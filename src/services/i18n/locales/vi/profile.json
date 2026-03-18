@@ -1,0 +1,91 @@
+{
+  "title": "Hồ sơ",
+  "title1": "Thông tin tài khoản",
+  "title2": "Đổi mật khẩu",
+  "title3": "Tính năng khác",
+  "balance": "Số dư: ",
+  "actions": {
+    "edit": "Chỉnh sửa",
+    "submit": "Cập nhật",
+    "cancel": "Hủy bỏ"
+  },
+  "inputs": {
+    "firstName": {
+      "label": "Tên",
+      "validation": {
+        "required": "Tên không được để trống"
+      }
+    },
+    "lastName": {
+      "label": "Họ",
+      "validation": {
+        "required": "Họ không được để trống"
+      }
+    },
+    "oldPassword": {
+      "label": "Mật khẩu hiện tại",
+      "validation": {
+        "required": "Mật khẩu hiện tại không được để trống",
+        "min": "Mật khẩu hiện tại cần có ít nhất 6 kí tự.",
+        "server": {
+          "incorrectOldPassword": "Mật khẩu hiện tại không đúng."
+        }
+      }
+    },
+    "phone": {
+      "label": "Số điện thoại",
+      "validation": {
+        "required": "Số điện thoại không được để trống",
+        "invalid": "Số điện thoại không hợp lệ"
+      }
+    },
+    "password": {
+      "label": "Mật khẩu mới",
+      "validation": {
+        "required": "Mật khẩu mới không được để trống",
+        "min": "Mật khẩu mới cần có ít nhất 6 kí tự.",
+        "match": "Mật khẩu mới không thể giống mật khẩu cũ."
+      }
+    },
+    "confirmPassword": {
+      "label": "Nhập lại mật khẩu mới.",
+      "validation": {
+        "required": "Mật khẩu xác nhận không được để trống",
+        "match": "Mật khẩu xác nhận không khớp với mật khẩu mới."
+      }
+    },
+    "avatar": {
+      "edit": "Đổi ảnh đại diện",
+      "label": "Ảnh đại diện",
+      "validation": {
+        "required": "Vui lòng tải ảnh đại diện.",
+        "max": "Ảnh có kích thước nhỏ hơn 2MB"
+      },
+      "pending": "Đang tải ảnh",
+      "success": "Tải ảnh thành công.",
+      "error": "Đã có lỗi xảy ra"
+    },
+    "socialId": {
+      "validation": {
+        "required": "CCCD không được để trống",
+        "invalid-length": "CCCD phải có 12 chữ số"
+      }
+    }
+  },
+  "alerts": {
+    "password": {
+      "success": "Thay đổi mật khẩu thành công.",
+      "error": "Đã có lỗi xảy ra, đổi mật khẩu không thành công."
+    },
+    "profile": {
+      "success": "Cập nhật hồ sơ thành công.",
+      "error": "Đã có lỗi xảy ra, cập nhật hồ sơ không thành công."
+    },
+    "quit": {
+      "title": "Bạn muốn thoát?",
+      "message": "Thông tin của bạn sẽ không được cập nhật.",
+      "yes": "Thoát",
+      "back": "Quay lại chỉnh sửa"
+    }
+  }
+}

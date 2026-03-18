@@ -1,0 +1,75 @@
+{
+  "title": "Đăng ký",
+  "welcome": "Tạo một tài khoản",
+  "actions": {
+    "submit": "Đăng ký",
+    "accountAlreadyExists": {
+      "ask": "Đã có tài khoản?",
+      "link": "Đăng nhập"
+    }
+  },
+  "inputs": {
+    "firstName": {
+      "label": "Tên",
+      "placeholder": "Nhập tên của bạn",
+      "validation": {
+        "required": "Vui lòng nhập thông tin"
+      }
+    },
+    "lastName": {
+      "label": "Họ",
+      "placeholder": "Nhập họ của bạn",
+      "validation": {
+        "required": "Vui lòng nhập thông tin"
+      }
+    },
+    "phone": {
+      "label": "Số điện thoại",
+      "placeholder": "Vui lòng nhập số điện thoại của bạn",
+      "validation": {
+        "required": "Bắt buộc nhập số điện thoại",
+        "invalid": "Số điện thoại không hợp lệ",
+        "server": {
+          "phone must be a phone number": "Số điện thoại không hợp lệ"
+        }
+      }
+    },
+    "email": {
+      "label": "Email",
+      "placeholder": "Nhập email của bạn",
+      "validation": {
+        "required": "Bắt buộc nhập Email",
+        "invalid": "Email không hợp lệ",
+        "server": {
+          "emailAlreadyExists": "Email này đã được dùng để tạo tài khoản. Vui lòng kiểm tra lại"
+        }
+      }
+    },
+    "socialId": {
+      "label": "CCCD",
+      "placeholder": "Nhập CCCD của bạn",
+      "validation": {
+        "invalid-length": "CCCD phải có 12 chữ số",
+        "required": "Bắt buộc"
+      }
+    },
+    "password": {
+      "label": "Mật khẩu",
+      "placeholder": "Vui lòng nhập mật khẩu",
+      "validation": {
+        "required": "Bắt buộc nhập mật khẩu",
+        "min": "Mật khẩu phải có ít nhất 6 kí tự",
+        "server": {
+          "incorrectPassword": "Mật khẩu không chính xác"
+        }
+      }
+    },
+    "terms": {
+      "label": "Đồng ý với Điều khoản và điều kiện",
+      "validation": {
+        "required": "Vui lòng đồng ý với Điều khoản và điều kiện của chúng tôi"
+      }
+    }
+  },
+  "or": "hoặc"
+}

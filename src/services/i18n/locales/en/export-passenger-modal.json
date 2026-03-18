@@ -1,0 +1,9 @@
+{
+  "title": "Export Passenger",
+  "message": "Have an error when finish the booking or any ticket has been booked by other. Please export the passengers information may be useful for you.",
+  "export-depart": "Export passenger list for Depart Order",
+  "export-return": "Export passenger list for Return Order",
+  "close": "Close",
+  "success": "Export successfully",
+  "fail": "Export fail"
+}

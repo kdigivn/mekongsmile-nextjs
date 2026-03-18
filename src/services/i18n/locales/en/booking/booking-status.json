@@ -1,0 +1,13 @@
+{
+  "unsupported": "Unsupported status:",
+  "0": "Draft",
+  "2": "Requested",
+  "4": "Paid",
+  "6": "Export Error",
+  "8": "Expired",
+  "10": "Booked",
+  "12": "Cancel Request",
+  "14": "Cancelled",
+  "16": "Cancelled Because Boat Not Depart",
+  "18": "Refunded"
+}

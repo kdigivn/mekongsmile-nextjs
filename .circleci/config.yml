@@ -1,0 +1,239 @@
+version: 2.1
+
+executors:
+  deploy:
+    docker:
+      - image: cimg/base:stable
+
+commands:
+  deploy-site:
+    description: Deploy a Next.js site via SSH to remote server
+    parameters:
+      server:
+        type: string
+      fingerprint:
+        type: string
+      remote_dir:
+        type: string
+      pm2_name:
+        type: string
+      branch:
+        type: string
+      build_command:
+        type: string
+        default: "npm run build"
+      node_version:
+        type: string
+        default: "22.14.0"
+      node_options:
+        type: string
+        default: ""
+      standalone_dir:
+        type: string
+        default: ""
+    steps:
+      - add_ssh_keys:
+          fingerprints:
+            - << parameters.fingerprint >>
+      - run:
+          name: Setup SSH known_hosts
+          command: |
+            mkdir -p ~/.ssh
+            ssh-keyscan -H << parameters.server >> >> ~/.ssh/known_hosts
+            chmod 644 ~/.ssh/known_hosts
+      - run:
+          name: Deploy << parameters.pm2_name >>
+          no_output_timeout: 15m
+          command: |
+            STANDALONE_DIR="<< parameters.standalone_dir >>"
+            REMOTE_DIR="<< parameters.remote_dir >>"
+            NODE_OPTS="<< parameters.node_options >>"
+
+            # Build conditional: standalone copy after build
+            if [ -n "$STANDALONE_DIR" ]; then
+              POST_BUILD="rm -rf ${STANDALONE_DIR}/* && cp -R ${REMOTE_DIR}/.next/standalone/. ${STANDALONE_DIR}"
+            else
+              POST_BUILD="true"
+            fi
+
+            # Build conditional: NODE_OPTIONS for memory limit
+            if [ -n "$NODE_OPTS" ]; then
+              EXPORT_NODE_OPTS="export NODE_OPTIONS='${NODE_OPTS}'"
+            else
+              EXPORT_NODE_OPTS="true"
+            fi
+
+            ssh -o BatchMode=yes root@<< parameters.server >> "
+              cd ${REMOTE_DIR} &&
+              git fetch --all &&
+              (git checkout << parameters.branch >> || git checkout -b << parameters.branch >> origin/<< parameters.branch >>) &&
+              git reset --hard origin/<< parameters.branch >> &&
+
+              echo '========== Deploy Info ==========' &&
+              echo \"App:      << parameters.pm2_name >>\" &&
+              echo \"Branch:   << parameters.branch >>\" &&
+              echo \"Commit:   \$(git rev-parse --short HEAD)\" &&
+              echo \"Message:  \$(git log -1 --pretty=%s)\" &&
+              echo \"Node:     << parameters.node_version >>\" &&
+              echo \"Time:     \$(date '+%Y-%m-%d %H:%M:%S %Z')\" &&
+              echo '==================================' &&
+
+              source /root/.nvm/nvm.sh &&
+              nvm install << parameters.node_version >> &&
+              nvm use << parameters.node_version >> &&
+              ${EXPORT_NODE_OPTS} &&
+              npm install &&
+              << parameters.build_command >> &&
+              ${POST_BUILD} &&
+              export PATH=\$PATH:/root/.nvm/versions/node/v<< parameters.node_version >>/bin &&
+              pm2 reload << parameters.pm2_name >> &&
+
+              echo 'Waiting for process to be online...' &&
+              RETRIES=5 &&
+              while [ \$RETRIES -gt 0 ]; do
+                STATUS=\$(pm2 show << parameters.pm2_name >> 2>/dev/null | grep 'status' | head -1 | awk '{print \$4}')
+                if [ \"\$STATUS\" = 'online' ]; then
+                  echo '✓ << parameters.pm2_name >> is online'
+                  break
+                fi
+                RETRIES=\$((RETRIES - 1))
+                echo \"Retry... (\$RETRIES left)\"
+                sleep 3
+              done &&
+              if [ \"\$STATUS\" != 'online' ]; then
+                echo '✗ << parameters.pm2_name >> failed to come online'
+                pm2 show << parameters.pm2_name >>
+                exit 1
+              fi
+            "
+
+jobs:
+  # --- UAT ---
+  deploy-to-uat-vetaucaotoc-net:
+    executor: deploy
+    steps:
+      - deploy-site:
+          server: ferry.com.vn
+          fingerprint: "SHA256:HOYRq2G1yvq2fJs74sdfz3WdURlihL87ikaAwGLRrnQ"
+          remote_dir: /root/ferry/vetaucaotoc-net
+          standalone_dir: /root/build-ferry/vetaucaotoc-net
+          pm2_name: vetaucaotoc.net
+          branch: uat
+          build_command: "npm run build:uat"
+          node_version: "22.22.0"
+          node_options: "--max-old-space-size=10096"
+
+  deploy-to-uat-condao-express:
+    executor: deploy
+    steps:
+      - deploy-site:
+          server: ferry.com.vn
+          fingerprint: "SHA256:HOYRq2G1yvq2fJs74sdfz3WdURlihL87ikaAwGLRrnQ"
+          remote_dir: /root/ferry/condao-express
+          standalone_dir: /root/build-ferry/condao-express
+          pm2_name: condao.express
+          branch: uat
+          build_command: "npm run build:uat"
+          node_version: "22.22.0"
+          node_options: "--max-old-space-size=10096"
+
+  # --- Production ---
+  deploy-to-production-vetaucaotoc-net:
+    executor: deploy
+    steps:
+      - deploy-site:
+          server: cloud.ferry.vn
+          fingerprint: "SHA256:GS3nMMk7TrPtqaNCxLm/TVD/Vq3PCw0N2SIPATpmxnk"
+          remote_dir: /root/ferry/vetaucaotoc-net
+          standalone_dir: /root/build-ferry/vetaucaotoc-net
+          pm2_name: vetaucaotoc.net
+          branch: main
+
+  deploy-to-production-condao-express:
+    executor: deploy
+    steps:
+      - deploy-site:
+          server: cloud.ferry.vn
+          fingerprint: "SHA256:GS3nMMk7TrPtqaNCxLm/TVD/Vq3PCw0N2SIPATpmxnk"
+          remote_dir: /root/ferry/condao-express
+          standalone_dir: /root/build-ferry/condao-express
+          pm2_name: condao.express
+          branch: main
+
+  deploy-to-production-phuquoc-express:
+    executor: deploy
+    steps:
+      - deploy-site:
+          server: cloud.ferry.vn
+          fingerprint: "SHA256:GS3nMMk7TrPtqaNCxLm/TVD/Vq3PCw0N2SIPATpmxnk"
+          remote_dir: /root/ferry/phuquoc-express
+          standalone_dir: /root/build-ferry/phuquoc-express
+          pm2_name: phuquoc.express
+          branch: main
+
+  deploy-to-production-honson-express:
+    executor: deploy
+    steps:
+      - deploy-site:
+          server: cloud.ferry.vn
+          fingerprint: "SHA256:GS3nMMk7TrPtqaNCxLm/TVD/Vq3PCw0N2SIPATpmxnk"
+          remote_dir: /root/ferry/honson-express
+          standalone_dir: /root/build-ferry/honson-express
+          pm2_name: honson.express
+          branch: main
+
+  deploy-to-production-ferryvn-com:
+    executor: deploy
+    steps:
+      - deploy-site:
+          server: cloud.ferry.vn
+          fingerprint: "SHA256:GS3nMMk7TrPtqaNCxLm/TVD/Vq3PCw0N2SIPATpmxnk"
+          remote_dir: /root/ferry/ferryvn-com
+          standalone_dir: /root/build-ferry/ferryvn-com
+          pm2_name: ferryvn.com
+          branch: en/main
+
+workflows:
+  deploy_workflow:
+    jobs:
+      # UAT — sequential (same server, avoid resource exhaustion)
+      - deploy-to-uat-vetaucaotoc-net:
+          filters:
+            branches:
+              only: uat
+      - deploy-to-uat-condao-express:
+          requires:
+            - deploy-to-uat-vetaucaotoc-net
+          filters:
+            branches:
+              only: uat
+
+      # Production — SEQUENTIAL (same server, prevents CPU/RAM exhaustion)
+      - deploy-to-production-vetaucaotoc-net:
+          filters:
+            branches:
+              only: main
+      - deploy-to-production-condao-express:
+          requires:
+            - deploy-to-production-vetaucaotoc-net
+          filters:
+            branches:
+              only: main
+      - deploy-to-production-phuquoc-express:
+          requires:
+            - deploy-to-production-condao-express
+          filters:
+            branches:
+              only: main
+      - deploy-to-production-honson-express:
+          requires:
+            - deploy-to-production-phuquoc-express
+          filters:
+            branches:
+              only: main
+
+      # ferryvn.com — separate branch (en/main), runs independently
+      - deploy-to-production-ferryvn-com:
+          filters:
+            branches:
+              only: en/main

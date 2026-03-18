@@ -1,0 +1,282 @@
+{
+  "title": "Booking Payment | Ferry Ticket",
+  "voyage-tab": {
+    "departure": "Chọn lượt đi",
+    "return": "Chọn lượt về",
+    "tooltip": {
+      "edit-button": "Có thể chỉnh sửa khi đơn chưa xuất vé"
+    }
+  },
+  "ticket-confirmation": {
+    "title": "Xác nhận thông tin vé",
+    "pic-info": {
+      "title": "Thông tin liên hệ",
+      "name": "Họ tên: ",
+      "phone": "Điện thoại: ",
+      "email": "Email: ",
+      "socialId": "CCCD: "
+    },
+    "ticket-detail": {
+      "passenger-info": {
+        "title": "Thông tin khách",
+        "name": "Họ tên:",
+        "gender": {
+          "title": "Giới tính:",
+          "male": "Nam",
+          "female": "Nữ"
+        },
+        "dateOfBirth": "Năm sinh:",
+        "socialId": "Số CCCD/Hộ chiếu:",
+        "nationality": "Quốc tịch:",
+        "plate-number": "Biển số xe:"
+      },
+      "seat-info": {
+        "title": "Thông tin ghế",
+        "ticket-type": "Loại vé:",
+        "seat-type": "Loại ghế:",
+        "seat-name": "Số ghế:"
+      },
+      "ticket-info": {
+        "title": "Thông tin vé",
+        "price": "Giá vé:"
+      }
+    }
+  },
+  "payment-info": {
+    "title": "Thông tin thanh toán",
+    "table": {
+      "col": {
+        "voyage": "Chuyến",
+        "ticket-type": "Loại vé",
+        "seat-type": "Loại ghế",
+        "amount": "Số lượng",
+        "price": "Đơn giá (VNĐ)",
+        "total": "Tổng tiền (VNĐ)"
+      },
+      "row": {
+        "total-ticket": "Tổng tiền vé",
+        "total-harbor-fee": "Tổng phí cảng",
+        "discount": "Giảm giá",
+        "total": "Thành tiền"
+      },
+      "departure": "Chuyến đi",
+      "return": "Chuyến về",
+      "ticket": "vé"
+    },
+    "payment-due-date": "Hạn thanh toán",
+    "payment-due-date-tooltip": "Vui lòng thanh toán đơn hàng trước hạn thanh toán, nếu không sẽ bị hủy bỏ"
+  },
+  "payment-methods": {
+    "title": "Chọn phương thức thanh toán",
+    "qr": "Quét QR - tự động xuất vé ",
+    "banking": "Thanh toán chuyển khoản ",
+    "direct": "Thanh toán trực tiếp tại Công ty FERRY VN ",
+    "onepay": "OnePay: Thẻ tín dụng/Thẻ ghi nợ ",
+    "fee": "(Phí {{fee}})",
+    "remaining": "Số tiền cần thanh toán: ",
+    "paid": "Số tiền đã thanh toán: ",
+    "available": "Số dư khả dụng: ",
+    "note": "Quý khách vui lòng kiểm tra kỹ và xác nhận các thông tin đã cung cấp trước khi thực hiện giao dịch mua vé. Sau khi thực hiện thanh toán ở trang tiếp theo quý khách sẽ không thể thay đổi được thông tin đã cung cấp, mọi sai xót chúng tôi không chịu trách nhiệm.",
+    "terms-1": "Chấp nhận ",
+    "terms-2": "Điều khoản & Điều kiện",
+    "action-button": "Thanh toán",
+    "qr-method": {
+      "title": "Chuyển khoản bằng QR code",
+      "noteTitle": "Lưu ý chuyển khoản",
+      "noteContent": "Chuyển khoản vào tài khoản ngân hàng của chúng tôi. Đơn hàng sẽ được xác nhận sau 5 phút sau khi chuyển khoản.",
+      "note-content-topup": "Chuyển khoản vào tài khoản ngân hàng của chúng tôi. Số tiền của bạn sẽ được xác nhận trong vòng 5 phút sau khi chuyển khoản.",
+      "bankingInformation": {
+        "title": "Thông tin chuyển khoản",
+        "bankAccountNumber": "Số tài khoản:",
+        "bankAccount": "Tài khoản ngân hàng",
+        "bankAccountName": "Tên tài khoản:",
+        "bankName": "Ngân hàng:",
+        "transferContent": "Nội dung:",
+        "topicTransferContent": "TT ve tau cao toc",
+        "orderCode": "mã đơn hàng",
+        "phoneNumber": "Số điện thoại",
+        "amountPayment": "Số tiền cần thanh toán",
+        "paymentCodeExpired": "Mã thanh toán này sẽ hết hạn vào lúc {{expiredDate}}"
+      }
+    },
+    "direct-method": {
+      "title": "Thanh toán trực tiếp",
+      "contactInformation": "Thông tin liên hệ",
+      "message": "Quý khách vui lòng đến trực tiếp Công ty FERRY VN",
+      "address": "Địa chỉ:",
+      "hotline": "Hotline:",
+      "ncmkAdress": "Số 5 Trần Văn Hoài, P. Ninh Kiều, TP. Cần Thơ"
+    },
+    "bank-transfer-method": {
+      "title": "Chuyển khoản ngân hàng",
+      "noteTitle": "Lưu ý chuyển khoản",
+      "noteContent": "Quý khách vui lòng chọn hình thức chuyển nhanh 24/7 và chuyển vào tài khoản.",
+      "bankingInformation": {
+        "title": "Thông tin chuyển khoản",
+        "bankAccountNumber": "Số tài khoản:",
+        "bankAccount": "Tài khoản ngân hàng",
+        "bankAccountName": "Tên tài khoản:",
+        "bankName": "Ngân hàng:",
+        "transferContent": "Nội dung:",
+        "topicTransferContent": "TT ve tau cao toc",
+        "orderCode": "mã đơn hàng",
+        "phoneNumber": "Số điện thoại",
+        "amountPayment": "Số tiền cần thanh toán:"
+      }
+    },
+    "check-balance": {
+      "title": "Tài khoản bạn đang có ",
+      "title-not-enough": "Không đủ thanh toán",
+      "title-enough": "Đủ thanh toán"
+    }
+  },
+  "payment-success": {
+    "title": "Thanh toán thành công",
+    "billCode": "Mã hoá đơn",
+    "paymentTime": "Thời gian thanh toán",
+    "paymentMethod": "Phương thức thanh toán",
+    "bankTransfer": "Chuyển khoản ngân hàng",
+    "payer": "Người thanh toán",
+    "amount": "Số tiền",
+    "exportBill": "Xuất vé",
+    "returnHomepage": "Quay vể trang chủ",
+    "sentRequest": "Đã gửi yêu cầu đặt vé",
+    "success": "thành công",
+    "waitForInfo": "Bạn vui lòng đợi thông tin thanh toán",
+    "loading": "Đang cập nhật..."
+  },
+  "payment-fail": {
+    "errorExport": "Đã có lỗi xảy ra trong quá trình xuất vé",
+    "hotlineInfo": "Vui lòng liên hệ hotline: 0924299898",
+    "fail": "thất bại",
+    "notEnough": "Chuyển chưa đủ tiền",
+    "hasPay": "Bạn đã thanh toán:",
+    "needMoreMoney": "Bạn vui lòng chuyển thêm để đặt vé"
+  },
+  "export-ticket": "Xuất vé",
+  "export-harbor-file": "Xuất file phí cảng",
+  "export-ticket-modal": {
+    "success": "Xuất vé thành công",
+    "downloadInfo": "Tải thông tin vé",
+    "departTicket": "Vé chiều đi",
+    "returnTicket": "Vé chiều về",
+    "confirm": "Xác nhận",
+    "exportTicket": "xuất vé",
+    "pleaseConfirm": "Bạn vui lòng xác nhận trước khi xuất vé",
+    "totalMoney": "Tổng tiền:",
+    "noteConfirm": "Khi chọn xác nhận hệ thống sẽ tiến hành xuất vé",
+    "cancel": "Hủy bỏ",
+    "waitExport": "Chờ xuất vé ...",
+    "errorBookedSeatExport": "Một trong các ghế bạn chọn đã bị đặt. Bạn hãy về lại bước chọn ghế để chọn ghế khác nhé. Gợi ý: có thể xuất danh sách hành khách để nhanh chóng nhập lại dữ liệu sau khi đổi ghế",
+    "errorDuplicateSocialId": "Có 1 hoặc nhiều số CCCD đã bị sử dụng trùng lặp. Vui lòng kiểm tra lại thông tin hành khách.",
+    "export": "Xuất vé ",
+    "export-fail": "thất bại",
+    "returnBookingStep2": "Trở về bước chọn ghế",
+    "errorExport": "Đã có lỗi xảy ra trong quá trình xuất vé",
+    "errorUknown": "Lỗi không xác định",
+    "errorProcessingIssueTicket": "Đơn đặt chỗ này đang xuất vé, vui lòng đợi.",
+    "errorCustomerBalanceNotEnough": "Số dư của bạn không đủ để thanh toán đơn hàng. Bạn có thể nhấn nút 'Xuất vé lại' sau khi đã thanh toán đủ tiền",
+    "errorInvalidInput": "Dữ liệu nhập không hợp lệ",
+    "errorInvalidStatus": "Đơn này không thể xuất vé lại do đã được xuất vé thành công, hoặc đã bị hủy",
+    "errorNoCustomerAttached": "Đơn đặt chỗ này không có khách hàng nào được liên kết",
+    "errorOrganizationBalanceNotEnough": "Số dư của đại lý bạn hoặc một trong các đại lý cấp cao hơn của bạn không đủ",
+    "errorOperatorIsDisabled": "Không thể xuất vé vì kết nối giữa hãng và hệ thống đang được bảo trì. Vui lòng thử lại sau.",
+    "iUnderstand": "Trở về trang Chi tiết đơn",
+    "ticket_export_error": "Đã có lỗi xảy ra trong quá trình xuất vé. Xin hãy liên hệ hotline để được hỗ trợ. Mã lỗi: {{errorCode}}",
+    "errorUnavailableSeats": "Một trong các ghế bạn chọn đã bị đặt.",
+    "errorDuplicateSocialIdOperator": "Số CCCD của hành khách đã được đặt trong chuyến tàu đang chọn:"
+  },
+  "payment": {
+    "title": "Thanh toán",
+    "notification": {
+      "success": "Nạp tiền thành công"
+    },
+    "loader": {
+      "title": "Xử lý thanh toán an toàn",
+      "description": "Vui lòng đợi trong khi chúng tôi xử lý khoản thanh toán của bạn một cách an toàn"
+    },
+    "loading": "Chúng tôi sẽ chuyển bạn qua trang xuất vé trong {{second}} giây",
+    "redirect-success": "Chúng tôi sẽ chuyển bạn qua chi tiết đơn hàng trong {{second}} giây",
+    "banking": {
+      "title": "Thanh toán trực tuyến"
+    },
+    "offline": {
+      "title": "Thanh toán trực tiếp"
+    },
+    "onepay": {
+      "title": "Thanh toán OnePay",
+      "loading-connect": "Đang kết nối đến OnePay...",
+      "check-transaction": "Đang kiểm tra kết quả giao dịch..."
+    }
+  },
+  "issue-ticket": {
+    "title": "Xuất vé"
+  },
+  "transaction-result": {
+    "title": "Kết quả giao dịch",
+    "payment-response-code": {
+      "success": "Giao dịch thành công",
+      "unknown": "Trạng thái giao dịch không xác định",
+      "card-not-enabled": "Giao dịch không thành công. Ngân hàng phát hành thẻ không cấp phép cho giao dịch hoặc thẻ chưa được kích hoạt dịch vụ thanh toán trên Internet. Vui lòng liên hệ ngân hàng theo số điện thoại sau mặt thẻ để được hỗ trợ chi tiết.",
+      "bank-rejected": "Giao dịch không thành công. Ngân hàng phát hành thẻ từ chối cấp phép cho giao dịch. Vui lòng liên hệ ngân hàng theo số điện thoại sau mặt thẻ để biết chính xác nguyên nhân ngân hàng từ chối.",
+      "no-bank-response": "Giao dịch không thành công. Cổng thanh toán không nhận được kết quả trả về từ ngân hàng phát hành thẻ. Vui lòng liên hệ với ngân hàng theo số điện thoại sau mặt thẻ để biết chính xác trạng thái giao dịch và thực hiện thanh toán lại.",
+      "card-expired": "Giao dịch không thành công do thẻ hết hạn sử dụng hoặc nhập sai thông tin tháng/năm hết hạn của thẻ. Vui lòng kiểm tra lại thông tin và thanh toán lại.",
+      "insufficient-balance": "Giao dịch không thành công. Thẻ không đủ hạn mức hoặc tài khoản không đủ số dư để thanh toán. Vui lòng kiểm tra lại thông tin và thanh toán lại.",
+      "bank-processing-error": "Giao dịch không thành công. Quá trình xử lý giao dịch phát sinh lỗi từ ngân hàng phát hành thẻ. Vui lòng liên hệ ngân hàng theo số điện thoại sau mặt thẻ để được hỗ trợ chi tiết.",
+      "transaction-error": "Giao dịch không thành công. Đã có lỗi phát sinh trong quá trình xử lý giao dịch. Vui lòng thực hiện thanh toán lại.",
+      "invalid-card-number": "Giao dịch không thành công. Số thẻ không đúng. Vui lòng kiểm tra và thực hiện thanh toán lại.",
+      "invalid-card-holder": "Giao dịch không thành công. Tên chủ thẻ không đúng. Vui lòng kiểm tra và thực hiện thanh toán lại.",
+      "card-locked-or-expired": "Giao dịch không thành công. Thẻ hết hạn hoặc thẻ bị khóa. Vui lòng kiểm tra và thực hiện thanh toán lại.",
+      "card-not-registered": "Giao dịch không thành công. Thẻ chưa đăng ký sử dụng dịch vụ thanh toán trên Internet. Vui lòng liên hệ ngân hàng theo số điện thoại sau mặt thẻ để được hỗ trợ.",
+      "invalid-expiry-date": "Giao dịch không thành công. Ngày phát hành/hết hạn không đúng. Vui lòng kiểm tra và thực hiện thanh toán lại.",
+      "insufficient-funds": "Giao dịch không thành công. Số tiền không đủ để thanh toán. Vui lòng kiểm tra và thực hiện thanh toán lại.",
+      "invalid-account-info": "Giao dịch không thành công. Thông tin tài khoản không đúng. Vui lòng kiểm tra và thực hiện thanh toán lại.",
+      "account-locked": "Giao dịch không thành công. Tài khoản bị khóa. Vui lòng liên hệ ngân hàng theo số điện thoại sau mặt thẻ để được hỗ trợ.",
+      "invalid-card-info": "Giao dịch không thành công. Thông tin thẻ không đúng. Vui lòng kiểm tra và thực hiện thanh toán lại.",
+      "invalid-otp": "Giao dịch không thành công. OTP không đúng. Vui lòng kiểm tra và thực hiện thanh toán lại.",
+      "payment-timeout": "Giao dịch không thành công. Quá thời gian thanh toán. Vui lòng thực hiện thanh toán lại.",
+      "user-cancelled": "Giao dịch không thành công. Người sử dụng đã hủy giao dịch.",
+      "three-d-secure-auth-failed": "Giao dịch không thành công do không xác thực được 3D-Secure. Vui lòng liên hệ ngân hàng theo số điện thoại sau mặt thẻ để được hỗ trợ chi tiết.",
+      "invalid-csc": "Giao dịch không thành công do nhập sai CSC (Card Security Code) hoặc ngân hàng từ chối cấp phép cho giao dịch. Vui lòng liên hệ ngân hàng theo số điện thoại sau mặt thẻ để được hỗ trợ chi tiết.",
+      "three-d-secure-verification-failed": "Giao dịch không thành công do không xác thực được 3D-Secure. Vui lòng liên hệ ngân hàng theo số điện thoại sau mặt thẻ để được hỗ trợ chi tiết.",
+      "transaction-rejected": "Giao dịch của bạn bị từ chối. Vui lòng liên hệ Đơn vị chấp nhận thẻ để được hỗ trợ.",
+      "default": "Thanh toán thất bại.",
+      "paymentResultInvalid": "Kết quả thanh toán không hợp lệ. Vui lòng thanh toán lại."
+    }
+  },
+  "error": {
+    "sorry": "Xin lỗi",
+    "not-found": "không tìm thấy",
+    "return-home": "Trở về trang chủ",
+    "not-found-booking": "đơn",
+    "not-found-booking-description": "Xin lỗi, chúng tôi không thể tìm thấy đơn bạn đang tìm kiếm.",
+    "not-found-page": "trang",
+    "not-found-page-description": "Xin lỗi, chúng tôi không thể tìm thấy trang bạn đang tìm kiếm. Có lẽ bạn đã gõ nhầm URL? Hãy chắc chắn kiểm tra chính tả của bạn!"
+  },
+  "bookingProcessing": "Đơn hàng {{bookingId}} vẫn đang trong quá trình xử lý, vui lòng kiểm tra lại sau 5 phút.",
+  "booking-no-payment": "Đơn hàng {{bookingId}} đang chờ thanh toán. Nếu bạn đã thanh toán, vui lòng thử lại sau 5 phút. Nếu vẫn gặp thông báo này, vui lòng liên hệ hotline hỗ trợ.",
+  "update-passenger-dialog": {
+    "title": "Cập nhật thông tin hành khách ở ghế {{seatName}}",
+    "field": {
+      "name": "Tên hành khách",
+      "name-placeholder": "Nhập tên",
+      "social-id": "CCCD/Hộ chiếu",
+      "social-id-placeholder": "Nhập số CCCD/Hộ chiếu"
+    },
+    "button": {
+      "update": "Cập nhật",
+      "cancel": "Hủy"
+    },
+    "yup-error": {
+      "name": "Tên hành khách là bắt buộc",
+      "social-id": "Số CCCD/Hộ chiếu là bắt buộc",
+      "social-id-min": "CCCD/Hộ chiếu phải có ít nhất {{min}} kí tự",
+      "social-id-max": "CCCD/Hộ chiếu không được vượt quá {{max}} kí tự"
+    },
+    "notification": {
+      "success": "Thông tin hành khách đã được cập nhật thành công",
+      "error": "Lỗi khi cập nhật thông tin hành khách",
+      "error-ticket-not-found": "Vé này đã hết lượt cập nhật thông tin"
+    }
+  }
+}

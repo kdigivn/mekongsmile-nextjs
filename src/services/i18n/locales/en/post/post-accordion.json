@@ -1,0 +1,7 @@
+{
+  "notice": "Notice",
+  "invalid": {
+    "noQR": "No QR image available.",
+    "label": "No label."
+  }
+}

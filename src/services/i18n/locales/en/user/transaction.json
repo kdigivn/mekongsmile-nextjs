@@ -1,0 +1,37 @@
+{
+  "table": {
+    "title": "Transaction History",
+    "header": {
+      "transaction-code": "Transaction code",
+      "transaction-time": "Transaction time",
+      "transaction-info": "Transaction content",
+      "booking-code": "Booking ID",
+      "total-amount": "Total amount changed (VND)",
+      "type": "Type",
+      "status": "Status",
+      "note": "Note"
+    },
+    "cell": {
+      "status": {
+        "0": "Failed",
+        "1": "Succeed",
+        "2": "Cancelled"
+      },
+      "type": {
+        "PB": "Pay booking (PB)",
+        "DP": "Customer deposit (DP)",
+        "OD": "Organization deposit (OD)",
+        "SO": "Sync with operator (SO)",
+        "BL": "Blank (BL)",
+        "UK": "Unknown (UK)",
+        "CB": "Customer borrow money (CB)",
+        "CR": "Customer repay debt (CR)",
+        "PO": "Payment for order (PO)",
+        "CH": "Revert payment (CH)",
+        "DR": "Debt Reconciliation (DR)",
+        "RF": "Refund (RF)"
+      }
+    }
+  },
+  "unsupported": "Unsupported"
+}

@@ -1,0 +1,68 @@
+{
+  "app-name": "APP",
+  "loading": "Loading ...",
+  "theme": {
+    "light": "Current theme: light",
+    "dark": "Current theme: dark"
+  },
+  "navigation": {
+    "home": "Trang chủ",
+    "search": "Tìm kiếm",
+    "signIn": "Đăng nhập",
+    "signUp": "Đăng ký",
+    "profile": "Hồ sơ",
+    "users": "Users",
+    "bookings": "Đơn hàng",
+    "logout": "Đăng xuất",
+    "balance": "Số dư: ",
+    "transactions": "Giao dịch"
+  },
+  "formInputs": {
+    "avatarInput": {
+      "dropzoneText": "Drop the image here ...",
+      "dragAndDrop": "Or drag 'n' drop some files here",
+      "selectFile": "Select an image"
+    },
+    "input": {
+      "showPassword": "Hiển thị mật khẩu"
+    }
+  },
+  "leavePage": {
+    "title": "Rời khỏi trang?",
+    "message": "Các thay đổi của bạn sẽ không được lưu",
+    "stay": "Ở lại",
+    "leave": "Rời khỏi"
+  },
+  "auth": {
+    "facebook": {
+      "action": "Đăng nhập với Facebook"
+    },
+    "google": {
+      "action": "Đăng nhập với Google"
+    }
+  },
+  "social-sharing.copied-link": "Đã sao chép liên kết",
+  "notification": {
+    "empty": "Bạn chưa có thông báo nào",
+    "title": "Thông báo",
+    "button": "Xem tất cả thông báo"
+  },
+  "top-up": {
+    "button": "Nạp tiền",
+    "top-up-dialog": {
+      "title": "Nạp tiền",
+      "message": "Nạp tiền vào tài khoản"
+    }
+  },
+  "qr-code": {
+    "download": "Tải xuống QR",
+    "copy": "Sao chép QR",
+    "downloaded": "Đã tải xuống QR",
+    "download-failed": "Tải xuống QR thất bại",
+    "copied": "Đã sao chép QR",
+    "copy-failed": "Sao chép QR thất bại"
+  },
+  "bank-app": {
+    "error": "Lấy ứng dụng ngân hàng thất bại"
+  }
+}

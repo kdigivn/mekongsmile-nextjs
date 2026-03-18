@@ -1,0 +1,8 @@
+{
+  "unsupported": "Unsupported status:",
+  "1": "Not Paid",
+  "3": "Partially Paid",
+  "4": "Paid",
+  "5": "Paid with Debt",
+  "18": "Refunded"
+}

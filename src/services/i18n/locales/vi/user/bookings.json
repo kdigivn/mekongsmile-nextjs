@@ -1,0 +1,56 @@
+{
+  "title": "Lịch sử đơn hàng | Ferry Ticket",
+  "form": {
+    "booking-id": { "title": "Mã Đơn", "placeholder": "Nhập mã đơn hàng..." },
+    "pic-name": { "title": "Khách hàng", "placeholder": "Nhập tên khách..." },
+    "created-date": { "title": "Ngày tạo", "placeholder": "Chọn ngày" },
+    "created-date-from": { "title": "Ngày tạo từ", "placeholder": "Chọn ngày" },
+    "created-date-to": { "title": "Ngày tạo đến", "placeholder": "Chọn ngày" },
+    "status": {
+      "title": "Trạng thái đơn hàng",
+      "placeholder": "-- Chọn trạng thái --"
+    },
+    "submit": "Tìm kiếm",
+    "reset": "Đặt lại"
+  },
+  "table": {
+    "title": "Lịch sử đơn hàng",
+    "no-of-results": "đơn hàng được tìm thấy",
+    "no-result": "Chưa có đơn hàng",
+    "load-data": {
+      "title": "Tải thêm dữ liệu",
+      "loading": "Đang tải dữ liệu..."
+    },
+    "header": {
+      "id": "Mã đơn hàng",
+      "created-date": "Ngày đặt",
+      "pic-name": "Khách hàng",
+      "order-detail": "Chi tiết đơn",
+      "total": "Tổng tiền (VND)",
+      "status": "Trạng thái",
+      "action": "Hành động"
+    },
+    "cell": {
+      "order-detail": {
+        "title": "Vé tàu cao tốc ",
+        "from": "Từ",
+        "to": "đến",
+        "depart-date": "Ngày khởi hành:",
+        "passengers": "Danh sách khách:",
+        "toggle-btn": "Ẩn/hiện"
+      },
+      "total-amount": {
+        "total": "Tổng tiền",
+        "total-discount": "Tổng giảm giá",
+        "payment-due-date": "Hạn thanh toán",
+        "payment-due-date-tooltip": "Vui lòng thanh toán đơn hàng trước hạn thanh toán, nếu quá hạn thanh toán đơn hàng sẽ bị hủy bỏ."
+      },
+      "download-ticket": "Tải vé"
+    },
+    "action-cell": {
+      "cancel-ticket": "Hủy vé",
+      "depart-cancel-ticket": "Hủy chuyến đi",
+      "return-cancel-ticket": "Hủy chuyến về"
+    }
+  }
+}

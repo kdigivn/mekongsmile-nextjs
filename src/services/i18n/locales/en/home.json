@@ -1,0 +1,59 @@
+{
+  "title": "Ferry Ticket",
+  "title1": "FERRY SCHEDULE, TICKET PRICES",
+  "title-search": "FIND A TRIP",
+  "table": {
+    "filter": {
+      "tab": "All",
+      "route": "Filter by route"
+    },
+    "header": {
+      "boat-name": "Boat Name",
+      "route": "Route",
+      "depart-time": "Departure time",
+      "available-seat": "Available seat",
+      "price": "Ticket price"
+    },
+    "action": "Choose to buy",
+    "no-of-results": "voyage(s) found",
+    "no-result": "No results",
+    "disabled": "This route is not available, please choose another route",
+    "load-data": {
+      "title": "Load more data",
+      "loading": "Loading..."
+    },
+    "cell": {
+      "promotion_applied": "Promotion Applied",
+      "surcharge_applied": "Surcharge Applied",
+      "click_to_view_price_details": "Click to view price details",
+      "price_details": "Price Details",
+      "ticket_price_details": "Ticket Price Details",
+      "initial_ticket_price": "Initial Ticket Price",
+      "promotion": "Promotion",
+      "total_promotion": "Total Promotion",
+      "surcharge": "Surcharge",
+      "final_price": "Final Price",
+      "savings": "Savings ",
+      "increase": "Increase ",
+      "issue-ticket-speed": {
+        "instant": {
+          "label": "Instant",
+          "description": "The ticket is issued immediately after payment."
+        },
+        "fast": {
+          "label": "Fast",
+          "description": "The ticket is issued within a processing time of less than 2 business hours after payment."
+        },
+        "standard": {
+          "label": "Standard",
+          "description": "The ticket is issued within a processing time of less than 4 business hours after payment."
+        },
+        "slow": {
+          "label": "Slow",
+          "description": "The ticket is issued within a processing time of less than 1 business day after payment."
+        }
+      }
+    }
+  },
+  "filterResultEmpty": "Không có chuyến đi nào theo bộ lọc này."
+}

@@ -1,0 +1,66 @@
+/**
+ * Barrel re-export for backward compatibility.
+ * Prefer direct imports for tree-shaking:
+ *   import { cn } from "@/lib/utils/cn";
+ *   import { setSeoData } from "@/lib/utils/seo-utils";
+ *   import { formatCurrency } from "@/lib/utils/format-utils";
+ */
+
+// Core
+export { cn } from "./utils/cn";
+
+// SEO & WordPress
+export {
+  wpURLtoNextURL,
+  getUriFromWpURL,
+  setSeoData,
+  getBreadcrumbFromSEO,
+  getFAQSchema,
+  excludeNextJsPage,
+} from "./utils/seo-utils";
+export type { FAQSchema } from "./utils/seo-utils";
+
+// Formatting
+export {
+  formatCurrency,
+  formatCurrencyWithShorten,
+  formatRelativeTime,
+  formatHourString,
+  getFormateVoyageDate,
+} from "./utils/format-utils";
+
+// Strings & HTML
+export {
+  removeAccents,
+  toCamelCase,
+  isEmptyString,
+  countHtmlDomParser,
+  getHtmlDomParser,
+  removeSquareBracketsInExcerpt,
+  fixFormatDescription,
+} from "./utils/string-utils";
+
+// Date & Time
+export { calculateAge, calculateDuration } from "./utils/date-utils";
+
+// Booking & Voucher
+export {
+  calculateVoucherDiscountAmount,
+  calculateBookingTotalDiscount,
+} from "./utils/booking-utils";
+
+// Browser & Auth
+export {
+  isBrowser,
+  getMobileOS,
+  isMac,
+  isJwtExpired,
+} from "./utils/browser-utils";
+
+// UI helpers
+export {
+  textAlignOptions,
+  getTextAlign,
+  getFontSizeForHeading,
+  getRouteBackgroundColor,
+} from "./utils/ui-utils";

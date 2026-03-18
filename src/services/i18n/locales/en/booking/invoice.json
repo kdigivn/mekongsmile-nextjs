@@ -1,0 +1,13 @@
+{
+  "provider": {
+    "ME_INVOICE": "MISA meInvoice",
+    "NONE": "Not use e-invoice feature"
+  },
+  "status": {
+    "PENDING": "Processing",
+    "ISSUED": "Published",
+    "FAILED": "Error",
+    "CANCELED": "Canceled",
+    "unknown": "Unknown status: {{status}}"
+  }
+}

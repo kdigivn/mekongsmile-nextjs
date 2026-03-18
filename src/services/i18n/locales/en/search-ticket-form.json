@@ -1,0 +1,33 @@
+{
+  "location": {
+    "filter-placeholder": "Enter location name...",
+    "placeholder": "Select location",
+    "no-result": "No location found.",
+    "departure": "Select departure",
+    "destination": "Select destination"
+  },
+  "departure": {
+    "label": "Departure",
+    "placeholder": "Select departure"
+  },
+  "destination": {
+    "label": "Destination",
+    "placeholder": "Select destination"
+  },
+  "departureDate": {
+    "label": "Departure Date",
+    "placeholder": "Select a date",
+    "title": "Select departure date"
+  },
+  "returnDate": {
+    "label": "Return Date",
+    "placeholder": "Select a date",
+    "title": "Select return date",
+    "clear": "Clear return date"
+  },
+  "passengers": {
+    "label": "Passengers",
+    "placeholder": "Number of passengers"
+  },
+  "search": "Search"
+}

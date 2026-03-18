@@ -1,0 +1,182 @@
+{
+  "title": "Chi tiết lịch sử đặt vé",
+  "table": {
+    "title": "Danh sách hành khách",
+    "no-of-results": "booking(s) found",
+    "header": {
+      "id": "Booking ID",
+      "passenger": "Hành khách",
+      "dob": "Ngày sinh",
+      "social-id": "Số CCCD/ Hộ chiếu",
+      "gender": {
+        "title": "Giới tính",
+        "male": "Nam",
+        "female": "Nữ"
+      },
+      "address": "Địa chỉ",
+      "nationality": "Quốc tịch",
+      "plate-number": "Biển số xe",
+      "seat-code": "Số ghế",
+      "ticket": "Vé"
+    },
+    "cell": {
+      "title": "Vé tàu cao tốc",
+      "from": "Từ",
+      "to": "đến",
+      "depart-date": "Ngày đi",
+      "passengers": "Hành khách:",
+      "toggle-btn": "Toggle",
+      "type": "Loại",
+      "adult": "Người lớn",
+      "children": "Trẻ em",
+      "price": "Giá"
+    },
+    "no-results": "Chưa có thông tin"
+  },
+  "button": {
+    "return": "Trở về",
+    "download": "Tải vé"
+  },
+  "order": "Đơn hàng",
+  "customer-info": "Thông tin khách hàng",
+  "payment-info": {
+    "title": "Thông tin thanh toán",
+    "total-amount": "Tổng tiền",
+    "harbor-fee": "Phí cảng",
+    "status": "Trạng thái",
+    "payment-due-date": "Ngày thanh toán",
+    "payment-due-date-tooltip": "Vui lòng thanh toán đơn hàng trước hạn thanh toán, nếu quá hạn thanh toán đơn hàng sẽ bị hủy bỏ."
+  },
+  "order-detail-information": {
+    "title": "Thông tin đơn đặt hàng",
+    "route": "Tuyến",
+    "depart-date": "Ngày đi",
+    "return-date": "Ngày về",
+    "passenger-list": "Danh sách hành khách",
+    "ferry-ticket": "Vé tàu cao tốc",
+    "boat": "Tên tàu",
+    "price": "Tổng tiền vé",
+    "discount": "Giảm giá",
+    "total": "Thành tiền",
+    "harbor-fee": "Tổng phí cảng",
+    "order-status": "Trạng thái đơn"
+  },
+  "payment-methods": {
+    "title": "Chọn phương thức thanh toán",
+    "qr": "Quét QR - tự động xuất vé (Phí 0đ)",
+    "banking": "Thanh toán chuyển khoản (Phí 0đ)",
+    "direct": "Thanh toán trực tiếp tại Công ty FERRY VN",
+    "onepay": "OnePay: Thẻ tín dụng/Thẻ ghi nợ (Phí: 5000đ + 3.5%)",
+    "remaining": "Số tiền cần thanh toán: ",
+    "note": "Quý khách vui lòng kiểm tra kỹ và xác nhận các thông tin đã cung cấp trước khi thực hiện giao dịch mua vé. Sau khi thực hiện thanh toán ở trang tiếp theo quý khách sẽ không thể thay đổi được thông tin đã cung cấp, mọi sai xót chúng tôi không chịu trách nhiệm.",
+    "terms-1": "Chấp nhận ",
+    "terms-2": "Điều khoản & Điều kiện",
+    "action-button": "Thanh toán",
+    "qr-method": {
+      "title": "Chuyển khoản bằng QR code",
+      "noteTitle": "Lưu ý chuyển khoản",
+      "noteContent": "Chuyển khoản vào tài khoản ngân hàng của chúng tôi. Đơn hàng sẽ được xác nhận sau 5 phút sau khi chuyển khoản.",
+      "bankingInformation": {
+        "title": "Thông tin chuyển khoản",
+        "bankAccountNumber": "Số tài khoản:",
+        "bankAccount": "Tài khoản ngân hàng",
+        "bankAccountName": "Tên tài khoản:",
+        "bankName": "Ngân hàng:",
+        "transferContent": "Nội dung:",
+        "topicTransferContent": "TT ve tau cao toc",
+        "orderCode": "mã đơn hàng",
+        "phoneNumber": "Số điện thoại",
+        "amountPayment": "Số tiền cần thanh toán"
+      }
+    },
+    "direct-method": {
+      "title": "Thanh toán trực tiếp",
+      "contactInformation": "Thông tin liên hệ",
+      "message": "Quý khách vui lòng đến trực tiếp Công ty FERRY VN",
+      "address": "Địa chỉ:",
+      "hotline": "Hotline:",
+      "ncmkAdress": "Số 5 Trần Văn Hoài, P. Ninh Kiều, TP. Cần Thơ"
+    },
+    "bank-transfer-method": {
+      "title": "Chuyển khoản ngân hàng",
+      "noteTitle": "Lưu ý chuyển khoản",
+      "noteContent": "Quý khách vui lòng chọn hình thức chuyển nhanh 24/7 và chuyển vào tài khoản.",
+      "bankingInformation": {
+        "title": "Thông tin chuyển khoản",
+        "bankAccountNumber": "Số tài khoản:",
+        "bankAccount": "Tài khoản ngân hàng",
+        "bankAccountName": "Tên tài khoản:",
+        "bankName": "Ngân hàng:",
+        "transferContent": "Nội dung:",
+        "topicTransferContent": "TT ve tau cao toc",
+        "orderCode": "mã đơn hàng",
+        "phoneNumber": "Số điện thoại",
+        "amountPayment": "Số tiền cần thanh toán:"
+      }
+    },
+    "check-balance": {
+      "title": "Tài khoản bạn đang có ",
+      "title-not-enough": "Không đủ thanh toán",
+      "title-enough": "Đủ thanh toán"
+    }
+  },
+  "export-ticket": "Xuất vé",
+  "export-ticket-modal": {
+    "success": "Xuất vé thành công",
+    "downloadInfo": "Tải thông tin vé",
+    "departTicket": "Vé chiều đi",
+    "returnTicket": "Vé chiều về",
+    "confirm": "Xác nhận",
+    "exportTicket": "xuất vé",
+    "pleaseConfirm": "Bạn vui lòng xác nhận trước khi xuất vé",
+    "totalMoney": "Tổng tiền:",
+    "noteConfirm": "Khi chọn xác nhận hệ thống sẽ tiến hành xuất vé",
+    "cancel": "Hủy bỏ",
+    "waitExport": "Chờ xuất vé ...",
+    "errorBookedSeatExport": "Một trong các ghế bạn chọn đã bị đặt. Bạn hãy về lại bước chọn ghế để chọn ghế khác nhé. Gợi ý: có thể xuất danh sách hành khách để nhanh chóng nhập lại dữ liệu sau khi đổi ghế",
+    "errorDuplicateSocialId": "Có 1 hoặc nhiều số CCCD đã bị sử dụng trùng lặp. Vui lòng kiểm tra lại thông tin hành khách.",
+    "export": "Xuất vé ",
+    "export-fail": "thất bại",
+    "returnBookingStep2": "Trở về bước chọn ghế",
+    "errorExport": "Đã có lỗi xảy ra trong quá trình xuất vé",
+    "errorUknown": "Lỗi không xác định",
+    "errorProcessingIssueTicket": "Đơn đặt chỗ này đang xuất vé, vui lòng đợi.",
+    "errorCustomerBalanceNotEnough": "Số dư của bạn không đủ để thanh toán đơn hàng. Bạn có thể nhấn nút 'Xuất vé lại' sau khi đã thanh toán đủ tiền",
+    "errorInvalidInput": "Dữ liệu nhập không hợp lệ",
+    "errorInvalidStatus": "Đơn này không thể xuất vé lại do đã được xuất vé thành công, hoặc đã bị hủy",
+    "errorNoCustomerAttached": "Đơn đặt chỗ này không có khách hàng nào được liên kết",
+    "errorOrganizationBalanceNotEnough": "Số dư của đại lý bạn hoặc một trong các đại lý cấp cao hơn của bạn không đủ",
+    "iUnderstand": "Trở về trang Chi tiết đơn",
+    "ticket_export_error": "Đã có lỗi xảy ra trong quá trình xuất vé. Xin hãy liên hệ hotline để được hỗ trợ. Mã lỗi: {{errorCode}}",
+    "errorUnavailableSeats": "Một trong các ghế bạn chọn đã bị đặt.",
+    "errorDuplicateSocialIdOperator": "Số CCCD của hành khách đã được đặt trong chuyến tàu đang chọn:"
+  },
+  "order-status": {
+    "0": "Nháp",
+    "2": "Đã tạo đơn",
+    "6": "Xuất vé lỗi",
+    "8": "Hết hạn",
+    "10": "Đã xuất vé",
+    "12": "Gửi yêu cầu hủy đơn",
+    "14": "Đã huỷ",
+    "16": "Hủy chuyến",
+    "4": "Chờ xuất vé",
+    "20": "Bắt buộc hủy đơn",
+    "18": "Đã hoàn tiền"
+  },
+  "e-invoice": {
+    "label": "Hóa đơn điện tử",
+    "not-found": "Đơn hàng chưa được xuất hóa đơn",
+    "status-label": "Trạng thái",
+    "lookup-code-label": "Mã tra cứu",
+    "lookup-url": {
+      "label": "Link tra cứu",
+      "open-link": "Tra cứu"
+    },
+    "pdf-file": {
+      "label": "File hóa đơn",
+      "download": "Tải hóa đơn"
+    },
+    "errors-label": "Đã có lỗi xảy ra trong quá trình xuất hóa đơn, vui lòng liên hệ hotline để được hỗ trợ."
+  }
+}

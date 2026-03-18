@@ -1,0 +1,9 @@
+{
+  "title": "Xuất Hành Khách",
+  "message": "Có lỗi xảy ra khi hoàn tất đặt vé hoặc có vé đã được đặt. Vui lòng xuất thông tin hành khách, có thể hữu ích cho bạn.",
+  "export-depart": "Xuất DS. hành khách của chuyến đi",
+  "export-return": "Xuất DS. hành khách của chuyến về",
+  "close": "Đóng",
+  "success": "Xuất thành công",
+  "fail": "Xuất thất bại"
+}

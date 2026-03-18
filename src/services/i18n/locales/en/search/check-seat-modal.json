@@ -1,0 +1,7 @@
+{
+  "title": "Seats of {{ boatName }}",
+  "title2": "Choose seat",
+  "depart-time": "Depart time:",
+  "floor": "Floor",
+  "close-button": "Close"
+}

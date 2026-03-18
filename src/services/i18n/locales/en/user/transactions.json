@@ -1,0 +1,11 @@
+{
+  "title": "All Transactions | Ferry Ticket",
+  "table": {
+    "title": "Transaction History",
+    "no-result": "No transactions found",
+    "load-data": {
+      "title": "Load more data",
+      "loading": "Loading..."
+    }
+  }
+}

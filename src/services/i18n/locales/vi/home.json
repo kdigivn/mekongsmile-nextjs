@@ -1,0 +1,60 @@
+{
+  "title": "Vé tàu",
+  "description": "Hello World!",
+  "title1": "LỊCH CHẠY TÀU, GIÁ VÉ",
+  "title-search": "Đi đâu đi!",
+  "table": {
+    "filter": {
+      "tab": "Tất cả",
+      "route": "Tìm theo tuyến"
+    },
+    "header": {
+      "boat-name": "Hãng tàu",
+      "route": "Tuyến",
+      "depart-time": "Giờ xuất cảng",
+      "available-seat": "Ghế trống",
+      "price": "Giá vé"
+    },
+    "action": "Chọn mua",
+    "no-of-results": "chuyến đi được tìm thấy",
+    "no-result": "Chưa có chuyến đi",
+    "disabled": "Tuyến này chưa hoạt động lại, vui lòng chọn tuyến khác",
+    "load-data": {
+      "title": "Tải thêm dữ liệu",
+      "loading": "Đang tải dữ liệu..."
+    },
+    "cell": {
+      "promotion_applied": "Khuyến mãi áp dụng",
+      "surcharge_applied": "Phụ thu áp dụng",
+      "click_to_view_price_details": "Nhấn để xem chi tiết giá",
+      "price_details": "Chi tiết giá",
+      "ticket_price_details": "Chi tiết giá vé",
+      "initial_ticket_price": "Giá vé ban đầu",
+      "promotion": "Khuyến mãi",
+      "total_promotion": "Tổng khuyến mãi",
+      "surcharge": "Phụ thu",
+      "final_price": "Giá cuối cùng",
+      "savings": "Tiết kiệm ",
+      "increase": "Tăng ",
+      "issue-ticket-speed": {
+        "instant": {
+          "label": "Tức Thì",
+          "description": "Vé được xuất ngay lập tức sau khi thanh toán."
+        },
+        "fast": {
+          "label": "Nhanh",
+          "description": "Vé được xuất trong thời gian xử lý dưới 2 giờ làm việc sau khi thanh toán."
+        },
+        "standard": {
+          "label": "Tiêu Chuẩn",
+          "description": "Vé được xuất trong thời gian xử lý dưới 4 giờ làm việc sau khi thanh toán."
+        },
+        "slow": {
+          "label": "Chậm",
+          "description": "Vé được xuất trong thời gian xử lý dưới 1 ngày làm việc sau khi thanh toán."
+        }
+      }
+    }
+  },
+  "filterResultEmpty": "Không có chuyến đi nào theo bộ lọc này."
+}

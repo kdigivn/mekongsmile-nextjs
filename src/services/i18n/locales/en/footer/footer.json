@@ -1,0 +1,30 @@
+{
+  "placeholder": {
+    "input-contact": "Phone number/Zalo"
+  },
+  "button": {
+    "contact": "Send"
+  },
+  "text": {
+    "text-01": "Members of Mekong Smile",
+    "text-02": "Contact",
+    "text-03": "Head Office: 5 Tran Van Hoai, Xuan Khanh, Ninh Kieu, Can Tho.",
+    "text-04": "HCM Office: 45 Dinh Tien Hoang, Ben Nghe, District 1, City. HCM.",
+    "text-05": "Business department",
+    "text-06": "Mekong Smile Ticket room",
+    "text-07": "Support",
+    "text-08": "Direct",
+    "text-09": "About us",
+    "text-10": "Introduce",
+    "text-11": "Contact",
+    "text-12": "Recruitment",
+    "text-13": "Help",
+    "text-14": "Partner program",
+    "text-15": "Others",
+    "text-16": "Privacy policy",
+    "text-17": "Terms and condition",
+    "text-18": "Payment gateways",
+    "text-19": "Connect with us now",
+    "text-20": "Mekong Smile"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "title": "Đăng nhập",
+  "welcome": "Chào mừng bạn quay trở lại",
+  "actions": {
+    "submit": "Đăng nhập",
+    "createAccount": {
+      "ask": "Chưa có tài khoản?",
+      "link": "Tạo tài khoản"
+    },
+    "forgotPassword": "Quên mật khẩu?"
+  },
+  "inputs": {
+    "email": {
+      "label": "Email",
+      "placeholder": "Vui lòng nhập email",
+      "validation": {
+        "required": "Bắt buộc nhập Email",
+        "invalid": "Email không hợp lệ",
+        "server": {
+          "notFound": "Địa chỉ email không chính xác, vui lòng kiểm tra lại"
+        },
+        "notExist": "Email không tồn tại"
+      }
+    },
+    "password": {
+      "label": "Mật khẩu",
+      "placeholder": "Vui lòng nhập mật khẩu",
+      "validation": {
+        "required": "Bắt buộc nhập mật khẩu",
+        "min": "Mật khẩu phải có ít nhất 6 kí tự",
+        "server": {
+          "incorrectPassword": "Mật khẩu không chính xác"
+        }
+      }
+    },
+    "remember": {
+      "label": "Ghi nhớ đăng nhập"
+    },
+    "user": {
+      "validation": {
+        "server": {
+          "notBelongToThisOrganization": "Người dùng chưa đăng kí tài khoản trên hệ thống"
+        }
+      }
+    }
+  },
+  "or": "hoặc"
+}

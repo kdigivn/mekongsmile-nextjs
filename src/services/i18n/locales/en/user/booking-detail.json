@@ -1,0 +1,182 @@
+{
+  "title": "Booking History Detail",
+  "table": {
+    "title": "Passengers list",
+    "no-of-results": "booking(s) found",
+    "header": {
+      "id": "Booking ID",
+      "passenger": "Passenger",
+      "gender": {
+        "title": "Gender:",
+        "male": "Male",
+        "female": "Female"
+      },
+      "dob": "Date of birth",
+      "social-id": "Social ID",
+      "address": "Address",
+      "nationality": "Nationality",
+      "plate-number": "Plate number",
+      "seat-code": "Seat code",
+      "ticket": "Ticket"
+    },
+    "cell": {
+      "title": "Ferry Ticket of",
+      "from": "From",
+      "to": "to",
+      "depart-date": "Departure date:",
+      "passengers": "Passengers:",
+      "toggle-btn": "Toggle",
+      "type": "Type",
+      "adult": "Adult",
+      "children": "Children",
+      "price": "Price"
+    },
+    "no-results": "No results"
+  },
+  "button": {
+    "return": "Return",
+    "download": "Download"
+  },
+  "order": "Order",
+  "customer-info": "Customer Information",
+  "payment-info": {
+    "title": "Payment Information",
+    "total-amount": "Total amount",
+    "harbor-fee": "Harbor fee",
+    "status": "Status",
+    "payment-due-date": "Payment due date",
+    "payment-due-date-tooltip": "Please pay the booking before the payment due date, otherwise the booking will be cancelled."
+  },
+  "order-detail-information": {
+    "title": "Order detail Information",
+    "route": "Route",
+    "depart-date": "Departure date",
+    "return-date": "Return date",
+    "passenger-list": "Passengers list",
+    "ferry-ticket": "Ferry ticket",
+    "boat": "Boat name",
+    "price": "Ticket price",
+    "discount": "Discount",
+    "total": "Total",
+    "harbor-fee": "Harbor fee",
+    "order-status": "Order status"
+  },
+  "payment-methods": {
+    "title": "Select payment method",
+    "qr": "QR Scan - Auto ticket issuance (Fee: 0đ)",
+    "banking": "Bank Transfer (Fee: 0đ)",
+    "direct": "Direct payment at ticket counter",
+    "onepay": "OnePay: Credit/Debit Card (Fee: 5000đ + 3.5%)",
+    "remaining": "Remaining: ",
+    "note": "Please carefully review and confirm the provided information before proceeding with the ticket purchase transaction. After payment on the next page, you won't be able to change the provided information, and we won't be responsible for any mistakes.",
+    "terms-1": "Accept ",
+    "terms-2": "Terms & Conditions",
+    "action-button": "Pay",
+    "qr-method": {
+      "title": "QR code",
+      "noteTitle": "Note transfer",
+      "noteContent": "Transfer money to our bank account. Order will be confirmed 5 minutes after transfer.",
+      "bankingInformation": {
+        "title": "Transfer information",
+        "bankAccountNumber": "Account number:",
+        "bankAccount": "Bank account: ",
+        "bankAccountName": "Account name:",
+        "bankName": "Bank:",
+        "transferContent": "Content:",
+        "topicTransferContent": "Pay for ferry tickets",
+        "orderCode": "code orders",
+        "phoneNumber": "Phone number",
+        "amountPayment": "Amount payment"
+      }
+    },
+    "direct-method": {
+      "title": "Direct payment",
+      "contactInformation": "Contact information",
+      "message": "Please come directly to FERRY VN Office",
+      "address": "Address:",
+      "hotline": "Hotline:",
+      "ncmkAdress": "No. 5 Tran Van Hoai Street, Ninh Kieu Ward, Can Tho City"
+    },
+    "bank-transfer-method": {
+      "title": "Bank transfer",
+      "noteTitle": "Note transfer",
+      "noteContent": "Please choose the 24/7 express transfer method and transfer to your account.",
+      "bankingInformation": {
+        "title": "Transfer information",
+        "bankAccountNumber": "Account number:",
+        "bankAccount": "Bank account:",
+        "bankAccountName": "Account name:",
+        "bankName": "Bank:",
+        "transferContent": "Content:",
+        "topicTransferContent": "Pay for ferry tickets",
+        "orderCode": "code orders",
+        "phoneNumber": "Phone number",
+        "amountPayment": "Amount payment"
+      }
+    },
+    "check-balance": {
+      "title": "Your account balance is ",
+      "title-not-enough": "Insufficient payment",
+      "title-enough": "Sufficient payment"
+    }
+  },
+  "export-ticket": "Export Ticket",
+  "export-ticket-modal": {
+    "success": "Ticket Exported Successfully",
+    "downloadInfo": "Download Ticket Information",
+    "departTicket": "Outbound Ticket",
+    "returnTicket": "Return Ticket",
+    "confirm": "Confirm",
+    "exportTicket": "Export Ticket",
+    "pleaseConfirm": "Please confirm before exporting the ticket",
+    "totalMoney": "Total Amount:",
+    "noteConfirm": "Upon selecting confirm, the system will export the ticket",
+    "cancel": "Cancel",
+    "waitExport": "Waiting to export the ticket...",
+    "errorBookedSeatExport": "One of the seats you selected has already been booked. Please go back to the seat selection step to choose another seat. Tip: You can export the passenger list to quickly re-enter the data after changing seats.",
+    "errorDuplicateSocialId": "One or more ID numbers have been used repeatedly. Please check passenger information again.",
+    "export": "Export ",
+    "export-fail": "fail",
+    "returnBookingStep2": "Return to the step of choosing a chair",
+    "errorExport": "An error occurred during ticket export",
+    "errorUknown": "Unknown error",
+    "errorProcessingIssueTicket": "This booking is currently issuing a ticket, please wait.",
+    "errorCustomerBalanceNotEnough": "Customer balance not enough",
+    "errorInvalidInput": "Invalid input",
+    "errorInvalidStatus": "This booking cannot be re-ticketed because it has already been successfully ticketed or has been cancelled",
+    "errorNoCustomerAttached": "This booking have no customer attached",
+    "errorOrganizationBalanceNotEnough": "The balance of your organization or one of its higher-level organizations is not sufficient.",
+    "iUnderstand": "Return to Booking Detail",
+    "ticket_export_error": "An error occurred during ticket export. Please contact the hotline for support. Error code: {{errorCode}}",
+    "errorUnavailableSeats": "One of the seats you selected has already been booked.",
+    "errorDuplicateSocialIdOperator": "The ID number of passenger has already been used in the selected voyage:"
+  },
+  "order-status": {
+    "0": "Draft",
+    "2": "Requested",
+    "6": "Export error",
+    "8": "Expired",
+    "10": "Booked",
+    "12": "Cancel request",
+    "14": "Cancelled",
+    "16": "Depart cancel",
+    "4": "Wait for issue",
+    "20": "Forced cancel",
+    "18": "Refunded"
+  },
+  "e-invoice": {
+    "label": "E-Invoice",
+    "not-found": "This order has not publish e-invoice",
+    "status-label": "Status",
+    "lookup-code-label": "Lookup code",
+    "lookup-url": {
+      "label": "Lookup link",
+      "open-link": "Lookup e-invoice"
+    },
+    "pdf-file": {
+      "label": "Invoice file",
+      "download": "Download invoice"
+    },
+    "errors-label": "Having an error when publishing invoice. Please contacts the hotline for more information."
+  }
+}

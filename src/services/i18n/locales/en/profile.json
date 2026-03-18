@@ -1,0 +1,84 @@
+{
+  "title": "Profile",
+  "title1": "Edit Profile",
+  "title2": "Change Password",
+  "title3": "Other Functions",
+  "balance": "Balance: ",
+  "actions": {
+    "edit": "Edit",
+    "submit": "Save",
+    "cancel": "Cancel"
+  },
+  "inputs": {
+    "firstName": {
+      "label": "First Name",
+      "validation": {
+        "required": "First Name is required"
+      }
+    },
+    "lastName": {
+      "label": "Last Name",
+      "validation": {
+        "required": "Last Name is required"
+      }
+    },
+    "oldPassword": {
+      "label": "Old Password",
+      "validation": {
+        "required": "Old Password is required",
+        "min": "Old Password must be at least 6 characters long",
+        "server": {
+          "incorrectOldPassword": "Old Password is not valid"
+        }
+      }
+    },
+    "password": {
+      "label": "New Password",
+      "validation": {
+        "required": "New Password is required",
+        "min": "New Password must be at least 6 characters long",
+        "match": "New Password cannot be the same as old password"
+      }
+    },
+    "confirmPassword": {
+      "label": "Password confirmation",
+      "validation": {
+        "required": "Password confirmation is required",
+        "match": "Password confirmation must match password"
+      }
+    },
+    "avatar": {
+      "edit": "Change avatar",
+      "label": "Avatar",
+      "validation": {
+        "required": "Import your avatar image",
+        "max": "Image size must be less than 2MB"
+      },
+      "pending": "Uploading...",
+      "success": "Upload image successfully",
+      "error": "Error occurred, please try again."
+    },
+    "socialId": {
+      "validation": {
+        "required": "Social ID is required",
+        "invalid-length": "Social ID must be 12 characters long"
+      }
+    }
+  },
+  "alerts": {
+    "password": {
+      "success": "Password has been updated successfully",
+      "error": "Error occurred, please try again."
+    },
+    "profile": {
+      "success": "Profile has been updated successfully",
+      "error": "Error occurred, please try again."
+    },
+    "quit": {
+      "title": "Are you sure you want to quit?",
+      "message": "Your information will not be saved.",
+      "yes": "Quit",
+      "back": "Back to edit"
+    }
+  }
+}

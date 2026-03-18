@@ -1,0 +1,28 @@
+{
+  "title": "Sort & Filter section",
+  "operator": "Operator",
+  "price": "Price",
+  "departureTime": "Departure time",
+  "departureButton": {
+    "early": "Most early",
+    "last": "Most Last"
+  },
+  "filterResultEmpty": "There is no voyage on this filter.",
+  "searchResultEmpty": "There is no voyage on this day. Please select another day.",
+  "selectDeparture": "Select departure",
+  "selectDestination": "Select destination",
+  "Monday": "Monday",
+  "Tuesday": "Tuesday",
+  "Wednesday": "Wednesday",
+  "Thursday": "Thursday",
+  "Friday": "Friday",
+  "Saturday": "Saturday",
+  "Sunday": "Sunday",
+  "reset": "Reset",
+  "view": "View",
+  "result": "results",
+  "action": "Filter voyages",
+  "map-modal": {
+    "title": "Map {{departLocationName}} - {{destiLocationName}}"
+  }
+}

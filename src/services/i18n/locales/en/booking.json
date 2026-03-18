@@ -1,0 +1,282 @@
+{
+  "title": "Booking Payment | Ferry Ticket",
+  "voyage-tab": {
+    "departure": "Departure",
+    "return": "Return",
+    "tooltip": {
+      "edit-button": "Can edit when booking is not confirmed yet"
+    }
+  },
+  "ticket-confirmation": {
+    "title": "Ticket confirmation",
+    "pic-info": {
+      "title": "Contact detail",
+      "name": "Name: ",
+      "phone": "Phone: ",
+      "email": "Email: ",
+      "socialId": "Social ID/Passport: "
+    },
+    "ticket-detail": {
+      "passenger-info": {
+        "title": "Passenger detail",
+        "name": "Name:",
+        "gender": {
+          "title": "Gender:",
+          "male": "Male",
+          "female": "Female"
+        },
+        "dateOfBirth": "DoB:",
+        "socialId": "Social ID/Passport:",
+        "nationality": "Nationality:",
+        "plate-number": "Plate Number:"
+      },
+      "seat-info": {
+        "title": "Seat detail",
+        "ticket-type": "Ticket type:",
+        "seat-type": "Seat type:",
+        "seat-name": "Seat name:"
+      },
+      "ticket-info": {
+        "title": "Ticket detail",
+        "price": "Price:"
+      }
+    }
+  },
+  "payment-info": {
+    "title": "Payment detail",
+    "table": {
+      "col": {
+        "voyage": "Voyage",
+        "ticket-type": "Ticket type",
+        "seat-type": "Seat type",
+        "amount": "Amount",
+        "price": "Price (VNĐ)",
+        "total": "Total (VNĐ)"
+      },
+      "row": {
+        "total-ticket": "Total ticket",
+        "total-harbor-fee": "Total harbor fee",
+        "discount": "Discount",
+        "total": "Total"
+      },
+      "departure": "Departure",
+      "return": "Return",
+      "ticket": "ticket"
+    },
+    "payment-due-date": "Payment due date",
+    "payment-due-date-tooltip": "Please pay the booking before the payment due date, otherwise the booking will be cancelled."
+  },
+  "payment-methods": {
+    "title": "Select payment method",
+    "qr": "QR Scan - Auto ticket issuance ",
+    "banking": "Bank Transfer ",
+    "direct": "Direct payment at ticket counter ",
+    "onepay": "OnePay: Credit/Debit Card ",
+    "fee": "(Fee: {{fee}})",
+    "remaining": "Remaining: ",
+    "paid": "Paid money: ",
+    "available": "Available balance: ",
+    "note": "Please carefully review and confirm the provided information before proceeding with the ticket purchase transaction. After payment on the next page, you won't be able to change the provided information, and we won't be responsible for any mistakes.",
+    "terms-1": "Accept ",
+    "terms-2": "Terms & Conditions",
+    "action-button": "Pay",
+    "qr-method": {
+      "title": "QR code",
+      "noteTitle": "Note transfer",
+      "noteContent": "Transfer money to our bank account. Order will be confirmed 5 minutes after transfer.",
+      "note-content-topup": "Transfer money to our bank account. Your money will be confirmed in 5 minutes after transfer.",
+      "bankingInformation": {
+        "title": "Transfer information",
+        "bankAccountNumber": "Account number:",
+        "bankAccount": "Bank account: ",
+        "bankAccountName": "Account name:",
+        "bankName": "Bank:",
+        "transferContent": "Content:",
+        "topicTransferContent": "Pay for ferry tickets",
+        "orderCode": "code orders",
+        "phoneNumber": "Phone number",
+        "amountPayment": "Amount payment",
+        "paymentCodeExpired": "This payment code will expire at {{expiredDate}}"
+      }
+    },
+    "direct-method": {
+      "title": "Direct payment",
+      "contactInformation": "Contact information",
+      "message": "Please come directly to FERRY VN Office",
+      "address": "Address:",
+      "hotline": "Hotline:",
+      "ncmkAdress": "No. 5 Tran Van Hoai Street, Ninh Kieu Ward, Can Tho City"
+    },
+    "bank-transfer-method": {
+      "title": "Bank transfer",
+      "noteTitle": "Note transfer",
+      "noteContent": "Please choose the 24/7 express transfer method and transfer to your account.",
+      "bankingInformation": {
+        "title": "Transfer information",
+        "bankAccountNumber": "Account number:",
+        "bankAccount": "Bank account:",
+        "bankAccountName": "Account name:",
+        "bankName": "Bank:",
+        "transferContent": "Content:",
+        "topicTransferContent": "Pay for ferry tickets",
+        "orderCode": "code orders",
+        "phoneNumber": "Phone number",
+        "amountPayment": "Amount payment"
+      }
+    },
+    "check-balance": {
+      "title": "Your account balance is ",
+      "title-not-enough": "Insufficient payment",
+      "title-enough": "Sufficient payment"
+    }
+  },
+  "payment-success": {
+    "title": "Payment successfully",
+    "billCode": "Bill code",
+    "paymentTime": "Payment time",
+    "paymentMethod": "Payment method",
+    "bankTransfer": "Bank Transfer",
+    "payer": "Payer",
+    "amount": "Amount",
+    "exportBill": "Export bill",
+    "returnHomepage": "Return homepage",
+    "sentRequest": "Booking Request Sent",
+    "success": "success",
+    "waitForInfo": "Please wait for payment information",
+    "loading": "Updating..."
+  },
+  "payment-fail": {
+    "errorExport": "An error occurred during ticket export",
+    "hotlineInfo": "Please contact hotline: 0924299898",
+    "fail": "failure",
+    "notEnough": "Insufficient amount transferred",
+    "hasPay": "You have paid:",
+    "needMoreMoney": "Please transfer additional funds to complete the booking"
+  },
+  "export-ticket": "Export Ticket",
+  "export-harbor-file": "Export Harbor File",
+  "export-ticket-modal": {
+    "success": "Ticket Exported Successfully",
+    "downloadInfo": "Download Ticket Information",
+    "departTicket": "Outbound Ticket",
+    "returnTicket": "Return Ticket",
+    "confirm": "Confirm",
+    "exportTicket": "Export Ticket",
+    "pleaseConfirm": "Please confirm before exporting the ticket",
+    "totalMoney": "Total Amount:",
+    "noteConfirm": "Upon selecting confirm, the system will export the ticket",
+    "cancel": "Cancel",
+    "waitExport": "Waiting to export the ticket...",
+    "errorBookedSeatExport": "One of the seats you selected has already been booked. Please go back to the seat selection step to choose another seat. Tip: You can export the passenger list to quickly re-enter the data after changing seats.",
+    "errorDuplicateSocialId": "One or more ID numbers have been used repeatedly. Please check passenger information again.",
+    "export": "Export ",
+    "export-fail": "fail",
+    "returnBookingStep2": "Return to the step of choosing a chair",
+    "errorExport": "An error occurred during ticket export",
+    "errorUknown": "Unknown error",
+    "errorProcessingIssueTicket": "This booking is currently issuing a ticket, please wait.",
+    "errorCustomerBalanceNotEnough": "Customer balance not enough",
+    "errorInvalidInput": "Invalid input",
+    "errorInvalidStatus": "This booking cannot be re-ticketed because it has already been successfully ticketed or has been cancelled",
+    "errorNoCustomerAttached": "This booking have no customer attached",
+    "errorOrganizationBalanceNotEnough": "The balance of your organization or one of its higher-level organizations is not sufficient.",
+    "errorOperatorIsDisabled": "Unable to issue ticket due to maintenance between operator and system connection. Please try again later.",
+    "iUnderstand": "Return to Booking Detail",
+    "ticket_export_error": "An error occurred during ticket export. Please contact the hotline for support. Error code: {{errorCode}}",
+    "errorUnavailableSeats": "One of the seats you selected has already been booked.",
+    "errorDuplicateSocialIdOperator": "The ID number of passenger has already been used in the selected voyage:"
+  },
+  "payment": {
+    "title": "Payment",
+    "notification": {
+      "success": "Deposit successfully"
+    },
+    "loader": {
+      "title": "Secure Payment Processing",
+      "description": "Please wait while we securely process your payment"
+    },
+    "loading": "We will redirect you to the ticket issuance page in {{second}} seconds",
+    "redirect-success": "We will redirect you to the booking details in {{second}} seconds",
+    "banking": {
+      "title": "Online payment"
+    },
+    "offline": {
+      "title": "Direct payment"
+    },
+    "onepay": {
+      "title": "OnePay payment",
+      "loading-connect": "Connecting to OnePay...",
+      "check-transaction": "Checking transaction result..."
+    }
+  },
+  "issue-ticket": {
+    "title": "Export Ticket"
+  },
+  "transaction-result": {
+    "title": "Transaction Result",
+    "payment-response-code": {
+      "success": "Transaction successful",
+      "unknown": "Transaction status unknown",
+      "card-not-enabled": "Transaction failed. The issuing bank has not authorized the transaction or the card has not been activated for Internet payment services. Please contact the bank using the phone number on the back of the card for detailed support.",
+      "bank-rejected": "Transaction failed. The issuing bank has declined to authorize the transaction. Please contact the bank using the phone number on the back of the card to find out the exact reason for the rejection.",
+      "no-bank-response": "Transaction failed. The payment gateway did not receive a response from the issuing bank. Please contact the bank using the phone number on the back of the card to check the transaction status and try again.",
+      "card-expired": "Transaction failed due to an expired card or incorrect expiration date entered. Please verify the information and try again.",
+      "insufficient-balance": "Transaction failed. The card does not have sufficient limit or the account does not have enough balance to complete the payment. Please verify the information and try again.",
+      "bank-processing-error": "Transaction failed. An error occurred during processing at the issuing bank. Please contact the bank using the phone number on the back of the card for detailed support.",
+      "transaction-error": "Transaction failed. An error occurred during transaction processing. Please try again.",
+      "invalid-card-number": "Transaction failed. The card number is incorrect. Please verify and try again.",
+      "invalid-card-holder": "Transaction failed. The cardholder name is incorrect. Please verify and try again.",
+      "card-locked-or-expired": "Transaction failed. The card is either expired or locked. Please verify and try again.",
+      "card-not-registered": "Transaction failed. The card has not been registered for Internet payment services. Please contact the bank using the phone number on the back of the card for support.",
+      "invalid-expiry-date": "Transaction failed. The issue/expiry date is incorrect. Please verify and try again.",
+      "insufficient-funds": "Transaction failed. Insufficient funds to complete the payment. Please verify and try again.",
+      "invalid-account-info": "Transaction failed. The account information is incorrect. Please verify and try again.",
+      "account-locked": "Transaction failed. The account is locked. Please contact the bank using the phone number on the back of the card for support.",
+      "invalid-card-info": "Transaction failed. The card information is incorrect. Please verify and try again.",
+      "invalid-otp": "Transaction failed. The OTP is incorrect. Please verify and try again.",
+      "payment-timeout": "Transaction failed. Payment timeout occurred. Please try again.",
+      "user-cancelled": "Transaction failed. The user canceled the transaction.",
+      "three-d-secure-auth-failed": "Transaction failed due to unsuccessful 3D-Secure authentication. Please contact the bank using the phone number on the back of the card for detailed support.",
+      "invalid-csc": "Transaction failed due to incorrect CSC (Card Security Code) or the bank declined to authorize the transaction. Please contact the bank using the phone number on the back of the card for detailed support.",
+      "three-d-secure-verification-failed": "Transaction failed due to unsuccessful 3D-Secure verification. Please contact the bank using the phone number on the back of the card for detailed support.",
+      "transaction-rejected": "Your transaction was rejected. Please contact the merchant for support.",
+      "default": "Payment failed.",
+      "paymentResultInvalid": "Payment result is invalid. Please pay again."
+    }
+  },
+  "error": {
+    "sorry": "Sorry",
+    "not-found": "not found",
+    "return-home": "Return to home page",
+    "not-found-booking": "booking",
+    "not-found-booking-description": "Sorry, we couldn't find the booking you're looking for.",
+    "not-found-page": "page",
+    "not-found-page-description": "Sorry, we couldn't find the page you're looking for. Maybe you typed the URL wrong? Please double-check your spelling!"
+  },
+  "bookingProcessing": "Booking {{bookingId}} is still being processed. Please check back in 5 minutes.",
+  "booking-no-payment": "Booking {{bookingId}} is waiting for payment. If you have already paid, please try again in 5 minutes. If you still see this message, please contact the hotline for support.",
+  "update-passenger-dialog": {
+    "title": "Update passenger information at seat {{seatName}}",
+    "field": {
+      "name": "Passenger name",
+      "name-placeholder": "Enter name",
+      "social-id": "Social ID",
+      "social-id-placeholder": "Enter Social ID"
+    },
+    "button": {
+      "update": "Update",
+      "cancel": "Cancel"
+    },
+    "yup-error": {
+      "name": "Passenger name is required",
+      "social-id": "Social ID is required",
+      "social-id-min": "Social ID must be at least {{min}} characters",
+      "social-id-max": "Social ID must not exceed {{max}} characters"
+    },
+    "notification": {
+      "success": "Passenger information has been updated successfully",
+      "error": "Error updating passenger information",
+      "error-ticket-not-found": "This ticket has no more update attempts"
+    }
+  }
+}

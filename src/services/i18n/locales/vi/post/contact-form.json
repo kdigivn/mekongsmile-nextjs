@@ -1,0 +1,25 @@
+{
+  "heading": "Để lại liên hệ",
+  "callNow": "Yêu cầu gọi lại tư vấn",
+  "contact-form": {
+    "name": {
+      "label": "Họ và tên",
+      "placeholder": "Họ tên",
+      "validation": {
+        "required": "Vui lòng nhập họ và tên"
+      }
+    },
+    "phone": {
+      "label": "Số điện thoại/ Zalo",
+      "placeholder": "0924299898",
+      "validation": {
+        "required": "Vui lòng nhập số điện thoại",
+        "notValid": "Số điện thoại không hợp lệ"
+      }
+    },
+    "sendForm": {
+      "error": "Có lỗi sảy ra, vui lòng thử lại sau.",
+      "success": "Liên hệ thành công, chúng tôi sẽ gọi lại cho bạn sau."
+    }
+  }
+}

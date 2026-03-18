@@ -1,0 +1,13 @@
+{
+  "provider": {
+    "ME_INVOICE": "MISA meInvoice",
+    "NONE": "Không dùng hóa đơn điện tử"
+  },
+  "status": {
+    "PENDING": "Đang xử lý",
+    "ISSUED": "Xuất thành công",
+    "FAILED": "Lỗi",
+    "CANCELED": "Hủy xuất",
+    "unknown": "Không rõ trạng thái: {{status}}"
+  }
+}

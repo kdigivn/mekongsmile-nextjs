@@ -1,0 +1,6 @@
+{
+  "operator": "Operator",
+  "destination": "Destination",
+  "booked": "booked",
+  "evaluated": "evaluated"
+}

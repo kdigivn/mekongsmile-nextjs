@@ -1,0 +1,323 @@
+{
+  "title": "Ticket Detail | Ferry Ticket",
+  "voyage-tab": {
+    "departure": "Select departure",
+    "return": "Select return",
+    "selectDepartSeats": "Select depart seats",
+    "selectDestinationSeats": "Select destination seats"
+  },
+  "selected-seats": {
+    "label": "Selected seats: ",
+    "label-2": "Selected seats {seatCount}: ",
+    "total": "Total: ",
+    "limit": "Cannot select more than 30 seats!",
+    "car-plate-count": "Number of vehicles sent: "
+  },
+  "boat-layout": {
+    "title": "Boat layout",
+    "floor": "Floor"
+  },
+  "passenger-details": {
+    "title": "Passenger details",
+    "total": "Total: ",
+    "total-discount": "Total discount: ",
+    "ticket-price": "Ticket price: ",
+    "fee-harbor": "Harbor fee: ",
+    "fee-domestic": "Domestic payment fee: ",
+    "fee-international": "International payment fee: ",
+    "passenger-details-input": {
+      "title": "Please enter passenger details",
+      "required": "Please fill in passenger data",
+      "pic-inputs": {
+        "title": "Contact information",
+        "name": {
+          "label": "Name",
+          "placeholder": "Enter your name",
+          "validation": {
+            "required": "Required"
+          }
+        },
+        "email": {
+          "label": "Email",
+          "placeholder": "Enter your email",
+          "validation": {
+            "invalid": "Invalid email",
+            "required": "Required"
+          }
+        },
+        "phone": {
+          "label": "Phone",
+          "placeholder": "Enter your phone",
+          "validation": {
+            "invalid": "Invalid phone",
+            "required": "Required"
+          }
+        },
+        "phone-country-code": {
+          "placeholder": "Search for a country or phone prefix...",
+          "not-found": "No results found.",
+          "button": "Select a country"
+        },
+        "socialId": {
+          "label": "Social ID",
+          "placeholder": "Enter Social ID",
+          "validation": {
+            "invalid-length": "Social ID must be 12 characters",
+            "required": "Required"
+          }
+        }
+      },
+      "exportVatForm": {
+        "title": "Export VAT Information",
+        "label": "Export VAT",
+        "input": {
+          "email": {
+            "label": "Email for export VAT",
+            "placeholder": "Enter email"
+          },
+          "taxNumber": {
+            "label": "Company tax number",
+            "placeholder": "Enter tax number"
+          },
+          "companyName": {
+            "label": "Company name",
+            "placeholder": "Enter company name"
+          },
+          "address": {
+            "label": "Company address",
+            "placeholder": "Enter company address"
+          }
+        }
+      },
+      "passenger-inputs": {
+        "title": "Passenger information",
+        "warning": "The Port Authority and the Operator require complete information before boarding can be completed.",
+        "no-seat-selected": "Please select a seat",
+        "ticket-title": "Detail of ticket ",
+        "name": {
+          "label": "Name",
+          "placeholder": "Enter your name",
+          "validation": {
+            "required": "Required"
+          }
+        },
+        "dateOfBirth": {
+          "label": "Date of birth",
+          "validation": {
+            "required": "Required",
+            "invalid": "Invalid Date",
+            "min": "Date must be from 1/1/1900",
+            "disableFuture": "Date can not in the future",
+            "yourAgeMustLessThan": "Your age must be less than or equal to",
+            "yourAgeMustMoreThan": "Your age must be more than or equal to",
+            "yearsOld": "years old"
+          }
+        },
+        "gender": {
+          "label": "Gender",
+          "placeholder": "Select your gender",
+          "validation": {
+            "required": "Required"
+          },
+          "male": "Male",
+          "female": "Female"
+        },
+        "socialId": {
+          "label": "Social ID",
+          "placeholder": "Enter your social ID",
+          "validation": {
+            "required": "Required",
+            "min_length": "Social ID must be at least {{min}} characters",
+            "max_length": "Social ID must not exceed {{max}} characters"
+          }
+        },
+        "address": {
+          "label": "Province/City",
+          "placeholder": "HCM City",
+          "validation": {
+            "required": "Required",
+            "min_length": "Province/City must be at least {{min}} characters",
+            "max_length": "Province/City must not exceed {{max}} characters"
+          }
+        },
+        "nationality": {
+          "label": "Nationality",
+          "placeholder": "Enter nationality...",
+          "no-result": "No nationality found",
+          "validation": {
+            "required": "Required"
+          }
+        },
+        "plate-number": {
+          "label": "Plate number (For transporting vehicle to island)",
+          "placeholder": "Enter plate number",
+          "validation": {
+            "required": "Required"
+          }
+        },
+        "ticketType": {
+          "label": "Ticket type",
+          "placeholder": "Choose ticket type...",
+          "validation": {
+            "required": "Required"
+          }
+        }
+      },
+      "submit": {
+        "actions": {
+          "save": "Save",
+          "back": "Back"
+        }
+      }
+    },
+    "importFromExcel": "Import from Excel",
+    "downloadTemplate": "Download template"
+  },
+  "loginError": {
+    "title": "You are not log in",
+    "message": "Please log in to your account to place order",
+    "successButtonText": "Go to log in"
+  },
+  "nextStep": "Next step",
+  "voyage-invalid": {
+    "departCancel": "The voyage has been canceled",
+    "voyageDepart": "The voyage has departed",
+    "notEnoughSeat": "Not enough available seats",
+    "returnCancel": "The return voyage has been canceled",
+    "notEnoughReturnSeat": "Not enough available seats on the return voyage",
+    "sameVoyage": "The return voyage must be different from the departure voyage"
+  },
+  "selected-fail-modal": {
+    "chooseSeat": "Choose Seat",
+    "fail": "failure",
+    "pleaseChooseAgain": "Please choose another voyage",
+    "chooseAgain": "Choose another voyage"
+  },
+  "toast": {
+    "depart": "Departure voyage data have been updated!",
+    "desti": "Return voyage data have been updated!"
+  },
+  "qr": {
+    "title": "Scan QR Code",
+    "message": "Please show QR code in front of camera to scan",
+    "notFound": "QR code not found",
+    "notValid": "Not a QR in Social Card!!!"
+  },
+  "import-modal": {
+    "title": "Import data from Excel",
+    "step1": "Step 1: Download the template file here",
+    "step2": "Step 2: Fill in passenger information into the template file",
+    "step2-1": "Note: The data must be in the correct format in the template file",
+    "step3": "Step 3: Import data here",
+    "import": "Import file",
+    "import-passenger": "Import passenger data:",
+    "view-detail-error": "View error details",
+    "invalid-data-for": "Invalid data at seat {{seat}}",
+    "name-empty": "Name at seat {{seat}} was empty",
+    "dob-empty": "Date of birth at seat {{seat}} was empty",
+    "dob-invalid": "Date of birth at seat {{seat}} was invalid",
+    "success": "Import passengers data successfully"
+  },
+  "note": {
+    "title": "Note:",
+    "content-1": "Passengers must carry personal documents when boarding the train.",
+    "content-2": "Foreigners must carry: Original passport, Visa.",
+    "content-3": "Children (from 6-11 years old) when filling in the ID/Passport section will enter \"TE\"",
+    "content-4": "Children under 5 years old are exempt from tickets when sitting with adults.",
+    "content-5": "In case of ticket cancellation or changes, please notify us at least 24 hours before the departure time.",
+    "content-6": "Cancellation/change fee: 30% of the ticket value.",
+    "content-7": "The parking fee is collected by the shipping line at the port, depending on the type of vehicle. Please bring all necessary vehicle documents when sending.",
+    "phuquy": {
+      "content-1": "Passengers boarding the ship must carry identification documents.",
+      "content-2": "Foreign passengers must carry: Original passport, Visa.",
+      "content-3": "Children (aged 6-11) should enter their 'Year of Birth' in the ID/Passport field.",
+      "content-4": "Children under 5 years old travel for free when sharing a seat with an adult.",
+      "content-5": "For ticket cancellations or changes, please notify at least 5 days before departure.",
+      "content-6": "Cancellation/Change fee: 30% of the ticket value.",
+      "content-7": "VIP bed: Denoted by the letter V.",
+      "content-8": "Standard beds: Denoted by the letters B-C-E.",
+      "content-9": "Lower bunk beds have even numbers - Upper bunk beds have odd numbers.",
+      "content-10": "Seats: Denoted by the letter A."
+    }
+  },
+  "ticketPrice": "Price",
+  "tooltip": {
+    "sync": "Sync passenger data from previous trip",
+    "sync-title": "Sync",
+    "import": "Select Seat before import data"
+  },
+  "confirm_save_info": "Confirm save information",
+  "save_info_prompt": "Do you want to save the passenger information for future use?",
+  "decline": "Decline",
+  "only_this_time": "Only this time",
+  "always_agree": "Always agree",
+  "confirm-button": "Confirm",
+  "cancel-button": "Cancel",
+  "steps": {
+    "first-step": "Click this area to select a chair"
+  },
+  "confirmDialog": {
+    "title": "Depart Seats Booked",
+    "message": "Some of your selected seats have been booked. Please check again.",
+    "successButtonText": "OK"
+  },
+  "confirmDialogDesti": {
+    "title": "Desti Seats Booked",
+    "message": "Some of your selected seats have been booked. Please check again.",
+    "hasCancelButton": false,
+    "successButtonText": "OK"
+  },
+  "confirmDialogEdit": {
+    "title": "Confirm",
+    "message": "Confirm update booking "
+  },
+  "booking-error": {
+    "operator-disabled-create-booking-message": "Unable to create booking due to maintenance between operator and system connection. Please try again later.",
+    "operator-disabled-edit-booking-message": "Unable to update booking due to maintenance between operator and system connection. Please try again later.",
+    "operator-disabled-message": "Unable to load seat map due to maintenance between operator and system connection. Please try again later.",
+    "duplicate-id-message": "One or more ID numbers have been used repeatedly. Please check passenger information again.",
+    "limit-voucher-per-customer-message": "One or more vouchers have been reached the maximum number of uses. Please check voucher information again.",
+    "invalid-ticket-type-id": "Error 150107: Invalid order data for seat {{seatName}}, please contact admin for assistance.",
+    "invalid-seat-type": "Error 150108: Invalid order data for seat {{seatName}}, please contact admin for assistance.",
+    "no-price-matched": "Error 150109: Invalid order data for seat {{seatName}}, please contact admin for assistance."
+  },
+  "voucher": {
+    "title": "Voucher",
+    "input": {
+      "label": "Voucher",
+      "placeholder": "Enter voucher",
+      "button": "Select voucher"
+    },
+    "apply": {
+      "title": "Apply Voucher",
+      "description": "Search and select vouchers that can be applied to your order.",
+      "button": "Apply",
+      "alreadyApplied": "Voucher has already been applied!",
+      "success": "Voucher applied successfully!",
+      "exceedOrderValue": "Discount value exceeds order value!",
+      "uniqueVoucher": {
+        "title": "Unique Voucher",
+        "message": "Cannot apply unique voucher with other vouchers. Current vouchers will be removed from the order when applying."
+      },
+      "notApplicable": "Failed to apply voucher, voucher is expired or used up.",
+      "failed": "Failed to apply voucher, Voucher does not exist!",
+      "discountApplied": "Discount applied: "
+    },
+    "list": {
+      "title": "Voucher List",
+      "description": "List of vouchers currently applied to your order.",
+      "viewMore": "View details",
+      "moreVouchers": "+{{count}} vouchers",
+      "noVouchers": "No vouchers are currently applied to your order.",
+      "close": "Close",
+      "details": "Details",
+      "expiryDate": "Valid until",
+      "applied": "Applied",
+      "remove": "Remove C",
+      "uniqueVoucher": {
+        "label": "Unique Voucher",
+        "tooltip": "This voucher can only be applied individually, cannot be used with other vouchers."
+      }
+    }
+  }
+}

@@ -1,0 +1,178 @@
+{
+  "title": "Lịch sử hủy vé | Ferry VN",
+  "table": {
+    "title": "Yêu cầu hủy vé",
+    "no-of-results": "yêu cầu hủy vé được tìm thấy",
+    "no-result": "Không có kết quả",
+    "load-data": { "title": "Tải thêm dữ liệu", "loading": "Đang tải..." },
+    "headers": {
+      "id": "ID",
+      "order_info": "Thông tin đơn hàng",
+      "cancel_positions": "Ghế hủy",
+      "cancel_reason": "Lý do hủy",
+      "recall_reason": "Lý do thu hồi",
+      "processing_status": "Trạng thái xử lý",
+      "action": "Hành động"
+    },
+    "no_recall_reason": "Không có lý do thu hồi",
+    "action-cell": {
+      "button": { "recall": "Thu hồi" },
+      "tooltip": "Không thể thu hồi do đã gửi yêu cầu hủy đến hãng!"
+    },
+    "cancel-positions-cell": {
+      "no_cancelled_positions": "Không có vị trí ghế hủy"
+    },
+    "order-cell": {
+      "no_order_info": "Không có thông tin vé",
+      "route": "Tuyến",
+      "departure_name": "Không xác định",
+      "destination_name": "Không xác định",
+      "operator": "Nhà điều hành",
+      "boat_name": "Tên thuyền",
+      "departure_date": "Ngày khởi hành",
+      "invalid_date": "Ngày không hợp lệ",
+      "passenger_list": "Danh sách hành khách",
+      "no_passengers": "Không có hành khách",
+      "passenger": "Hành khách",
+      "date_of_birth": "Ngày sinh",
+      "social_id": "CCCD",
+      "home_town": "Quê quán",
+      "seat": "Ghế",
+      "seat_type": "Loại ghế",
+      "position": "Vị trí",
+      "booking_id": "Mã đơn hàng"
+    },
+    "processing-status-cell": {
+      "error_message": "Đã có lỗi xảy ra, không thể theo dõi tiến độ xử lý!"
+    }
+  },
+  "dialog": {
+    "recall-cancel-ticket-request-dialog": {
+      "title": "Xác nhận thu hồi yêu cầu hủy vé: ",
+      "form": {
+        "placeholder": "Nhập lý do thu hồi",
+        "errors": { "recall_message": "Thông báo lỗi cho lý do thu hồi" }
+      },
+      "buttons": {
+        "cancel": "Đóng",
+        "submit": "Gửi",
+        "submitting": "Đang gửi..."
+      },
+      "messages": {
+        "success": "Gửi yêu cầu thu hồi thành công!",
+        "error": "Gửi yêu cầu thu hồi thất bại!"
+      }
+    },
+    "create-cancel-ticket-request-dialog": {
+      "title": "Chọn vé để hủy",
+      "form": {
+        "cancel_reason_placeholder": "Nhập lý do hủy",
+        "errors": {
+          "cancel_reason": "Bạn cần nhập lý do hủy",
+          "cancel_ticket_by_positions": "Bạn cần chọn ít nhất một vé để hủy"
+        }
+      },
+      "buttons": {
+        "cancel": "Đóng",
+        "submit": "Gửi",
+        "submitting": "Đang gửi..."
+      },
+      "messages": {
+        "success": "Yêu cầu hủy vé đã được gửi thành công!",
+        "error": "Yêu cầu hủy vé thất bại!",
+        "no_order": "Đơn hàng gặp sự cố khi tải, vui lòng gọi hotline để được hỗ trợ kịp thời!",
+        "already_cancelled": "Bạn đã yêu cầu hủy vé này, không thể chọn hủy lại!"
+      },
+      "no_cancel_ticket_rule": "Không có quy định hủy vé",
+      "cancel_ticket_rule": "Quy định hủy vé của ",
+      "cancel_ticket_rule_number_of_tickets": "Số lượng vé",
+      "cancel_ticket_rule_service_fee": "Phí dịch vụ",
+      "cancel_ticket_rule_time_frame": "Khung thời gian",
+      "cancel_ticket_rule_time_frame_before_departure": "Trước giờ khởi hành",
+      "cancel_ticket_rule_refund_amount": "Phí hủy/vé",
+      "no_results": "Không có kết quả",
+      "route": "Tuyến",
+      "operator": "Hãng",
+      "boat": "Tàu",
+      "departure_date": "Ngày khởi hành",
+      "total_amount": "Tổng tiền",
+      "total-ticket": "Tổng tiền vé",
+      "total-discount": "Tổng giảm giá",
+      "total-harbor-fee": "Tổng phí cảng",
+      "cancel-discount-order": "Đơn hàng này đã bao gồm giảm giá, chỉ có thể huỷ tất cả các vé cùng lúc."
+    },
+    "redirect-cancel-ticket-request-page-dialog": {
+      "title": "Đã gửi yêu cầu hủy vé",
+      "description": "Bạn có thể chuyển đến trang hủy vé để theo dõi tiến độ xử lý yêu cầu hủy vé.",
+      "buttons": {
+        "stay": "Đóng",
+        "loading": "Đang xử lý...",
+        "redirect": "Đến trang hủy vé"
+      }
+    }
+  },
+  "errors": {
+    "160101": "Mã đơn hàng không tồn tại",
+    "160102": "Đơn hàng chưa được thanh toán, không thể tạo yêu cầu hủy vé!",
+    "160103": "Thiếu mã tổ chức",
+    "160104": "Cấu hình hủy vé không được để trống",
+    "160105": "Số dư không đủ để tạo yêu cầu hủy vé, vui lòng nạp thêm",
+    "160106": "Mã đơn hàng không được để trống!",
+    "160107": "Danh sách vé hủy không được để trống!",
+    "160108": "Lý do hủy vé không được để trống!",
+    "160109": "Tổ chức không tồn tại",
+    "160110": "Thiếu thời gian/ngày khởi hành, không thể tạo yêu cầu hủy vé",
+    "160111": "Thời gian/ngày khởi hành không hợp lệ",
+    "160112": "Chuyến đi đã khởi hành, không thể hủy vé",
+    "160113": "Thiếu tổ chức liên quan",
+    "160114": "Lỗi tính toán hoàn tiền theo tổ chức!",
+    "160115": "Tổ chức không tồn tại",
+    "160116": "Yêu cầu hủy vé không tồn tại",
+    "160117": "Tổ chức không có quyền thao tác",
+    "160118": "Lỗi tìm tổ chức liên quan trong yêu cầu hủy vé!",
+    "160119": "Tổ chức của bạn đã xử lý yêu cầu này, vui lòng không gửi lại!",
+    "160120": "Quy định hủy vé trống!",
+    "160121": "Tổ chức mẹ không chấp nhận yêu cầu",
+    "160122": "Tổ chức mẹ không hoàn tiền",
+    "160123": "Tất cả tổ chức phải chấp nhận yêu cầu",
+    "160124": "Khách hàng không tồn tại",
+    "160125": "Mã nhà vận hành không tồn tại",
+    "160126": "Tổ chức gốc đang xử lý, không thể thu hồi yêu cầu!",
+    "160127": "Mã yêu cầu hủy vé không tồn tại!",
+    "160128": "Bạn không phải người tạo yêu cầu, không thể thu hồi!",
+    "160129": "Mã đơn hàng không tồn tại!",
+    "160130": "Bạn đã từ chối yêu cầu này, vui lòng không gửi lại!",
+    "160131": "Hạn mức tín dụng âm/không đủ để hủy vé",
+    "160132": "Số dư khả dụng không đủ chi trả phí hủy vé",
+    "160133": "Lỗi hoàn trả đơn hàng theo vé tổ chức!",
+    "160134": "Không tìm thấy quy định hủy vé cho nhà vận hành",
+    "160135": "Số tiền hoàn trả không hợp lệ",
+    "160136": "Tổ chức liên quan không tồn tại",
+    "160137": "Phí hủy vé phải lớn hơn hoặc bằng 0",
+    "160138": "Hạn mức tín dụng không đủ chi trả phí hủy vé",
+    "160139": "Cập nhật yêu cầu hủy vé thất bại",
+    "160140": "Yêu cầu hủy vé đã được thu hồi, không thể thực hiện hành động này!",
+    "160141": "Yêu cầu hủy vé cho đơn hàng giảm giá/voucher, bạn phải hủy tất cả vé!",
+    "160143": "Không được phép yêu cầu, có thể do thời gian khởi hành quá gần!"
+  },
+  "status": {
+    "processing": "Đang xử lý",
+    "accepted": "Đã chấp nhận",
+    "rejected": "Đã từ chối",
+    "recalled": "Đã thu hồi",
+    "refunded": "Đã hoàn tiền",
+    "unknown": "Không xác định"
+  },
+  "payment": {
+    "pending": "Chưa thanh toán",
+    "paid": "Đã thanh toán",
+    "refunded": "Đã hoàn tiền",
+    "unknown": "Không xác định"
+  },
+  "ticket": {
+    "draft": "Nháp",
+    "booked": "Đã đặt",
+    "cancelled": "Vé hủy",
+    "unknown": "Không xác định"
+  }
+}

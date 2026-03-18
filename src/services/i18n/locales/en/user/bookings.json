@@ -1,0 +1,65 @@
+{
+  "title": "All Bookings | Ferry Ticket",
+  "form": {
+    "booking-id": {
+      "title": "Booking ID",
+      "placeholder": "Enter booking ID..."
+    },
+    "pic-name": {
+      "title": "Contact Name",
+      "placeholder": "Enter contact name..."
+    },
+    "created-date": { "title": "Created Date", "placeholder": "Select a date" },
+    "created-date-from": {
+      "title": "Created Date From",
+      "placeholder": "Select a date"
+    },
+    "created-date-to": {
+      "title": "Created Date To",
+      "placeholder": "Select a date"
+    },
+    "status": {
+      "title": "Booking Status",
+      "placeholder": "-- Select status --"
+    },
+    "submit": "Search",
+    "reset": "Reset"
+  },
+  "table": {
+    "title": "Booking History",
+    "no-of-results": "booking(s) found",
+    "no-result": "No results",
+    "load-data": { "title": "Load more data", "loading": "Loading..." },
+    "header": {
+      "id": "Booking ID",
+      "created-date": "Created Date",
+      "pic-name": "Person in charge",
+      "order-detail": "Order Detail",
+      "total": "Total (VND)",
+      "status": "Status",
+      "action": "Action"
+    },
+    "cell": {
+      "order-detail": {
+        "title": "Ferry Ticket of",
+        "from": "From",
+        "to": "to",
+        "depart-date": "Departure date:",
+        "passengers": "Passengers:",
+        "toggle-btn": "Toggle"
+      },
+      "total-amount": {
+        "total": "Total amount",
+        "total-discount": "Total discount",
+        "payment-due-date": "Payment due date",
+        "payment-due-date-tooltip": "Please pay the booking before the payment due date, otherwise the booking will be cancelled."
+      },
+      "download-ticket": "Download Ticket"
+    },
+    "action-cell": {
+      "cancel-ticket": "Cancel ticket",
+      "depart-cancel-ticket": "Depart cancel ticket",
+      "return-cancel-ticket": "Return cancel ticket"
+    }
+  }
+}

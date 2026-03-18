@@ -1,0 +1,25 @@
+{
+  "heading": "Contact us",
+  "callNow": "Call us now",
+  "contact-form": {
+    "name": {
+      "label": "Full name",
+      "placeholder": "Enter your full name",
+      "validation": {
+        "required": "Full name is required"
+      }
+    },
+    "phone": {
+      "label": "Phone number/ Zalo",
+      "placeholder": "Enter your phone number or Zalo",
+      "validation": {
+        "required": "Phone number is required",
+        "notValid": "Phone number is not valid"
+      }
+    },
+    "sendForm": {
+      "error": "Something went wrong, please try again.",
+      "success": "Contact success, we'll contact you soon."
+    }
+  }
+}

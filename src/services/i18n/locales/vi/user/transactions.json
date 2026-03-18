@@ -1,0 +1,11 @@
+{
+  "title": "Lịch sử giao dịch | Ferry Ticket",
+  "table": {
+    "title": "Lịch sử giao dịch",
+    "no-result": "Chưa có giao dịch",
+    "load-data": {
+      "title": "Tải thêm dữ liệu",
+      "loading": "Đang tải dữ liệu..."
+    }
+  }
+}

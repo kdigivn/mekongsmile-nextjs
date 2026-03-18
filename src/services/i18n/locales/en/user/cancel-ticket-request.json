@@ -1,0 +1,179 @@
+{
+  "title": "Cancel Ticket Request | Ferry Ticket",
+  "table": {
+    "title": "Cancel Ticket Request",
+    "no-of-results": "cancel ticket request(s) found",
+    "no-result": "No results",
+    "load-data": { "title": "Load more data", "loading": "Loading..." },
+    "headers": {
+      "id": "ID",
+      "order_info": "Order Information",
+      "cancel_positions": "Cancelled Seats",
+      "cancel_reason": "Cancellation Reason",
+      "recall_reason": "Recall Reason",
+      "processing_status": "Processing Status",
+      "action": "Action"
+    },
+    "no_recall_reason": "No recall reason",
+    "action-cell": {
+      "button": { "recall": "Recall" },
+      "tooltip": "Recall request is not allowed in this status"
+    },
+    "cancel-positions-cell": {
+      "no_cancelled_positions": "No cancelled seat positions"
+    },
+    "order-cell": {
+      "no_order_info": "No ticket information",
+      "route": "Route",
+      "departure_name": "Unknown",
+      "destination_name": "Unknown",
+      "operator": "Operator",
+      "boat_name": "Boat Name",
+      "departure_date": "Departure Date",
+      "invalid_date": "Invalid Date",
+      "passenger_list": "Passenger List",
+      "no_passengers": "No passengers",
+      "passenger": "Passenger",
+      "date_of_birth": "Date of Birth",
+      "social_id": "ID Card",
+      "home_town": "Hometown",
+      "seat": "Seat",
+      "seat_type": "Seat Type",
+      "position": "Position",
+      "booking_id": "Booking ID"
+    },
+    "processing-status-cell": {
+      "error_message": "An error occurred, unable to track processing status!"
+    }
+  },
+  "dialog": {
+    "recall-cancel-ticket-request-dialog": {
+      "title": "Confirm ticket cancellation recall: ",
+      "form": {
+        "placeholder": "Enter reason for recall",
+        "errors": { "recall_message": "Error message for recall message" }
+      },
+      "buttons": {
+        "cancel": "Cancel",
+        "submit": "Submit",
+        "submitting": "Submitting..."
+      },
+      "messages": {
+        "success": "Recall request submitted successfully!",
+        "error": "Failed to submit recall request!"
+      }
+    },
+    "create-cancel-ticket-request-dialog": {
+      "title": "Select ticket to cancel",
+      "form": {
+        "cancel_reason_placeholder": "Enter reason for cancellation",
+        "errors": {
+          "cancel_reason": "You need to enter a reason for cancellation",
+          "cancel_ticket_by_positions": "You need to select at least one ticket to cancel"
+        }
+      },
+      "buttons": {
+        "cancel": "Cancel",
+        "submit": "Submit",
+        "submitting": "Submitting..."
+      },
+      "messages": {
+        "success": "Cancel ticket request sent successfully!",
+        "error": "Cancel ticket request failed!",
+        "no_order": "Order is having issues loading, please call the hotline for timely support!",
+        "already_cancelled": "You have already requested to cancel this ticket, you cannot select to cancel again!"
+      },
+      "no_cancel_ticket_rule": "No cancellation policy",
+      "cancel_ticket_rule": "Cancellation policy of ",
+      "cancel_ticket_rule_number_of_tickets": "Number of tickets",
+      "cancel_ticket_rule_service_fee": "Service fee",
+      "cancel_ticket_rule_time_frame": "Time frame",
+      "cancel_ticket_rule_time_frame_before_departure": "Before departure time",
+      "cancel_ticket_rule_refund_amount": "Cancellation fee/ticket",
+      "no_results": "No results",
+      "route": "Route",
+      "operator": "Operator",
+      "boat": "Boat",
+      "departure_date": "Departure Date",
+      "total_ticket_price": "Total Ticket Price",
+      "total_amount": "Total Amount",
+      "total-ticket": "Total Ticket",
+      "total-discount": "Total Discount",
+      "total-harbor-fee": "Total Harbor Fee",
+      "cancel-discount-order": "Cancel ticket request for discount/voucher order, you must cancel all tickets!"
+    },
+    "redirect-cancel-ticket-request-page-dialog": {
+      "title": "Ticket cancellation request sent",
+      "description": "You can go to the ticket cancellation tracking page to track the progress of the ticket cancellation request.",
+      "buttons": {
+        "stay": "Stay",
+        "loading": "Processing...",
+        "redirect": "Go to cancel ticket page"
+      }
+    }
+  },
+  "errors": {
+    "160101": "OrderIdNotExist",
+    "160102": "Order is not booked, so you cannot create a cancel ticket request!",
+    "160103": "OrganizationIdNotExist",
+    "160104": "Cancel ticket setting cannot be empty",
+    "160105": "Balance is not enough to create cancel ticket request, please top-up",
+    "160106": "Order id cannot be empty!",
+    "160107": "Cancel tickets cannot be empty!",
+    "160108": "Cancel reason cannot be empty!",
+    "160109": "OrganizationNotExists",
+    "160110": "Departure time or date is missing, unable to create cancel ticket request",
+    "160111": "Invalid departure time or date, unable to create cancel ticket request",
+    "160112": "Voyage has already departed, unable to create cancel ticket request",
+    "160113": "Related org cannot be empty",
+    "160114": "Calculate refund order based on organization have problem!",
+    "160115": "Organization does not exist",
+    "160116": "Cancel ticket request does not exist",
+    "160117": "Organization not have permission in this cancel ticket request",
+    "160118": "Find related organization in cancel ticket request have problem!",
+    "160119": "Your organization already processed this cancel ticket, please do not submit again!",
+    "160120": "Cancel ticket rules is empty!",
+    "160121": "Parent organization not accept request",
+    "160122": "Parent organization not refund",
+    "160123": "All organization must accept request",
+    "160124": "Customer not exists",
+    "160125": "Operator code not exists",
+    "160126": "Root org is processing cannot recall this request!",
+    "160127": "CancelTicketRequestIdNotExisted!",
+    "160128": "You are not created by this request, unable to recall!",
+    "160129": "OrderIdNotExisted!",
+    "160130": "You already reject this request, please do not send request again!",
+    "160131": "Organization credit is zero or negative, unable to send cancel ticket request",
+    "160132": "Organization balance is insufficient to cover the cancel service fee, unable to send cancel ticket request",
+    "160133": "Revert order by ticket addition in organization have problem!",
+    "160134": "Cannot find cancel ticket rule for operator in organization cancel tickets setting",
+    "160135": "AmountRefundInvalid",
+    "160136": "OrganizationRelatedNotExists",
+    "160137": "Cancel service fee must be greater or equal than zero, unable to send cancel ticket request",
+    "160138": "Credit is insufficient to cover the cancel service fee, unable to send cancel ticket request",
+    "160139": "Cancel ticket request updated failed",
+    "160140": "Cancel ticket request was recalled",
+    "160141": "Cancel ticket request for discount/voucher order, you must cancel all tickets!",
+    "160143": "Not allow to request, maybe because departure time is too close!"
+  },
+  "status": {
+    "processing": "Processing",
+    "accepted": "Accepted",
+    "rejected": "Rejected",
+    "recalled": "Recalled",
+    "refunded": "Refunded",
+    "unknown": "Unknown"
+  },
+  "payment": {
+    "pending": "Pending",
+    "paid": "Paid",
+    "refunded": "Refunded",
+    "unknown": "Unknown"
+  },
+  "ticket": {
+    "draft": "Draft",
+    "booked": "Booked",
+    "cancelled": "Cancelled",
+    "unknown": "Unknown"
+  }
+}

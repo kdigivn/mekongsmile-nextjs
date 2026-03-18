@@ -1,0 +1,28 @@
+{
+  "title": "Lọc kết quả",
+  "operator": "Hãng tàu",
+  "price": "Giá tiền",
+  "departureTime": "Giờ xuất cảng",
+  "departureButton": {
+    "early": "Sớm nhất",
+    "last": "Muộn nhất"
+  },
+  "filterResultEmpty": "Không có chuyến đi nào theo bộ lọc này.",
+  "searchResultEmpty": "Không có chuyến đi nào vào ngày này. Vui lòng chọn ngày khác.",
+  "selectDeparture": "Chọn chuyến đi",
+  "selectDestination": "Chọn chuyến về",
+  "Monday": "Thứ Hai",
+  "Tuesday": "Thứ Ba",
+  "Wednesday": "Thứ Tư",
+  "Thursday": "Thứ Năm",
+  "Friday": "Thứ Sáu",
+  "Saturday": "Thứ Bảy",
+  "Sunday": "Chủ Nhật",
+  "reset": "Đặt lại",
+  "view": "Xem",
+  "result": "chuyến tàu",
+  "action": "Lọc kết quả",
+  "map-modal": {
+    "title": "Bản đồ {{departLocationName}} - {{destiLocationName}}"
+  }
+}

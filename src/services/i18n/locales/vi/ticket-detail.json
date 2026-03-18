@@ -1,0 +1,323 @@
+{
+  "title": "Đặt vé | Đặt vé tàu",
+  "voyage-tab": {
+    "departure": "Chọn chuyến đi",
+    "return": "Chọn chuyến về",
+    "selectDepartSeats": "Chọn ghế chuyến đi",
+    "selectDestinationSeats": "Chọn ghế chuyến về"
+  },
+  "selected-seats": {
+    "label": "Ghế đã chọn: ",
+    "label-2": "Ghế đã chọn {seatCount}: ",
+    "total": "Số ghế đã chọn: ",
+    "limit": "Không thể chọn nhiều hơn 30 ghế!",
+    "car-plate-count": "Số xe gửi: "
+  },
+  "boat-layout": {
+    "title": "Sơ đồ ghế",
+    "floor": "Tầng"
+  },
+  "passenger-details": {
+    "title": "Thông tin khách hàng",
+    "total": "Thành tiền: ",
+    "total-discount": "Tổng giảm giá: ",
+    "ticket-price": "Giá vé: ",
+    "fee-harbor": "Phí cảng: ",
+    "fee-domestic": "Phí nội địa: ",
+    "fee-international": "Phí quốc tế: ",
+    "passenger-details-input": {
+      "title": "Vui lòng nhập thông tin khách hàng",
+      "required": "Vui lòng nhập dữ liệu hành khách",
+      "pic-inputs": {
+        "title": "Thông tin liên hệ",
+        "name": {
+          "label": "Họ và tên",
+          "placeholder": "Nhập họ và tên",
+          "validation": {
+            "required": "Bắt buộc"
+          }
+        },
+        "email": {
+          "label": "Email",
+          "placeholder": "Nhập email",
+          "validation": {
+            "invalid": "Email không hợp lệ",
+            "required": "Bắt buộc"
+          }
+        },
+        "phone": {
+          "label": "Số điện thoại",
+          "placeholder": "Nhập số điện thoại",
+          "validation": {
+            "invalid": "Số điện thoại không hợp lệ",
+            "required": "Bắt buộc"
+          }
+        },
+        "phone-country-code": {
+          "placeholder": "Tìm kiếm quốc gia hoặc tiền tố số điện thoại...",
+          "not-found": "Không tìm thấy kết quả nào.",
+          "button": "Lựa chọn quốc gia"
+        },
+        "socialId": {
+          "label": "CCCD",
+          "placeholder": "Nhập CCCD",
+          "validation": {
+            "invalid-length": "CCCD phải có 12 chữ số",
+            "required": "Bắt buộc"
+          }
+        }
+      },
+      "exportVatForm": {
+        "title": "Thông tin xuất VAT",
+        "label": "Xuất VAT",
+        "input": {
+          "email": {
+            "label": "Email nhận VAT",
+            "placeholder": "Nhập email nhận VAT"
+          },
+          "taxNumber": {
+            "label": "MST công ty",
+            "placeholder": "Nhập MST"
+          },
+          "companyName": {
+            "label": "Tên công ty",
+            "placeholder": "Nhập tên công ty"
+          },
+          "address": {
+            "label": "Địa chỉ công ty",
+            "placeholder": "Nhập địa chỉ"
+          }
+        }
+      },
+      "passenger-inputs": {
+        "title": "Thông tin hành khách",
+        "warning": "Cảng vụ và Hãng yêu cầu nhập đầy đủ thông tin thì mới có thể làm thủ tục lên tàu",
+        "no-seat-selected": "Vui lòng chọn ghế",
+        "ticket-title": "Chi tiết vé ",
+        "name": {
+          "label": "Họ và tên",
+          "placeholder": "Nhập họ và tên",
+          "validation": {
+            "required": "Bắt buộc"
+          }
+        },
+        "gender": {
+          "label": "Giới tính",
+          "placeholder": "Select your gender từ cccd",
+          "validation": {
+            "required": "Bắt buộc"
+          },
+          "male": "Nam",
+          "female": "Nữ"
+        },
+        "dateOfBirth": {
+          "label": "Ngày sinh",
+          "validation": {
+            "required": "Bắt buộc",
+            "invalid": "Ngày sinh không hợp lệ",
+            "min": "Ngày sinh phải từ 1/1/1900",
+            "disableFuture": "Ngày sinh không thể ở tương lai",
+            "yourAgeMustLessThan": "Tuổi của bạn phải nhỏ hơn hoặc bằng",
+            "yourAgeMustMoreThan": "Tuổi của bạn phải lớn hơn hoặc bằng",
+            "yearsOld": "tuổi"
+          }
+        },
+        "socialId": {
+          "label": "CCCD/Hộ chiếu",
+          "placeholder": "Nhập CCCD/Hộ chiếu",
+          "validation": {
+            "required": "Bắt buộc",
+            "min_length": "CMND/CCCD phải có ít nhất {{min}} kí tự",
+            "max_length": "CMND/CCCD không được vượt quá {{max}} kí tự"
+          }
+        },
+        "address": {
+          "label": "Tỉnh/Thành phố",
+          "placeholder": "TP. HCM",
+          "validation": {
+            "required": "Bắt buộc",
+            "min_length": "Tỉnh/Thành phố phải có ít nhất {{min}} kí tự",
+            "max_length": "Tỉnh/Thành phố không được vượt quá {{max}} kí tự"
+          }
+        },
+        "nationality": {
+          "label": "Quốc tịch",
+          "placeholder": "Nhập quốc tịch...",
+          "no-result": "Không tìm thấy quốc tịch",
+          "validation": {
+            "required": "Bắt buộc"
+          }
+        },
+        "plate-number": {
+          "label": "Biển số xe (Chỉ nhập khi cần gửi xe qua đảo)",
+          "placeholder": "Nhập biển số xe",
+          "validation": {
+            "required": "Bắt buộc"
+          }
+        },
+        "ticketType": {
+          "label": "Loại vé",
+          "placeholder": "Chọn loại vé",
+          "validation": {
+            "required": "Bắt buộc"
+          }
+        }
+      },
+      "submit": {
+        "actions": {
+          "save": "Lưu",
+          "back": "Quay lại"
+        }
+      }
+    },
+    "importFromExcel": "Nhập từ Excel",
+    "downloadTemplate": "Tải file mẫu"
+  },
+  "loginError": {
+    "title": "Bạn chưa đăng nhập",
+    "message": "Bạn cần đăng nhập vào tài khoản để có thể đặt vé!",
+    "successButtonText": "Tới trang đăng nhập"
+  },
+  "nextStep": "Bước kế tiếp",
+  "voyage-invalid": {
+    "departCancel": "Chuyến tàu đã bị hủy",
+    "voyageDepart": "Chuyến tàu đã khởi hành",
+    "notEnoughSeat": "Số ghế trống còn lại không đủ",
+    "returnCancel": "Chuyến tàu về đã bị hủy",
+    "notEnoughReturnSeat": "Số ghế trống còn lại ở chuyến về không đủ",
+    "sameVoyage": "Chuyến đi và chuyến về không thể trùng nhau"
+  },
+  "selected-fail-modal": {
+    "chooseSeat": "Chọn ghế",
+    "fail": "thất bại",
+    "pleaseChooseAgain": "Bạn vui lòng chọn chuyến khác",
+    "chooseAgain": "Chọn chuyến khác"
+  },
+  "toast": {
+    "depart": "Dữ liệu các chuyến tàu chiều đi đã được cập nhật!",
+    "desti": "Dữ liệu các chuyến tàu chiều về đã được cập nhật!"
+  },
+  "qr": {
+    "title": "Quét mã QR trên CCCD",
+    "message": "Vui lòng đưa mã QR trước camera để quét",
+    "notFound": "Không tìm thấy mã QR",
+    "notValid": "Không phải mã QR trên CCCD!!!"
+  },
+  "import-modal": {
+    "title": "Nhập dữ liệu từ Excel",
+    "step1": "Bước 1: Tải file mẫu tại đây",
+    "step2": "Bước 2: Điền thông tin hành khách vào file mẫu",
+    "step2-1": "Lưu ý: Dữ liệu phải đúng định dạng trong file mẫu",
+    "step3": "Bước 3: Nhập dữ liệu tại đây",
+    "import": "Nhập file",
+    "import-passenger": "Dữ liệu hành khách đã được nhập:",
+    "view-detail-error": "Xem chi tiết lỗi",
+    "invalid-data-for": "Dữ liệu không hợp lệ tại ghế {{seat}}",
+    "name-empty": "Tên tại ghế {{seat}} bị trống",
+    "dob-empty": "Ngày sinh tại ghế {{seat}} bị trống",
+    "dob-invalid": "Ngày sinh tại ghế {{seat}} không hợp lệ",
+    "success": "Nhập dữ liệu hành khách thành công"
+  },
+  "note": {
+    "title": "Chú ý:",
+    "content-1": "Hành khách làm thủ tục lên tàu phải mang theo giấy tờ tùy thân.",
+    "content-2": "Đối với người nước ngoài phải mang theo: Hộ chiếu bản gốc,Thị thực.",
+    "content-3": "Trẻ em (từ 6-11 tuổi) khi điền thông tin ở mục CMND/Hộ chiếu sẽ điền \"TE\"",
+    "content-4": "Trẻ em dưới 5 tuổi miễn vé khi ngồi chung với người lớn.",
+    "content-5": "Trường hợp phát sinh hủy hoặc đổi vé, Quý khách vui lòng thông báo trước 24 giờ so với giờ khởi hành.",
+    "content-6": "Phí hủy/đổi vé: 30% giá trị vé.",
+    "content-7": "Phí gửi xe do hãng tàu thu tại cảng, tùy theo loại xe. Quý khách vui lòng mang đầy đủ giấy tờ xe khi gửi.",
+    "phuquy": {
+      "content-1": "Hành khách làm thủ tục lên tàu phải mang theo giấy tờ tùy thân.",
+      "content-2": "Đối với người nước ngoài phải mang theo: Hộ chiếu bản gốc, Thị thực.",
+      "content-3": "Trẻ em (từ 6-11 tuổi) khi điền thông tin ở mục CMND/Hộ chiếu sẽ điền 'Năm sinh'.",
+      "content-4": "Trẻ em dưới 5 tuổi miễn vé khi ngồi chung với người lớn.",
+      "content-5": "Trường hợp phát sinh hủy hoặc đổi vé, Quý khách vui lòng thông báo trước 5 ngày so với ngày khởi hành.",
+      "content-6": "Phí hủy/đổi vé: 30% giá trị vé.",
+      "content-7": "Giường VIP: Ký hiệu chữ V.",
+      "content-8": "Giường phổ thông: Ký hiệu chữ B-C-E.",
+      "content-9": "Giường tầng dưới là số Chẵn - Giường tầng trên là số Lẻ.",
+      "content-10": "Ghế ngồi: Ký hiệu chữ A."
+    }
+  },
+  "ticketPrice": "Giá",
+  "tooltip": {
+    "sync": "Đồng bộ dữ liệu hành khách từ chuyến đi trước",
+    "sync-title": "Đồng bộ",
+    "import": "Chọn ghế trước khi nhập dữ liệu"
+  },
+  "confirm_save_info": "Xác nhận lưu thông tin",
+  "save_info_prompt": "Bạn có muốn lưu lại thông tin hành khách để dùng lại sau này không?",
+  "decline": "Từ chối",
+  "only_this_time": "Chỉ lần này",
+  "always_agree": "Luôn đồng ý",
+  "confirm-button": "Xác nhận",
+  "cancel-button": "Hủy chọn",
+  "steps": {
+    "first-step": "Nhấp vào vùng này để chọn ghế"
+  },
+  "confirmDialog": {
+    "title": "Ghế Khởi Hành Đã Được Đặt",
+    "message": "Một số ghế bạn đã chọn đã được đặt. Vui lòng kiểm tra lại.",
+    "successButtonText": "OK"
+  },
+  "confirmDialogDesti": {
+    "title": "Ghế Đến Đã Được Đặt",
+    "message": "Một số ghế bạn đã chọn đã được đặt. Vui lòng kiểm tra lại.",
+    "hasCancelButton": false,
+    "successButtonText": "OK"
+  },
+  "confirmDialogEdit": {
+    "title": "Xác nhận",
+    "message": "Xác nhận cập nhật đơn "
+  },
+  "booking-error": {
+    "operator-disabled-create-booking-message": "Không thể tạo đơn hàng vì kết nối giữa hãng và hệ thống đang được bảo trì. Vui lòng thử lại sau.",
+    "operator-disabled-edit-booking-message": "Không thể cập nhật đơn hàng vì kết nối giữa hãng và hệ thống đang được bảo trì. Vui lòng thử lại sau.",
+    "operator-disabled-message": "Không thể tải sơ đồ ghế vì kết nối giữa hãng và hệ thống đang được bảo trì. Vui lòng thử lại sau.",
+    "duplicate-id-message": "Có 1 hoặc nhiều số CCCD đã bị sử dụng trùng lặp. Vui lòng kiểm tra lại thông tin hành khách.",
+    "limit-voucher-per-customer-message": "Một hoặc nhiều mã giảm giá đã đạt giới hạn sử dụng. Vui lòng kiểm tra lại thông tin mã giảm giá.",
+    "invalid-ticket-type-id": "Lỗi 150107: Dữ liệu đơn hàng không hợp lệ tại ghế {{seatName}}, vui lòng liên hệ admin để được hỗ trợ.",
+    "invalid-seat-type": "Lỗi 150108: Dữ liệu đơn hàng không hợp lệ tại ghế {{seatName}}, vui lòng liên hệ admin để được hỗ trợ.",
+    "no-price-matched": "Lỗi 150109: Dữ liệu đơn hàng không hợp lệ tại ghế {{seatName}}, vui lòng liên hệ admin để được hỗ trợ."
+  },
+  "voucher": {
+    "title": "Mã giảm giá",
+    "input": {
+      "label": "Mã giảm giá",
+      "placeholder": "Nhập mã giảm giá",
+      "button": "Nhập mã"
+    },
+    "apply": {
+      "title": "Áp dụng mã giảm giá",
+      "description": "Tìm kiếm và chọn các mã giảm giá có thể áp dụng vào đơn hàng.",
+      "button": "Áp dụng",
+      "alreadyApplied": "Mã giảm giá đã được áp dụng!",
+      "success": "Áp dụng mã giảm giá thành công!",
+      "exceedOrderValue": "Giá trị giảm giá đã vượt quá giá trị đơn hàng!",
+      "uniqueVoucher": {
+        "title": "Mã Giảm Giá Lẻ",
+        "message": "Không thể áp dụng mã lẻ cùng với mã giảm giá khác, khi áp dụng các mã hiện tại sẽ bị xoá khỏi đơn hàng."
+      },
+      "notApplicable": "Áp dụng mã giảm giá thất bại, Mã giảm giá đã hết hạn hoặc hết lượt sử dụng.",
+      "failed": "Áp dụng mã giảm giá thất bại, Mã giảm giá không tồn tại!",
+      "discountApplied": "Giảm giá đã áp dụng: "
+    },
+    "list": {
+      "title": "Danh sách mã giảm giá",
+      "description": "Danh sách các mã giảm giá đang được áp dụng cho đơn hàng.",
+      "viewMore": "Xem chi tiết",
+      "moreVouchers": "+{{count}} mã",
+      "noVouchers": "Không có mã giảm giá nào đang được áp dụng cho đơn hàng.",
+      "close": "Đóng",
+      "details": "Chi tiết",
+      "expiryDate": "Hạn sử dụng",
+      "applied": "Đã áp dụng",
+      "remove": "Xoá",
+      "uniqueVoucher": {
+        "label": "Mã giảm giá lẻ",
+        "tooltip": "Mã chỉ có thể áp dụng riêng lẽ, không áp dụng được với các mã khác."
+      }
+    }
+  }
+}

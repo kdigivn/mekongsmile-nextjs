@@ -1,0 +1,8 @@
+{
+  "title": "Xác nhận",
+  "message": "Bạn xác nhận muốn thực hiện hành động?",
+  "actions": {
+    "yes": "Xác nhận",
+    "no": "Huỷ"
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "app-name": "APP",
+  "loading": "Loading ...",
+  "theme": {
+    "light": "Current theme: light",
+    "dark": "Current theme: dark"
+  },
+  "navigation": {
+    "home": "Home",
+    "search": "Search",
+    "signIn": "Log In",
+    "signUp": "Sign Up",
+    "profile": "Profile",
+    "users": "Users",
+    "bookings": "Booking History",
+    "logout": "Logout",
+    "balance": "Balance: ",
+    "transactions": "Transaction History"
+  },
+  "formInputs": {
+    "avatarInput": {
+      "dropzoneText": "Drop the image here ...",
+      "dragAndDrop": "Or drag 'n' drop some files here",
+      "selectFile": "Select an image"
+    },
+    "input": {
+      "showPassword": "Show password"
+    }
+  },
+  "leavePage": {
+    "title": "Leave this page?",
+    "message": "Changes you made may not be saved",
+    "stay": "Stay on Page",
+    "leave": "Leave Page"
+  },
+  "auth": {
+    "facebook": {
+      "action": "Login with Facebook"
+    },
+    "google": {
+      "action": "Continue with Google"
+    }
+  },
+  "social-sharing": {
+    "copied-link": "Copied to clipboard"
+  },
+  "notification": {
+    "empty": "You have no notifications",
+    "title": "Notification",
+    "button": "See all announcements"
+  },
+  "top-up": {
+    "button": "Top up",
+    "top-up-dialog": {
+      "title": "Top up",
+      "message": "Top up your account"
+    }
+  },
+  "qr-code": {
+    "download": "Download QR",
+    "copy": "Copy QR",
+    "downloaded": "Downloaded QR",
+    "download-failed": "Download failed QR",
+    "copied": "Copied QR",
+    "copy-failed": "Copy failed QR"
+  },
+  "bank-app": {
+    "error": "Failed to get bank app"
+  }
+}

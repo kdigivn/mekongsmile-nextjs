@@ -1,0 +1,14 @@
+{
+  "operator": "Hãng tàu",
+  "availableSeats": "Ghế trống",
+  "tooltip": {
+    "map": "Xem bản đồ",
+    "seat": "Xem sơ đồ ghế"
+  },
+  "departure": "Điểm đi",
+  "destination": "Điểm đến",
+  "departureTime": "Thời gian khởi hành",
+  "selectButton": "Chọn",
+  "noRemain": "Hết ghế",
+  "depart": "Khởi hành"
+}

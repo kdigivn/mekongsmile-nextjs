@@ -1,0 +1,33 @@
+import { Company } from "../../companies/types/company";
+import { FileEntity } from "../../files/types/file-entity";
+import { User } from "../../users/types/user";
+import { CustomerGroup } from "./customer-groups";
+import { CustomerSource } from "./customer-sources";
+import { CustomerType } from "./customer-types";
+import { Status } from "./status";
+
+export type Customer = {
+  id: number;
+  user_id: string | null;
+  user: User | null;
+  pronoun: string | null;
+  first_name: string | null;
+  last_name: string | null;
+  phone: string | null;
+  email: string | null;
+  social_id: string | null;
+  date_of_birth: Date | null;
+  nationality_abbrev: string | null;
+  photo?: FileEntity | null;
+  group: CustomerGroup | null;
+  source: CustomerSource | null;
+  type: CustomerType | null;
+  status: Status | null;
+  company_id: string | null;
+  company: Company | null;
+  createdAt: Date;
+  updatedAt: Date;
+  createdBy: string;
+  balance: number;
+  phone_country_code: string | null;
+};

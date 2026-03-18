@@ -1,0 +1,31 @@
+{
+  "location": {
+    "filter-placeholder": "Nhập địa điểm...",
+    "placeholder": "Chọn điểm đến",
+    "no-result": "Không tìm thấy điểm đến phù hợp.",
+    "departure": "Chọn nơi khởi hành",
+    "destination": "Chọn nơi đến"
+  },
+  "departure": {
+    "label": "Nơi khởi hành",
+    "placeholder": "Chọn nơi khởi hành"
+  },
+  "destination": {
+    "label": "Nơi đến",
+    "placeholder": "Chọn nơi đến"
+  },
+  "departureDate": {
+    "label": "Ngày khởi hành",
+    "placeholder": "Chọn ngày khởi hành"
+  },
+  "returnDate": {
+    "label": "Ngày về",
+    "placeholder": "Chọn ngày về",
+    "clear": "Xóa ngày trở về"
+  },
+  "passengers": {
+    "label": "Số khách",
+    "placeholder": "Chọn số khác"
+  },
+  "search": "Tìm kiếm"
+}

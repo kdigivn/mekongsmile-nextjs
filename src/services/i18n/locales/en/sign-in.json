@@ -1,0 +1,48 @@
+{
+  "title": "Log In",
+  "welcome": "Welcome back!",
+  "actions": {
+    "submit": "Log In",
+    "createAccount": {
+      "ask": "No account?",
+      "link": "Create one"
+    },
+    "forgotPassword": "Forgot Password?"
+  },
+  "inputs": {
+    "email": {
+      "label": "Email",
+      "placeholder": "Please enter your email",
+      "validation": {
+        "required": "Email is required",
+        "invalid": "Email is not valid",
+        "server": {
+          "notFound": "Email does not exist"
+        },
+        "notExist": "Email does not exist"
+      }
+    },
+    "password": {
+      "label": "Password",
+      "placeholder": "Please enter your password",
+      "validation": {
+        "required": "Password is required",
+        "min": "Password must be at least 6 characters long",
+        "server": {
+          "incorrectPassword": "Password is not valid"
+        }
+      }
+    },
+    "remember": {
+      "label": "Remember login"
+    },
+    "user": {
+      "validation": {
+        "server": {
+          "notBelongToThisOrganization": "User is not register in this system"
+        }
+      }
+    }
+  },
+  "or": "or"
+}

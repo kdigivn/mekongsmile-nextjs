@@ -1,0 +1,10 @@
+{
+  "title": "Tìm chuyến tàu | Đặt vé tàu",
+  "toast": {
+    "depart": "Dữ liệu các chuyến tàu chiều đi đã được cập nhật!",
+    "desti": "Dữ liệu các chuyến tàu chiều về đã được cập nhật!"
+  },
+  "disabled": "Tuyến này chưa hoạt động lại, vui lòng chọn tuyến khác",
+  "chooseVoyage": "Bạn chưa chọn tuyến, vui lòng chọn tuyến để tìm kiếm!",
+  "loadingOperator": "Đang lấy dữ liệu mới nhất {{ value }}% ..."
+}

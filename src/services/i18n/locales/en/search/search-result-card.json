@@ -1,0 +1,14 @@
+{
+  "operator": "Operator",
+  "availableSeats": "Available Seats",
+  "tooltip": {
+    "map": "Check trip map",
+    "seat": "Check boat seat layout"
+  },
+  "departure": "Departure",
+  "destination": "Destination",
+  "departureTime": "Departure time",
+  "selectButton": "Select",
+  "noRemain": "No remain",
+  "depart": "Depart"
+}

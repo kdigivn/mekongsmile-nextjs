@@ -1,0 +1,358 @@
+@import "./styles/post-detail.css";
+@import "./styles/contact-buttons.css";
+@import "./cookie-banner/silktide-consent-manager.css";
+
+/* Tailwindcss */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@layer base {
+  :root {
+    /* --page-background: 210 22% 96%;
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%; */
+
+    /* --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%; */
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+
+    --tooltip: 211 24% 17%;
+    --tooltip-foreground: 0 0% 100%;
+
+    /* --primary: 120 61% 33%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%; */
+
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+
+    /* --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%; */
+
+    /* Ferry seat colors */
+    --seat-default: 213 16% 89%;
+    --seat-default-foreground: 0 0% 0%;
+    --seat-booked: 2 77% 41%;
+    --seat-booked-foreground: 0 0% 100%;
+    --seat-onHold: 198 100% 31%;
+    --seat-onHold-foreground: 0 0% 100%;
+    --seat-eco: 213 16% 89%;
+    --seat-eco-foreground: 0 0% 0%;
+    --seat-vip: 44 100% 70%;
+    --seat-vip-foreground: 0 0% 0%;
+    --seat-business: 154 78% 31%;
+    --seat-business-foreground: 0 0% 0%;
+    --seat-president: 261 76% 41%;
+    --seat-president-foreground: 0 0% 100%;
+    /* --seat-booked: 0 100% 100%;
+    --seat-booked-background: 2 77% 41%;
+    --seat-onHold: 0 100% 100%;
+    --seat-onHold-background: 198 100% 31%;
+    --seat-normal: 0 100% 0%;
+    --seat-normal-background: 210 22% 96%;
+    --seat-normal-background-hover: 240 5% 96%; */
+    --a: hsl(0, 0%, 100%);
+    --a: hsl(213, 16%, 89%);
+
+    /* --border: 0 0% 89.8%; */
+    /* --input: 120 61% 33%; */
+    /* --ring: 0 0% 3.9%; */
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    /* --page-background: 0 0% 3.9%;
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 100%; */
+
+    /* --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 100%; */
+
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 100%;
+
+    /* --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 9%; */
+
+    /* --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 100%; */
+
+    /* --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%; */
+
+    /* --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 100%; */
+
+    /* --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%; */
+
+    /* --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%; */
+
+    --date-disable: 208 17% 80%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-inter), sans-serif;
+  }
+
+  /* Custom Scroll Bar */
+  /* Mobile */
+  *::-webkit-scrollbar {
+    width: 0.25rem;
+    height: 0.25rem;
+    /* display: none; */
+    /* visibility: hidden; */
+  }
+
+  * {
+    scrollbar-width: none;
+  }
+
+  /* Desktop */
+  @media (min-width: 1024px) {
+    /* Works on Firefox */
+    * {
+      scrollbar-width: thin;
+      scrollbar-color: hsl(var(--heroui-primary) / 1) transparent;
+    }
+
+    .scrollbar-gray {
+      scrollbar-color: #cccccc transparent;
+    }
+
+    /* Works on Chrome, Edge, and Safari */
+    *::-webkit-scrollbar {
+      width: 0.25rem;
+      height: 0.25rem;
+    }
+
+    *::-webkit-scrollbar-track {
+      background: rgb(245, 245, 245);
+    }
+
+    *::-webkit-scrollbar-thumb {
+      background-color: hsl(var(--heroui-primary) / 1);
+      border-radius: 2rem;
+    }
+
+    *::-webkit-scrollbar-corner {
+      background: #1e1f22;
+    }
+
+    .scrollbar-gray::-webkit-scrollbar-thumb {
+      background-color: rgb(204, 204, 204);
+    }
+  }
+
+  .scrollbar-hide::-webkit-scrollbar-thumb,
+  .scrollbar-hide::-webkit-scrollbar-track {
+    visibility: hidden;
+  }
+
+  .scrollbar-hover-show:hover::-webkit-scrollbar-thumb,
+  .scrollbar-hover-show:hover::-webkit-scrollbar-track {
+    visibility: visible;
+  }
+
+  @media (min-width: 920px) {
+    .navMobile {
+      display: none !important;
+    }
+
+    .navBarMobile {
+      display: flex !important;
+    }
+  }
+}
+
+/** Custom Classes */
+#html5qr-code-full-region__scan_region {
+  display: flex;
+  justify-content: center;
+}
+
+@keyframes pulse-2 {
+  0% {
+    -webkit-transform: rotate(0) scale(0.7) skew(1deg);
+    opacity: 0.2;
+  }
+
+  50% {
+    -webkit-transform: rotate(0) scale(1) skew(1deg);
+    opacity: 0.2;
+  }
+
+  100% {
+    -webkit-transform: rotate(0) scale(0.7) skew(1deg);
+    opacity: 0.2;
+  }
+}
+
+@keyframes phonering-alo-circle-img-anim {
+  0% {
+    -webkit-transform: rotate(0) scale(1) skew(1deg);
+  }
+
+  10% {
+    -webkit-transform: rotate(-25deg) scale(1) skew(1deg);
+  }
+
+  20% {
+    -webkit-transform: rotate(25deg) scale(1) skew(1deg);
+  }
+
+  30% {
+    -webkit-transform: rotate(-25deg) scale(1) skew(1deg);
+  }
+
+  40% {
+    -webkit-transform: rotate(25deg) scale(1) skew(1deg);
+  }
+
+  100%,
+  50% {
+    -webkit-transform: rotate(0) scale(1) skew(1deg);
+  }
+}
+
+@keyframes phonering-alo-circle-anim {
+  0% {
+    -webkit-transform: rotate(0) scale(0.5) skew(1deg);
+    -webkit-opacity: 0.1;
+  }
+
+  30% {
+    -webkit-transform: rotate(0) scale(0.7) skew(1deg);
+    -webkit-opacity: 0.5;
+  }
+
+  100% {
+    -webkit-transform: rotate(0) scale(1) skew(1deg);
+    -webkit-opacity: 0.1;
+  }
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.aligncenter {
+  display: block;
+  margin: 0 auto;
+}
+
+/* Hide the Google Translate toolbar */
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
+
+.skiptranslate {
+  display: none !important;
+}
+
+/* Adjust body position after removing the banner */
+body {
+  top: 0px !important;
+}
+
+/* Optionally, hide the language dropdown that appears at the top */
+.goog-te-gadget {
+  display: none !important;
+}
+/* Style postion popover appear */
+@media (max-width: 767px) {
+  div:has(.popover-content) {
+    width: 100%;
+    padding: 0px 20px !important;
+  }
+}
+
+/* For hidden re-captcha badge */
+.grecaptcha-badge {
+  visibility: hidden;
+}
+
+div.note-detail ul {
+  list-style-type: disc;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+div.note-detail ul li::marker {
+  margin-right: 4px;
+}
+
+.sm-chatbox-plugin {
+  z-index: 40 !important;
+}
+
+@media screen and (max-width: 768px) {
+  #sm-chatbox {
+    /* height: 0; */
+    width: 0;
+  }
+
+  #sm-chatbox-action {
+    bottom: 60px !important;
+  }
+
+  #sm-chatbox-container {
+    height: 100%;
+  }
+  div#sm-chatbox-iframe {
+    border-radius: 16px;
+    height: 450px;
+    width: 330px;
+    bottom: 0px !important;
+    left: 10px;
+  }
+
+  .sm-chatbox-mobile {
+    height: 65% !important;
+    width: 90% !important;
+  }
+
+  #silktide-cookie-icon {
+    bottom: 70px !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #sm-chatbox {
+    top: 170px;
+  }
+
+  #sm-chatbox-action {
+    bottom: 70px !important;
+    width: 48px !important;
+    height: 48px !important;
+  }
+
+  #silktide-cookie-icon {
+    bottom: 70px !important;
+  }
+}

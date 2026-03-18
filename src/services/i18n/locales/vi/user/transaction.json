@@ -1,0 +1,37 @@
+{
+  "table": {
+    "title": "Lịch sử giao dịch",
+    "header": {
+      "transaction-code": "Mã thanh toán",
+      "transaction-time": "Thời gian giao dịch",
+      "transaction-info": "Nội dung giao dịch",
+      "booking-code": "Mã đơn hàng",
+      "total-amount": "Số dư thay đổi (VND)",
+      "type": "Loại",
+      "status": "Trạng thái",
+      "note": "Ghi chú"
+    },
+    "cell": {
+      "status": {
+        "0": "Thất bại",
+        "1": "Thành công",
+        "2": "Hủy"
+      },
+      "type": {
+        "PB": "Thanh toán đặt chỗ (PB)",
+        "DP": "Khách hàng nạp tiền (DP)",
+        "OD": "Đại lý nạp tiền (OD)",
+        "SO": "Đồng bộ với hãng (SO)",
+        "BL": "Trống (BL)",
+        "UK": "Không xác định (UK)",
+        "CB": "Khách hàng mượn tiền (CB)",
+        "CR": "Khách hàng trả nợ (CR)",
+        "PO": "Thanh toán đơn hàng (PO)",
+        "CH": "Hoàn trả thanh toán (CH)",
+        "DR": "Đối soát gạch nợ (DR)",
+        "RF": "Hoàn tiền (RF)"
+      }
+    }
+  },
+  "unsupported": "Không hỗ trợ"
+}

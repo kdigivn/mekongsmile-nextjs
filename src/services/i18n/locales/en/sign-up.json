@@ -1,0 +1,72 @@
+{
+  "title": "Sign Up",
+  "welcome": "Create an account",
+  "actions": {
+    "submit": "Sign Up",
+    "accountAlreadyExists": {
+      "ask": "Already have an account?",
+      "link": "Log in"
+    }
+  },
+  "inputs": {
+    "firstName": {
+      "label": "First Name",
+      "placeholder": "Please enter first name",
+      "validation": {
+        "required": "First Name is required"
+      }
+    },
+    "lastName": {
+      "label": "Last Name",
+      "placeholder": "Please enter last name",
+      "validation": {
+        "required": "Last Name is required"
+      }
+    },
+    "phone": {
+      "label": "Phone",
+      "placeholder": "Please enter your phone number",
+      "validation": {
+        "required": "Phone is required",
+        "invalid": "Phone is not valid"
+      }
+    },
+    "email": {
+      "label": "Email",
+      "placeholder": "Please enter your email",
+      "validation": {
+        "required": "Email is required",
+        "invalid": "Email is not valid",
+        "server": {
+          "emailAlreadyExists": "Email already exists"
+        }
+      }
+    },
+    "socialId": {
+      "label": "Social ID",
+      "placeholder": "Enter Social ID",
+      "validation": {
+        "invalid-length": "Social ID must be 12 characters",
+        "required": "Required"
+      }
+    },
+    "password": {
+      "label": "Password",
+      "placeholder": "Please enter your password",
+      "validation": {
+        "required": "Password is required",
+        "min": "Password must be at least 6 characters long",
+        "server": {
+          "incorrectPassword": "Password is not valid"
+        }
+      }
+    },
+    "terms": {
+      "label": "Agree with our Terms",
+      "validation": {
+        "required": "Please check to agree with our Terms"
+      }
+    }
+  },
+  "or": "or"
+}
