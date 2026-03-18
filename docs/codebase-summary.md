@@ -1,8 +1,10 @@
 # Codebase Summary
 
-> Quick reference for AI agents and new developers. Find files, components, hooks, and services without searching.
+> Quick reference for AI agents and new developers on mekongsmile.com tour booking platform.
 
-**Last Updated:** 2026-03-10
+**Last Updated:** 2026-03-18
+**Project:** mekongsmile.com (Next.js 14 + WordPress + Tour Booking)
+**Status:** Phases 1-8, 10-11 complete. Phase 9 (booking engine) deferred.
 
 ## Table of Contents
 
@@ -31,7 +33,7 @@
 | Validation | yup | 1.6.1 |
 | i18n | i18next + react-i18next | 23.16.8 |
 | Animation | framer-motion | 11.18.2 |
-| Search | meilisearch | 0.50.0 |
+| GraphQL | @apollo/client | 3.x |
 | Auth (social) | @react-oauth/google | 0.12.1 |
 | Maps | leaflet | 1.9.4 |
 | Error Tracking | @sentry/nextjs | 9.28.1 |
@@ -43,22 +45,67 @@
 
 ```
 src/
-├── app/                   # Next.js App Router
-│   ├── (language)/        # Route group (optional lang prefix)
-│   └── api/               # BFF API routes
-├── components/            # Reusable UI components
-│   ├── ui/                # Radix + Tailwind primitives
-│   └── form-elements/     # Form input wrappers
-├── hooks/                 # Generic utility hooks
-├── lib/                   # Pure utility functions
-├── services/              # Business logic layer
-│   ├── apis/              # API service hooks (per domain)
-│   ├── auth/              # Auth context & provider
-│   ├── i18n/              # i18n config & hooks
-│   ├── react-query/       # QueryProvider & key factory
-│   └── infrastructure/    # WordPress, Meilisearch integrations
-├── views/                 # Page-level view components
-└── server-actions/        # Server-only actions (auth/cookie ops)
+├── app/                          # Next.js App Router
+│   ├── (language)/               # Locale routing group (en/vi/zh)
+│   │   ├── page.tsx              # Homepage (ISR 60s)
+│   │   ├── tours/                # Tour listing (ISR) + [slug]/ detail (SSG)
+│   │   ├── destination/[slug]/   # Destination pages (SSG)
+│   │   ├── blog/                 # Blog listing (ISR) + [slug]/ post detail (SSG)
+│   │   ├── news/                 # News category (ISR) + [slug]/ post detail (SSG)
+│   │   ├── about-us/             # Static page (ISR)
+│   │   ├── contact-us/           # Contact page (ISR)
+│   │   ├── sign-in/ & sign-up/   # Auth pages (CSR)
+│   │   ├── user/                 # Account pages (auth required, CSR)
+│   │   │   ├── profile/
+│   │   │   └── bookings/         # Phase 9 deferred
+│   │   └── [...slug]/            # Dynamic CMS pages (ISR)
+│   ├── api/                      # BFF routes
+│   │   ├── auth/                 # Login, register, refresh
+│   │   └── [..path]/             # Generic backend proxy
+│   ├── sitemap.ts                # Dynamic XML sitemaps
+│   ├── robots.ts                 # robots.txt
+│   ├── layout.tsx                # Root layout (Sentry, providers)
+│   └── globals.css
+│
+├── components/                   # Reusable UI
+│   ├── ui/                       # Radix + Tailwind primitives (25+ components)
+│   ├── form-elements/            # Form field wrappers
+│   ├── app-bar.tsx               # Header navigation
+│   ├── footer/                   # Footer with menus + contact
+│   └── [feature]/                # Domain-specific components
+│
+├── hooks/                        # Custom React hooks (8 hooks)
+├── lib/                          # Utilities
+│   ├── utils.ts                  # Barrel export
+│   ├── utils/                    # Modular utilities (format, date, string, etc.)
+│   └── cms-html-sanitizer.ts     # XSS prevention
+│
+├── services/                     # Business Logic
+│   ├── wordpress/                # WPGraphQL service layer (6 services)
+│   ├── auth/                     # Auth context + JWT
+│   ├── i18n/                     # i18next (en/vi/zh)
+│   ├── react-query/              # QueryProvider + keys
+│   └── social-auth/              # Google OAuth
+│
+├── graphql/                      # WPGraphQL Integration
+│   ├── client.ts                 # fetchGraphQL() + Apollo
+│   ├── types.ts                  # All TS interfaces
+│   ├── queries/                  # Query definitions
+│   │   ├── tours/
+│   │   ├── blog/
+│   │   ├── taxonomies/
+│   │   └── site/
+│   └── fragments/                # Shared fragments
+│
+├── views/                        # Page-level Components
+│   ├── homepage/                 # Hero, featured tours, blog
+│   ├── tour/                     # Tour card, listing, detail, filters
+│   ├── blog/                     # Blog listing, post detail
+│   ├── destination/              # Destination archive
+│   └── page/                     # Generic CMS page renderer
+│
+├── server-actions/               # Server-only functions
+└── middleware.ts                 # i18n routing + locale detection
 ```
 
 ---
@@ -133,93 +180,56 @@ Wrappers around UI primitives with label, error, and react-hook-form integration
 | `QuickLoginModal` | `components/modals/quick-login-modal/` | Inline login modal during checkout |
 | `QuickSignUpModal` | `components/modals/quick-sign-up-modal/` | Inline register modal during checkout |
 
-### Booking & Schedule Components
-
-| Component | File | Purpose |
-|-----------|------|---------|
-| `CardVoyage` | `components/cards/card-voyage/` | Voyage listing card (price, time, operator) |
-| `VoyageDetailCard` | `components/cards/voyage-detail-card/` | Expanded voyage info |
-| `BoatLayoutTabs` | `components/modals/boat-layout-tabs/` | Visual seat map with tabs per deck |
-| `SeatLegend` | `components/chip/seat-legend/` | Seat type color legend |
-| `SeatLegendFixedLabel` | `components/chip/` | Floating legend overlay |
-| `CheckVoyageSeatsModal` | `components/modals/check-voyage-seats/` | Check seat availability |
-
-### Seat Selection Components
+### Tour Components
 
 | Component | Purpose |
 |-----------|---------|
-| `ChooseSeatModal` | Full-screen seat picker (mobile drawer / desktop modal) |
-| `SelectedSeatSection` | Summary of chosen seats |
-| `SelectedSeat` | Individual selected seat chip |
+| `TourCard` | Tour listing card (image, title, duration, price, destination) |
+| `TourDetailView` | Tour detail page layout (gallery, info, FAQ, includes/excludes, booking CTA) |
+| `TourFilterBar` | Filter sidebar (destination, type, travel style, search) |
+| `TourGallery` | Image gallery (hero + thumbnails) |
+| `TourFaqSection` | FAQ accordion from ACF repeater field |
+| `TourIncludesSection` | Included/excluded items lists |
+| `TourMeetingSection` | Pickup point + Google Maps link |
+| `TourPricingSection` | Price display (USD/VND) |
 
-### Passenger Components
-
-| Component | Purpose |
-|-----------|---------|
-| `PassengerForms` | Multi-passenger form (repeating section per passenger) |
-| `PassengerFormInputs` | Type-specific fields (adult, child, infant) |
-| `UpdatePassengerDialog` | Edit saved passenger dialog |
-| `ImportPassengersModal` | Bulk import passengers from CSV/saved list |
-
-### Payment Components
+### Blog Components
 
 | Component | Purpose |
 |-----------|---------|
-| `PaymentMethodModal` | Select payment method (OnePay, banking, offline) |
-| `PaymentModal` | Payment processing status modal |
-| `PriceDetailDialog` | Itemized price breakdown popup |
-| `BankAppDrawer` | Bank app deep link selector (for SMS banking) |
-| `TopUpDialog` | Account credit top-up dialog |
+| `PostCard` | Blog post preview card (image, title, excerpt, date) |
+| `BlogView` | Blog listing + pagination |
+| `PostDetailView` | Full blog post (content, comments, ratings, related posts) |
+| `CommentsSection` | WordPress comment submission + display |
+| `RatingSection` | Star rating system |
 
-### Voucher Components
-
-| Component | Purpose |
-|-----------|---------|
-| `ApplyVoucherPopover` | Promo code input popover |
-| `ListVoucher` | Grid of available vouchers |
-| `ShowSuggestionVoucherDialog` | Auto-suggest applicable vouchers |
-
-### Export Components
+### Destination Components
 
 | Component | Purpose |
 |-----------|---------|
-| `ExportVATForm` | VAT invoice request form |
-| `ExportPassengerModal` | Export passenger list (CSV/Excel) |
-| `ConfirmExportTicketModal` | Confirm before bulk ticket export |
-| `ResultExportTicketModal` | Show export result / download link |
+| `DestinationView` | Destination archive (related tours + blog posts) |
 
-### Card Components
+### Other Card Components
 
 | Component | Purpose |
 |-----------|---------|
-| `UserBookingCard` | Booking list item (status, route, date) |
-| `TransactionCard` | Transaction history item |
-| `CancelTicketRequestCard` | Cancellation request status card |
-| `PostCard` | Blog post preview card |
+| `UserBookingCard` | Booking list item (Phase 9) |
+| `TransactionCard` | Transaction history item (Phase 9) |
 
-### Promo & Route Modals
-
-| Component | Purpose |
-|-----------|---------|
-| `ModalRouteForVietnamese` | Route selection modal for Vietnamese domestic routes |
-| `PromoExpiredModal` | Notification when applied promo code has expired |
 
 ### Utility Components
 
 | Component | Purpose |
 |-----------|---------|
-| `CountDown` | Timer countdown (payment timeout) |
 | `ErrorContent` | Error message display with retry option |
 | `FullPageLoader` | Full-screen loading overlay |
 | `LinkBase` | Next.js Link wrapper with locale support |
 | `HeadingBase` | Semantic heading with responsive sizing |
 | `CopyButton` | Copy-to-clipboard with feedback |
 | `BackToTop` | Scroll-to-top floating button |
-| `Map` | Leaflet map wrapper (pickup locations) |
-| `HtmlToImage` | Renders DOM node as downloadable image |
-| `GoogleTranslate` | Google Translate widget embed |
+| `Map` | Leaflet map wrapper (tour meeting points) |
 | `PageTracker` | GA4 pageview tracker |
-| `BigCalendar` | `react-big-calendar` wrapper for voyage calendar view |
+| `GoogleTranslate` | Google Translate widget embed |
 
 ---
 
@@ -242,10 +252,11 @@ Wrappers around UI primitives with label, error, and react-hook-form integration
 
 ### Auth Service (`src/services/auth/`)
 
-| Export | Purpose |
-|--------|---------|
-| `AuthProvider` | React context provider — wraps app, manages session |
-| `useAuth()` | Hook — `{ user, isAuthenticated, login, logout, isLoading }` |
+| Export | Purpose | Status |
+|--------|---------|--------|
+| `AuthProvider` | React context provider — wraps app, manages JWT session | Simplified |
+| `useAuth()` | Hook — `{ user, isAuthenticated, login, logout, isLoading }` | Simplified |
+| `GoogleAuthProvider` | Google OAuth provider | Active |
 
 ### API Services (`src/services/apis/`)
 
@@ -360,21 +371,20 @@ All API hooks use React Query internally. Pattern: `use[Verb][Resource]()`.
 - `useGetBooking()` — Payment status critical; must reflect latest confirmation
 - `useAuthGetMeQuery()` — User balance/auth state; must be current during checkout
 
-### Infrastructure Services
+### WordPress GraphQL Service (`src/services/wordpress/`)
 
-#### WordPress (`src/services/infrastructure/wordpress/`)
-| Function | Purpose |
-|----------|---------|
-| `getMenuItemsByLocation(location)` | Fetch nav menu from WP |
-| `getHighLightPosts()` | Featured blog posts |
-| `getLogo()` | Site logo URL |
-| `getEnvWebsiteSettings()` | Site name, social links, contact |
-| `getSEOBySlug(slug)` | Yoast SEO data for CMS pages |
+**Service functions wrapping WPGraphQL queries:**
 
-#### Meilisearch (`src/services/infrastructure/meilisearch/`)
-- Search client configured with host + API key from env
-- Used by search dialog for instant full-text search
-- `wordpress-indexing.service.ts` — batched document indexer; `beforeExit` handler flushes remaining buffer on Node.js shutdown
+| Service | Functions | Purpose |
+|---------|-----------|---------|
+| `tour-service.ts` | `getAllTours()`, `getTourBySlug()`, `getTourSlugs()` | Tour data queries |
+| `post-service.ts` | `getAllBlogPosts()`, `getPostBySlug()`, `getNews()` | Blog + news queries |
+| `page-service.ts` | `getPageBySlug()`, `getAllPages()` | Static WP pages |
+| `taxonomy-service.ts` | `getAllDestinations()`, `getTourFilterOptions()` | Taxonomy data (destinations, types, styles) |
+| `site-service.ts` | `getLayoutData()` | Menus + site settings in one query |
+| `options-service.ts` | `getTourConstant()` | ACF Options Page data (tour constants, why choose us, etc.) |
+
+All services use `fetchGraphQL()` from `graphql/client.ts` with proper error handling and type safety.
 
 ---
 

@@ -1,8 +1,9 @@
 # System Architecture
 
-> Technical architecture for ferry-frontend (Next.js 14 App Router)
+> Technical architecture for mekongsmile.com (Next.js 14 App Router + WPGraphQL + Custom Backend)
 
-**Last Updated:** 2026-03-10
+**Last Updated:** 2026-03-18
+**Status:** Phase 1-8, 10-11 complete. Phase 9 (booking engine) deferred pending backend API design
 
 ## Table of Contents
 
@@ -32,106 +33,150 @@
 └──────────────────────┬──────────────────────────────┘
                        │ HTTP
 ┌──────────────────────▼──────────────────────────────┐
-│              Next.js App (ferry-frontend)            │
+│           Next.js 14 Frontend (mekongsmile.com)      │
 │  ┌─────────────────────────────────────────────┐    │
 │  │         App Router (src/app/)               │    │
-│  │   Pages · API Routes (BFF) · Layouts        │    │
+│  │   Tour Pages · Blog · Auth · Booking (P9)   │    │
+│  │   API Routes (BFF) · Layouts                │    │
 │  └──────────────┬───────────────────────────   │    │
 │                 │                               │    │
 │  ┌──────────────▼───────────────────────────   │    │
-│  │         Services Layer (src/services/)      │    │
-│  │   API hooks · Auth · i18n · React Query     │    │
+│  │      Services & GraphQL Layer               │    │
+│  │   wordpress/ · auth/ · i18n/ · graphql/    │    │
 │  └──────────────┬───────────────────────────   │    │
 └─────────────────┼───────────────────────────────────┘
-                  │ HTTP (server-side)
-      ┌───────────┼───────────────┐
-      ▼           ▼               ▼
-┌──────────┐ ┌──────────┐ ┌──────────────┐
-│ Backend  │ │WordPress │ │  Meilisearch │
-│ REST API │ │ GraphQL  │ │    Search    │
-└──────────┘ └──────────┘ └──────────────┘
+                  │ HTTP
+      ┌───────────┴──────────────────────┐
+      ▼                                  ▼
+┌──────────────────────┐      ┌──────────────────────┐
+│   WordPress CMS      │      │  Custom Backend API  │
+│   (mekongsmile.com)  │      │    (TBD — Phase 9)   │
+│                      │      │                      │
+│ • Tours (34)         │      │ • Bookings           │
+│ • Blog Posts         │      │ • Availability       │
+│ • Pages              │      │ • Payments           │
+│ • Menus + Settings   │      │ • Orders             │
+│ • SEO (Rank Math)    │      │ • User Accounts      │
+└──────────────────────┘      └──────────────────────┘
 ```
+
+**Hybrid Architecture:**
+- **Content Layer:** WordPress (WPGraphQL) — tours, blog, pages, menus, SEO
+- **Frontend:** Next.js 14 App Router with Server Components + ISR
+- **Commerce Layer:** Custom backend API (deferred — Phase 9 pending design)
+- **Communication:** Server-side `fetchGraphQL()` for CMS; BFF proxy for backend (future)
 
 ## 2. Folder Structure
 
 ```
 src/
-├── app/                    # Next.js App Router root
-│   ├── (language)/         # Route group — adds [lang] prefix if enabled
+├── app/                    # Next.js App Router
+│   ├── (language)/         # Locale routing group
 │   │   ├── layout.tsx      # Shared layout (header, footer, providers)
-│   │   ├── page.tsx        # Home page (ISR)
-│   │   ├── schedules/      # Schedule search pages
-│   │   ├── ticket-detail/  # Booking form (CSR, auth required)
-│   │   ├── booking/[id]/   # Booking detail + payment
-│   │   ├── sign-in/        # Login page
-│   │   ├── sign-up/        # Registration page
-│   │   ├── user/           # User-specific pages (auth required)
-│   │   ├── profile/        # Profile edit
-│   │   ├── transactions/   # Transaction history
-│   │   ├── payment-gateway/# Payment result pages
-│   │   └── [...slug]/      # Dynamic CMS pages (WordPress)
-│   ├── api/                # API route handlers (BFF layer)
-│   │   ├── auth/           # Auth endpoints (login, register, refresh)
-│   │   ├── payments/       # Payment gateway endpoints
-│   │   ├── ai/             # AI integrations (ID card scan)
-│   │   ├── [...path]/      # Generic backend proxy
-│   │   └── sse/[...path]/  # Server-sent events proxy
-│   ├── layout.tsx          # Root layout (Sentry, theme init)
-│   └── globals.css         # Global CSS reset + Tailwind base
+│   │   ├── page.tsx        # Homepage — featured tours + blog (ISR 60s)
+│   │   ├── tours/          # Tour listing (filter, pagination)
+│   │   │   └── [slug]/     # Tour detail (SSG: 34 tours)
+│   │   ├── destination/    # Destination pages (SSG: 14 dests)
+│   │   │   └── [slug]/     # Tours + posts per destination
+│   │   ├── blog/           # Blog listing (ISR 3600s)
+│   │   │   └── [slug]/     # Blog post (SSG: all posts)
+│   │   ├── news/           # News category (ISR 3600s)
+│   │   │   └── [slug]/     # News post (SSG)
+│   │   ├── about-us/       # Static page (ISR 86400s)
+│   │   ├── contact-us/     # Contact page + form (ISR 86400s)
+│   │   ├── sign-in/        # Login (email + Google OAuth)
+│   │   ├── sign-up/        # Registration
+│   │   ├── user/           # User account (auth required)
+│   │   │   ├── profile/    # Profile edit
+│   │   │   └── bookings/   # Booking history (Phase 9)
+│   │   └── [...slug]/      # WP pages catch-all (ISR)
+│   ├── api/                # BFF API routes
+│   │   ├── auth/           # Login, register, refresh
+│   │   └── [..path]/       # Proxy to custom backend (Phase 9)
+│   ├── sitemap.ts          # Dynamic sitemaps (tours, blog, pages, destinations)
+│   ├── robots.ts           # Robots.txt
+│   ├── layout.tsx          # Root layout (Sentry, providers)
+│   └── globals.css         # Global styles + Tailwind
 │
-├── components/             # Reusable UI components
-│   ├── ui/                 # Radix UI + Tailwind primitives
-│   ├── form-elements/      # Form input wrappers
-│   ├── cards/              # Card components
-│   ├── dialog/             # Dialog/modal components
-│   ├── modals/             # Large feature modals
-│   ├── chip/               # Status chips/badges
+├── components/             # UI Components
+│   ├── ui/                 # Radix + Tailwind primitives (25+)
+│   ├── form-elements/      # Form field wrappers
+│   ├── app-bar.tsx         # Header navigation
+│   ├── footer/             # Footer with menus
 │   └── [feature]/          # Domain-specific components
 │
-├── services/               # Business logic + external integrations
-│   ├── apis/               # API service hooks (per domain)
-│   ├── auth/               # Auth context + provider
-│   ├── i18n/               # i18n config + hooks
+├── services/               # Business Logic
+│   ├── wordpress/          # GraphQL service layer (6 files)
+│   │   ├── tour-service.ts
+│   │   ├── post-service.ts
+│   │   ├── page-service.ts
+│   │   ├── taxonomy-service.ts
+│   │   ├── site-service.ts
+│   │   └── options-service.ts
+│   ├── auth/               # Auth context + JWT handling
+│   ├── i18n/               # i18next (en/vi/zh)
 │   ├── react-query/        # QueryProvider + key factory
-│   ├── infrastructure/     # External: WordPress, Meilisearch
-│   └── social-auth/        # Google/Facebook OAuth providers
+│   ├── apis/               # API hooks (legacy — removing in Phase 11)
+│   └── social-auth/        # Google OAuth
 │
-├── hooks/                  # Generic custom React hooks
-├── lib/                    # Utility functions (utils.ts, etc.)
-├── views/                  # Page-level view components
-│   └── [domain]/           # homepage, blog, schedule, error, etc.
-├── server-actions/         # Next.js server actions (getJWT, check, logout)
-└── middleware.ts           # i18n routing + auth guard
+├── graphql/                # WPGraphQL Integration
+│   ├── client.ts           # fetchGraphQL() + Apollo client
+│   ├── types.ts            # All TS interfaces (SeoData, TourDetail, etc.)
+│   ├── queries/            # Query definitions (tours, blog, pages, taxonomies)
+│   └── fragments/          # Shared fragments (tour, post, seo, menu, media)
+│
+├── hooks/                  # Custom React hooks (useBoolean, useDebounce, etc.)
+├── lib/                    # Utilities
+│   ├── utils.ts            # Barrel export
+│   ├── utils/              # Modular utilities (format, date, string, etc.)
+│   └── cms-html-sanitizer.ts
+│
+├── views/                  # Page View Components
+│   ├── homepage/           # Hero, featured tours, blog section
+│   ├── tour/               # Tour card, listing, detail, filters
+│   ├── blog/               # Blog listing, post detail
+│   ├── destination/        # Destination archive
+│   └── page/               # Generic CMS page renderer
+│
+├── server-actions/         # Server-only actions (getJWT, logout)
+└── middleware.ts           # i18n routing + locale detection
 ```
 
 ## 3. Page / Route Inventory
 
-### Customer Pages
+### Tour & Content Routes
 
-| Route | Rendering | Auth | Description |
-|-------|-----------|------|-------------|
-| `/` | ISR | No | Home — hero, schedule search, blog preview, operators |
-| `/schedules` | SSR | No | Route overview |
-| `/schedules/[route_def]` | SSR | No | Voyage search by route & date |
-| `/ticket-detail` | CSR | Yes | Booking form: passengers, seats, summary |
-| `/booking/[id]` | CSR | Yes | Booking confirmation + payment |
-| `/booking/[id]/issue-ticket` | CSR | Yes | Ticket issuance |
-| `/booking/[id]/check-issue-ticket` | CSR | Yes | Issue status check |
-| `/sign-in` | CSR | No | Login |
-| `/sign-up` | CSR | No | Register |
-| `/confirm-email` | CSR | No | Email OTP confirmation |
-| `/forgot-password` | CSR | No | Password reset request |
-| `/password-change` | CSR | Yes | Change password |
-| `/profile` | CSR | Yes | Edit user profile |
-| `/user/bookings` | CSR | Yes | Booking history |
-| `/user/bookings/[id]` | CSR | Yes | Booking detail |
-| `/user/cancel-ticket-request` | CSR | Yes | Cancel requests |
-| `/transactions` | CSR | Yes | Transaction history |
-| `/payment-gateway/onepay` | CSR | Yes | OnePay gateway |
-| `/payment-gateway/onepay/transaction-result` | CSR | Yes | OnePay result |
-| `/payment-gateway/banking` | CSR | Yes | SMS banking |
-| `/payment-gateway/offline` | CSR | Yes | Offline payment info |
-| `/[...slug]` | ISR | No | Dynamic CMS pages (WordPress) |
+| Route | Rendering | Auth | Data Source | Description |
+|-------|-----------|------|-------------|-------------|
+| `/` | ISR (60s) | No | WPGraphQL | Homepage — hero, featured tours (6), blog preview (4), why choose section |
+| `/tours/` | ISR (60s) | No | WPGraphQL | Tour listing — all 34 tours with destination/type/style filters, pagination |
+| `/tour/[slug]/` | SSG | No | WPGraphQL | Tour detail — gallery, description, pricing, highlights, FAQ, includes/excludes, meeting point, booking CTA |
+| `/destination/[slug]/` | SSG | No | WPGraphQL | Destination page — related tours + blog posts for that destination (14 destinations) |
+| `/blog/` | ISR (3600s) | No | WPGraphQL | Blog listing — all posts, paginated (12 per page) |
+| `/blog/[slug]/` | SSG | No | WPGraphQL | Blog post detail — article, comments, ratings, related posts |
+| `/news/` | ISR (3600s) | No | WPGraphQL | News category listing — filtered by category slug |
+| `/news/[slug]/` | SSG | No | WPGraphQL | News post detail — article layout |
+| `/about-us/` | ISR (86400s) | No | WPGraphQL | Static page from WP |
+| `/contact-us/` | ISR (86400s) | No | WPGraphQL | Static page + contact form |
+| `/[...slug]/` | ISR | No | WPGraphQL | Dynamic CMS pages (FAQ, privacy, terms, custom pages) |
+
+### Auth & User Routes
+
+| Route | Rendering | Auth | Status | Description |
+|-------|-----------|------|--------|-------------|
+| `/sign-in` | CSR | No | Simplified | Email + password + Google OAuth (simplified from ferry) |
+| `/sign-up` | CSR | No | Simplified | Registration (backend TBD) |
+| `/user/profile` | CSR | Yes | Basic | View/edit profile (name, email, avatar) |
+| `/user/bookings` | CSR | Yes | Phase 9 | Booking history (deferred, requires backend) |
+
+### API Routes (BFF & Backend Proxy)
+
+| Route | Method | Purpose |
+|-------|--------|---------|
+| `/api/auth/login` | POST | Email login |
+| `/api/auth/register` | POST | User registration |
+| `/api/auth/refresh` | POST | Token refresh |
+| `/api/[...path]` | `*` | Generic proxy to custom backend |
 
 ### API Routes (BFF)
 
@@ -366,22 +411,31 @@ User selects payment method
 ## 9. WordPress CMS Integration
 
 ```
-WordPress (GraphQL API)
+WordPress (mekongsmile.com/graphql)
     │
-    ▼ src/services/infrastructure/wordpress/
-    getMenuItemsByLocation()    → Navigation menus
-    getHighLightPosts()         → Featured blog posts
-    getLogo()                   → Site branding
-    getEnvWebsiteSettings()     → Site configuration (name, social, etc.)
-    getSEO()                    → Yoast SEO metadata per page
+    ├─→ GraphQL Queries (src/graphql/queries/)
+    │   ├── tours/          → GET_ALL_TOURS, GET_TOUR_BY_SLUG
+    │   ├── blog/           → GET_ALL_BLOG_POSTS, GET_POST_BY_SLUG
+    │   ├── taxonomies/     → GET_ALL_DESTINATIONS, GET_TOUR_FILTER_OPTIONS
+    │   └── site/           → GET_LAYOUT_DATA, GET_PAGES, GET_MENUS
     │
-    ▼ Consumed in:
-    Root layout (menus, logo, settings) — server-side on every request
-    [...slug] pages (ISR) — dynamic CMS pages
-    Blog/product pages (ISR)
+    ├─→ Service Layer (src/services/wordpress/)
+    │   ├── tour-service.ts              → getAllTours(), getTourBySlug(), getTourSlugs()
+    │   ├── post-service.ts              → getAllBlogPosts(), getPostBySlug(), getNews()
+    │   ├── page-service.ts              → getPageBySlug(), getAllPages()
+    │   ├── taxonomy-service.ts          → getAllDestinations(), getTourFilterOptions()
+    │   ├── site-service.ts              → getLayoutData() (menus + settings)
+    │   └── options-service.ts           → getTourConstant() (ACF Options Page)
+    │
+    └─→ Consumed in:
+        ├── Root layout (menus, logo, settings via getLayoutData())
+        ├── Tour detail pages (tour data + SEO)
+        ├── Blog/news pages (posts + filters)
+        ├── Destination pages (destination + related content)
+        └── [...slug] catch-all (dynamic WP pages)
 
-Note: Root layout uses Promise.all with per-item catch — CMS failures return null.
-ResponsiveAppBar and Footer render conditionally; null CMS data does not crash the page.
+**Resilience:** Root layout uses Promise.all with error catches. CMS failures return null gracefully.
+Header/footer render conditionally when CMS data available. Page render continues without CMS metadata fallback.
 ```
 
 ## 10. Component Architecture

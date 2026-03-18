@@ -1,8 +1,9 @@
 # Deployment Guide
 
-> Setup, build, and deploy ferry-frontend.
+> Setup, build, and deploy mekongsmile.com Next.js 14 tour booking frontend.
 
-**Last Updated:** 2026-03-03
+**Last Updated:** 2026-03-18
+**Status:** Core tour booking platform deployed. Phase 9 (booking engine) deferred
 
 ## Table of Contents
 
@@ -33,7 +34,7 @@
 
 ```bash
 git clone <repo-url>
-cd ferry-frontend
+cd mekongsmile
 npm install
 ```
 
@@ -49,9 +50,11 @@ Edit `.env.local` with your local configuration (see §3 for full variable refer
 
 **Minimum required for local dev:**
 ```env
-API_SERVER_URL=http://localhost:3000
-API_SERVER_PREFIX=/api
+NEXT_PUBLIC_WORDPRESS_GRAPHQL_URL=https://mekongsmile.com/graphql
+NEXT_PUBLIC_SITE_URL=https://mekongsmile.com
 NEXT_PUBLIC_BASE_URL=http://localhost:3001
+NEXT_PUBLIC_IS_GOOGLE_AUTH_ENABLED=true
+NEXT_PUBLIC_GOOGLE_CLIENT_ID=YOUR_GOOGLE_CLIENT_ID
 ```
 
 ### Run Development Server
@@ -75,11 +78,10 @@ npm run format       # Prettier auto-format
 
 | Variable | Required | Default | Description |
 |----------|----------|---------|-------------|
-| `API_SERVER_URL` | **Yes** | — | Backend REST API base URL (e.g., `http://localhost:3000`) |
-| `API_SERVER_PREFIX` | **Yes** | — | API path prefix (e.g., `/api`) |
-| `NEXT_PUBLIC_BASE_URL` | **Yes** | — | Frontend public URL (e.g., `http://localhost:3001`) |
-| `INTERNATIONAL_ROUTING_ENABLED` | No | `false` | Enable `/[lang]/` URL prefix routing (e.g., `/en/schedules`) |
-| `NEXT_PUBLIC_DISABLE_ROBOTS` | No | — | Set `true` to add `noindex, nofollow` (non-production envs) |
+| `NEXT_PUBLIC_BASE_URL` | **Yes** | — | Frontend public URL (e.g., `https://mekongsmile.com`) |
+| `NEXT_PUBLIC_WORDPRESS_GRAPHQL_URL` | **Yes** | — | WordPress GraphQL endpoint (e.g., `https://mekongsmile.com/graphql`) |
+| `INTERNATIONAL_ROUTING_ENABLED` | No | `false` | Enable `/[lang]/` URL prefix routing (e.g., `/en/tours`) |
+| `NEXT_PUBLIC_DISABLE_ROBOTS` | No | — | Set `true` to add `noindex, nofollow` (staging/dev only) |
 
 ### Sentry (Error Tracking)
 
@@ -89,9 +91,9 @@ npm run format       # Prettier auto-format
 | `SENTRY_AUTH_TOKEN` | No | Auth token for sourcemap upload (CI only) |
 | `ENABLE_SENTRY_DEBUG` | No | Set `true` for verbose Sentry logging |
 
-> Sentry org: `ferryvn`, project: `frontend-vetaucaotoc`
-> Sourcemaps are deleted after upload (not served to users).
-> Error tunnel route: `/monitoring` (bypasses ad blockers).
+> **Sentry org:** `mekongsmile` | **project:** `frontend-mekongsmile`
+> Sourcemaps deleted after upload (not served to users).
+> Error tunnel: `/monitoring` (bypasses ad blockers).
 
 ### i18n Debug
 
@@ -103,20 +105,20 @@ npm run format       # Prettier auto-format
 
 | Variable | Required | Description |
 |----------|----------|-------------|
-| `WORDPRESS_GRAPHQL_ENDPOINT` | No | WordPress GraphQL API URL (e.g., `https://cms.example.com/graphql`) |
+| `NEXT_PUBLIC_WORDPRESS_GRAPHQL_URL` | **Yes** | WordPress GraphQL endpoint (e.g., `https://mekongsmile.com/graphql`) |
 | `MAX_PAGES_TO_BUILD` | No | Max SSG pages per category (default: `100`) |
 | `POSTS_PER_PAGES` | No | Blog posts per page (default: `20`) |
-| `NEXT_PUBLIC_ALLOW_ANONYMOUS_COMMENT` | No | Allow unauthenticated comments (default: `true`) |
-| `NEXT_PUBLIC_DEFAULT_PRODUCT_VIDEO_URL` | No | Fallback product video URL |
+| `NEXT_PUBLIC_ALLOW_ANONYMOUS_COMMENT` | No | Allow comments without auth (default: `true`) |
+| `NEXT_PUBLIC_DEFAULT_TOUR_IMAGE_URL` | No | Fallback image if WP image unavailable |
 
 ### Authentication
 
-| Variable | Required | Description |
-|----------|----------|-------------|
-| `NEXT_PUBLIC_IS_GOOGLE_AUTH_ENABLED` | No | Enable Google OAuth button (default: `false`) |
-| `NEXT_PUBLIC_GOOGLE_CLIENT_ID` | No | Google OAuth client ID |
-| `NEXT_PUBLIC_IS_FACEBOOK_AUTH_ENABLED` | No | Enable Facebook OAuth button (default: `false`) |
-| `NEXT_PUBLIC_FACEBOOK_APP_ID` | No | Facebook app ID |
+| Variable | Required | Description | Status |
+|----------|----------|-------------|--------|
+| `NEXT_PUBLIC_IS_GOOGLE_AUTH_ENABLED` | No | Enable Google OAuth (default: `false`) | Active |
+| `NEXT_PUBLIC_GOOGLE_CLIENT_ID` | No | Google OAuth client ID | Active |
+| `NEXT_PUBLIC_IS_FACEBOOK_AUTH_ENABLED` | No | Enable Facebook OAuth (deprecated) | Removed (Phase 8) |
+| `NEXT_PUBLIC_FACEBOOK_APP_ID` | No | Facebook app ID (deprecated) | Removed (Phase 8) |
 
 ### Analytics & Tracking
 
@@ -130,14 +132,16 @@ npm run format       # Prettier auto-format
 |----------|----------|-------------|
 | `NEXT_PUBLIC_MAX_ALLOWED_PASSENGERS` | No | Max passengers per booking (default: `30`) |
 
-### Search (Meilisearch)
+### Search
 
-| Variable | Required | Description |
-|----------|----------|-------------|
-| `NEXT_PUBLIC_MEILISEARCH_HOST` | No | Meilisearch server URL |
-| `MEILISEARCH_ADMIN_KEY` | No | Admin API key — **server-only**, never expose to browser |
-| `NEXT_PUBLIC_MEILISEARCH_SEARCH_KEY` | No | Search-only API key (safe for browser) |
-| `NEXT_PUBLIC_MEILISEARCH_INDEX_NAME` | No | Search index name |
+| Variable | Required | Description | Status |
+|----------|----------|-------------|--------|
+| `NEXT_PUBLIC_MEILISEARCH_HOST` | No | Meilisearch server URL | Removed (Phase 11) — Use client-side filtering |
+| `MEILISEARCH_ADMIN_KEY` | No | Admin API key | Removed |
+| `NEXT_PUBLIC_MEILISEARCH_SEARCH_KEY` | No | Search-only API key | Removed |
+| `NEXT_PUBLIC_MEILISEARCH_INDEX_NAME` | No | Search index name | Removed |
+
+**Note:** Tour search implemented via client-side text filtering + server-side taxonomy filters (destination, type, style). No external search service needed for 34 tours.
 
 ### Security
 
@@ -149,9 +153,9 @@ npm run format       # Prettier auto-format
 
 | Variable | Required | Description |
 |----------|----------|-------------|
-| `NEXT_PUBLIC_BOOKED_NUMBER` | No | Marketing counter (e.g., `"10K"`) shown on homepage |
-| `NEXT_PUBLIC_DEFAULT_ROUTE` | No | Default ferry route ID pre-selected in search |
+| `NEXT_PUBLIC_BOOKED_NUMBER` | No | Marketing counter (e.g., `"5K"`) on homepage |
 | `NEXT_PUBLIC_TRAVEL_GUIDE_CATEGORY` | No | WordPress category slug for travel guides |
+| `NEXT_PUBLIC_MAX_ALLOWED_PASSENGERS` | No | Max passengers per booking (default: `30`) |
 
 ### AI Integrations
 
@@ -159,11 +163,12 @@ npm run format       # Prettier auto-format
 |----------|----------|-------------|
 | `VIETTEL_AI_TOKEN` | No | Viettel AI API token for ID card OCR (`/api/ai/scan-id-card`) |
 
-### API Authentication
+### Custom Backend (Phase 9 — Deferred)
 
-| Variable | Required | Description |
-|----------|----------|-------------|
-| `FERRY_DEFAULT_API_KEY` | No | Default API key injected into backend requests |
+| Variable | Required | Description | Status |
+|----------|----------|-------------|--------|
+| `NEXT_PUBLIC_BOOKING_API_URL` | No | Custom backend API base URL | Deferred |
+| `MEKONG_DEFAULT_API_KEY` | No | Default API key for backend requests | Deferred |
 
 ---
 
@@ -202,14 +207,18 @@ npx next-sitemap         # Generate sitemap (runs automatically post-build)
 ### Standard Build
 
 ```bash
-# 1. Set environment variables
-cp example.env .env.local
-# Edit .env.local with production values
+# 1. Configure environment
+cp example.env .env.production.local
+# Edit .env.production.local with production values:
+# - NEXT_PUBLIC_WORDPRESS_GRAPHQL_URL=https://mekongsmile.com/graphql
+# - NEXT_PUBLIC_BASE_URL=https://mekongsmile.com
+# - NEXT_PUBLIC_SENTRY_DSN=https://...
+# - Etc.
 
 # 2. Build
 npm run build
 
-# 3. The standalone server output is at:
+# 3. Standalone output:
 #    .next/standalone/server.js
 ```
 
@@ -253,10 +262,12 @@ Ensure `.env.uat` exists with UAT-specific values (UAT API URL, Sentry DSN, etc.
 
 ## 6. Sentry Setup
 
-Sentry is configured across 3 runtimes:
-- `sentry.client.config.ts` — browser
-- `sentry.server.config.ts` — Node.js server
-- `sentry.edge.config.ts` — Edge runtime (middleware)
+Sentry configured across 3 runtimes:
+- `sentry.client.config.ts` — browser error tracking + session replay
+- `sentry.server.config.ts` — Node.js server errors
+- `sentry.edge.config.ts` — Edge runtime (middleware) errors
+
+**Sentry org:** `mekongsmile` | **project:** `frontend-mekongsmile`
 
 ### Sourcemap Upload (CI)
 
@@ -286,19 +297,19 @@ No additional PWA build step required — Next.js handles manifest serving.
 
 ## 8. Sitemap
 
-Sitemap is generated by `next-sitemap` post-build:
+Auto-generated by `next-sitemap` post-build:
 
 ```bash
-# Runs automatically after `npm run build` via postbuild script
-# Config: next-sitemap.config.js
+npm run build  # Automatically runs next-sitemap after build
 ```
 
-**Sitemap routes:**
-- `/sitemap.xml` — Main sitemap index
-- `/sitemap/posts.xml` — Blog posts (rewritten from `/post-sitemap.xml`)
-- `/sitemap/products.xml` — Products
-- `/sitemap/pages.xml` — CMS pages
-- `/sitemap/categories.xml` — Categories
+**Sitemap index:** `/sitemap.xml`
+
+**Sub-sitemaps:**
+- `/sitemap/tours.xml` — Tour detail pages (34 tours)
+- `/sitemap/posts.xml` — Blog posts (all)
+- `/sitemap/pages.xml` — CMS pages (about, contact, etc.)
+- `/sitemap/destinations.xml` — Destination archive pages (14 destinations)
 
 ## 9. Image Domains (next.config.js)
 
@@ -306,21 +317,10 @@ Allowed remote image hostnames for `next/image`:
 
 | Hostname | Usage |
 |----------|-------|
-| `img.vietqr.io` | VietQR bank logos |
-| `api.vietqr.io` | VietQR API images |
-| `r2.kdigi.net` | CDN assets |
-| `r2.nucuoimekong.vn` | Mekong operator assets |
-| `cdn.condao.express` | Con Dao Express CDN |
-| `cms.condao.express` | Con Dao Express CMS media |
-| `cdn.phuquoc.express` | Phu Quoc Express CDN |
-| `cms.phuquoc.express` | Phu Quoc Express CMS media |
-| `cdn.vetaucaotoc.net` | Vetaucaotoc CDN |
-| `cdn.honson.express` | Hon Son Express CDN |
-| `cdn.ferryvn.com` | FerryVN CDN |
-| `cdn.ferry.vn` | Ferry.vn CDN |
-| `secure.gravatar.com` | User avatars (WordPress) |
+| `mekongsmile.com` | WordPress media library (tours, blog, pages) |
+| `secure.gravatar.com` | User avatars (WordPress author pictures) |
 
-To add a new image domain, update `images.remotePatterns` in `next.config.js`.
+To add new domain: Update `images.remotePatterns` in `next.config.js`.
 
 ## 10. Bundle Analysis
 
