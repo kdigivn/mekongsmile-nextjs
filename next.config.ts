@@ -29,7 +29,7 @@ const nextConfig: NextConfig = {
       "@heroui/react",
       "date-fns",
       "react-icons",
-      "motion",
+      "framer-motion",
       "@radix-ui/react-select",
       "@radix-ui/react-dialog",
       "@radix-ui/react-dropdown-menu",
