@@ -5,7 +5,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { getServerTranslation } from "@/services/i18n";
 import "@/services/i18n/config";
-import { languages } from "@/services/i18n/config";
+import { fallbackLanguage } from "@/services/i18n/config";
 import StoreLanguageProvider from "@/services/i18n/store-language-provider";
 import { getLayoutData } from "@/services/wordpress/site-service";
 import QueryProvider from "@/services/react-query/query-provider";
@@ -37,12 +37,8 @@ const ReactQueryDevtools =
       )
     : () => null;
 
-type Props = {
-  params: { language: string };
-};
-
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { t } = await getServerTranslation(params.language, "common");
+export async function generateMetadata(): Promise<Metadata> {
+  const { t } = await getServerTranslation(fallbackLanguage, "common");
 
   return {
     title: t("title"),
@@ -51,10 +47,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       version: process.env.npm_package_version ?? "",
     },
   };
-}
-
-export async function generateStaticParams() {
-  return languages.map((language) => ({ language }));
 }
 
 const inter = Inter({
@@ -71,11 +63,10 @@ const notoSansSC = Noto_Sans_SC({
 
 async function RootLayout({
   children,
-  params: { language = "en" },
 }: {
   children: React.ReactNode;
-  params: { language: string };
 }) {
+  const language = fallbackLanguage;
   // Fetch layout data (settings + menus) in a single GraphQL query
   const layoutData = await getLayoutData().catch(() => null);
 

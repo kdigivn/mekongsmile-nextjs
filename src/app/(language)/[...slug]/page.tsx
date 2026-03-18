@@ -43,9 +43,10 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string[] };
+  params: Promise<{ slug: string[] }>;
 }): Promise<Metadata> {
-  const uri = `/${params.slug.join("/")}/`;
+  const { slug } = await params;
+  const uri = `/${slug.join("/")}/`;
   const page = await getPageBySlug(uri);
   if (!page) return {};
 
@@ -61,9 +62,10 @@ export async function generateMetadata({
 export default async function CatchAllPage({
   params,
 }: {
-  params: { slug: string[] };
+  params: Promise<{ slug: string[] }>;
 }) {
-  const uri = `/${params.slug.join("/")}/`;
+  const { slug } = await params;
+  const uri = `/${slug.join("/")}/`;
   const page = await getPageBySlug(uri);
 
   if (!page) notFound();

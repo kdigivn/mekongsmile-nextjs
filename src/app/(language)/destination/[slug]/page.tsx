@@ -9,7 +9,7 @@ import DestinationView from "@/views/destination/destination-view";
 export const revalidate = 300;
 
 type Props = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
 export async function generateStaticParams() {
@@ -32,7 +32,8 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   try {
-    const destination = await getDestinationBySlug(params.slug);
+    const { slug } = await params;
+    const destination = await getDestinationBySlug(slug);
     if (!destination) return { title: "Destination Not Found" };
 
     return {
@@ -47,11 +48,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function DestinationPage({ params }: Props) {
+  const { slug } = await params;
   let destination;
   try {
-    destination = await getDestinationBySlug(params.slug, 12, 6);
+    destination = await getDestinationBySlug(slug, 12, 6);
   } catch (error) {
-    console.error(`[Destination] Failed to fetch ${params.slug}:`, error);
+    console.error(`[Destination] Failed to fetch ${slug}:`, error);
   }
   if (!destination) notFound();
 

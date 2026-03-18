@@ -14,8 +14,7 @@ const PAGE_BLUR_PLACEHOLDER =
   "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSI5Ij48cmVjdCBmaWxsPSIjMWEzNjVkIiB3aWR0aD0iMTYiIGhlaWdodD0iOSIgb3BhY2l0eT0iMC40Ii8+PC9zdmc+";
 
 const TableOfContentActiveHeading = dynamic(
-  () => import("@/components/table-of-content/TableOfContentActiveHeading"),
-  { ssr: false }
+  () => import("@/components/table-of-content/TableOfContentActiveHeading")
 );
 
 const tocStyle = {
