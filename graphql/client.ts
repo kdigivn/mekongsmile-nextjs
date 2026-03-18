@@ -17,7 +17,6 @@ import {
   InMemoryCache,
   HttpLink,
   type DocumentNode,
-  type NormalizedCacheObject,
 } from "@apollo/client";
 
 // ─── Configuration ────────────────────────────────────────────────────────────
@@ -28,9 +27,9 @@ const GRAPHQL_ENDPOINT =
 
 // ─── Apollo Client (for use in React components with ApolloProvider) ──────────
 
-let apolloClientInstance: ApolloClient<NormalizedCacheObject> | null = null;
+let apolloClientInstance: ApolloClient | null = null;
 
-export function getApolloClient(): ApolloClient<NormalizedCacheObject> {
+export function getApolloClient(): ApolloClient {
   if (apolloClientInstance) return apolloClientInstance;
 
   apolloClientInstance = new ApolloClient({
