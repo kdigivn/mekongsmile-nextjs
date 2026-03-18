@@ -12,67 +12,13 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "img.vietqr.io",
+        hostname: "mekongsmile.com",
         port: "",
-        pathname: "/image/**",
-      },
-{
-        protocol: "https",
-        hostname: "cdn.condao.express",
-        port: "",
-        pathname: "/**",
-      },
-      {
-        protocol: "https",
-        hostname: "cms.condao.express",
-        port: "",
-        pathname: "/**",
-      },
-      {
-        protocol: "https",
-        hostname: "cdn.phuquoc.express",
-        port: "",
-        pathname: "/**",
-      },
-      {
-        protocol: "https",
-        hostname: "cms.phuquoc.express",
-        port: "",
-        pathname: "/**",
-      },
-      {
-        protocol: "https",
-        hostname: "cdn.vetaucaotoc.net",
-        port: "",
-        pathname: "/**",
-      },
-      {
-        protocol: "https",
-        hostname: "cdn.honson.express",
-        port: "",
-        pathname: "/**",
-      },
-      {
-        protocol: "https",
-        hostname: "cdn.ferryvn.com",
-        port: "",
-        pathname: "/**",
+        pathname: "/wp-content/**",
       },
       {
         protocol: "https",
         hostname: "secure.gravatar.com",
-        port: "",
-        pathname: "/**",
-      },
-      {
-        protocol: "https",
-        hostname: "cdn.ferry.vn",
-        port: "",
-        pathname: "/**",
-      },
-      {
-        protocol: "https",
-        hostname: "api.vietqr.io",
         port: "",
         pathname: "/**",
       },
@@ -136,24 +82,20 @@ const nextConfig = {
         destination: "/sitemap/posts.xml",
       },
       {
-        source: "/product-sitemap.xml",
-        destination: "/sitemap/products.xml",
+        source: "/tour-sitemap.xml",
+        destination: "/sitemap/tours.xml",
       },
       {
         source: "/page-sitemap.xml",
         destination: "/sitemap/pages.xml",
       },
       {
+        source: "/destination-sitemap.xml",
+        destination: "/sitemap/destinations.xml",
+      },
+      {
         source: "/category-sitemap.xml",
         destination: "/sitemap/categories.xml",
-      },
-      {
-        source: "/term-sitemap.xml",
-        destination: "/sitemap/terms.xml",
-      },
-      {
-        source: "/tag-sitemap.xml",
-        destination: "/sitemap/tags.xml",
       },
     ];
   },
@@ -162,8 +104,13 @@ const nextConfig = {
   async redirects() {
     return [
       {
-        source: "/product",
-        destination: "/diem-den/con-dao/",
+        source: "/product/:slug*",
+        destination: "/tour/:slug*",
+        permanent: true,
+      },
+      {
+        source: "/shop/",
+        destination: "/tours/",
         permanent: true,
       },
     ];
@@ -179,8 +126,8 @@ module.exports = withSentryConfig(module.exports, {
   // For all available options, see:
   // https://github.com/getsentry/sentry-webpack-plugin#options
 
-  org: "ferryvn",
-  project: "frontend-vetaucaotoc",
+  org: "mekongsmile",
+  project: "frontend-mekongsmile",
 
   // Only print logs for uploading source maps in CI
   silent: !process.env.CI,

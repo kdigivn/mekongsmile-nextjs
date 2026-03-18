@@ -1,5 +1,5 @@
 {
-  "name": "@vetaucaotoc/frontend",
+  "name": "@mekongsmile/frontend",
   "version": "3.2.7",
   "private": true,
   "scripts": {
@@ -20,6 +20,7 @@
     "ts:watch": "npm run ts --watch"
   },
   "dependencies": {
+    "@apollo/client": "^4.1.6",
     "@arthurgeron/eslint-plugin-react-usememo": "2.5.0",
     "@heroui/react": "2.7.6",
     "@hookform/resolvers": "3.10.0",
@@ -67,6 +68,7 @@
     "event-source-polyfill": "1.0.31",
     "eventsource": "3.0.6",
     "framer-motion": "11.18.2",
+    "graphql": "^16.13.1",
     "html-to-image": "1.11.13",
     "html5-qrcode": "2.3.8",
     "i18next": "23.16.8",
@@ -77,6 +79,7 @@
     "jwt-decode": "4.0.0",
     "leaflet": "1.9.4",
     "lightgallery": "2.8.3",
+    "lucide-react": "^0.577.0",
     "mailparser": "3.7.2",
     "meilisearch": "0.50.0",
     "nanoid": "5.0.9",
