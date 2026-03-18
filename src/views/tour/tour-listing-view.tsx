@@ -82,9 +82,15 @@ export default function TourListingView({
     if (!pageInfo.hasNextPage || !pageInfo.endCursor) return;
     setLoading(true);
     try {
-      const res = await fetch(
-        `/api/tours?after=${encodeURIComponent(pageInfo.endCursor)}&first=12`
-      );
+      const params = new URLSearchParams({
+        after: pageInfo.endCursor,
+        first: "12",
+      });
+      if (activeFilters.destination) params.set("destination", activeFilters.destination);
+      if (activeFilters.type) params.set("type", activeFilters.type);
+      if (activeFilters.style) params.set("style", activeFilters.style);
+
+      const res = await fetch(`/api/tours?${params.toString()}`);
       if (res.ok) {
         const data = await res.json();
         setTours((prev) => [...prev, ...data.nodes]);
