@@ -2,8 +2,8 @@
 
 > Technical architecture for mekongsmile.com (Next.js 14 App Router + WPGraphQL + Custom Backend)
 
-**Last Updated:** 2026-03-18
-**Status:** Phase 1-8, 10-11 complete. Phase 9 (booking engine) deferred pending backend API design
+**Last Updated:** 2026-03-19
+**Status:** Phase 1-8, 10-11 complete. Phase 9 (booking engine) deferred pending backend API design. Upgraded to Next.js 16 (2026-03-19).
 
 ## Table of Contents
 
@@ -33,9 +33,9 @@
 └──────────────────────┬──────────────────────────────┘
                        │ HTTP
 ┌──────────────────────▼──────────────────────────────┐
-│           Next.js 14 Frontend (mekongsmile.com)      │
+│         Next.js 16 Frontend (mekongsmile.com)       │
 │  ┌─────────────────────────────────────────────┐    │
-│  │         App Router (src/app/)               │    │
+│  │    App Router (src/app/) + Turbopack        │    │
 │  │   Tour Pages · Blog · Auth · Booking (P9)   │    │
 │  │   API Routes (BFF) · Layouts                │    │
 │  └──────────────┬───────────────────────────   │    │
@@ -139,7 +139,7 @@ src/
 │   └── page/               # Generic CMS page renderer
 │
 ├── server-actions/         # Server-only actions (getJWT, logout)
-└── middleware.ts           # i18n routing + locale detection
+└── proxy.ts                # i18n routing + locale detection (Next.js 16+)
 ```
 
 ## 3. Page / Route Inventory
@@ -689,9 +689,9 @@ Returns `{ streamingStatus }` — `NOT_STARTED | IN_PROGRESS | FINISH`
 
 ---
 
-## 14. Middleware Deep-Dive
+## 14. Middleware Deep-Dive (Now Proxy)
 
-`src/middleware.ts` runs on every non-API, non-static request.
+`src/proxy.ts` (formerly `src/middleware.ts` in Next.js 14) runs on every non-API, non-static request. In Next.js 16+, middleware is renamed to `proxy` with the function renamed from `middleware()` to `proxy()`.
 
 ### Execution Flow
 
@@ -727,9 +727,9 @@ Incoming Request
 ## 15. Build & Deployment
 
 ```
-Development:    npm run dev          → localhost:3001
+Development:    npm run dev          → localhost:3001 (Turbopack by default)
 Type check:     npm run ts
-Lint:           npm run lint
+Lint:           npm run lint (external ESLint)
 Format:         npm run format
 
 Production:     npm run build        → .next/standalone
@@ -740,6 +740,8 @@ Post-build:
     ├── next-sitemap → public/sitemap.xml
     └── Copy public/ + static/ to standalone output
 ```
+
+**Turbopack:** Next.js 16 uses Turbopack as the default bundler in dev mode (replaces Webpack). For production builds, Next.js still uses its optimized Webpack build, but dev-time compilation is significantly faster (50-100x faster for large projects).
 
 ### Standalone Server Output
 

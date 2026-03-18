@@ -2,8 +2,8 @@
 
 > Product Design Requirements (PDR) for mekongsmile.com
 
-**Last Updated:** 2026-03-18
-**Status:** Migration complete. Mekong Delta tour booking platform fully deployed on mekongsmile.com
+**Last Updated:** 2026-03-19
+**Status:** Migration complete. Mekong Delta tour booking platform fully deployed on mekongsmile.com. Upgraded to Next.js 16 (2026-03-19).
 
 ## Table of Contents
 
@@ -18,9 +18,9 @@
 
 ## 1. Project Summary
 
-**mekongsmile.com** is a Next.js 14 tour booking platform for discovering and reserving guided tours in the Mekong Delta region. The platform provides content via WordPress CMS and order management through a custom backend API (future phase).
+**mekongsmile.com** is a Next.js 16 tour booking platform for discovering and reserving guided tours in the Mekong Delta region. The platform provides content via WordPress CMS and order management through a custom backend API (future phase).
 
-**Stack:** Next.js 14 (App Router) · TypeScript · Tailwind CSS · React Query v5 · i18next · WPGraphQL + Custom Backend
+**Stack:** Next.js 16 (App Router + Turbopack) · React 19 · TypeScript · Tailwind CSS · React Query v5 · i18next · WPGraphQL + Custom Backend
 
 ## 2. Business Context
 
@@ -101,17 +101,18 @@ Read Full Article → Share / Related Posts
 
 | Category | Choice | Rationale |
 |----------|--------|-----------|
-| Framework | Next.js 14 App Router | SSR/ISR, file-based routing, React Server Components |
-| Language | TypeScript 5.5 | Type safety, better DX |
-| Styling | Tailwind CSS 3 + HeroUI | Rapid UI development, design tokens |
+| Framework | Next.js 16 App Router + Turbopack | SSR/ISR, file-based routing, React Server Components, fast dev builds |
+| Runtime | React 19 | Modern hooks, improved performance, better error handling |
+| Language | TypeScript 5.5+ | Type safety, better DX |
+| Styling | Tailwind CSS 3+ | Rapid UI development, design tokens |
 | State | TanStack Query v5 | Server state caching, background refresh |
 | Forms | React Hook Form + Yup | Performant forms, schema validation |
 | i18n | i18next + react-i18next | Multi-language (en/vi/zh) |
 | Auth | Custom JWT + HTTP-only cookies | Security, server-side token handling |
 | CMS | WordPress WPGraphQL | Tours, blog, pages, SEO via GraphQL |
-| Monitoring | Sentry | Error tracking, session replay |
+| Animation | motion (framer-motion replacement) | Modern motion library with better Next.js 16 support |
 | Testing | Cypress E2E | End-to-end test automation |
-| Search | Client-side filtering | Filter 34 tours via taxonomy + text search (no Meilisearch) |
+| Search | Client-side filtering | Filter 34 tours via taxonomy + text search |
 
 ## 6. External Integrations
 
@@ -170,6 +171,16 @@ Read Full Article → Share / Related Posts
 | Mobile (iOS Safari, Android Chrome) | Primary — responsive design |
 | PWA | Supported (manifest.ts) |
 | Tablet | Responsive |
+
+---
+
+## Recent Updates
+
+**2026-03-19: Next.js 14→16 Upgrade**
+- Upgraded from Next.js 14.2.29 to 16.2.0
+- Updated React from 18.3.1 to 19.2.4
+- Turbopack now default bundler for development (50-100x faster builds)
+- Migration guide: [Next.js 16 Upgrade Guide](./nextjs-16-upgrade-guide.md)
 
 ---
 

@@ -20,7 +20,7 @@
 
 Customer-facing frontend for the Ferry Ticket booking system. Allows users to search routes, book tickets, manage passengers, and process payments across multiple Vietnamese ferry operators.
 
-**Stack:** Next.js 14 (App Router) · TypeScript · Tailwind CSS · React Query v5 · i18next
+**Stack:** Next.js 16 (App Router) · React 19 · TypeScript · Tailwind CSS · React Query v5 · i18next
 
 ## Quick Start
 
@@ -60,7 +60,7 @@ npm run dev
 
 ## Features
 
-- [x] Next.js 14 App Router (SSR, ISR, RSC)
+- [x] Next.js 16 App Router (SSR, ISR, RSC, Turbopack)
 - [x] TypeScript 5 (strict mode)
 - [x] Tailwind CSS + HeroUI + Radix UI (shadcn/ui pattern)
 - [x] TanStack Query v5 (server state)
@@ -85,11 +85,11 @@ npm run dev
 ## Scripts
 
 ```bash
-npm run dev          # Dev server on port 3001
+npm run dev          # Dev server on port 3001 (Turbopack bundler by default)
 npm run build        # Production build
 npm run build:uat    # UAT build
 npm run start        # Start standalone server
-npm run lint         # ESLint
+npm run lint         # ESLint (src/ only)
 npm run format       # Prettier
 npm run ts           # TypeScript check
 ```

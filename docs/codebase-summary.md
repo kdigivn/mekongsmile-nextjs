@@ -2,9 +2,9 @@
 
 > Quick reference for AI agents and new developers on mekongsmile.com tour booking platform.
 
-**Last Updated:** 2026-03-18
-**Project:** mekongsmile.com (Next.js 14 + WordPress + Tour Booking)
-**Status:** Phases 1-8, 10-11 complete. Phase 9 (booking engine) deferred.
+**Last Updated:** 2026-03-19
+**Project:** mekongsmile.com (Next.js 16 + React 19 + WordPress + Tour Booking)
+**Status:** Phases 1-8, 10-11 complete. Phase 9 (booking engine) deferred. Upgraded to Next.js 16 (2026-03-19).
 
 ## Table of Contents
 
@@ -23,20 +23,21 @@
 
 | Category | Library | Version |
 |----------|---------|---------|
-| Framework | Next.js | 14.2.29 |
-| Language | TypeScript | 5.5.4 |
-| Styling | Tailwind CSS | 3.4.17 |
+| Framework | Next.js | 16.2.0 |
+| Runtime | React | 19.2.4 |
+| Language | TypeScript | 5.5+ |
+| Styling | Tailwind CSS | 3.4+ |
 | UI Components | @heroui/react | 2.7.6 |
 | UI Primitives | @radix-ui/* | 1.x |
 | Server State | @tanstack/react-query | 5.80.6 |
 | Forms | react-hook-form | 7.57.0 |
 | Validation | yup | 1.6.1 |
 | i18n | i18next + react-i18next | 23.16.8 |
-| Animation | framer-motion | 11.18.2 |
-| GraphQL | @apollo/client | 3.x |
-| Auth (social) | @react-oauth/google | 0.12.1 |
+| Animation | motion | 12.38.0 |
+| Date Picker | react-day-picker | 9.14.0 |
+| GraphQL | @apollo/client | 4.1.6 |
+| Auth (social) | @react-oauth/google | 0.13.4 |
 | Maps | leaflet | 1.9.4 |
-| Error Tracking | @sentry/nextjs | 9.28.1 |
 | Testing | cypress | 13.6.2 |
 | Notifications | sonner | 2.0.3 |
 | Icons | react-icons | 5.5.0 |
@@ -105,7 +106,7 @@ src/
 │   └── page/                     # Generic CMS page renderer
 │
 ├── server-actions/               # Server-only functions
-└── middleware.ts                 # i18n routing + locale detection
+└── proxy.ts                      # i18n routing + locale detection (Next.js 16+)
 ```
 
 ---

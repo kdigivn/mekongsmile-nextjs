@@ -5,7 +5,7 @@
 **Date:** 2026-03-10 (Updated)
 **Original:** 2026-02-24
 **Branch:** `feat/improve-performance` (merged to develop)
-**Target site:** https://vetaucaotoc.net (Next.js 14 App Router)
+**Target site:** https://mekongsmile.com (Next.js 16 App Router + Turbopack)
 
 ---
 

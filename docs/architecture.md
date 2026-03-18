@@ -1,6 +1,6 @@
 # Architecture
 
-> Folder structure and routing overview for ferry-frontend (Next.js 14 App Router).
+> Folder structure and routing overview for mekongsmile (Next.js 16 App Router + Turbopack).
 > For full architecture detail, see [system-architecture.md](system-architecture.md).
 
 ## Folder Structure

@@ -1,8 +1,8 @@
 # Deployment Guide
 
-> Setup, build, and deploy mekongsmile.com Next.js 14 tour booking frontend.
+> Setup, build, and deploy mekongsmile.com Next.js 16 tour booking frontend.
 
-**Last Updated:** 2026-03-18
+**Last Updated:** 2026-03-19
 **Status:** Core tour booking platform deployed. Phase 9 (booking engine) deferred
 
 ## Table of Contents
