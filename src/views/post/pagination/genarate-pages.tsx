@@ -3,7 +3,7 @@ import {
   PaginationItem,
   PaginationLink,
 } from "@/components/ui/pagination";
-import { useCallback, useMemo } from "react";
+import React, { useCallback, useMemo } from "react";
 
 export const usePaginationLinks = (
   currentPage: number,
@@ -21,7 +21,7 @@ export const usePaginationLinks = (
 
   // Tính toán mảng pages với useMemo
   const pages = useMemo(() => {
-    const pageElements: JSX.Element[] = [];
+    const pageElements: React.JSX.Element[] = [];
 
     // Nếu tổng số trang nhỏ hơn hoặc bằng maxVisiblePages, hiển thị tất cả các trang
     if (totalPages <= maxVisiblePages) {

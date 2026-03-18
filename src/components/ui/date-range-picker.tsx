@@ -281,31 +281,31 @@ function DatePickerWithRange(props: DatePickerType) {
 
   const classNames = useMemo(
     () => ({
-      row: "grid grid-cols-7 w-full mt-2 justify-items-stretch",
-      head_row:
+      week: "grid grid-cols-7 w-full mt-2 justify-items-stretch",
+      weekdays:
         "grid grid-cols-7 w-full md:justify-normal md:flex justify-items-center",
       months: "flex flex-col md:flex-row space-y-4 md:space-x-4 md:space-y-0",
-      day_today: "bg-primary-100 text-accent-foreground",
-      cell: cn(
+      today: "bg-primary-100 text-accent-foreground",
+      day: cn(
         "relative p-0 text-center text-sm focus-within:relative focus-within:z-20 [&:has([aria-selected])]:bg-accent [&:has([aria-selected].day-outside)]:bg-accent/50 [&:has([aria-selected].day-range-end)]:rounded-r-md [&:has(>.day-range-end)]:rounded-r-md [&:has(>.day-range-start)]:rounded-l-md first:[&:has([aria-selected])]:rounded-l-md last:[&:has([aria-selected])]:rounded-r-md"
       ),
-      day: cn(
+      day_button: cn(
         buttonVariants({ variant: "ghost" }),
         "h-8 w-full p-0 font-normal aria-selected:opacity-100"
       ),
-      day_disabled: cn(
+      disabled: cn(
         "text-muted-foreground opacity-50 cursor-not-allowed hover:bg-transparent",
         // Always apply line-through to disabled days
         "line-through"
       ),
-      day_outside: cn(
+      outside: cn(
         "text-muted-foreground opacity-50",
         // Also apply line-through to days outside the current month
         "line-through"
       ),
-      day_range_middle:
+      range_middle:
         "aria-selected:bg-accent aria-selected:text-accent-foreground",
-      day_hidden: "invisible",
+      hidden: "invisible",
     }),
     []
   );
@@ -364,7 +364,7 @@ function DatePickerWithRange(props: DatePickerType) {
             <Calendar
               showOutsideDays={false}
               locale={locale}
-              initialFocus
+              autoFocus
               mode="range"
               className="p-0"
               classNames={classNames}
@@ -430,7 +430,7 @@ function DatePickerWithRange(props: DatePickerType) {
           >
             <Calendar
               showOutsideDays={false}
-              initialFocus
+              autoFocus
               locale={locale}
               mode="range"
               className="p-0"

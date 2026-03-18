@@ -47,7 +47,7 @@ const HeadingBase = ({
     supportedHeadings.find((heading) => heading === headingTag) ??
     supportedHeadings[0];
 
-  const HeadingTag = Tag as keyof JSX.IntrinsicElements; // Dynamically set heading tag
+  const HeadingTag = Tag as keyof React.JSX.IntrinsicElements; // Dynamically set heading tag
 
   const fontSizeMap = {
     h1: "text-3xl",

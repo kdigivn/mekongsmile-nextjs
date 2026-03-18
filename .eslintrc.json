@@ -14,7 +14,7 @@
     "**/out/*",
     "**/node_modules/*",
     "**/.next/*",
-    "next.config.js",
+    "next.config.ts",
     "vite.config.js",
     "vite.config.ts",
     "src/reportWebVitals.js",

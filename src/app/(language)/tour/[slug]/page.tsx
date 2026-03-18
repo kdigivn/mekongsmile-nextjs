@@ -11,7 +11,7 @@ import { safeJsonLd } from "@/lib/utils/jsonld-utils";
 export const revalidate = 300;
 
 type Props = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
 export async function generateStaticParams() {
@@ -25,7 +25,8 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   try {
-    const tour = await getTourBySlug(params.slug);
+    const { slug } = await params;
+    const tour = await getTourBySlug(slug);
     if (!tour) return { title: "Tour Not Found" };
 
     const price = tour.shortTourInformation?.priceInUsd;
@@ -42,7 +43,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function TourPage({ params }: Props) {
-  const tour = await getTourBySlug(params.slug);
+  const { slug } = await params;
+  const tour = await getTourBySlug(slug);
   if (!tour) notFound();
 
   return (

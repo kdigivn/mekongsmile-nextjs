@@ -56,7 +56,7 @@ function SelectInputRaw<T extends object>(
         onChange={(event: React.ChangeEvent<HTMLSelectElement>) => {
           const newValue = props.options.find(
             (option) =>
-              option[props.keyValue]?.toString() === event.target.value ?? false
+              (option[props.keyValue]?.toString() ?? "") === event.target.value
           );
           if (!newValue) return;
 

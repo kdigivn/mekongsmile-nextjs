@@ -2,7 +2,7 @@
 
 > Coding conventions and patterns for ferry-frontend. All contributors and AI agents must follow these.
 
-**Last Updated:** 2026-03-03
+**Last Updated:** 2026-03-19
 
 ## Table of Contents
 

@@ -1,7 +1,7 @@
-import { memo } from "react";
+import React, { memo } from "react";
 
 type Props = {
-  label: string | JSX.Element;
+  label: string | React.JSX.Element;
   color?:
     | "primary"
     | "grey"

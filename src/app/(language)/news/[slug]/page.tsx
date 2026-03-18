@@ -25,18 +25,19 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   try {
-    if (NEWS_SUBCATEGORIES.has(params.slug)) {
-      const label = params.slug.charAt(0).toUpperCase() + params.slug.slice(1);
+    const { slug } = await params;
+    if (NEWS_SUBCATEGORIES.has(slug)) {
+      const label = slug.charAt(0).toUpperCase() + slug.slice(1);
       return {
         title: `${label} News — Mekong Smile`,
-        description: `Latest ${params.slug} news from Mekong Smile.`,
+        description: `Latest ${slug} news from Mekong Smile.`,
       };
     }
 
-    const post = await getNewsBySlug(params.slug);
+    const post = await getNewsBySlug(slug);
     if (!post) return {};
 
     return seoToMetadata(post.seo, {
@@ -51,13 +52,14 @@ export async function generateMetadata({
 export default async function NewsSlugPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
+  const { slug } = await params;
   // Check if slug is a subcategory (awards, csr, events, organization)
-  if (NEWS_SUBCATEGORIES.has(params.slug)) {
+  if (NEWS_SUBCATEGORIES.has(slug)) {
     try {
-      const { nodes: posts } = await getNewsBySubcategory(params.slug, 50);
-      const label = params.slug.charAt(0).toUpperCase() + params.slug.slice(1);
+      const { nodes: posts } = await getNewsBySubcategory(slug, 50);
+      const label = slug.charAt(0).toUpperCase() + slug.slice(1);
       return (
         <div className="mx-auto w-full max-w-screen-xl px-4 py-8 md:px-8">
           <h1 className="mb-6 text-3xl font-bold">{label} News</h1>
@@ -70,7 +72,7 @@ export default async function NewsSlugPage({
   }
 
   // Otherwise treat as individual news post
-  const post = await getNewsBySlug(params.slug).catch(() => null);
+  const post = await getNewsBySlug(slug).catch(() => null);
   if (!post) notFound();
 
   return (
