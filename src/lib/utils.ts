@@ -14,11 +14,9 @@ export {
   wpURLtoNextURL,
   getUriFromWpURL,
   setSeoData,
-  getBreadcrumbFromSEO,
-  getFAQSchema,
-  excludeNextJsPage,
+  wpSeoToMetadata,
+  seoToMetadata,
 } from "./utils/seo-utils";
-export type { FAQSchema } from "./utils/seo-utils";
 
 // Formatting
 export {
@@ -43,12 +41,6 @@ export {
 // Date & Time
 export { calculateAge, calculateDuration } from "./utils/date-utils";
 
-// Booking & Voucher
-export {
-  calculateVoucherDiscountAmount,
-  calculateBookingTotalDiscount,
-} from "./utils/booking-utils";
-
 // Browser & Auth
 export {
   isBrowser,
@@ -56,11 +48,3 @@ export {
   isMac,
   isJwtExpired,
 } from "./utils/browser-utils";
-
-// UI helpers
-export {
-  textAlignOptions,
-  getTextAlign,
-  getFontSizeForHeading,
-  getRouteBackgroundColor,
-} from "./utils/ui-utils";

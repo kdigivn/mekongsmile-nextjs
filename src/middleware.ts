@@ -40,7 +40,11 @@ export function middleware(req: NextRequest) {
   } else {
     const { pathname } = req.nextUrl;
     // Check if the pathname starts with a language prefix
-    if (pathname.startsWith("/en/") || pathname.startsWith("/vi/")) {
+    if (
+      pathname.startsWith("/en/") ||
+      pathname.startsWith("/vi/") ||
+      pathname.startsWith("/zh/")
+    ) {
       // Remove the language prefix from the pathname
       const newPathname = pathname.replace(/^\/[a-z]{2}\//, "/");
       // Redirect to the new pathname without the language prefix
