@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import LinkBase from "../link-base";
 import Image from "next/image";
 import type { Menu, MenuItem, GeneralSettings } from "@/graphql/types";
+import { SecurePaymentBadge } from "@/components/trust-badges";
 import LayoutWrapper from "../wrapper/layout-wrapper";
 
 type Props = {
@@ -99,6 +100,9 @@ export default function Footer({ menu, siteSettings }: Props) {
                   menuItems.length % 2 === 0 ? "md:col-span-2" : "md:col-span-3"
                 )}
               >
+                <div className="mb-2">
+                  <SecurePaymentBadge />
+                </div>
                 <div className="grid w-full grid-cols-5 gap-2">
                   <Image
                     src={"/static-img/pay-img/vietqr.svg"}

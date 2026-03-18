@@ -2,7 +2,7 @@
 
 import { useState, useMemo, useCallback } from "react";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { SlidersHorizontal } from "lucide-react";
 import type {
   TourCard,
@@ -14,6 +14,8 @@ import type {
 import TourCardComponent from "./tour-card";
 import TourSearchBar from "./tour-search-bar";
 import TourFilterSidebar from "./tour-filter-sidebar";
+import TourFilterPills from "./tour-filter-pills";
+import TourSortDropdown, { type SortOption } from "./tour-sort-dropdown";
 import { useDebounce } from "@/hooks/use-debounce";
 
 type FilterOptions = {
@@ -47,6 +49,7 @@ export default function TourListingView({
   const [loading, setLoading] = useState(false);
   const [localSearch, setLocalSearch] = useState(activeFilters.q ?? "");
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
+  const [sortBy, setSortBy] = useState<SortOption>("popular");
 
   const activeTravelStyles = useMemo(
     () =>
@@ -64,6 +67,27 @@ export default function TourListingView({
         (tour.shortDescription ?? "").toLowerCase().includes(q)
     );
   }, [tours, localSearch]);
+
+  // Client-side sort
+  const sortedTours = useMemo(() => {
+    const arr = [...filteredTours];
+    switch (sortBy) {
+      case "price-asc":
+        return arr.sort(
+          (a, b) =>
+            (a.shortTourInformation?.priceInUsd ?? 999999) -
+            (b.shortTourInformation?.priceInUsd ?? 999999)
+        );
+      case "price-desc":
+        return arr.sort(
+          (a, b) =>
+            (b.shortTourInformation?.priceInUsd ?? 0) -
+            (a.shortTourInformation?.priceInUsd ?? 0)
+        );
+      default:
+        return arr;
+    }
+  }, [filteredTours, sortBy]);
 
   const [debouncedSetSearch] = useDebounce(
     useCallback((val: string) => setLocalSearch(val), []),
@@ -104,6 +128,7 @@ export default function TourListingView({
   };
 
   const hasFilters = !!filterOptions;
+  const totalLoaded = tours.length;
 
   return (
     <div className="flex flex-col gap-6">
@@ -124,21 +149,29 @@ export default function TourListingView({
                 Filters
               </Button>
             </SheetTrigger>
-            <SheetContent side="left" className="w-72 overflow-y-auto">
-              <div className="pt-6">
-                <TourFilterSidebar
-                  destinations={filterOptions!.destinations}
-                  tourTypes={filterOptions!.tourTypes}
-                  travelStyles={filterOptions!.travelStyles}
-                  activeDestination={activeFilters.destination}
-                  activeTourType={activeFilters.type}
-                  activeTravelStyles={activeTravelStyles}
-                />
-              </div>
+            <SheetContent side="left" className="w-full overflow-y-auto sm:w-80">
+              <SheetHeader className="sticky top-0 bg-background pb-4 pt-6">
+                <SheetTitle className="text-base">Filters</SheetTitle>
+              </SheetHeader>
+              <TourFilterSidebar
+                destinations={filterOptions!.destinations}
+                tourTypes={filterOptions!.tourTypes}
+                travelStyles={filterOptions!.travelStyles}
+                activeDestination={activeFilters.destination}
+                activeTourType={activeFilters.type}
+                activeTravelStyles={activeTravelStyles}
+              />
             </SheetContent>
           </Sheet>
         )}
       </div>
+
+      {/* Active filter pills */}
+      <TourFilterPills
+        activeDestination={activeFilters.destination}
+        activeTourType={activeFilters.type}
+        activeTravelStyles={activeTravelStyles}
+      />
 
       <div className="flex gap-8">
         {/* Desktop sidebar */}
@@ -157,22 +190,26 @@ export default function TourListingView({
 
         {/* Tour grid + results */}
         <div className="flex flex-1 flex-col gap-6">
-          <p className="text-sm text-muted-foreground">
-            {filteredTours.length === 0
-              ? "No tours found"
-              : `${filteredTours.length} tour${filteredTours.length !== 1 ? "s" : ""} found`}
-            {localSearch && (
-              <span>
-                {" "}
-                for &ldquo;<strong>{localSearch}</strong>&rdquo;
-              </span>
-            )}
-          </p>
+          {/* Result count + sort */}
+          <div className="flex items-center justify-between gap-3">
+            <p className="text-sm text-muted-foreground">
+              {sortedTours.length === 0
+                ? "No tours found"
+                : `Showing ${sortedTours.length} of ${totalLoaded} tour${totalLoaded !== 1 ? "s" : ""}`}
+              {localSearch && (
+                <span>
+                  {" "}
+                  for &ldquo;<strong>{localSearch}</strong>&rdquo;
+                </span>
+              )}
+            </p>
+            <TourSortDropdown onSort={setSortBy} />
+          </div>
 
-          {filteredTours.length > 0 ? (
+          {sortedTours.length > 0 ? (
             <>
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3">
-                {filteredTours.map((tour) => (
+                {sortedTours.map((tour) => (
                   <TourCardComponent key={tour.databaseId} tour={tour} />
                 ))}
               </div>

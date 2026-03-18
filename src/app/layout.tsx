@@ -14,7 +14,7 @@ import { dir } from "i18next";
 import type { Metadata } from "next";
 import Script from "next/script";
 import "./globals.css";
-import { Inter, Noto_Sans_SC } from "next/font/google";
+import { Be_Vietnam_Pro, Noto_Sans_SC } from "next/font/google";
 import dynamic from "next/dynamic";
 import NextTopLoader from "nextjs-toploader";
 
@@ -49,9 +49,9 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-const inter = Inter({
+const beVietnamPro = Be_Vietnam_Pro({
   subsets: ["latin", "vietnamese"],
-  variable: "--font-inter",
+  variable: "--font-be-vietnam-pro",
   weight: ["400", "500", "600", "700"],
 });
 
@@ -82,7 +82,7 @@ async function RootLayout({
     <html
       lang={language}
       dir={dir(language)}
-      className={`${inter.variable} ${notoSansSC.variable}`}
+      className={`${beVietnamPro.variable} ${notoSansSC.variable}`}
     >
       <head>
         {/* Preconnect to WordPress media */}
@@ -90,7 +90,7 @@ async function RootLayout({
       </head>
       <body className="bg-pageBackground">
         <NextTopLoader
-          color="#2563eb"
+          color="#2D5A27"
           height={3}
           showSpinner={false}
           shadow={false}

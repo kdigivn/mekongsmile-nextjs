@@ -182,6 +182,8 @@ export interface TourCard {
   allPaTourType: { nodes: TourType[] };
   allPaTravelStyle: { nodes: TravelStyle[] };
   productTags: { nodes: ProductTag[] };
+  averageRating?: number | null;
+  reviewCount?: number | null;
   shortTourInformation?: {
     priceInUsd: number | null;
     priceInVnd: number | null;

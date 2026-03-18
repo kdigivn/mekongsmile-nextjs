@@ -17,7 +17,7 @@ progress: 100%
 **Hybrid setup:**
 - WordPress (mekongsmile.com/graphql) = content CMS (tours, blog, pages, SEO, menus, destinations)
 - Custom backend = booking engine (availability, cart, checkout, payment, orders) -- future phase
-- Next.js 14 = frontend consuming both via `fetchGraphQL()` (Server Components)
+- Next.js 16 = frontend consuming both via `fetchGraphQL()` (Server Components)
 
 ## Phase Overview
 

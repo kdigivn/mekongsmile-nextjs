@@ -78,6 +78,8 @@ export const TOUR_CARD_FIELDS = gql`
         ...ProductTagFields
       }
     }
+    averageRating
+    reviewCount
     ... on BookingProduct {
       shortTourInformation {
         priceInUsd
