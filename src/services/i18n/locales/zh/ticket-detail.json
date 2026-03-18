@@ -1,0 +1,323 @@
+{
+  "title": "票据详情 | 湄公微笑",
+  "voyage-tab": {
+    "departure": "选择出发",
+    "return": "选择返回",
+    "selectDepartSeats": "选择出发座位",
+    "selectDestinationSeats": "选择目的地座位"
+  },
+  "selected-seats": {
+    "label": "已选座位：",
+    "label-2": "已选座位 {seatCount}：",
+    "total": "总计：",
+    "limit": "最多只能选择30个座位！",
+    "car-plate-count": "发送车辆数："
+  },
+  "boat-layout": {
+    "title": "座位布局",
+    "floor": "楼层"
+  },
+  "passenger-details": {
+    "title": "游客详情",
+    "total": "总计：",
+    "total-discount": "总折扣：",
+    "ticket-price": "票价：",
+    "fee-harbor": "港口费：",
+    "fee-domestic": "国内支付手续费：",
+    "fee-international": "国际支付手续费：",
+    "passenger-details-input": {
+      "title": "请填写游客详情",
+      "required": "请填写游客数据",
+      "pic-inputs": {
+        "title": "联系信息",
+        "name": {
+          "label": "姓名",
+          "placeholder": "请输入您的姓名",
+          "validation": {
+            "required": "必填"
+          }
+        },
+        "email": {
+          "label": "邮箱",
+          "placeholder": "请输入您的邮箱",
+          "validation": {
+            "invalid": "邮箱格式无效",
+            "required": "必填"
+          }
+        },
+        "phone": {
+          "label": "电话",
+          "placeholder": "请输入您的电话",
+          "validation": {
+            "invalid": "电话格式无效",
+            "required": "必填"
+          }
+        },
+        "phone-country-code": {
+          "placeholder": "搜索国家或电话区号...",
+          "not-found": "未找到结果。",
+          "button": "选择国家"
+        },
+        "socialId": {
+          "label": "证件号",
+          "placeholder": "请输入证件号",
+          "validation": {
+            "invalid-length": "证件号必须为12位",
+            "required": "必填"
+          }
+        }
+      },
+      "exportVatForm": {
+        "title": "增值税发票信息",
+        "label": "开具增值税发票",
+        "input": {
+          "email": {
+            "label": "增值税发票邮箱",
+            "placeholder": "请输入邮箱"
+          },
+          "taxNumber": {
+            "label": "公司税号",
+            "placeholder": "请输入税号"
+          },
+          "companyName": {
+            "label": "公司名称",
+            "placeholder": "请输入公司名称"
+          },
+          "address": {
+            "label": "公司地址",
+            "placeholder": "请输入公司地址"
+          }
+        }
+      },
+      "passenger-inputs": {
+        "title": "游客信息",
+        "warning": "港务局和运营商要求完整信息方可登船。",
+        "no-seat-selected": "请先选择座位",
+        "ticket-title": "票据详情 ",
+        "name": {
+          "label": "姓名",
+          "placeholder": "请输入您的姓名",
+          "validation": {
+            "required": "必填"
+          }
+        },
+        "dateOfBirth": {
+          "label": "出生日期",
+          "validation": {
+            "required": "必填",
+            "invalid": "日期无效",
+            "min": "日期须在1900年1月1日之后",
+            "disableFuture": "日期不能在未来",
+            "yourAgeMustLessThan": "年龄必须小于或等于",
+            "yourAgeMustMoreThan": "年龄必须大于或等于",
+            "yearsOld": "岁"
+          }
+        },
+        "gender": {
+          "label": "性别",
+          "placeholder": "选择性别",
+          "validation": {
+            "required": "必填"
+          },
+          "male": "男",
+          "female": "女"
+        },
+        "socialId": {
+          "label": "证件号",
+          "placeholder": "请输入证件号",
+          "validation": {
+            "required": "必填",
+            "min_length": "证件号至少需要 {{min}} 个字符",
+            "max_length": "证件号不超过 {{max}} 个字符"
+          }
+        },
+        "address": {
+          "label": "省/市",
+          "placeholder": "胡志明市",
+          "validation": {
+            "required": "必填",
+            "min_length": "省/市至少需要 {{min}} 个字符",
+            "max_length": "省/市不超过 {{max}} 个字符"
+          }
+        },
+        "nationality": {
+          "label": "国籍",
+          "placeholder": "请输入国籍...",
+          "no-result": "未找到国籍",
+          "validation": {
+            "required": "必填"
+          }
+        },
+        "plate-number": {
+          "label": "车牌号（用于将车辆运至岛屿）",
+          "placeholder": "请输入车牌号",
+          "validation": {
+            "required": "必填"
+          }
+        },
+        "ticketType": {
+          "label": "票种",
+          "placeholder": "请选择票种...",
+          "validation": {
+            "required": "必填"
+          }
+        }
+      },
+      "submit": {
+        "actions": {
+          "save": "保存",
+          "back": "返回"
+        }
+      }
+    },
+    "importFromExcel": "从Excel导入",
+    "downloadTemplate": "下载模板"
+  },
+  "loginError": {
+    "title": "您尚未登录",
+    "message": "请登录您的账户以下订单",
+    "successButtonText": "前往登录"
+  },
+  "nextStep": "下一步",
+  "voyage-invalid": {
+    "departCancel": "行程已取消",
+    "voyageDepart": "行程已出发",
+    "notEnoughSeat": "可用座位不足",
+    "returnCancel": "返回行程已取消",
+    "notEnoughReturnSeat": "返回行程可用座位不足",
+    "sameVoyage": "返回行程必须与出发行程不同"
+  },
+  "selected-fail-modal": {
+    "chooseSeat": "选择座位",
+    "fail": "失败",
+    "pleaseChooseAgain": "请选择其他行程",
+    "chooseAgain": "选择其他行程"
+  },
+  "toast": {
+    "depart": "出发行程数据已更新！",
+    "desti": "返回行程数据已更新！"
+  },
+  "qr": {
+    "title": "扫描二维码",
+    "message": "请将二维码对准摄像头扫描",
+    "notFound": "未找到二维码",
+    "notValid": "这不是社交卡的二维码!!!"
+  },
+  "import-modal": {
+    "title": "从Excel导入数据",
+    "step1": "第1步：在此下载模板文件",
+    "step2": "第2步：将游客信息填入模板文件",
+    "step2-1": "注意：数据必须符合模板文件中的正确格式",
+    "step3": "第3步：在此导入数据",
+    "import": "导入文件",
+    "import-passenger": "导入游客数据：",
+    "view-detail-error": "查看错误详情",
+    "invalid-data-for": "座位 {{seat}} 数据无效",
+    "name-empty": "座位 {{seat}} 的姓名为空",
+    "dob-empty": "座位 {{seat}} 的出生日期为空",
+    "dob-invalid": "座位 {{seat}} 的出生日期无效",
+    "success": "游客数据导入成功"
+  },
+  "note": {
+    "title": "注意：",
+    "content-1": "游客登船时必须携带个人证件。",
+    "content-2": "外国人必须携带：原件护照、签证。",
+    "content-3": "儿童（6-11岁）填写证件号时输入\"TE\"",
+    "content-4": "5岁以下儿童与成人同座可免票。",
+    "content-5": "如需取消或更改票据，请至少提前24小时通知我们。",
+    "content-6": "取消/更改费用：票值的30%。",
+    "content-7": "停车费由港口航运公司收取，依车型而定，请携带所有必要的车辆证件。",
+    "phuquy": {
+      "content-1": "登船游客必须携带身份证件。",
+      "content-2": "外国游客必须携带：原件护照、签证。",
+      "content-3": "儿童（6-11岁）在证件号/护照栏填写\"出生年份\"。",
+      "content-4": "5岁以下儿童与成人同座可免费出行。",
+      "content-5": "如需取消或更改票据，请至少提前5天通知。",
+      "content-6": "取消/更改费用：票值的30%。",
+      "content-7": "VIP卧铺：用字母V表示。",
+      "content-8": "标准卧铺：用字母B-C-E表示。",
+      "content-9": "下铺为偶数 - 上铺为奇数。",
+      "content-10": "座椅：用字母A表示。"
+    }
+  },
+  "ticketPrice": "价格",
+  "tooltip": {
+    "sync": "从上一次行程同步游客数据",
+    "sync-title": "同步",
+    "import": "请先选择座位再导入数据"
+  },
+  "confirm_save_info": "确认保存信息",
+  "save_info_prompt": "是否保存游客信息以便将来使用？",
+  "decline": "拒绝",
+  "only_this_time": "仅此一次",
+  "always_agree": "始终同意",
+  "confirm-button": "确认",
+  "cancel-button": "取消",
+  "steps": {
+    "first-step": "点击此区域选择座位"
+  },
+  "confirmDialog": {
+    "title": "出发座位已被预订",
+    "message": "您选择的部分座位已被预订，请重新检查。",
+    "successButtonText": "确定"
+  },
+  "confirmDialogDesti": {
+    "title": "目的地座位已被预订",
+    "message": "您选择的部分座位已被预订，请重新检查。",
+    "hasCancelButton": false,
+    "successButtonText": "确定"
+  },
+  "confirmDialogEdit": {
+    "title": "确认",
+    "message": "确认更新预订 "
+  },
+  "booking-error": {
+    "operator-disabled-create-booking-message": "由于运营商与系统连接维护中，无法创建预订，请稍后重试。",
+    "operator-disabled-edit-booking-message": "由于运营商与系统连接维护中，无法更新预订，请稍后重试。",
+    "operator-disabled-message": "由于运营商与系统连接维护中，无法加载座位图，请稍后重试。",
+    "duplicate-id-message": "一个或多个证件号重复使用，请再次核查游客信息。",
+    "limit-voucher-per-customer-message": "一个或多个优惠券已达到最大使用次数，请再次核查优惠券信息。",
+    "invalid-ticket-type-id": "错误150107：座位 {{seatName}} 的订单数据无效，请联系管理员获取帮助。",
+    "invalid-seat-type": "错误150108：座位 {{seatName}} 的订单数据无效，请联系管理员获取帮助。",
+    "no-price-matched": "错误150109：座位 {{seatName}} 的订单数据无效，请联系管理员获取帮助。"
+  },
+  "voucher": {
+    "title": "优惠券",
+    "input": {
+      "label": "优惠券",
+      "placeholder": "输入优惠券",
+      "button": "选择优惠券"
+    },
+    "apply": {
+      "title": "使用优惠券",
+      "description": "搜索并选择可应用于您订单的优惠券。",
+      "button": "使用",
+      "alreadyApplied": "优惠券已被使用！",
+      "success": "优惠券使用成功！",
+      "exceedOrderValue": "折扣金额超过订单金额！",
+      "uniqueVoucher": {
+        "title": "专属优惠券",
+        "message": "专属优惠券不能与其他优惠券同时使用，使用时将删除当前订单中的其他优惠券。"
+      },
+      "notApplicable": "使用优惠券失败，优惠券已过期或已用完。",
+      "failed": "使用优惠券失败，优惠券不存在！",
+      "discountApplied": "已应用折扣："
+    },
+    "list": {
+      "title": "优惠券列表",
+      "description": "当前已应用于您订单的优惠券列表。",
+      "viewMore": "查看详情",
+      "moreVouchers": "+{{count}}张优惠券",
+      "noVouchers": "当前没有优惠券应用于您的订单。",
+      "close": "关闭",
+      "details": "详情",
+      "expiryDate": "有效期至",
+      "applied": "已使用",
+      "remove": "移除",
+      "uniqueVoucher": {
+        "label": "专属优惠券",
+        "tooltip": "此优惠券只能单独使用，不能与其他优惠券同时使用。"
+      }
+    }
+  }
+}

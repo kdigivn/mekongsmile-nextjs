@@ -1,25 +1,25 @@
 {
-  "title": "Ferry Ticket",
-  "title1": "FERRY SCHEDULE, TICKET PRICES",
-  "title-search": "FIND A TRIP",
+  "title": "Mekong Smile Tours",
+  "title1": "MEKONG DELTA TOURS & EXPERIENCES",
+  "title-search": "EXPLORE TOURS",
   "table": {
     "filter": {
       "tab": "All",
-      "route": "Filter by route"
+      "route": "Filter by destination"
     },
     "header": {
-      "boat-name": "Boat Name",
-      "route": "Route",
+      "boat-name": "Tour Name",
+      "route": "Destination",
       "depart-time": "Departure time",
-      "available-seat": "Available seat",
-      "price": "Ticket price"
+      "available-seat": "Available spots",
+      "price": "Price from"
     },
-    "action": "Choose to buy",
-    "no-of-results": "voyage(s) found",
+    "action": "Book Now",
+    "no-of-results": "tour(s) found",
     "no-result": "No results",
-    "disabled": "This route is not available, please choose another route",
+    "disabled": "This tour is not available, please choose another tour",
     "load-data": {
-      "title": "Load more data",
+      "title": "Load more",
       "loading": "Loading..."
     },
     "cell": {
@@ -27,8 +27,8 @@
       "surcharge_applied": "Surcharge Applied",
       "click_to_view_price_details": "Click to view price details",
       "price_details": "Price Details",
-      "ticket_price_details": "Ticket Price Details",
-      "initial_ticket_price": "Initial Ticket Price",
+      "ticket_price_details": "Tour Price Details",
+      "initial_ticket_price": "Initial Tour Price",
       "promotion": "Promotion",
       "total_promotion": "Total Promotion",
       "surcharge": "Surcharge",
@@ -38,22 +38,22 @@
       "issue-ticket-speed": {
         "instant": {
           "label": "Instant",
-          "description": "The ticket is issued immediately after payment."
+          "description": "Booking confirmed immediately after payment."
         },
         "fast": {
           "label": "Fast",
-          "description": "The ticket is issued within a processing time of less than 2 business hours after payment."
+          "description": "Booking confirmed within 2 business hours after payment."
         },
         "standard": {
           "label": "Standard",
-          "description": "The ticket is issued within a processing time of less than 4 business hours after payment."
+          "description": "Booking confirmed within 4 business hours after payment."
         },
         "slow": {
-          "label": "Slow",
-          "description": "The ticket is issued within a processing time of less than 1 business day after payment."
+          "label": "Standard",
+          "description": "Booking confirmed within 1 business day after payment."
         }
       }
     }
   },
-  "filterResultEmpty": "Không có chuyến đi nào theo bộ lọc này."
+  "filterResultEmpty": "No tours found matching this filter."
 }

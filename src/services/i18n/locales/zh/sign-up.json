@@ -1,0 +1,72 @@
+{
+  "title": "注册",
+  "welcome": "创建账户",
+  "actions": {
+    "submit": "注册",
+    "accountAlreadyExists": {
+      "ask": "已有账户？",
+      "link": "登录"
+    }
+  },
+  "inputs": {
+    "firstName": {
+      "label": "名",
+      "placeholder": "请输入名字",
+      "validation": {
+        "required": "名字为必填项"
+      }
+    },
+    "lastName": {
+      "label": "姓",
+      "placeholder": "请输入姓氏",
+      "validation": {
+        "required": "姓氏为必填项"
+      }
+    },
+    "phone": {
+      "label": "电话",
+      "placeholder": "请输入您的电话号码",
+      "validation": {
+        "required": "电话为必填项",
+        "invalid": "电话号码无效"
+      }
+    },
+    "email": {
+      "label": "电子邮件",
+      "placeholder": "请输入您的电子邮件",
+      "validation": {
+        "required": "电子邮件为必填项",
+        "invalid": "电子邮件格式无效",
+        "server": {
+          "emailAlreadyExists": "电子邮件已存在"
+        }
+      }
+    },
+    "socialId": {
+      "label": "身份证号",
+      "placeholder": "输入身份证号",
+      "validation": {
+        "invalid-length": "身份证号必须为12位",
+        "required": "必填"
+      }
+    },
+    "password": {
+      "label": "密码",
+      "placeholder": "请输入您的密码",
+      "validation": {
+        "required": "密码为必填项",
+        "min": "密码至少需要6个字符",
+        "server": {
+          "incorrectPassword": "密码无效"
+        }
+      }
+    },
+    "terms": {
+      "label": "同意我们的条款",
+      "validation": {
+        "required": "请勾选同意我们的条款"
+      }
+    }
+  },
+  "or": "或"
+}

@@ -1,0 +1,25 @@
+{
+  "heading": "联系我们",
+  "callNow": "立即致电",
+  "contact-form": {
+    "name": {
+      "label": "全名",
+      "placeholder": "请输入您的全名",
+      "validation": {
+        "required": "全名不能为空"
+      }
+    },
+    "phone": {
+      "label": "电话号码 / Zalo",
+      "placeholder": "请输入您的电话号码或 Zalo",
+      "validation": {
+        "required": "电话号码不能为空",
+        "notValid": "电话号码格式无效"
+      }
+    },
+    "sendForm": {
+      "error": "出现错误，请重试。",
+      "success": "联系成功，我们将尽快与您联系。"
+    }
+  }
+}

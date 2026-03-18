@@ -1,10 +1,10 @@
 {
-  "title": "Tìm chuyến tàu | Đặt vé tàu",
+  "title": "Tìm Tour | Mekong Smile",
   "toast": {
-    "depart": "Dữ liệu các chuyến tàu chiều đi đã được cập nhật!",
-    "desti": "Dữ liệu các chuyến tàu chiều về đã được cập nhật!"
+    "depart": "Dữ liệu tour chiều đi đã được cập nhật!",
+    "desti": "Dữ liệu tour chiều về đã được cập nhật!"
   },
-  "disabled": "Tuyến này chưa hoạt động lại, vui lòng chọn tuyến khác",
-  "chooseVoyage": "Bạn chưa chọn tuyến, vui lòng chọn tuyến để tìm kiếm!",
+  "disabled": "Điểm đến này chưa khả dụng, vui lòng chọn điểm đến khác",
+  "chooseVoyage": "Bạn chưa chọn tour, vui lòng chọn tour để tìm kiếm!",
   "loadingOperator": "Đang lấy dữ liệu mới nhất {{ value }}% ..."
 }

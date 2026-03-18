@@ -1,0 +1,65 @@
+{
+  "title": "全部预订 | 湄公微笑",
+  "form": {
+    "booking-id": {
+      "title": "预订编号",
+      "placeholder": "请输入预订编号..."
+    },
+    "pic-name": {
+      "title": "联系人姓名",
+      "placeholder": "请输入联系人姓名..."
+    },
+    "created-date": { "title": "创建日期", "placeholder": "选择日期" },
+    "created-date-from": {
+      "title": "创建日期（起）",
+      "placeholder": "选择日期"
+    },
+    "created-date-to": {
+      "title": "创建日期（止）",
+      "placeholder": "选择日期"
+    },
+    "status": {
+      "title": "预订状态",
+      "placeholder": "-- 选择状态 --"
+    },
+    "submit": "搜索",
+    "reset": "重置"
+  },
+  "table": {
+    "title": "预订历史",
+    "no-of-results": "条预订记录",
+    "no-result": "无结果",
+    "load-data": { "title": "加载更多", "loading": "加载中..." },
+    "header": {
+      "id": "预订编号",
+      "created-date": "创建日期",
+      "pic-name": "负责人",
+      "order-detail": "订单详情",
+      "total": "总计（越南盾）",
+      "status": "状态",
+      "action": "操作"
+    },
+    "cell": {
+      "order-detail": {
+        "title": "旅游预订",
+        "from": "从",
+        "to": "到",
+        "depart-date": "出发日期：",
+        "passengers": "游客：",
+        "toggle-btn": "展开"
+      },
+      "total-amount": {
+        "total": "总金额",
+        "total-discount": "总折扣",
+        "payment-due-date": "支付截止日期",
+        "payment-due-date-tooltip": "请在支付截止日期前完成支付，否则预订将被取消。"
+      },
+      "download-ticket": "下载票据"
+    },
+    "action-cell": {
+      "cancel-ticket": "取消预订",
+      "depart-cancel-ticket": "取消出发预订",
+      "return-cancel-ticket": "取消返回预订"
+    }
+  }
+}

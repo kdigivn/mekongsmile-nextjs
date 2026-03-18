@@ -1,10 +1,10 @@
 {
-  "title": "Search Voyage | Ferry Ticket",
+  "title": "Search Tours | Mekong Smile",
   "toast": {
-    "depart": "Departure voyage data have been updated!",
-    "desti": "Return voyage data have been updated!"
+    "depart": "Departure tour data have been updated!",
+    "desti": "Return tour data have been updated!"
   },
-  "disabled": "This route is not available, please choose another route",
-  "chooseVoyage": "You have not chosen a voyage, please choose a voyage to search!",
+  "disabled": "This destination is not available, please choose another destination",
+  "chooseVoyage": "You have not chosen a tour, please choose a tour to search!",
   "loadingOperator": "Getting latest data {{ value }}% ..."
 }

@@ -1,5 +1,5 @@
 {
-  "title": "Booking Payment | Ferry Ticket",
+  "title": "Booking Payment | Mekong Smile",
   "voyage-tab": {
     "departure": "Departure",
     "return": "Return",
@@ -46,7 +46,7 @@
     "title": "Payment detail",
     "table": {
       "col": {
-        "voyage": "Voyage",
+        "voyage": "Tour",
         "ticket-type": "Ticket type",
         "seat-type": "Seat type",
         "amount": "Amount",
@@ -92,7 +92,7 @@
         "bankAccountName": "Account name:",
         "bankName": "Bank:",
         "transferContent": "Content:",
-        "topicTransferContent": "Pay for ferry tickets",
+        "topicTransferContent": "Pay for tour booking",
         "orderCode": "code orders",
         "phoneNumber": "Phone number",
         "amountPayment": "Amount payment",
@@ -102,7 +102,7 @@
     "direct-method": {
       "title": "Direct payment",
       "contactInformation": "Contact information",
-      "message": "Please come directly to FERRY VN Office",
+      "message": "Please come directly to Mekong Smile Office",
       "address": "Address:",
       "hotline": "Hotline:",
       "ncmkAdress": "No. 5 Tran Van Hoai Street, Ninh Kieu Ward, Can Tho City"
@@ -118,7 +118,7 @@
         "bankAccountName": "Account name:",
         "bankName": "Bank:",
         "transferContent": "Content:",
-        "topicTransferContent": "Pay for ferry tickets",
+        "topicTransferContent": "Pay for tour booking",
         "orderCode": "code orders",
         "phoneNumber": "Phone number",
         "amountPayment": "Amount payment"

@@ -1,0 +1,70 @@
+{
+  "app-name": "APP",
+  "loading": "加载中 ...",
+  "theme": {
+    "light": "当前主题：浅色",
+    "dark": "当前主题：深色"
+  },
+  "navigation": {
+    "home": "首页",
+    "search": "搜索",
+    "signIn": "登录",
+    "signUp": "注册",
+    "profile": "个人资料",
+    "users": "用户",
+    "bookings": "预订历史",
+    "logout": "退出登录",
+    "balance": "余额：",
+    "transactions": "交易历史"
+  },
+  "formInputs": {
+    "avatarInput": {
+      "dropzoneText": "将图片拖放到此处 ...",
+      "dragAndDrop": "或将文件拖放到此处",
+      "selectFile": "选择图片"
+    },
+    "input": {
+      "showPassword": "显示密码"
+    }
+  },
+  "leavePage": {
+    "title": "离开此页面？",
+    "message": "您所做的更改可能不会被保存",
+    "stay": "留在此页",
+    "leave": "离开页面"
+  },
+  "auth": {
+    "facebook": {
+      "action": "使用 Facebook 登录"
+    },
+    "google": {
+      "action": "使用 Google 继续"
+    }
+  },
+  "social-sharing": {
+    "copied-link": "已复制到剪贴板"
+  },
+  "notification": {
+    "empty": "您没有通知",
+    "title": "通知",
+    "button": "查看全部公告"
+  },
+  "top-up": {
+    "button": "充值",
+    "top-up-dialog": {
+      "title": "充值",
+      "message": "为您的账户充值"
+    }
+  },
+  "qr-code": {
+    "download": "下载二维码",
+    "copy": "复制二维码",
+    "downloaded": "已下载二维码",
+    "download-failed": "下载二维码失败",
+    "copied": "已复制二维码",
+    "copy-failed": "复制二维码失败"
+  },
+  "bank-app": {
+    "error": "获取银行应用失败"
+  }
+}

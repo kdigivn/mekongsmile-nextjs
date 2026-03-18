@@ -7,8 +7,8 @@
     "early": "Most early",
     "last": "Most Last"
   },
-  "filterResultEmpty": "There is no voyage on this filter.",
-  "searchResultEmpty": "There is no voyage on this day. Please select another day.",
+  "filterResultEmpty": "There are no tours matching this filter.",
+  "searchResultEmpty": "There are no tours on this day. Please select another day.",
   "selectDeparture": "Select departure",
   "selectDestination": "Select destination",
   "Monday": "Monday",
@@ -21,7 +21,7 @@
   "reset": "Reset",
   "view": "View",
   "result": "results",
-  "action": "Filter voyages",
+  "action": "Filter tours",
   "map-modal": {
     "title": "Map {{departLocationName}} - {{destiLocationName}}"
   }

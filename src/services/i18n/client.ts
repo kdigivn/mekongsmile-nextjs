@@ -12,7 +12,7 @@ import { getOptions, languages } from "./config";
 import useStoreLanguage from "./use-store-language";
 import useStoreLanguageActions from "./use-store-language-actions";
 import useLanguage from "./use-language";
-import { runsOnServerSide } from "../runs-on-server-side/runs-on-server-side";
+const runsOnServerSide = typeof window === "undefined";
 
 i18next
   .use(initReactI18next)

@@ -1,0 +1,33 @@
+{
+  "location": {
+    "filter-placeholder": "输入地点名称...",
+    "placeholder": "选择地点",
+    "no-result": "未找到地点。",
+    "departure": "选择出发地",
+    "destination": "选择目的地"
+  },
+  "departure": {
+    "label": "出发地",
+    "placeholder": "选择出发地"
+  },
+  "destination": {
+    "label": "目的地",
+    "placeholder": "选择目的地"
+  },
+  "departureDate": {
+    "label": "出发日期",
+    "placeholder": "选择日期",
+    "title": "选择出发日期"
+  },
+  "returnDate": {
+    "label": "返回日期",
+    "placeholder": "选择日期",
+    "title": "选择返回日期",
+    "clear": "清除返回日期"
+  },
+  "passengers": {
+    "label": "乘客",
+    "placeholder": "乘客人数"
+  },
+  "search": "搜索"
+}

@@ -1,0 +1,49 @@
+{
+  "title1": "编辑用户",
+  "title2": "修改密码",
+  "actions": {
+    "submit": "保存",
+    "cancel": "取消"
+  },
+  "inputs": {
+    "email": {
+      "label": "电子邮件",
+      "validation": {
+        "invalid": "电子邮件无效",
+        "required": "电子邮件为必填项",
+        "server": { "emailAlreadyExists": "电子邮件已存在" }
+      }
+    },
+    "firstName": {
+      "label": "名",
+      "validation": { "required": "名字为必填项" }
+    },
+    "lastName": {
+      "label": "姓",
+      "validation": { "required": "姓氏为必填项" }
+    },
+    "role": {
+      "label": "角色",
+      "validation": { "required": "角色为必填项" },
+      "options": { "1": "管理员", "2": "用户" }
+    },
+    "password": {
+      "label": "密码",
+      "validation": {
+        "required": "密码为必填项",
+        "min": "密码至少需要6个字符"
+      }
+    },
+    "passwordConfirmation": {
+      "label": "确认密码",
+      "validation": {
+        "required": "确认密码为必填项",
+        "match": "确认密码必须与密码匹配"
+      }
+    }
+  },
+  "alerts": {
+    "password": { "success": "密码已成功更新" },
+    "user": { "success": "用户资料已成功更新" }
+  }
+}

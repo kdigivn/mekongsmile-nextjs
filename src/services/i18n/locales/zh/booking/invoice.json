@@ -1,0 +1,13 @@
+{
+  "provider": {
+    "ME_INVOICE": "MISA meInvoice",
+    "NONE": "不使用电子发票功能"
+  },
+  "status": {
+    "PENDING": "处理中",
+    "ISSUED": "已开具",
+    "FAILED": "错误",
+    "CANCELED": "已取消",
+    "unknown": "未知状态：{{status}}"
+  }
+}

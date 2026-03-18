@@ -1,0 +1,84 @@
+{
+  "title": "个人资料",
+  "title1": "编辑个人资料",
+  "title2": "修改密码",
+  "title3": "其他功能",
+  "balance": "余额：",
+  "actions": {
+    "edit": "编辑",
+    "submit": "保存",
+    "cancel": "取消"
+  },
+  "inputs": {
+    "firstName": {
+      "label": "名",
+      "validation": {
+        "required": "名字为必填项"
+      }
+    },
+    "lastName": {
+      "label": "姓",
+      "validation": {
+        "required": "姓氏为必填项"
+      }
+    },
+    "oldPassword": {
+      "label": "旧密码",
+      "validation": {
+        "required": "旧密码为必填项",
+        "min": "旧密码至少需要6个字符",
+        "server": {
+          "incorrectOldPassword": "旧密码无效"
+        }
+      }
+    },
+    "password": {
+      "label": "新密码",
+      "validation": {
+        "required": "新密码为必填项",
+        "min": "新密码至少需要6个字符",
+        "match": "新密码不能与旧密码相同"
+      }
+    },
+    "confirmPassword": {
+      "label": "确认密码",
+      "validation": {
+        "required": "确认密码为必填项",
+        "match": "确认密码必须与密码匹配"
+      }
+    },
+    "avatar": {
+      "edit": "更换头像",
+      "label": "头像",
+      "validation": {
+        "required": "请上传头像图片",
+        "max": "图片大小不能超过2MB"
+      },
+      "pending": "上传中...",
+      "success": "图片上传成功",
+      "error": "发生错误，请重试。"
+    },
+    "socialId": {
+      "validation": {
+        "required": "身份证号为必填项",
+        "invalid-length": "身份证号必须为12位"
+      }
+    }
+  },
+  "alerts": {
+    "password": {
+      "success": "密码已成功更新",
+      "error": "发生错误，请重试。"
+    },
+    "profile": {
+      "success": "个人资料已成功更新",
+      "error": "发生错误，请重试。"
+    },
+    "quit": {
+      "title": "确定要退出吗？",
+      "message": "您的信息将不会被保存。",
+      "yes": "退出",
+      "back": "返回编辑"
+    }
+  }
+}
