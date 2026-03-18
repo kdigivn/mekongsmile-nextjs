@@ -8,7 +8,6 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { CalendarIcon } from "@radix-ui/react-icons";
-import { format } from "date-fns";
 import { vi } from "date-fns/locale/vi";
 import { memo, useEffect, useState } from "react";
 
@@ -45,7 +44,7 @@ const CalendarPopover = ({ inputValue, onSelect }: Props) => {
           mode="single"
           selected={selectedDate}
           onSelect={onSelect}
-          initialFocus
+          autoFocus
           defaultMonth={selectedDate}
           onDayClick={(date) => {
             setSelectedDate(date);
@@ -55,11 +54,6 @@ const CalendarPopover = ({ inputValue, onSelect }: Props) => {
             date > new Date() || date < new Date("1900-01-01")
           }
           locale={vi}
-          labels={{
-            labelWeekday: (date) => format(date, "EEEE", { locale: vi }),
-            labelMonthDropdown: () => "Tháng",
-            labelYearDropdown: () => "Năm",
-          }}
         />
       </PopoverContent>
     </Popover>
