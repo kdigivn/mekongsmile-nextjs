@@ -67,7 +67,7 @@ export const GET_TOURS_BY_TRAVEL_STYLE = gql`
       where: {
         taxonomyFilter: {
           filters: [
-            { taxonomy: PATRAVELSTYLE, terms: $travelStyleSlug }
+            { taxonomy: PA_TRAVEL_STYLE, terms: $travelStyleSlug }
           ]
         }
       }
@@ -106,7 +106,7 @@ export const GET_TOURS_BY_TOUR_TYPE = gql`
       where: {
         taxonomyFilter: {
           filters: [
-            { taxonomy: PATOURTYPE, terms: $tourTypeSlug }
+            { taxonomy: PA_TOUR_TYPE, terms: $tourTypeSlug }
           ]
         }
       }
@@ -146,7 +146,7 @@ export const GET_TOURS_BY_TAG = gql`
       where: {
         taxonomyFilter: {
           filters: [
-            { taxonomy: PRODUCTTAG, terms: $tagSlug }
+            { taxonomy: PRODUCT_TAG, terms: $tagSlug }
           ]
         }
       }
@@ -190,7 +190,7 @@ export const GET_TOURS_BY_COMBINED_FILTERS = gql`
           relation: AND
           filters: [
             { taxonomy: DESTINATION, terms: $destinationSlug }
-            { taxonomy: PATRAVELSTYLE, terms: $travelStyleSlug }
+            { taxonomy: PA_TRAVEL_STYLE, terms: $travelStyleSlug }
           ]
         }
       }

@@ -121,6 +121,21 @@ const nextConfig = {
         destination: "/tours/",
         permanent: true,
       },
+      {
+        source: "/product-tag/:slug*",
+        destination: "/tours/",
+        permanent: true,
+      },
+      {
+        source: "/travel-guide/",
+        destination: "/blog/",
+        permanent: true,
+      },
+      {
+        source: "/travel-guide/:slug*",
+        destination: "/blog/:slug*",
+        permanent: true,
+      },
     ];
   },
 };
