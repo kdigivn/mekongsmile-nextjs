@@ -6,6 +6,14 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "standalone",
+  eslint: {
+    // Lint separately via `npm run lint`; skip during build for speed
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+    // Type check separately via `npx tsc --noEmit`; skip during build for speed
+    ignoreBuildErrors: false,
+  },
   images: {
     // Serve AVIF first (25% smaller than WebP), fallback to WebP
     formats: ["image/avif", "image/webp"],
@@ -118,48 +126,4 @@ const nextConfig = {
 };
 
 module.exports = withBundleAnalyzer(nextConfig);
-
-// Injected content via Sentry wizard below
-const { withSentryConfig } = require("@sentry/nextjs");
-
-module.exports = withSentryConfig(module.exports, {
-  // For all available options, see:
-  // https://github.com/getsentry/sentry-webpack-plugin#options
-
-  org: "mekongsmile",
-  project: "frontend-mekongsmile",
-
-  // Only print logs for uploading source maps in CI
-  silent: !process.env.CI,
-
-  // For all available options, see:
-  // https://docs.sentry.io/platforms/javascript/guides/nextjs/manual-setup/
-  authToken: process.env.SENTRY_AUTH_TOKEN,
-
-  // Upload a larger set of source maps for prettier stack traces (increases build time)
-  widenClientFileUpload: true,
-
-  // Automatically annotate React components to show their full name in breadcrumbs and session replay
-  reactComponentAnnotation: {
-    enabled: true,
-  },
-
-  // Tunnel route disabled — server cannot reach sentry.io (ETIMEDOUT), causing
-  // unhandled AggregateError that crashes the process. Browser sends events directly.
-  // tunnelRoute: "/monitoring",
-
-  // Automatically tree-shake Sentry logger statements to reduce bundle size
-  disableLogger: true,
-
-  sourcemaps: {
-    // We don't want to serve source maps to our users
-    deleteSourcemapsAfterUpload: true,
-  },
-
-  // Enables automatic instrumentation of Vercel Cron Monitors. (Does not yet work with App Router route handlers.)
-  // See the following for more information:
-  // https://docs.sentry.io/product/crons/
-  // https://vercel.com/docs/cron-jobs
-  // automaticVercelMonitors: true,
-});
 
