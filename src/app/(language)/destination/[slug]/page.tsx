@@ -31,19 +31,28 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const destination = await getDestinationBySlug(params.slug);
-  if (!destination) return { title: "Destination Not Found" };
+  try {
+    const destination = await getDestinationBySlug(params.slug);
+    if (!destination) return { title: "Destination Not Found" };
 
-  return {
-    title: `${destination.name} Tours — Mekong Smile`,
-    description:
-      destination.description ??
-      `Explore tours and travel guides for ${destination.name} with Mekong Smile.`,
-  };
+    return {
+      title: `${destination.name} Tours — Mekong Smile`,
+      description:
+        destination.description ??
+        `Explore tours and travel guides for ${destination.name} with Mekong Smile.`,
+    };
+  } catch {
+    return { title: "Destination — Mekong Smile" };
+  }
 }
 
 export default async function DestinationPage({ params }: Props) {
-  const destination = await getDestinationBySlug(params.slug, 12, 6);
+  let destination;
+  try {
+    destination = await getDestinationBySlug(params.slug, 12, 6);
+  } catch (error) {
+    console.error(`[Destination] Failed to fetch ${params.slug}:`, error);
+  }
   if (!destination) notFound();
 
   return <DestinationView destination={destination} />;

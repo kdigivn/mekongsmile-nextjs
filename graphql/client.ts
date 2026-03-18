@@ -162,7 +162,19 @@ export async function fetchGraphQL<T = Record<string, unknown>>(
     );
   }
 
-  const json: GraphQLResponse<T> = await res.json();
+  let json: GraphQLResponse<T>;
+  try {
+    json = await res.json();
+  } catch (parseError) {
+    const text = await res.clone().text().catch(() => "");
+    console.error(
+      `[GraphQL] JSON parse failed (${text.length} bytes):`,
+      parseError
+    );
+    throw new Error(
+      `GraphQL response is not valid JSON (${text.length} bytes)`
+    );
+  }
 
   if (json.errors) {
     console.error("[GraphQL Errors]", JSON.stringify(json.errors, null, 2));
