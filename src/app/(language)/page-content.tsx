@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/link-base";
 import Image from "next/image";
 import type {
   TourCard,
@@ -12,7 +12,7 @@ import FeaturedToursSection from "@/views/homepage/featured-tours-section";
 type Props = {
   tours: TourCard[];
   posts: PostCard[];
-  tourConstant: TourConstant;
+  tourConstant: TourConstant | null;
   destinations: Destination[];
 };
 
@@ -129,7 +129,9 @@ export default function HomePageContent({
     <div className="flex flex-col divide-y divide-gray-100">
       <FeaturedToursSection tours={tours} />
       <DestinationsSection destinations={destinations} />
-      <WhyChooseSection items={tourConstant.whyChooseUs} />
+      {tourConstant && (
+        <WhyChooseSection items={tourConstant.whyChooseUs} />
+      )}
       <LatestPostsSection posts={posts} />
     </div>
   );

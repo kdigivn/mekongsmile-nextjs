@@ -24,17 +24,21 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const tour = await getTourBySlug(params.slug);
-  if (!tour) return { title: "Tour Not Found" };
+  try {
+    const tour = await getTourBySlug(params.slug);
+    if (!tour) return { title: "Tour Not Found" };
 
-  const price = tour.shortTourInformation?.priceInUsd;
-  const duration = tour.shortTourInformation?.duration;
-  const fallbackDescription = `${tour.name}${duration ? ` — ${duration}` : ""}${price ? ` from $${price} USD` : ""}. Book now with Mekong Smile.`;
+    const price = tour.shortTourInformation?.priceInUsd;
+    const duration = tour.shortTourInformation?.duration;
+    const fallbackDescription = `${tour.name}${duration ? ` — ${duration}` : ""}${price ? ` from $${price} USD` : ""}. Book now with Mekong Smile.`;
 
-  return seoToMetadata(tour.seo, {
-    title: `${tour.name} — Mekong Smile`,
-    description: fallbackDescription,
-  });
+    return seoToMetadata(tour.seo, {
+      title: `${tour.name} — Mekong Smile`,
+      description: fallbackDescription,
+    });
+  } catch {
+    return { title: "Tour — Mekong Smile" };
+  }
 }
 
 export default async function TourPage({ params }: Props) {

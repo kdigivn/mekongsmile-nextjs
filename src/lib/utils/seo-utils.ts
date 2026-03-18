@@ -73,7 +73,7 @@ export function wpSeoToMetadata(
       follow: !robotsMeta.includes("nofollow"),
     },
     alternates: {
-      canonical: sanitized.canonical || undefined,
+      canonical: sanitized.canonicalUrl || undefined,
     },
     openGraph: {
       title: sanitized.openGraph?.title || sanitized.title || fallback.title,
@@ -81,12 +81,11 @@ export function wpSeoToMetadata(
         sanitized.openGraph?.description ||
         sanitized.description ||
         fallback.description,
-      url: sanitized.openGraph?.url || sanitized.canonical || undefined,
+      url: sanitized.openGraph?.url || sanitized.canonicalUrl || undefined,
       siteName: sanitized.openGraph?.siteName || undefined,
-      images: ogImages,
+      images: ogImages.length > 0 ? ogImages : undefined,
       type:
-        (sanitized.openGraph?.type as "website" | "article" | undefined) ||
-        "website",
+        sanitized.openGraph?.type === "article" ? "article" : "website",
     },
   };
 }

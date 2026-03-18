@@ -3,7 +3,7 @@ import { PostDetail } from "@/graphql/types";
 import { sanitizeCmsHtml } from "@/lib/cms-html-sanitizer";
 import { format } from "date-fns";
 import Image from "next/image";
-import Link from "next/link";
+import Link from "@/components/link-base";
 import { CiCalendar } from "react-icons/ci";
 import { createTableOfContents } from "@/components/table-of-content/create-table-of-content";
 import Breadcrumbs from "@/components/breadcrumbs/breadcrumbs";

@@ -120,11 +120,7 @@ describe("tour-service", () => {
     it("returns array of slugs", async () => {
       const mockResponse = {
         products: {
-          nodes: [
-            { slug: "tour-1" },
-            { slug: "tour-2" },
-            { slug: "tour-3" },
-          ],
+          nodes: [{ slug: "tour-1" }, { slug: "tour-2" }, { slug: "tour-3" }],
         },
       };
       mockFetchGraphQL.mockResolvedValue(mockResponse);

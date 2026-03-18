@@ -28,9 +28,7 @@ describe("taxonomy-service", () => {
           databaseId: 1,
           name: "Vietnam",
           slug: "vietnam",
-          children: [
-            { databaseId: 2, name: "Da Nang", slug: "da-nang" },
-          ],
+          children: [{ databaseId: 2, name: "Da Nang", slug: "da-nang" }],
         },
       ];
       mockFetchGraphQL.mockResolvedValue({
@@ -228,9 +226,7 @@ describe("taxonomy-service", () => {
     });
 
     it("extracts tour types from allPaTourType", async () => {
-      const mockTypes = [
-        { databaseId: 1, name: "Group", slug: "group" },
-      ];
+      const mockTypes = [{ databaseId: 1, name: "Group", slug: "group" }];
       mockFetchGraphQL.mockResolvedValue({
         allPaTourType: { nodes: mockTypes, pageInfo: {} },
       });
@@ -271,9 +267,7 @@ describe("taxonomy-service", () => {
     });
 
     it("extracts travel styles from allPaTravelStyle", async () => {
-      const mockStyles = [
-        { databaseId: 1, name: "Budget", slug: "budget" },
-      ];
+      const mockStyles = [{ databaseId: 1, name: "Budget", slug: "budget" }];
       mockFetchGraphQL.mockResolvedValue({
         allPaTravelStyle: { nodes: mockStyles, pageInfo: {} },
       });
@@ -312,9 +306,7 @@ describe("taxonomy-service", () => {
     });
 
     it("extracts tags from productTags nodes", async () => {
-      const mockTags = [
-        { databaseId: 1, name: "Relaxing", slug: "relaxing" },
-      ];
+      const mockTags = [{ databaseId: 1, name: "Relaxing", slug: "relaxing" }];
       mockFetchGraphQL.mockResolvedValue({
         productTags: { nodes: mockTags, pageInfo: {} },
       });
@@ -403,9 +395,7 @@ describe("taxonomy-service", () => {
           ],
         },
         productTags: {
-          nodes: [
-            { databaseId: 1, name: "Scenic", slug: "scenic" },
-          ],
+          nodes: [{ databaseId: 1, name: "Scenic", slug: "scenic" }],
         },
       };
       mockFetchGraphQL.mockResolvedValue(mockFilterOptions);

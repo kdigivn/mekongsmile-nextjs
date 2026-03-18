@@ -36,7 +36,8 @@ export async function generateStaticParams() {
     .filter((p) => !EXCLUDED_SLUGS.has(p.slug))
     .map((p) => ({
       slug: (p.uri ?? `/${p.slug}/`).split("/").filter((s) => s !== ""),
-    }));
+    }))
+    .filter((p) => p.slug.length > 0);
 }
 
 export async function generateMetadata({

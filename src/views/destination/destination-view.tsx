@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/link-base";
 import Image from "next/image";
 import type { Destination, TourCard, PostCard } from "@/graphql/types";
 import { sanitizeCmsHtml } from "@/lib/cms-html-sanitizer";
@@ -109,7 +109,9 @@ export default function DestinationView({ destination }: Props) {
                       <p
                         className="mt-1 line-clamp-2 text-xs text-muted-foreground"
                         dangerouslySetInnerHTML={{
-                          __html: sanitizeCmsHtml(post.excerpt.replace(/<[^>]*>/g, "")),
+                          __html: sanitizeCmsHtml(
+                            post.excerpt.replace(/<[^>]*>/g, "")
+                          ),
                         }}
                       />
                     )}

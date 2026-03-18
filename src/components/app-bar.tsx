@@ -15,7 +15,6 @@ import { usePathname } from "next/navigation";
 import React, { memo, useCallback, useMemo, useState } from "react";
 import LinkBase from "./link-base";
 import { Button } from "./ui/button";
-import { MdOutlineAccountCircle } from "react-icons/md";
 import type { Menu, MenuItem } from "@/graphql/types";
 import { cn } from "@/lib/utils";
 import {
@@ -48,8 +47,7 @@ const GoogleTranslate = dynamic(
 
 const ResponsiveAppBar = ({ primaryMenu, siteTitle }: Props) => {
   const { t } = useTranslation("common");
-  // TODO: re-add auth when auth services are re-implemented
-  const user = null;
+  // TODO: re-add auth when custom backend is ready
   const isAuthenticated = false;
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/components/link-base";
 import { getAllTours } from "@/services/wordpress/tour-service";
 import { getAllBlogPosts } from "@/services/wordpress/post-service";
 import { getTourConstant } from "@/services/wordpress/options-service";
@@ -24,14 +24,14 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function HomePage() {
   const [toursResult, postsResult, tourConstant, destinations] =
     await Promise.all([
-      getAllTours(6),
-      getAllBlogPosts(3),
-      getTourConstant(),
-      getAllDestinations(true),
+      getAllTours(6).catch(() => ({ nodes: [], pageInfo: null })),
+      getAllBlogPosts(3).catch(() => ({ nodes: [], pageInfo: null })),
+      getTourConstant().catch(() => null),
+      getAllDestinations(true).catch(() => []),
     ]);
 
-  const tours = toursResult.nodes;
-  const posts = postsResult.nodes;
+  const tours = toursResult?.nodes ?? [];
+  const posts = postsResult?.nodes ?? [];
 
   return (
     <>

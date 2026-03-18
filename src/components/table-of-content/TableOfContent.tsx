@@ -1,4 +1,4 @@
-import { memo, useEffect, useRef, useState } from "react";
+import { memo, useRef, useState } from "react";
 import HeadingBase from "../heading/heading-base";
 import TableOfContentItem from "./TableOfContentItem";
 import { TableOfContentNode } from "./types/table-of-content.type";

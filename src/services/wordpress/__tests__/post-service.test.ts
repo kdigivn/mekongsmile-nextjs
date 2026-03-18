@@ -81,11 +81,7 @@ describe("post-service", () => {
     it("returns array of all post slugs", async () => {
       const mockResponse = {
         posts: {
-          nodes: [
-            { slug: "post-1" },
-            { slug: "post-2" },
-            { slug: "post-3" },
-          ],
+          nodes: [{ slug: "post-1" }, { slug: "post-2" }, { slug: "post-3" }],
         },
       };
       mockFetchGraphQL.mockResolvedValue(mockResponse);

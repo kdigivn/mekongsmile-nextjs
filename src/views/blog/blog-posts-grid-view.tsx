@@ -2,7 +2,7 @@
 import { PostCard } from "@/graphql/types";
 import { format } from "date-fns";
 import Image from "next/image";
-import Link from "next/link";
+import Link from "@/components/link-base";
 import { CiCalendar } from "react-icons/ci";
 import { removeSquareBracketsInExcerpt } from "@/lib/utils";
 import { sanitizeCmsHtml } from "@/lib/cms-html-sanitizer";
@@ -80,7 +80,9 @@ const PostCardItem = ({
           <div
             className="line-clamp-3 text-sm text-default-600"
             dangerouslySetInnerHTML={{
-              __html: sanitizeCmsHtml(removeSquareBracketsInExcerpt(post.excerpt)),
+              __html: sanitizeCmsHtml(
+                removeSquareBracketsInExcerpt(post.excerpt)
+              ),
             }}
           />
         )}

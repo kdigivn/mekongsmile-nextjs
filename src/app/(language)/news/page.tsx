@@ -17,7 +17,10 @@ const breadcrumbLinks = [
 ];
 
 export default async function NewsPage() {
-  const postsData = await getAllNews(24).catch(() => ({ nodes: [], pageInfo: null }));
+  const postsData = await getAllNews(24).catch(() => ({
+    nodes: [],
+    pageInfo: null,
+  }));
   const posts = postsData.nodes ?? [];
 
   return (

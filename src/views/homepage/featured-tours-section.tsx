@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/link-base";
 import type { TourCard } from "@/graphql/types";
 import TourCardComponent from "@/views/tour/tour-card";
 

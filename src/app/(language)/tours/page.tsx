@@ -61,7 +61,14 @@ export default async function ToursPage({ searchParams }: PageProps) {
       <Suspense>
         <TourListingView
           initialTours={toursData?.nodes ?? []}
-          initialPageInfo={toursData?.pageInfo ?? { hasNextPage: false, hasPreviousPage: false, startCursor: null, endCursor: null }}
+          initialPageInfo={
+            toursData?.pageInfo ?? {
+              hasNextPage: false,
+              hasPreviousPage: false,
+              startCursor: null,
+              endCursor: null,
+            }
+          }
           filterOptions={{ destinations, tourTypes, travelStyles }}
           activeFilters={{ destination, type, style, q }}
         />

@@ -41,9 +41,7 @@ describe("page-service", () => {
     });
 
     it("extracts pages nodes from response", async () => {
-      const mockPages = [
-        { databaseId: 1, title: "Home", slug: "home" },
-      ];
+      const mockPages = [{ databaseId: 1, title: "Home", slug: "home" }];
       mockFetchGraphQL.mockResolvedValue({
         pages: {
           nodes: mockPages,
@@ -171,9 +169,7 @@ describe("page-service", () => {
     });
 
     it("includes uri field for each page", async () => {
-      const mockPageSlugs = [
-        { slug: "privacy", uri: "/privacy-policy" },
-      ];
+      const mockPageSlugs = [{ slug: "privacy", uri: "/privacy-policy" }];
       mockFetchGraphQL.mockResolvedValue({
         pages: { nodes: mockPageSlugs },
       });

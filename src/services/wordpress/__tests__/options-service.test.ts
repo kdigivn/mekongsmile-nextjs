@@ -80,9 +80,7 @@ describe("options-service", () => {
     it("returns other ACF fields", async () => {
       const mockConstant = {
         aboutUsText: "About the company",
-        testimonials: [
-          { name: "John", text: "Great tour" },
-        ],
+        testimonials: [{ name: "John", text: "Great tour" }],
         contactInfo: {
           email: "info@example.com",
           phone: "+84123456789",

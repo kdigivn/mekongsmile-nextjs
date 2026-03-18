@@ -156,7 +156,6 @@ export interface SeoOpenGraph {
 export interface SeoBreadcrumb {
   text: string;
   url: string;
-  isHome: boolean;
 }
 
 export interface SeoData {
@@ -164,7 +163,7 @@ export interface SeoData {
   description: string | null;
   focusKeywords: string[] | null;
   robots: string[] | null;
-  canonical: string | null;
+  canonicalUrl: string | null;
   breadcrumbs: SeoBreadcrumb[] | null;
   openGraph: SeoOpenGraph | null;
   jsonLd: { raw: string } | null;

@@ -12,9 +12,7 @@ import {
 import type {
   GetAllToursResponse,
   GetTourBySlugResponse,
-  TourCard,
   TourDetail,
-  PageInfo,
 } from "@/graphql/types";
 
 /** Paginated tour listing */
