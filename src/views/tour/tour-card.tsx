@@ -57,13 +57,13 @@ export default function TourCard({ tour }: Props) {
 
         {/* Content */}
         <div className="p-4">
-          <h3 className="line-clamp-2 text-base font-semibold leading-snug transition-colors group-hover:text-primary">
+          <h3 className="font-heading line-clamp-2 text-base font-semibold leading-snug transition-colors group-hover:text-primary">
             {tour.name}
           </h3>
 
           {/* Star rating */}
           <div className="mt-2 flex items-center gap-1 text-sm">
-            <span className="text-amber-500">★</span>
+            <span className="text-brand-gold">★</span>
             <span className="font-medium">
               {averageRating ? averageRating.toFixed(1) : "New"}
             </span>
@@ -87,7 +87,7 @@ export default function TourCard({ tour }: Props) {
             {price ? (
               <>
                 <span className="text-xs text-muted-foreground">From</span>
-                <span className="text-lg font-bold">${price}</span>
+                <span className="text-lg font-bold text-brand-gold">${price}</span>
                 <span className="text-xs text-muted-foreground">/ person</span>
               </>
             ) : (

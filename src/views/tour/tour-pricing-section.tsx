@@ -15,7 +15,7 @@ export default function TourPricingSection({ info, tourName }: Props) {
       {priceInUsd ? (
         <>
           <div className="flex items-baseline gap-2">
-            <span className="text-3xl font-bold">${priceInUsd}</span>
+            <span className="text-3xl font-bold text-brand-gold">${priceInUsd}</span>
             <span className="text-sm text-muted-foreground">/ person</span>
           </div>
           {priceInVnd && (
@@ -58,7 +58,7 @@ export default function TourPricingSection({ info, tourName }: Props) {
 
       <a
         href={`mailto:${bookingEmail}?subject=${encodeURIComponent(`Booking: ${tourName}`)}`}
-        className="mt-6 flex w-full items-center justify-center rounded-xl bg-primary py-4 text-base font-bold text-white transition-all hover:bg-primary/90 active:scale-[0.98]"
+        className="mt-6 flex w-full items-center justify-center rounded-xl bg-brand-gold py-4 text-base font-bold text-brand-navy transition-all hover:bg-brand-gold-light active:scale-[0.98]"
       >
         Book Now
       </a>

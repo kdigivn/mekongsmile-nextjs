@@ -43,7 +43,7 @@ const PostCardItem = ({
   const category = post.categories?.nodes?.[0];
 
   return (
-    <div className="flex flex-col gap-3 rounded-lg border border-gray-100 bg-white p-4 shadow-sm transition-shadow hover:shadow-md">
+    <div className="flex flex-col gap-3 rounded-2xl border border-gray-100 bg-white p-4 shadow-card transition-shadow hover:shadow-cardHover">
       <Link href={href} className="group block overflow-hidden rounded-lg">
         <Image
           src={

@@ -10,7 +10,7 @@ export default function TourIncludesSection({ included, excluded }: Props) {
 
   return (
     <div className="rounded-lg border bg-white p-5">
-      <h2 className="mb-4 text-lg font-semibold">{"What's Included"}</h2>
+      <h2 className="font-heading mb-4 text-xl font-semibold">{"What's Included"}</h2>
       <div className="grid gap-4 sm:grid-cols-2">
         {included && (
           <div>

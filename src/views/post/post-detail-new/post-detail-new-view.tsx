@@ -52,7 +52,7 @@ function PostDetailNewView({ post, basePath = "/blog" }: Props) {
 
         {/* Post header */}
         <div className="flex w-full flex-col gap-3">
-          <h1 className="text-2xl font-bold md:text-3xl">{post.title}</h1>
+          <h1 className="font-heading text-display text-2xl font-bold md:text-3xl">{post.title}</h1>
 
           <div className="flex flex-wrap items-center gap-2">
             {category && (
@@ -114,7 +114,7 @@ function PostDetailNewView({ post, basePath = "/blog" }: Props) {
                 </div>
               )}
               <div
-                className="post-detail flex w-full flex-col p-1"
+                className="prose post-detail flex w-full flex-col p-1"
                 dangerouslySetInnerHTML={{ __html: sanitizeCmsHtml(content) }}
               />
             </div>

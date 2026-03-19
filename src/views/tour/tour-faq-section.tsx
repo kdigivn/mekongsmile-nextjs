@@ -17,7 +17,7 @@ export default function TourFaqSection({ faqs }: Props) {
 
   return (
     <div className="rounded-lg border bg-white p-5">
-      <h2 className="mb-4 text-lg font-semibold">Frequently Asked Questions</h2>
+      <h2 className="font-heading mb-4 text-xl font-semibold">Frequently Asked Questions</h2>
       <Accordion type="multiple">
         {faqs.map((faq, idx) => (
           <AccordionItem key={idx} value={`faq-${idx}`}>

@@ -5,6 +5,8 @@ import { getTourConstant } from "@/services/wordpress/options-service";
 import { getAllDestinations } from "@/services/wordpress/taxonomy-service";
 import HomePageContent from "./page-content";
 import HeroSection from "@/views/homepage/hero-section";
+import TrustBar from "@/views/homepage/trust-bar";
+import CtaBanner from "@/views/homepage/cta-banner";
 
 export const revalidate = 300;
 
@@ -36,6 +38,7 @@ export default async function HomePage() {
   return (
     <>
       <HeroSection />
+      <TrustBar />
 
       {/* Main content */}
       <div className="mx-auto w-full max-w-screen-xl px-4 md:px-8">
@@ -46,6 +49,8 @@ export default async function HomePage() {
           destinations={destinations}
         />
       </div>
+
+      <CtaBanner />
     </>
   );
 }

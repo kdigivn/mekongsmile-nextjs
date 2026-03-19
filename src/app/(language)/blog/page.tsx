@@ -32,7 +32,7 @@ export default async function BlogPage() {
       <div className="relative bg-primary-50 px-5 py-6 md:px-10 lg:px-8">
         <div className="mx-auto flex max-w-7xl flex-col gap-4">
           <Breadcrumbs links={breadcrumbLinks} hasBackground={false} />
-          <HeadingBase headingTag="h1">Blog</HeadingBase>
+          <HeadingBase headingTag="h1" contentClass="font-heading">Blog</HeadingBase>
           {filteredCategories.length > 0 && (
             <div className="flex flex-wrap gap-2">
               {filteredCategories.map((cat) => (

@@ -166,6 +166,16 @@ const config = {
         sans: ['"Be Vietnam Pro"', '"Noto Sans SC"', "sans-serif"],
         heading: ['"Playfair Display"', "Georgia", "serif"],
       },
+      fontSize: {
+        hero: [
+          "clamp(2.5rem, 5vw, 4.5rem)",
+          { lineHeight: "1.1", letterSpacing: "-0.02em" },
+        ],
+        display: [
+          "clamp(2rem, 4vw, 3.5rem)",
+          { lineHeight: "1.15", letterSpacing: "-0.01em" },
+        ],
+      },
       boxShadow: {
         card: "0 1px 3px 0 rgb(0 0 0 / 0.08), 0 1px 2px -1px rgb(0 0 0 / 0.08)",
         cardHover:
@@ -184,6 +194,14 @@ const config = {
           800: "#081f86",
           900: "#05156f",
           DEFAULT: "#1b52e8",
+        },
+        // Premium brand colors
+        brand: {
+          navy: "#0B1D3A",
+          gold: "#C5A55A",
+          "gold-light": "#D4BA7A",
+          cream: "#FAF7F2",
+          "sage-light": "#E8F0EA",
         },
         /**
          * Shadcn colors

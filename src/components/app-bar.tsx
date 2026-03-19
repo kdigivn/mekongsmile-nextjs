@@ -286,7 +286,7 @@ const ResponsiveAppBar = ({ primaryMenu, siteTitle }: Props) => {
                       {menuItem.path ? (
                         <LinkBase
                           href={menuItem.path}
-                          className="text-sm font-normal hover:text-primary"
+                          className="text-sm font-medium hover:text-primary"
                         >
                           {menuItem.label}
                         </LinkBase>
@@ -329,7 +329,7 @@ const ResponsiveAppBar = ({ primaryMenu, siteTitle }: Props) => {
                     <NavigationMenuLink asChild>
                       <LinkBase
                         href={menuItem.path}
-                        className="text-sm font-normal hover:text-primary"
+                        className="text-sm font-medium hover:text-primary"
                       >
                         {menuItem.label}
                       </LinkBase>
@@ -356,6 +356,7 @@ const ResponsiveAppBar = ({ primaryMenu, siteTitle }: Props) => {
         isBordered
         classNames={navClassNames}
         height="60px"
+        className="bg-white/95 backdrop-blur-md"
       >
         <div className="flex h-[60px] w-full">
           {/* Desktop */}
@@ -370,7 +371,7 @@ const ResponsiveAppBar = ({ primaryMenu, siteTitle }: Props) => {
                 href={"/"}
                 className="hidden h-[48px] items-center justify-center lg:flex"
               >
-                <span className="text-xl font-bold text-primary">
+                <span className="font-heading text-xl font-bold text-primary">
                   {siteTitle}
                 </span>
               </LinkBase>
@@ -385,7 +386,7 @@ const ResponsiveAppBar = ({ primaryMenu, siteTitle }: Props) => {
                   href={"/"}
                   className="flex h-[36px] items-center justify-center"
                 >
-                  <span className="text-lg font-bold text-primary">
+                  <span className="font-heading text-lg font-bold text-primary">
                     {siteTitle}
                   </span>
                 </LinkBase>
