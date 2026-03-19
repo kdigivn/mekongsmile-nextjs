@@ -9,8 +9,12 @@ export const revalidate = 3600;
 export const dynamicParams = true;
 
 export async function generateStaticParams() {
-  const slugs = await getAllPostSlugs();
-  return slugs.map((p) => ({ slug: p.slug }));
+  try {
+    const slugs = await getAllPostSlugs();
+    return slugs.map((p) => ({ slug: p.slug }));
+  } catch {
+    return [];
+  }
 }
 
 export async function generateMetadata({
