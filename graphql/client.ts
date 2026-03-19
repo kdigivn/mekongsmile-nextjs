@@ -147,6 +147,7 @@ export async function fetchGraphQL<T = Record<string, unknown>>(
     method: "POST",
     headers: {
       "Content-Type": "application/json",
+      "User-Agent": "MekongSmile-Frontend/1.0",
       ...headers,
     },
     body: JSON.stringify({
