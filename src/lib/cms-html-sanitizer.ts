@@ -66,5 +66,16 @@ export function sanitizeCmsHtml(html: string): string {
       "player.vimeo.com",
       "www.google.com",
     ],
+    // Strip inline width/height from figures and images — let CSS handle sizing
+    transformTags: {
+      figure: (tagName: string, attribs: Record<string, string>) => {
+        const { style, width, height, ...rest } = attribs;
+        return { tagName, attribs: rest };
+      },
+      img: (tagName: string, attribs: Record<string, string>) => {
+        const { width, height, style, ...rest } = attribs;
+        return { tagName, attribs: rest };
+      },
+    },
   });
 }
