@@ -7,20 +7,21 @@ import { seoToMetadata } from "@/lib/utils/seo-utils";
 export const revalidate = 3600;
 
 export async function generateMetadata(): Promise<Metadata> {
-  const page = await getPageBySlug("/about-us/");
-  if (!page) return { title: "About Us" };
-
-  return seoToMetadata(page.seo, {
-    title: `${page.title} — Mekong Smile`,
-    description:
-      "Learn about Mekong Smile — your trusted local travel partner in Vietnam and Southeast Asia.",
-  });
+  try {
+    const page = await getPageBySlug("/about-us/");
+    if (!page) return { title: "About Us — Mekong Smile" };
+    return seoToMetadata(page.seo, {
+      title: `${page.title} — Mekong Smile`,
+      description:
+        "Learn about Mekong Smile — your trusted local travel partner in Vietnam.",
+    });
+  } catch {
+    return { title: "About Us — Mekong Smile" };
+  }
 }
 
 export default async function AboutUsPage() {
-  // URI format required for idType: URI — WordPress expects "/slug/"
-  const page = await getPageBySlug("/about-us/");
+  const page = await getPageBySlug("/about-us/").catch(() => null);
   if (!page) notFound();
-
-  return <WpPageContentView page={page} breadcrumbLabel="Về chúng tôi" />;
+  return <WpPageContentView page={page} breadcrumbLabel="About Us" />;
 }

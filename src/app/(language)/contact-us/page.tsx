@@ -7,21 +7,21 @@ import { seoToMetadata } from "@/lib/utils/seo-utils";
 export const revalidate = 3600;
 
 export async function generateMetadata(): Promise<Metadata> {
-  // URI format required for idType: URI — WordPress expects "/slug/"
-  const page = await getPageBySlug("/contact-us/");
-  if (!page) return { title: "Contact Us" };
-
-  return seoToMetadata(page.seo, {
-    title: `${page.title} — Mekong Smile`,
-    description:
-      "Contact Mekong Smile for tour inquiries, bookings, and travel support in Vietnam and Southeast Asia.",
-  });
+  try {
+    const page = await getPageBySlug("/contact-us/");
+    if (!page) return { title: "Contact Us — Mekong Smile" };
+    return seoToMetadata(page.seo, {
+      title: `${page.title} — Mekong Smile`,
+      description:
+        "Contact Mekong Smile for tour inquiries, bookings, and travel support.",
+    });
+  } catch {
+    return { title: "Contact Us — Mekong Smile" };
+  }
 }
 
 export default async function ContactUsPage() {
-  // URI format required for idType: URI — WordPress expects "/slug/"
-  const page = await getPageBySlug("/contact-us/");
+  const page = await getPageBySlug("/contact-us/").catch(() => null);
   if (!page) notFound();
-
-  return <WpPageContentView page={page} breadcrumbLabel="Liên hệ" />;
+  return <WpPageContentView page={page} breadcrumbLabel="Contact Us" />;
 }
