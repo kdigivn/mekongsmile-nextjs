@@ -27,6 +27,10 @@ const Footer = dynamic(() => import("@/components/footer/footer"), {
   loading: () => <div style={{ minHeight: "400px" }} />,
 });
 
+const FloatingContact = dynamic(
+  () => import("@/components/floating-contact")
+);
+
 // Load ReactQueryDevtools only in development
 const ReactQueryDevtools =
   process.env.NODE_ENV === "development"
@@ -122,6 +126,7 @@ async function RootLayout({
                   {secondaryMenu && siteSettings && (
                     <Footer menu={secondaryMenu} siteSettings={siteSettings} />
                   )}
+                  <FloatingContact />
                 </TooltipProvider>
               </ConfirmDialogProvider>
             </StoreLanguageProvider>

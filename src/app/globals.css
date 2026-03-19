@@ -370,3 +370,69 @@ div.note-detail ul li::marker {
     bottom: 70px !important;
   }
 }
+
+/* Section chip label — JTravel-inspired */
+.section-chip {
+  @apply inline-block px-4 py-1.5 text-xs font-medium tracking-wider uppercase
+    bg-brand-sage-light text-primary rounded-full mb-4;
+}
+
+/* Itinerary timeline — vertical line with day markers */
+.itinerary-timeline {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.itinerary-timeline::before {
+  content: '';
+  position: absolute;
+  left: 0.5rem;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: hsl(var(--primary) / 0.2);
+}
+
+.itinerary-timeline h3,
+.itinerary-timeline h4 {
+  position: relative;
+  margin-top: 1.5rem;
+  padding-top: 0.5rem;
+  font-weight: 700;
+  color: hsl(var(--primary));
+}
+
+.itinerary-timeline h3::before,
+.itinerary-timeline h4::before {
+  content: '';
+  position: absolute;
+  left: -2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background: hsl(var(--primary));
+  border: 3px solid white;
+  box-shadow: 0 0 0 2px hsl(var(--primary) / 0.2);
+}
+
+.itinerary-timeline li {
+  position: relative;
+  padding-left: 1rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  font-size: 0.875rem;
+}
+
+.itinerary-timeline li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: hsl(var(--primary) / 0.4);
+}
