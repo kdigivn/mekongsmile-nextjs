@@ -14,7 +14,7 @@
     "**/out/*",
     "**/node_modules/*",
     "**/.next/*",
-    "next.config.js",
+    "next.config.ts",
     "vite.config.js",
     "vite.config.ts",
     "src/reportWebVitals.js",
@@ -30,8 +30,8 @@
     "tailwind.config.js"
   ],
   "rules": {
-    "@arthurgeron/react-usememo/require-usememo": [2],
-    "@arthurgeron/react-usememo/require-memo": [2],
+    "@arthurgeron/react-usememo/require-usememo": [1],
+    "@arthurgeron/react-usememo/require-memo": [1],
     // "prettier/prettier": [
     //   "error",
     //   {

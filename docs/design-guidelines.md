@@ -1,6 +1,6 @@
 # Design Guidelines
 
-> UI/UX design system and styling conventions for ferry-frontend.
+> UI/UX design system and styling conventions for Mekong Smile Tours.
 
 **Last Updated:** 2026-03-03
 
@@ -119,8 +119,8 @@ Apply theme class on `<html>` or root container. The `OrgProvider` handles this 
 // Use semantic HTML — HeadingBase handles responsive sizing
 import { HeadingBase } from "@/components/heading-base";
 
-<HeadingBase level={1}>Ferry Ticket Booking</HeadingBase>
-<HeadingBase level={2}>Available Voyages</HeadingBase>
+<HeadingBase level={1}>Mekong Smile Tours</HeadingBase>
+<HeadingBase level={2}>Available Tours</HeadingBase>
 ```
 
 **Rule:** Never skip heading levels for visual styling. Use CSS to restyle, not semantic shortcuts.

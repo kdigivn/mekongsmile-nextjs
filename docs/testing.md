@@ -1,6 +1,6 @@
 # Testing
 
-> Testing setup, tools, and E2E test commands for ferry-frontend.
+> Testing setup, tools, and E2E test commands for Mekong Smile Tours.
 
 **Last Updated:** 2026-03-03
 
@@ -18,7 +18,7 @@
 
 ## Overview
 
-ferry-frontend currently uses **Cypress** for end-to-end (E2E) testing only.
+Mekong Smile Tours currently uses **Cypress** for end-to-end (E2E) testing only.
 
 | Test Type | Tool | Status |
 |-----------|------|--------|
@@ -111,17 +111,17 @@ cypress/
 ### Writing Tests
 
 ```typescript
-// cypress/e2e/booking/schedule-search.cy.ts
-describe("Schedule Search", () => {
+// cypress/e2e/booking/tour-search.cy.ts
+describe("Tour Search", () => {
   beforeEach(() => {
-    cy.visit("/schedules");
+    cy.visit("/tours");
   });
 
-  it("shows voyage results for a valid route", () => {
-    cy.get("[data-testid=origin-select]").click();
-    cy.contains("Vũng Tàu").click();
+  it("shows tour results for a valid search", () => {
+    cy.get("[data-testid=destination-select]").click();
+    cy.contains("Can Tho").click();
     cy.get("[data-testid=search-btn]").click();
-    cy.get("[data-testid=voyage-card]").should("have.length.greaterThan", 0);
+    cy.get("[data-testid=tour-card]").should("have.length.greaterThan", 0);
   });
 });
 ```

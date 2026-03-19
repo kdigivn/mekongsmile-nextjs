@@ -1,5 +1,5 @@
 {
-  "title": "Booking Payment | Ferry Ticket",
+  "title": "Booking Payment | Mekong Smile",
   "voyage-tab": {
     "departure": "Chọn lượt đi",
     "return": "Chọn lượt về",
@@ -70,7 +70,7 @@
     "title": "Chọn phương thức thanh toán",
     "qr": "Quét QR - tự động xuất vé ",
     "banking": "Thanh toán chuyển khoản ",
-    "direct": "Thanh toán trực tiếp tại Công ty FERRY VN ",
+    "direct": "Thanh toán trực tiếp tại Mekong Smile",
     "onepay": "OnePay: Thẻ tín dụng/Thẻ ghi nợ ",
     "fee": "(Phí {{fee}})",
     "remaining": "Số tiền cần thanh toán: ",
@@ -92,7 +92,7 @@
         "bankAccountName": "Tên tài khoản:",
         "bankName": "Ngân hàng:",
         "transferContent": "Nội dung:",
-        "topicTransferContent": "TT ve tau cao toc",
+        "topicTransferContent": "TT dat tour Mekong Smile",
         "orderCode": "mã đơn hàng",
         "phoneNumber": "Số điện thoại",
         "amountPayment": "Số tiền cần thanh toán",
@@ -102,7 +102,7 @@
     "direct-method": {
       "title": "Thanh toán trực tiếp",
       "contactInformation": "Thông tin liên hệ",
-      "message": "Quý khách vui lòng đến trực tiếp Công ty FERRY VN",
+      "message": "Quý khách vui lòng liên hệ Mekong Smile",
       "address": "Địa chỉ:",
       "hotline": "Hotline:",
       "ncmkAdress": "Số 5 Trần Văn Hoài, P. Ninh Kiều, TP. Cần Thơ"
@@ -118,7 +118,7 @@
         "bankAccountName": "Tên tài khoản:",
         "bankName": "Ngân hàng:",
         "transferContent": "Nội dung:",
-        "topicTransferContent": "TT ve tau cao toc",
+        "topicTransferContent": "TT dat tour Mekong Smile",
         "orderCode": "mã đơn hàng",
         "phoneNumber": "Số điện thoại",
         "amountPayment": "Số tiền cần thanh toán:"

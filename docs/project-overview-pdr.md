@@ -1,8 +1,9 @@
-# Project Overview — Ferry Ticket Booking Frontend
+# Project Overview — Mekong Delta Tour Booking Frontend
 
-> Product Design Requirements (PDR) for ferry-frontend
+> Product Design Requirements (PDR) for mekongsmile.com
 
-**Last Updated:** 2026-03-03
+**Last Updated:** 2026-03-19
+**Status:** Migration complete. Mekong Delta tour booking platform fully deployed on mekongsmile.com. Upgraded to Next.js 16 (2026-03-19).
 
 ## Table of Contents
 
@@ -17,141 +18,150 @@
 
 ## 1. Project Summary
 
-**ferry-frontend** is a Next.js 14 web application for booking ferry tickets in Vietnam. It serves as the customer-facing frontend and operator admin interface for a multi-organization ferry booking platform.
+**mekongsmile.com** is a Next.js 16 tour booking platform for discovering and reserving guided tours in the Mekong Delta region. The platform provides content via WordPress CMS and order management through a custom backend API (future phase).
 
-**Stack:** Next.js 14 (App Router) · TypeScript · Tailwind CSS · React Query v5 · i18next
+**Stack:** Next.js 16 (App Router + Turbopack) · React 19 · TypeScript · Tailwind CSS · React Query v5 · i18next · WPGraphQL + Custom Backend
 
 ## 2. Business Context
 
-Vietnamese ferry services connect mainland ports to islands (Condao, Phuquoc, Mekong Delta routes). Customers need a convenient online booking platform to:
-- Search available voyages by route and date
-- Select seats and enter passenger information
-- Pay via local payment gateways (OnePay, SMS banking, offline transfer)
-- Manage bookings, cancel requests, and download VAT invoices
+Mekong Delta offers diverse tour experiences: delta cruises, floating market visits, riverside villages, and nature walks. Customers expect:
+- Intuitive tour discovery with filtering by destination, type, duration
+- Rich travel guides and insider blog content
+- Secure date + guest selection and booking
+- Multiple payment methods (online gateway + bank transfer)
+- Booking history and tour management dashboard
 
-The platform supports **multiple ferry operators** (multi-tenant) with brand-specific themes.
+Single-tenant platform (mekongsmile.com) with UI in English, Vietnamese, and Chinese. Content sourced from WordPress CMS.
 
 ## 3. Core Features
 
-### Customer Features
+### Tour Discovery & Content
 | Feature | Description |
 |---------|-------------|
-| Schedule Search | Search voyages by origin, destination, date; filter by operator/class |
-| Seat Selection | Visual boat layout with seat status (available, booked, eco, vip, business, president) |
-| Passenger Management | Multi-passenger forms with ID card OCR (Viettel AI) |
-| Booking Management | View history, check status, download tickets |
-| Payment | OnePay (card/bank), SMS banking, offline transfer |
-| Vouchers | Apply promo codes, auto-suggest applicable vouchers |
-| VAT Invoice | Export VAT receipts for corporate bookings |
-| Cancel Requests | Submit and track cancellation requests |
-| Ticket Export | Download/email ticket PDFs |
+| Tour Listing | Browse all 34+ tours with filtering by destination, type, duration |
+| Tour Detail | Full tour information with gallery, pricing, highlights, FAQ, meeting point |
+| Destination Pages | Explore by region (Mekong Delta, Can Tho, Con Dao, etc.) |
+| Blog & News | Travel guides, insider tips, destination articles |
+| Static Pages | About, Contact, FAQ, Terms, Privacy policy |
+| Search & Filter | Text search + taxonomy filters (destination, tour type, travel style) |
+
+### Booking & Checkout (Phase 9 — Deferred)
+| Feature | Description | Status |
+|---------|-------------|--------|
+| Booking Form | Select date, guest count (adult/child), contact info | Deferred |
+| Availability Check | Real-time from custom backend API | Deferred |
+| Payment Methods | Online gateway + bank transfer | Deferred |
+| Order Confirmation | Email + confirmation page | Deferred |
+| Booking History | User bookings dashboard | Deferred |
+| Cancellation | Refund request + policy info | Deferred |
 
 ### Authentication
-| Method | Description |
-|--------|-------------|
-| Email + OTP | Register via email with OTP verification |
-| Email + Password | Login with existing credentials |
-| Google OAuth | One-click Google login |
-| Facebook OAuth | Optional Facebook login |
+| Method | Description | Status |
+|--------|-------------|--------|
+| Email + Password | Register and login (backend TBD) | Simplified |
+| Google OAuth | One-click Google login | Active |
+| Password Recovery | Forgot password flow | Simplified |
+| User Profile | View/edit personal info | Basic |
 
-### Content & SEO
-- WordPress CMS integration (GraphQL) — travel guides, blog posts, product pages, static pages
+### Content & Localization
+- WordPress CMS integration (WPGraphQL) — tours, blog posts, pages, menus, SEO data
 - Dynamic CMS pages via `[...slug]` catch-all route
-- ISR (Incremental Static Regeneration) for content pages
-- Sitemap auto-generation (next-sitemap)
-- Meilisearch full-text search integration
+- ISR (Incremental Static Regeneration) for static content
+- Trilingual UI: English (primary), Vietnamese, Chinese
+- Rank Math SEO integration for metadata
 
 ## 4. User Flows
 
+### Tour Discovery Flow
+```
+Home → Browse Tours / Search → Filter by Destination → View Tour Detail →
+Related Tours / Destination Page → Read Blog Articles
+```
+
 ### Booking Flow
 ```
-Home → Search Schedules → Select Voyage → Enter Passengers → Choose Seat →
-Review Summary → Choose Payment → Complete Payment → View Booking Confirmation
+Tour Detail "Book Now" → Select Date & Guests → Enter Contact Info →
+Review Price & Details → Choose Payment Method → Complete Payment →
+Confirmation Email & Page → View in Booking History
 ```
 
 ### Auth Flow
 ```
-Email Check → (New user) Register with OTP → Login →
-Session via HTTP-only JWT cookie → Token refresh on expiry
+Sign In Page (Email+Password or Google OAuth) → Create Account (if new) →
+Login with JWT cookie → View Profile & Bookings → Manage Preferences
 ```
 
-### Cancel Flow
+### Content Discovery Flow
 ```
-Booking Detail → Request Cancellation → Confirmation → Admin Review → Refund
+Home → Blog/News Section → Browse Posts → Filter by Category →
+Read Full Article → Share / Related Posts
 ```
 
 ## 5. Tech Stack Summary
 
 | Category | Choice | Rationale |
 |----------|--------|-----------|
-| Framework | Next.js 14 App Router | SSR/ISR, file-based routing, React Server Components |
-| Language | TypeScript 5.5 | Type safety, better DX |
-| Styling | Tailwind CSS 3 + HeroUI | Rapid UI development, design tokens |
+| Framework | Next.js 16 App Router + Turbopack | SSR/ISR, file-based routing, React Server Components, fast dev builds |
+| Runtime | React 19 | Modern hooks, improved performance, better error handling |
+| Language | TypeScript 5.5+ | Type safety, better DX |
+| Styling | Tailwind CSS 3+ | Rapid UI development, design tokens |
 | State | TanStack Query v5 | Server state caching, background refresh |
 | Forms | React Hook Form + Yup | Performant forms, schema validation |
-| i18n | i18next + react-i18next | Multi-language (vi/en) |
+| i18n | i18next + react-i18next | Multi-language (en/vi/zh) |
 | Auth | Custom JWT + HTTP-only cookies | Security, server-side token handling |
-| Monitoring | Sentry | Error tracking, session replay |
+| CMS | WordPress WPGraphQL | Tours, blog, pages, SEO via GraphQL |
+| Animation | motion (framer-motion replacement) | Modern motion library with better Next.js 16 support |
 | Testing | Cypress E2E | End-to-end test automation |
-| Search | Meilisearch | Fast full-text search |
-| CMS | WordPress GraphQL | Flexible content management |
+| Search | Client-side filtering | Filter 34 tours via taxonomy + text search |
 
 ## 6. External Integrations
 
 | Integration | Purpose |
 |-------------|---------|
-| **Backend REST API** | Core business data (bookings, voyages, passengers) via BFF proxy |
-| **WordPress CMS** | Blog posts, travel guides, menus, SEO data |
-| **OnePay** | Card and bank transfer payment gateway |
-| **SMS Banking** | Vietnamese bank SMS payment |
-| **Google OAuth** | Social authentication |
-| **Facebook OAuth** | Social authentication (optional) |
-| **Viettel AI** | ID card OCR for passenger autofill |
-| **Meilisearch** | Full-text search index |
-| **Google Analytics 4** | Web analytics |
-| **Sentry** | Error tracking & performance monitoring |
-| **Google reCAPTCHA v2** | Bot prevention on auth forms |
-| **Leaflet Maps** | Route/pickup location maps |
+| **WordPress CMS** | Tours, blog posts, pages, menus, SEO metadata (Rank Math) |
+| **WPGraphQL** | GraphQL API for WordPress content queries |
+| **Custom Backend API** | Tour availability, bookings, payments, orders (future) |
+| **Google OAuth** | Social sign-in |
+| **Payment Gateway** | OnePay (online) or custom backend (future) |
+| **Google Analytics 4** | Web analytics & performance tracking |
+| **Sentry** | Error tracking & session replay |
+| **Google reCAPTCHA v2** | Bot prevention on forms |
+| **Leaflet Maps** | Tour meeting point / pickup location maps |
 
 ## 7. Non-Functional Requirements
 
 ### Performance
-- ISR for static content (home, blog, CMS pages) — fast TTFB
+- ISR for static content (home, tours, blog, pages) — revalidate 60-300s
 - React Query stale-while-revalidate for dynamic data
 - Image optimization via Next.js Image + sharp
 - Lazy loading for below-fold components
-- Bundle analysis via `npm run build:analyze`
+- Code splitting (7 service layers, view components)
 
 ### SEO
-- Server-rendered metadata per page
-- JSON-LD structured data (FAQ, breadcrumbs)
-- Auto-generated sitemap
-- Robots.txt configurable via env var
-- WordPress SEO data (Yoast) consumed via GraphQL
+- Server-rendered metadata per page via `generateMetadata()`
+- JSON-LD structured data for tours (Product schema) and posts (Article schema)
+- Auto-generated XML sitemaps (tours, posts, pages, destinations)
+- Robots.txt — allow all crawlers
+- Rank Math SEO data from WordPress (meta, OG, breadcrumbs)
 
 ### Internationalization
-- Languages: Vietnamese (vi, default), English (en)
-- URL prefix routing: optional (controlled by `INTERNATIONAL_ROUTING_ENABLED`)
-- Server-side and client-side translation support
-- RTL: not required
+- Languages: English (en, primary), Vietnamese (vi), Chinese (zh)
+- Cookie-based language routing (no URL prefix)
+- Server-side + client-side translation via i18next
+- RTL: not required (all LTR)
 
 ### Security
 - JWT in HTTP-only cookies (XSS-safe)
-- BFF API proxy — backend credentials hidden from browser
+- BFF API proxy for auth + payments (credentials hidden)
 - reCAPTCHA on auth forms
 - HTTPS enforced in production
-- Sentry for security-relevant error tracking
-
-### Multi-tenancy
-- Organization context via `OrgProvider`
-- Per-org theme (default `light`, `condao-express-light`, etc.)
-- API key per organization
-- Branding (logo, colors) fetched from backend/WordPress
+- Sentry for error tracking + security events
 
 ### Accessibility
 - Radix UI primitives (ARIA-compliant)
-- Keyboard navigation for dialogs/modals
-- Screen reader support via semantic HTML
+- Keyboard navigation for all interactive elements
+- Screen reader support via semantic HTML + labels
+- Responsive design (mobile-first)
 
 ## 8. Target Platforms
 
@@ -161,6 +171,16 @@ Booking Detail → Request Cancellation → Confirmation → Admin Review → Re
 | Mobile (iOS Safari, Android Chrome) | Primary — responsive design |
 | PWA | Supported (manifest.ts) |
 | Tablet | Responsive |
+
+---
+
+## Recent Updates
+
+**2026-03-19: Next.js 14→16 Upgrade**
+- Upgraded from Next.js 14.2.29 to 16.2.0
+- Updated React from 18.3.1 to 19.2.4
+- Turbopack now default bundler for development (50-100x faster builds)
+- Migration guide: [Next.js 16 Upgrade Guide](./nextjs-16-upgrade-guide.md)
 
 ---
 

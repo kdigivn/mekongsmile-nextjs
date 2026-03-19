@@ -1,0 +1,179 @@
+{
+  "title": "取消预订申请 | 湄公微笑",
+  "table": {
+    "title": "取消票请求",
+    "no-of-results": "个取消票请求",
+    "no-result": "无结果",
+    "load-data": { "title": "加载更多数据", "loading": "加载中..." },
+    "headers": {
+      "id": "ID",
+      "order_info": "订单信息",
+      "cancel_positions": "已取消座位",
+      "cancel_reason": "取消原因",
+      "recall_reason": "撤回原因",
+      "processing_status": "处理状态",
+      "action": "操作"
+    },
+    "no_recall_reason": "无撤回原因",
+    "action-cell": {
+      "button": { "recall": "撤回" },
+      "tooltip": "此状态下不允许撤回请求"
+    },
+    "cancel-positions-cell": {
+      "no_cancelled_positions": "无已取消座位"
+    },
+    "order-cell": {
+      "no_order_info": "无票务信息",
+      "route": "路线",
+      "departure_name": "未知",
+      "destination_name": "未知",
+      "operator": "运营商",
+      "boat_name": "船名",
+      "departure_date": "出发日期",
+      "invalid_date": "日期无效",
+      "passenger_list": "乘客列表",
+      "no_passengers": "无乘客",
+      "passenger": "乘客",
+      "date_of_birth": "出生日期",
+      "social_id": "身份证",
+      "home_town": "家乡",
+      "seat": "座位",
+      "seat_type": "座位类型",
+      "position": "位置",
+      "booking_id": "预订编号"
+    },
+    "processing-status-cell": {
+      "error_message": "发生错误，无法跟踪处理状态！"
+    }
+  },
+  "dialog": {
+    "recall-cancel-ticket-request-dialog": {
+      "title": "确认取消票撤回：",
+      "form": {
+        "placeholder": "输入撤回原因",
+        "errors": { "recall_message": "撤回消息的错误信息" }
+      },
+      "buttons": {
+        "cancel": "取消",
+        "submit": "提交",
+        "submitting": "提交中..."
+      },
+      "messages": {
+        "success": "撤回请求提交成功！",
+        "error": "撤回请求提交失败！"
+      }
+    },
+    "create-cancel-ticket-request-dialog": {
+      "title": "选择要取消的票",
+      "form": {
+        "cancel_reason_placeholder": "输入取消原因",
+        "errors": {
+          "cancel_reason": "您需要输入取消原因",
+          "cancel_ticket_by_positions": "您需要至少选择一张要取消的票"
+        }
+      },
+      "buttons": {
+        "cancel": "取消",
+        "submit": "提交",
+        "submitting": "提交中..."
+      },
+      "messages": {
+        "success": "取消票请求发送成功！",
+        "error": "取消票请求失败！",
+        "no_order": "订单加载出现问题，请致电热线及时获取支持！",
+        "already_cancelled": "您已请求取消此票，无法再次选择取消！"
+      },
+      "no_cancel_ticket_rule": "无取消政策",
+      "cancel_ticket_rule": "取消政策：",
+      "cancel_ticket_rule_number_of_tickets": "票数",
+      "cancel_ticket_rule_service_fee": "服务费",
+      "cancel_ticket_rule_time_frame": "时间范围",
+      "cancel_ticket_rule_time_frame_before_departure": "出发前",
+      "cancel_ticket_rule_refund_amount": "每票取消费",
+      "no_results": "无结果",
+      "route": "路线",
+      "operator": "运营商",
+      "boat": "船",
+      "departure_date": "出发日期",
+      "total_ticket_price": "总票价",
+      "total_amount": "总金额",
+      "total-ticket": "总票数",
+      "total-discount": "总折扣",
+      "total-harbor-fee": "总港口费",
+      "cancel-discount-order": "折扣/优惠券订单的取消票请求，必须取消所有票！"
+    },
+    "redirect-cancel-ticket-request-page-dialog": {
+      "title": "取消票请求已发送",
+      "description": "您可以前往取消票跟踪页面跟踪取消票请求的进度。",
+      "buttons": {
+        "stay": "留在此页",
+        "loading": "处理中...",
+        "redirect": "前往取消票页面"
+      }
+    }
+  },
+  "errors": {
+    "160101": "订单ID不存在",
+    "160102": "订单未预订，无法创建取消票请求！",
+    "160103": "机构ID不存在",
+    "160104": "取消票设置不能为空",
+    "160105": "余额不足以创建取消票请求，请充值",
+    "160106": "订单ID不能为空！",
+    "160107": "取消票不能为空！",
+    "160108": "取消原因不能为空！",
+    "160109": "机构不存在",
+    "160110": "出发时间或日期缺失，无法创建取消票请求",
+    "160111": "出发时间或日期无效，无法创建取消票请求",
+    "160112": "行程已出发，无法创建取消票请求",
+    "160113": "相关机构不能为空",
+    "160114": "基于机构计算退款订单出现问题！",
+    "160115": "机构不存在",
+    "160116": "取消票请求不存在",
+    "160117": "机构对此取消票请求没有权限",
+    "160118": "在取消票请求中查找相关机构出现问题！",
+    "160119": "您的机构已处理此取消票，请勿再次提交！",
+    "160120": "取消票规则为空！",
+    "160121": "上级机构未接受请求",
+    "160122": "上级机构未退款",
+    "160123": "所有机构必须接受请求",
+    "160124": "客户不存在",
+    "160125": "运营商代码不存在",
+    "160126": "根机构正在处理中，无法撤回此请求！",
+    "160127": "取消票请求ID不存在！",
+    "160128": "您不是此请求的创建者，无法撤回！",
+    "160129": "订单ID不存在！",
+    "160130": "您已拒绝此请求，请勿再次发送请求！",
+    "160131": "机构信用额度为零或负数，无法发送取消票请求",
+    "160132": "机构余额不足以支付取消服务费，无法发送取消票请求",
+    "160133": "在机构中通过加票方式撤销订单出现问题！",
+    "160134": "在机构取消票设置中找不到运营商的取消票规则",
+    "160135": "退款金额无效",
+    "160136": "相关机构不存在",
+    "160137": "取消服务费必须大于或等于零，无法发送取消票请求",
+    "160138": "信用额度不足以支付取消服务费，无法发送取消票请求",
+    "160139": "取消票请求更新失败",
+    "160140": "取消票请求已被撤回",
+    "160141": "折扣/优惠券订单的取消票请求，必须取消所有票！",
+    "160143": "不允许请求，可能是因为出发时间太近！"
+  },
+  "status": {
+    "processing": "处理中",
+    "accepted": "已接受",
+    "rejected": "已拒绝",
+    "recalled": "已撤回",
+    "refunded": "已退款",
+    "unknown": "未知"
+  },
+  "payment": {
+    "pending": "待处理",
+    "paid": "已付款",
+    "refunded": "已退款",
+    "unknown": "未知"
+  },
+  "ticket": {
+    "draft": "草稿",
+    "booked": "已预订",
+    "cancelled": "已取消",
+    "unknown": "未知"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "operator": "运营商",
+  "availableSeats": "可用名额",
+  "tooltip": {
+    "map": "查看行程地图",
+    "seat": "查看座位布局"
+  },
+  "departure": "出发地",
+  "destination": "目的地",
+  "departureTime": "出发时间",
+  "selectButton": "选择",
+  "noRemain": "无余位",
+  "depart": "出发"
+}

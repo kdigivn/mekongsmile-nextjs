@@ -1,7 +1,7 @@
 {
   "step": {
-    "1": "Select voyage",
-    "2": "Select seat",
+    "1": "Select tour",
+    "2": "Select options",
     "3": "Payment"
   }
 }

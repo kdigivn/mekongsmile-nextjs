@@ -1,13 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { BreadcrumbsLinkProps } from "@/components/breadcrumbs/breadcrumbs";
-import {
-  WordpressPage,
-  WordpressPageShortForSlug,
-} from "@/services/infrastructure/wordpress/types/page";
-import { FaqItem } from "@/services/infrastructure/wordpress/types/sideBar";
+import type { SeoData } from "@/graphql/types";
+import type { Metadata } from "next";
 
+/** Replace WordPress backend URLs with frontend base URL in a string */
 export const wpURLtoNextURL = (str: string) => {
-  let cmsSite = process.env.WORDPRESS_GRAPHQL_ENDPOINT;
+  let cmsSite = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_URL;
   if (cmsSite) {
     const indexOfGraphql = cmsSite.indexOf("/graphql");
     cmsSite =
@@ -15,10 +12,8 @@ export const wpURLtoNextURL = (str: string) => {
   }
   const siteUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
-  const replaceString = str.replace(
-    new RegExp(cmsSite ?? "", "g"),
-    siteUrl ?? ""
-  );
+  if (!cmsSite) return str;
+  const replaceString = str.replace(new RegExp(cmsSite, "g"), siteUrl ?? "");
 
   return replaceString.replace(
     new RegExp(`${siteUrl}/wp-content/`, "g"),
@@ -26,8 +21,9 @@ export const wpURLtoNextURL = (str: string) => {
   );
 };
 
+/** Extract URI path from a WordPress URL */
 export const getUriFromWpURL = (str: string) => {
-  let cmsSite = process.env.WORDPRESS_GRAPHQL_ENDPOINT;
+  let cmsSite = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_URL;
   let site = cmsSite;
   if (cmsSite) {
     const indexOfGraphql = cmsSite.indexOf("/graphql");
@@ -40,123 +36,62 @@ export const getUriFromWpURL = (str: string) => {
     ?.replace(new RegExp(site ?? "", "g"), "");
 };
 
-export const setSeoData = ({ seo }: { seo: WordpressPage["seo"] }) => {
-  if (!seo) return {};
+// ─── Rank Math SeoData → Next.js Metadata ────────────────────────────────────
 
-  seo = JSON.parse(wpURLtoNextURL(JSON.stringify(seo)));
+/**
+ * Convert WPGraphQL Rank Math SeoData to a Next.js Metadata object.
+ * Falls back to the provided title/description when SEO fields are absent.
+ */
+export function wpSeoToMetadata(
+  seo: SeoData | undefined,
+  fallback: { title: string; description: string }
+): Metadata {
+  if (!seo) {
+    return { title: fallback.title, description: fallback.description };
+  }
+
+  const sanitized: SeoData = JSON.parse(wpURLtoNextURL(JSON.stringify(seo)));
+
+  const ogImages = sanitized.openGraph?.image?.url
+    ? [
+        {
+          url: sanitized.openGraph.image.url,
+          width: sanitized.openGraph.image.width ?? undefined,
+          height: sanitized.openGraph.image.height ?? undefined,
+        },
+      ]
+    : [];
+
+  const robotsMeta = sanitized.robots ?? [];
 
   return {
-    metadataBase: new URL(`${process.env.NEXT_PUBLIC_BASE_URL}`),
-    title: seo.title || "",
-    description: seo.description || "",
+    title: sanitized.title || fallback.title,
+    description: sanitized.description || fallback.description,
+    keywords: sanitized.focusKeywords ?? undefined,
     robots: {
-      index: seo.robots.includes("index"),
-      follow: seo.robots.includes("follow"),
+      index: !robotsMeta.includes("noindex"),
+      follow: !robotsMeta.includes("nofollow"),
+    },
+    alternates: {
+      canonical: sanitized.canonicalUrl || undefined,
     },
     openGraph: {
-      title: seo.openGraph.title || "",
-      description: seo.openGraph.description || "",
-      url: seo.openGraph.url || "",
-      siteName: seo.openGraph.siteName || "",
-      images: [seo.openGraph?.image || ""],
-      locale: seo.openGraph.locale || "vi_VN",
+      title: sanitized.openGraph?.title || sanitized.title || fallback.title,
+      description:
+        sanitized.openGraph?.description ||
+        sanitized.description ||
+        fallback.description,
+      url: sanitized.openGraph?.url || sanitized.canonicalUrl || undefined,
+      siteName: sanitized.openGraph?.siteName || undefined,
+      images: ogImages.length > 0 ? ogImages : undefined,
       type:
-        (seo.openGraph.type as
-          | "website"
-          | "article"
-          | "book"
-          | "profile"
-          | "music.song"
-          | "music.album"
-          | "music.playlist"
-          | "music.radio_station"
-          | "video.movie"
-          | "video.episode"
-          | "video.tv_show"
-          | "video.other"
-          | undefined) || "website",
+        sanitized.openGraph?.type === "article" ? "article" : "website",
     },
-    twitter: {
-      card:
-        (seo.openGraph.twitterMeta.card as
-          | "summary_large_image"
-          | "summary"
-          | "player"
-          | "app"
-          | undefined) || "summary_large_image",
-      title: seo.openGraph.twitterMeta.title || "",
-      description: seo.openGraph.twitterMeta.description || "",
-      images: [seo.openGraph.twitterMeta.image || ""],
-    },
-    keywords: seo.focusKeywords || [""],
   };
-};
+}
 
-export const getBreadcrumbFromSEO = ({
-  seo,
-}: {
-  seo?: WordpressPage["seo"];
-}): BreadcrumbsLinkProps[] => {
-  if (!seo) return [];
+/** Convenience alias */
+export const seoToMetadata = wpSeoToMetadata;
 
-  seo.breadcrumbs = seo.breadcrumbs.filter(
-    (breadcrumb) => !breadcrumb.isHidden && breadcrumb.url !== ""
-  );
-
-  seo.breadcrumbs = seo.breadcrumbs.map((breadcrumb) => ({
-    ...breadcrumb,
-    url: `${getUriFromWpURL(breadcrumb.url).startsWith("/") ? "" : "/"}${getUriFromWpURL(breadcrumb.url)}`,
-  }));
-
-  const links: BreadcrumbsLinkProps[] = seo.breadcrumbs.map((breadcrumb) => ({
-    href: breadcrumb.url,
-    name: breadcrumb.text,
-  }));
-  if (
-    seo.breadcrumbTitle &&
-    seo.breadcrumbTitle !== links[links.length - 1].name
-  )
-    links.push({ name: seo.breadcrumbTitle, href: "" });
-  return links;
-};
-
-export type FAQSchema = {
-  "@context": "https://schema.org";
-  "@type": "FAQPage";
-  mainEntity: {
-    "@type": "Question";
-    name: string;
-    acceptedAnswer: { "@type": "Answer"; text: string };
-  }[];
-};
-
-export const getFAQSchema = (faqItems: FaqItem[]): FAQSchema => {
-  return {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: faqItems?.map((item) => ({
-      "@type": "Question",
-      name: item.faqKey,
-      acceptedAnswer: { "@type": "Answer", text: item.faqValue || "" },
-    })),
-  };
-};
-
-export const excludeNextJsPage = (
-  pages: WordpressPageShortForSlug[]
-): WordpressPageShortForSlug[] => {
-  const excludeUri = [
-    "/booking/",
-    "/confirm-email/",
-    "/forgot-password/",
-    "/password-change/",
-    "/profile/",
-    "/schedules/",
-    "/sign-in/",
-    "/sign-up/",
-    "/ticket-detail/",
-    "/user-bookings/",
-  ];
-
-  return pages.filter((page) => !excludeUri.includes(page.uri));
-};
+/** Legacy alias for backward compat (unused in new code) */
+export const setSeoData = wpSeoToMetadata;

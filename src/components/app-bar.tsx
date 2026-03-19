@@ -1,12 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
-/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
-import useAuth from "@/services/auth/use-auth";
-import useAuthActions from "@/services/auth/use-auth-actions";
 import { useTranslation } from "@/services/i18n/client";
 import useLanguage from "@/services/i18n/use-language";
 import {
-  CircularProgress,
   Navbar,
   NavbarBrand,
   NavbarContent,
@@ -15,26 +11,12 @@ import {
   NavbarMenuItem,
   NavbarMenuToggle,
 } from "@heroui/react";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
-import React, { memo, useCallback, useEffect, useMemo, useState } from "react";
+import React, { memo, useCallback, useMemo, useState } from "react";
 import LinkBase from "./link-base";
 import { Button } from "./ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "./ui/dropdown-menu";
-import { MdOutlineAccountCircle } from "react-icons/md";
-import {
-  ChildItem,
-  Menus,
-} from "@/services/infrastructure/wordpress/types/menu";
-import { Logo } from "@/services/infrastructure/wordpress/types/logo";
-import { cn, formatCurrency } from "@/lib/utils";
+import type { Menu, MenuItem } from "@/graphql/types";
+import { cn } from "@/lib/utils";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -44,79 +26,36 @@ import {
   NavigationMenuTrigger,
 } from "./ui/navigation-menu";
 
-import { Post } from "@/services/infrastructure/wordpress/types/post";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "./ui/accordion";
-import { Trigger } from "@radix-ui/react-navigation-menu";
-import { useSearchDialogActions } from "./search/context/use-search-dialog-actions";
-import { useSearchDialog } from "./search/context/use-search-dialog";
 import { IoIosMenu, IoMdClose } from "react-icons/io";
-import { IoShareSocialOutline } from "react-icons/io5";
-import { BiSearchAlt } from "react-icons/bi";
-import { useMobileBottomNavActions } from "./footer/footer-mobile-contact-buttons/use-mobile-bottom-nav-actions";
 import dynamic from "next/dynamic";
-import Profile from "./profile/profile";
-import ChangePassword from "./profile/change-password";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { ContactHeaderIconsItem } from "@/services/infrastructure/wordpress/types/sideBar";
-import SupportContactForm from "./form/support-contact-form";
-import TopUpDialog from "./dialog/top-up-dialog";
-import ShowSuggestionVoucherDialog from "./dialog/show-suggestion-voucher-dialog";
-// import UserNotification from "./user-notification";
-// import GoogleTranslate from "./google-translate/google-translate";
-// import Search from "./search/search";
 
 type Props = {
-  mainMenu: Menus;
-  mobileMenu: Menus;
-  logoData: Logo;
-  highLightPosts: Post[];
-  contactHeaderIcons: ContactHeaderIconsItem[];
-  displayVoucherSuggestion: boolean;
+  primaryMenu: Menu;
+  siteTitle: string;
 };
 
-const UserNotification = dynamic(() => import("./user-notification"), {
-  ssr: false,
-});
-const Search = dynamic(() => import("./search/search"), { ssr: false });
 const GoogleTranslate = dynamic(
   () => import("./google-translate/google-translate"),
   { ssr: false }
 );
 
-const ResponsiveAppBar = ({
-  mainMenu,
-  mobileMenu,
-  logoData,
-  highLightPosts,
-  contactHeaderIcons,
-  displayVoucherSuggestion,
-}: Props) => {
+const ResponsiveAppBar = ({ primaryMenu, siteTitle }: Props) => {
   const { t } = useTranslation("common");
-  const { user, isAuthenticated } = useAuth();
-  const { logOut } = useAuthActions();
+  // TODO: re-add auth when custom backend is ready
+  const isAuthenticated = false;
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { hideNav, showNav } = useMobileBottomNavActions();
   const pathname = usePathname();
   const language = useLanguage();
-
-  const { toggleOpen } = useSearchDialogActions();
 
   const handleCloseNavMenu = useCallback(() => {
     setIsMenuOpen(false);
   }, []);
-
-  const toggleSearch = useCallback(() => toggleOpen(), [toggleOpen]);
-
-  const [isTopUpDialogOpen, setIsTopUpDialogOpen] = useState(false);
-
-  const toggleTopUpDialog = useCallback(() => {
-    setIsTopUpDialogOpen(!isTopUpDialogOpen);
-  }, [isTopUpDialogOpen]);
 
   const navClassNames = useMemo(
     () => ({
@@ -149,32 +88,7 @@ const ResponsiveAppBar = ({
     []
   );
 
-  const [isProfileOpen, setIsProfileOpen] = useState(false);
-  const [isChangePasswordOpen, setIsChangePasswordOpen] = useState(false);
-  const { isOpen: isSearchOpen } = useSearchDialog();
-
-  const toggleProfile = useCallback(() => {
-    setIsProfileOpen(!isProfileOpen);
-  }, [isProfileOpen]);
-
-  useEffect(() => {
-    if (isProfileOpen || isChangePasswordOpen || isMenuOpen || isSearchOpen) {
-      hideNav();
-    } else {
-      showNav();
-    }
-  }, [
-    hideNav,
-    isChangePasswordOpen,
-    isMenuOpen,
-    isProfileOpen,
-    isSearchOpen,
-    showNav,
-  ]);
-
-  // const toggleChangePassword = useCallback(() => {
-  //   setIsChangePasswordOpen(!isChangePasswordOpen);
-  // }, [isChangePasswordOpen]);
+  // TODO: re-add profile/password modals when auth is rebuilt
 
   // temporary take down for mega menu
   // let bottomMenuItems: React.ReactNode[] = [];
@@ -268,9 +182,9 @@ const ResponsiveAppBar = ({
   // );
 
   // Handle render menu item for mobile (Accordion)
-  const renderMenuItems = (menuItems: ChildItem[], level = 0) => {
+  const renderMenuItems = (menuItems: MenuItem[], level = 0) => {
     if (menuItems && menuItems.length > 0) {
-      return menuItems.map((menu: ChildItem) => {
+      return menuItems.map((menu: MenuItem) => {
         // Safely check if there are child items
         const hasChildren =
           menu?.childItems?.nodes && menu?.childItems?.nodes?.length > 0;
@@ -279,8 +193,8 @@ const ResponsiveAppBar = ({
           // Menu item with children: render as Accordion
           return (
             <AccordionItem
-              key={menu.id}
-              value={`item-${menu.id}`}
+              key={menu.databaseId}
+              value={`item-${menu.databaseId}`}
               className={cn(
                 "w-full",
                 level === 0 ? "border-b-1 border-default-400" : "border-none"
@@ -288,8 +202,8 @@ const ResponsiveAppBar = ({
             >
               <div className="flex flex-row items-center gap-2 border-b-1 border-default-400">
                 <NavbarMenuItem
-                  key={menu.id}
-                  isActive={pathname === `/${language}${menu.uri}`}
+                  key={menu.databaseId}
+                  isActive={pathname === `/${language}${menu.path}`}
                   className={cn(
                     "w-full",
                     level === 0
@@ -297,7 +211,7 @@ const ResponsiveAppBar = ({
                       : `ml-${level * 2} py-2 text-black hover:bg-primary-100`
                   )}
                 >
-                  <LinkBase onClick={handleCloseNavMenu} href={`${menu.uri}`}>
+                  <LinkBase onClick={handleCloseNavMenu} href={`${menu.path}`}>
                     <p
                       className={`${level === 0 ? "font-semibold" : "font-medium"} text-sm leading-7 [&:not(:first-child)]:mt-6`}
                     >
@@ -325,8 +239,8 @@ const ResponsiveAppBar = ({
           // Menu item without children: render as a simple link
           return (
             <NavbarMenuItem
-              key={menu.id}
-              isActive={pathname === `/${language}${menu.uri}`}
+              key={menu.databaseId}
+              isActive={pathname === `/${language}${menu.path}`}
               className={cn(
                 "w-full",
                 level === 0
@@ -334,7 +248,7 @@ const ResponsiveAppBar = ({
                   : `ml-${level * 2} py-2 text-black hover:bg-primary-100`
               )}
             >
-              <LinkBase onClick={handleCloseNavMenu} href={`${menu.uri}`}>
+              <LinkBase onClick={handleCloseNavMenu} href={`${menu.path}`}>
                 <p
                   className={`${level === 0 ? "font-semibold" : "font-medium"} text-sm leading-7 [&:not(:first-child)]:mt-6`}
                 >
@@ -358,96 +272,81 @@ const ResponsiveAppBar = ({
   }, []); // Empty dependency array means the function is memoized and won't change
 
   let mainMenuItems: React.ReactNode[] = [];
-  if (mainMenu) {
+  if (primaryMenu) {
     mainMenuItems =
-      mainMenu?.menus.nodes[0].menuItems.nodes.map(
-        (menuItem: ChildItem, idx) => {
-          const childItems = menuItem?.childItems?.nodes ?? [];
-          if (childItems.length > 0) {
-            return (
-              <NavbarItem key={idx}>
-                <NavigationMenu>
-                  <NavigationMenuList>
-                    <NavigationMenuItem>
-                      <NavigationMenuTrigger className="bg-transparent px-0 font-normal hover:bg-transparent focus:bg-transparent data-[active]:bg-transparent data-[state=open]:bg-transparent data-[active]:text-primary data-[state=open]:text-primary">
-                        {menuItem.uri ? (
-                          <LinkBase
-                            href={menuItem.uri}
-                            className="text-sm font-normal hover:text-primary"
-                          >
-                            {menuItem.label}
-                          </LinkBase>
-                        ) : (
-                          menuItem.label
-                        )}
-                      </NavigationMenuTrigger>
-                      <NavigationMenuContent>
-                        {childItems[0].childItems?.nodes.length ? (
-                          <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2">
-                            {childItems.map((component, idx) => (
-                              <ListMenuItem component={component} key={idx} />
-                            ))}
-                          </ul>
-                        ) : (
-                          <ul className="grid min-w-[300px] gap-1 p-2">
-                            {childItems.map((component) => (
-                              <ListItem
-                                key={component.id}
-                                title={component.label}
-                                href={component.uri}
-                              >
-                                {/* {component.label} */}
-                              </ListItem>
-                            ))}
-                          </ul>
-                        )}
-                      </NavigationMenuContent>
-                    </NavigationMenuItem>
-                  </NavigationMenuList>
-                </NavigationMenu>
-              </NavbarItem>
-            );
-          } else {
-            return (
-              <NavbarItem key={idx}>
-                <NavigationMenu>
-                  <NavigationMenuList>
-                    <NavigationMenuItem>
-                      <NavigationMenuLink asChild>
+      primaryMenu.menuItems.nodes.map((menuItem: MenuItem, idx) => {
+        const childItems = menuItem?.childItems?.nodes ?? [];
+        if (childItems.length > 0) {
+          return (
+            <NavbarItem key={idx}>
+              <NavigationMenu>
+                <NavigationMenuList>
+                  <NavigationMenuItem>
+                    <NavigationMenuTrigger className="bg-transparent px-0 font-normal hover:bg-transparent focus:bg-transparent data-[active]:bg-transparent data-[state=open]:bg-transparent data-[active]:text-primary data-[state=open]:text-primary">
+                      {menuItem.path ? (
                         <LinkBase
-                          href={menuItem.uri}
+                          href={menuItem.path}
                           className="text-sm font-normal hover:text-primary"
                         >
                           {menuItem.label}
                         </LinkBase>
-                      </NavigationMenuLink>
-                    </NavigationMenuItem>
-                  </NavigationMenuList>
-                </NavigationMenu>
-              </NavbarItem>
-            );
-          }
+                      ) : (
+                        menuItem.label
+                      )}
+                    </NavigationMenuTrigger>
+                    <NavigationMenuContent>
+                      {childItems[0].childItems?.nodes.length ? (
+                        <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2">
+                          {childItems.map((component, idx) => (
+                            <ListMenuItem component={component} key={idx} />
+                          ))}
+                        </ul>
+                      ) : (
+                        <ul className="grid min-w-[300px] gap-1 p-2">
+                          {childItems.map((component) => (
+                            <ListItem
+                              key={String(component.databaseId)}
+                              title={component.label}
+                              href={component.path}
+                            >
+                              {/* {component.label} */}
+                            </ListItem>
+                          ))}
+                        </ul>
+                      )}
+                    </NavigationMenuContent>
+                  </NavigationMenuItem>
+                </NavigationMenuList>
+              </NavigationMenu>
+            </NavbarItem>
+          );
+        } else {
+          return (
+            <NavbarItem key={idx}>
+              <NavigationMenu>
+                <NavigationMenuList>
+                  <NavigationMenuItem>
+                    <NavigationMenuLink asChild>
+                      <LinkBase
+                        href={menuItem.path}
+                        className="text-sm font-normal hover:text-primary"
+                      >
+                        {menuItem.label}
+                      </LinkBase>
+                    </NavigationMenuLink>
+                  </NavigationMenuItem>
+                </NavigationMenuList>
+              </NavigationMenu>
+            </NavbarItem>
+          );
         }
-      ) ?? [];
+      }) ?? [];
   }
 
   // const themeSwitchFallback = useMemo(
   //   () => <Skeleton className="h-10 rounded-lg bg-neutral-200" />,
   //   []
   // );
-
-  useEffect(() => {
-    if (isMenuOpen) {
-      hideNav();
-    } else {
-      showNav();
-    }
-  }, [hideNav, isMenuOpen, showNav]);
-
-  const fullName =
-    language === "en"
-      ? `${user?.customer?.first_name || ""}${user?.customer?.last_name ? (user?.customer?.first_name ? " " : "") + user?.customer?.last_name : ""}`
-      : `${user?.customer?.last_name || ""}${user?.customer?.first_name ? (user?.customer?.last_name ? " " : "") + user?.customer?.first_name : ""}`;
 
   return (
     <>
@@ -469,17 +368,11 @@ const ResponsiveAppBar = ({
             <NavbarBrand className="lg:!flex-grow-0">
               <LinkBase
                 href={"/"}
-                className="hidden h-[48px] w-[140px] items-center justify-center dark:md:border dark:md:border-white dark:md:bg-white dark:md:bg-opacity-95 dark:md:backdrop-blur-md lg:flex"
+                className="hidden h-[48px] items-center justify-center lg:flex"
               >
-                <div className="relative h-[48px] w-[140px]">
-                  <img
-                    src={logoData?.siteLogo?.sourceUrl}
-                    alt={logoData?.siteLogo?.title}
-                    width={140}
-                    height={48}
-                    className="h-full w-full object-contain"
-                  />
-                </div>
+                <span className="text-xl font-bold text-primary">
+                  {siteTitle}
+                </span>
               </LinkBase>
             </NavbarBrand>
             <NavbarContent
@@ -490,17 +383,11 @@ const ResponsiveAppBar = ({
               <NavbarBrand>
                 <LinkBase
                   href={"/"}
-                  className="flex h-[36px] w-[100px] items-center justify-center dark:border dark:border-white dark:bg-white dark:bg-opacity-95 dark:backdrop-blur-md"
+                  className="flex h-[36px] items-center justify-center"
                 >
-                  <div className="relative h-[36px] w-[100px]">
-                    <img
-                      src={logoData?.siteLogo?.sourceUrl}
-                      alt={logoData?.siteLogo?.title}
-                      width={100}
-                      height={36}
-                      className="h-full w-full object-contain"
-                    />
-                  </div>
+                  <span className="text-lg font-bold text-primary">
+                    {siteTitle}
+                  </span>
                 </LinkBase>
               </NavbarBrand>
             </NavbarContent>
@@ -513,12 +400,12 @@ const ResponsiveAppBar = ({
                 mobileMenu.menus.nodes[0].menuItems.nodes?.map(
                   (menu: ChildItem) => (
                     <NavbarMenuItem
-                      key={menu.id}
-                      isActive={pathname === `/${language}${menu.uri}`}
+                      key={menu.databaseId}
+                      isActive={pathname === `/${language}${menu.path}`}
                     >
                       <LinkBase
                         onClick={handleCloseNavMenu}
-                        href={`${menu.uri}`}
+                        href={`${menu.path}`}
                       >
                         <p className="text-center leading-7 [&:not(:first-child)]:mt-6">
                           {menu.label}
@@ -559,12 +446,12 @@ const ResponsiveAppBar = ({
             id="menu-appbar"
             className="z-40 bg-white bg-white/70 px-10 backdrop-blur-xl"
           >
-            {mobileMenu ? (
+            {primaryMenu ? (
               <Accordion
                 type="multiple"
                 className="mb-40 flex w-full flex-col items-start gap-4"
               >
-                {renderMenuItems(mobileMenu.menus.nodes[0].menuItems.nodes)}
+                {renderMenuItems(primaryMenu.menuItems.nodes)}
                 <NavbarMenuItem className="flex w-full lg:hidden">
                   <Button
                     onClick={handleCloseNavMenu}
@@ -628,14 +515,8 @@ const ResponsiveAppBar = ({
           <NavbarContent justify="end" className="flex">
             <NavbarItem>
               <NavbarContent className="ml-2 hidden gap-4 lg:flex">
-                {mainMenu ? (
-                  <>
-                    {/* {bottomMenuItems} */}
-                    {mainMenuItems}
-                    <NavbarItem>
-                      <Search highLightPosts={highLightPosts} />
-                    </NavbarItem>
-                  </>
+                {primaryMenu ? (
+                  <>{mainMenuItems}</>
                 ) : (
                   <LinkBase onClick={handleCloseNavMenu} href="/">
                     <NavbarItem className="text-sm">
@@ -646,191 +527,11 @@ const ResponsiveAppBar = ({
               </NavbarContent>
             </NavbarItem>
 
-            <UserNotification />
-
-            <NavbarItem className="hidden lg:flex">
-              <NavigationMenu>
-                <NavigationMenuList>
-                  <NavigationMenuItem>
-                    {contactHeaderIcons.length > 1 && (
-                      <>
-                        <Trigger
-                          className="flex h-10 items-center justify-center bg-transparent px-0 font-normal hover:bg-transparent data-[active]:text-primary data-[state=open]:text-primary"
-                          aria-label="Social media"
-                        >
-                          <IoShareSocialOutline className="h-5 w-5" />
-                        </Trigger>
-                        <NavigationMenuContent>
-                          <ul className="flex w-36 items-center gap-3 p-2">
-                            {contactHeaderIcons.map((icon, idx) => (
-                              <NavbarItem key={idx}>
-                                <LinkBase href={icon.link}>
-                                  <Image
-                                    src={icon.image}
-                                    alt={icon.text}
-                                    width={32}
-                                    height={32}
-                                    className="rounded-full"
-                                    unoptimized
-                                  />
-                                </LinkBase>
-                              </NavbarItem>
-                            ))}
-                          </ul>
-                        </NavigationMenuContent>
-                      </>
-                    )}
-                    {contactHeaderIcons.length === 1 && (
-                      <LinkBase
-                        href={contactHeaderIcons[0].link}
-                        className="flex h-5 w-5"
-                      >
-                        <Image
-                          src={contactHeaderIcons[0].image}
-                          alt={contactHeaderIcons[0].text}
-                          width={32}
-                          height={32}
-                          className="rounded-full"
-                          unoptimized
-                        />
-                      </LinkBase>
-                    )}
-                  </NavigationMenuItem>
-                </NavigationMenuList>
-              </NavigationMenu>
-            </NavbarItem>
-
-            {/* Change Language */}
-
-            {/* {(<NavbarItem className="">
-              <Suspense fallback={themeSwitchFallback}>
-                <ThemeSwitchLanguage />
-              </Suspense>
-            </NavbarItem>)} */}
-            {/* <NavbarItem className="hidden lg:flex">
-              <Button
-                onClick={handleCloseNavMenu}
-                asChild
-                className="rounded-lg"
-              >
-                <LinkBase href={"tel:0924299898"} className="flex gap-2">
-                  <MdCall size={24} /> 0924299898
-                </LinkBase>
-              </Button>
-            </NavbarItem> */}
-            <NavbarItem className="lg:hidden">
-              <div
-                className="flex cursor-pointer flex-row items-center justify-center lg:hidden"
-                onClick={toggleSearch}
-              >
-                <BiSearchAlt className="h-5 w-5 hover:text-primary group-hover:text-primary" />
-              </div>
-            </NavbarItem>
-
             <NavbarItem>
               <GoogleTranslate />
             </NavbarItem>
 
-            {isAuthenticated ? (
-              !user ? (
-                <CircularProgress aria-label="Loading..." color="primary" />
-              ) : (
-                <>
-                  <NavbarItem>
-                    <DropdownMenu>
-                      <DropdownMenuTrigger className="h-8 w-8 overflow-hidden rounded-full border-none">
-                        {/* <Avatar
-                          className="flex aspect-square h-9 w-9 items-center justify-center rounded-s-full bg-default-200 text-base font-semibold transition-transform"
-                          color="secondary"
-                          name={
-                            language === "en"
-                              ? (user.customer.last_name ?? "")
-                              : (user.customer.first_name ?? "")
-                          }
-                          size="sm"
-                          src={user.customer.photo?.path}
-                          ImgComponent={Image}
-                          imgProps={imgProps}
-                        /> */}
-
-                        <Avatar className="flex h-full w-full flex-col items-center justify-center">
-                          <AvatarImage
-                            src={user?.customer?.photo?.path ?? ""}
-                            className="h-full w-full bg-white object-cover"
-                          />
-                          <AvatarFallback className="bg-primary text-white">
-                            {`${user.customer?.last_name?.[0] ?? ""}${
-                              user.customer?.first_name?.[0] ?? ""
-                            }`}
-                          </AvatarFallback>
-                        </Avatar>
-                      </DropdownMenuTrigger>
-                      <DropdownMenuContent
-                        aria-label="Profile Actions"
-                        className="min-w-[200px] rounded-lg"
-                      >
-                        <DropdownMenuLabel>
-                          <p className="!font-semibold">{fullName}</p>
-                          <div className="flex flex-wrap items-center justify-between gap-2">
-                            <p className="text-xs text-muted-foreground">
-                              {t("navigation.balance")}
-                              {`${formatCurrency(user.customer?.balance || 0)}`}
-                            </p>
-                            <Button
-                              variant="outline"
-                              size="sm"
-                              onClick={toggleTopUpDialog}
-                            >
-                              {t("top-up.button")}
-                            </Button>
-                          </div>
-                        </DropdownMenuLabel>
-                        <DropdownMenuSeparator />
-                        <DropdownMenuItem onClick={toggleProfile}>
-                          {t("navigation.profile")}
-                        </DropdownMenuItem>
-                        <DropdownMenuItem asChild>
-                          <LinkBase href="/user/bookings">
-                            {t("navigation.bookings")}
-                          </LinkBase>
-                        </DropdownMenuItem>
-                        <DropdownMenuItem asChild>
-                          <LinkBase href="/transactions">
-                            {t("navigation.transactions")}
-                          </LinkBase>
-                        </DropdownMenuItem>
-                        <DropdownMenuItem asChild>
-                          <LinkBase href="/user/cancel-ticket-request">
-                            Theo dõi hủy vé
-                          </LinkBase>
-                        </DropdownMenuItem>
-                        <DropdownMenuItem
-                          onClick={logOut}
-                          className="focus:bg-danger-100 focus:text-danger"
-                        >
-                          {t("navigation.logout")}
-                        </DropdownMenuItem>
-                      </DropdownMenuContent>
-                    </DropdownMenu>
-                  </NavbarItem>
-                </>
-              )
-            ) : (
-              <>
-                <NavbarItem className="hidden lg:flex">
-                  <LinkBase
-                    onClick={handleCloseNavMenu}
-                    href="/sign-in"
-                    aria-label="Login"
-                  >
-                    <MdOutlineAccountCircle className="text-3xl hover:text-primary" />
-                    {/* <p className="text-center leading-7">
-                        {t("navigation.signIn")}
-                      </p> */}
-                  </LinkBase>
-                </NavbarItem>
-              </>
-            )}
+            {/* TODO: re-add user auth dropdown when auth system is re-implemented */}
 
             {/* {!isAuthenticated && (
               <NavbarMenuToggle
@@ -856,31 +557,7 @@ const ResponsiveAppBar = ({
           </div>
         )} */}
       </Navbar>
-      {user && (
-        <>
-          <Profile
-            isOpen={isProfileOpen}
-            setIsOpen={setIsProfileOpen}
-            user={user}
-            language={language}
-            setIsChangePasswordOpen={setIsChangePasswordOpen}
-          />
-          <ChangePassword
-            user={user}
-            isOpen={isChangePasswordOpen}
-            setIsOpen={setIsChangePasswordOpen}
-            language={language}
-            setIsChangeProfileOpen={setIsProfileOpen}
-          ></ChangePassword>
-          <TopUpDialog open={isTopUpDialogOpen} onClose={toggleTopUpDialog} />
-        </>
-      )}
-      <SupportContactForm />
-      {displayVoucherSuggestion && (
-        <ShowSuggestionVoucherDialog
-          displayVoucherSuggestion={displayVoucherSuggestion}
-        />
-      )}
+      {/* Profile and ChangePassword dialogs removed — TODO: re-add when auth is re-implemented */}
     </>
   );
 };
@@ -916,7 +593,7 @@ const ListItem = ({
   );
 };
 
-const ListMenuItem = ({ component }: { component: ChildItem }) => {
+const ListMenuItem = ({ component }: { component: MenuItem }) => {
   return (
     <li>
       <NavigationMenuLink asChild>
@@ -934,7 +611,7 @@ const ListMenuItem = ({ component }: { component: ChildItem }) => {
           <ListItem
             key={idx}
             title={child.label}
-            href={child.uri}
+            href={child.path}
             className="!px-2 !font-normal"
           />
         ))}

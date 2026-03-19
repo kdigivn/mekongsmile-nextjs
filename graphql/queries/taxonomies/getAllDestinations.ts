@@ -91,7 +91,6 @@ export const GET_DESTINATION_BY_SLUG = gql`
             name
             slug
             uri
-            shortDescription
             featuredImage {
               node {
                 sourceUrl
@@ -100,7 +99,6 @@ export const GET_DESTINATION_BY_SLUG = gql`
             }
             shortTourInformation {
               priceInUsd
-              priceInVnd
               duration
             }
           }
@@ -113,7 +111,6 @@ export const GET_DESTINATION_BY_SLUG = gql`
           slug
           uri
           date
-          excerpt
           featuredImage {
             node {
               sourceUrl

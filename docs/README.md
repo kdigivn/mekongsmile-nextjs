@@ -1,8 +1,8 @@
-# Ferry Ticket Frontend — Documentation
+# Mekong Smile Tours — Documentation
 
 > Index of all project documentation with recommended reading order.
 
-**Last Updated:** 2026-03-03
+**Last Updated:** 2026-03-19
 
 ## Getting Started
 

@@ -1,6 +1,6 @@
 # Installing and Running
 
-> Setup, environment variables, build commands, and development server for ferry-frontend.
+> Setup, environment variables, build commands, and development server for Mekong Smile Tours.
 
 **Last Updated:** 2026-03-03
 
@@ -31,7 +31,7 @@
 
    ```bash
    git clone <repo-url>
-   cd ferry-frontend
+   cd mekongsmile
    ```
 
 2. Install dependencies

@@ -91,7 +91,7 @@ const DatePickerInput = memo(
                 selected={date}
                 onSelect={handleSelect}
                 disabled={handleDisable}
-                initialFocus
+                autoFocus
               />
             </PopoverContent>
           </Popover>

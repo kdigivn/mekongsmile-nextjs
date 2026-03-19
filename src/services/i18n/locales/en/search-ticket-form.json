@@ -26,8 +26,8 @@
     "clear": "Clear return date"
   },
   "passengers": {
-    "label": "Passengers",
-    "placeholder": "Number of passengers"
+    "label": "Travelers",
+    "placeholder": "Number of travelers"
   },
   "search": "Search"
 }

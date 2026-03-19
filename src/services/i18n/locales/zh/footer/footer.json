@@ -1,0 +1,30 @@
+{
+  "placeholder": {
+    "input-contact": "电话/Zalo"
+  },
+  "button": {
+    "contact": "发送"
+  },
+  "text": {
+    "text-01": "Mekong Smile 成员",
+    "text-02": "联系方式",
+    "text-03": "总部：5 Tran Van Hoai, Xuan Khanh, Ninh Kieu, Can Tho。",
+    "text-04": "胡志明市办公室：45 Dinh Tien Hoang, Ben Nghe, 第1区, 胡志明市。",
+    "text-05": "商务部",
+    "text-06": "Mekong Smile 售票室",
+    "text-07": "支持",
+    "text-08": "直接联系",
+    "text-09": "关于我们",
+    "text-10": "简介",
+    "text-11": "联系我们",
+    "text-12": "招聘",
+    "text-13": "帮助",
+    "text-14": "合作伙伴计划",
+    "text-15": "其他",
+    "text-16": "隐私政策",
+    "text-17": "条款与条件",
+    "text-18": "支付网关",
+    "text-19": "立即与我们联系",
+    "text-20": "Mekong Smile"
+  }
+}

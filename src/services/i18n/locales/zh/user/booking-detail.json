@@ -1,0 +1,175 @@
+{
+  "title": "预订历史详情",
+  "table": {
+    "title": "乘客列表",
+    "no-of-results": "个预订",
+    "header": {
+      "id": "预订编号",
+      "passenger": "乘客",
+      "gender": { "title": "性别：", "male": "男", "female": "女" },
+      "dob": "出生日期",
+      "social-id": "身份证号",
+      "address": "地址",
+      "nationality": "国籍",
+      "plate-number": "车牌号",
+      "seat-code": "座位编号",
+      "ticket": "票据"
+    },
+    "cell": {
+      "title": "行程票",
+      "from": "从",
+      "to": "至",
+      "depart-date": "出发日期：",
+      "passengers": "乘客：",
+      "toggle-btn": "展开",
+      "type": "类型",
+      "adult": "成人",
+      "children": "儿童",
+      "price": "价格"
+    },
+    "no-results": "无结果"
+  },
+  "button": { "return": "返回", "download": "下载" },
+  "order": "订单",
+  "customer-info": "客户信息",
+  "payment-info": {
+    "title": "付款信息",
+    "total-amount": "总金额",
+    "harbor-fee": "港口费",
+    "status": "状态",
+    "payment-due-date": "付款截止日期",
+    "payment-due-date-tooltip": "请在付款截止日期前完成付款，否则预订将被取消。"
+  },
+  "order-detail-information": {
+    "title": "订单详细信息",
+    "route": "路线",
+    "depart-date": "出发日期",
+    "return-date": "返回日期",
+    "passenger-list": "乘客列表",
+    "ferry-ticket": "旅游预订",
+    "boat": "船名",
+    "price": "票价",
+    "discount": "折扣",
+    "total": "总计",
+    "harbor-fee": "港口费",
+    "order-status": "订单状态"
+  },
+  "payment-methods": {
+    "title": "选择付款方式",
+    "qr": "二维码扫描 - 自动出票 (手续费：0đ)",
+    "banking": "银行转账 (手续费：0đ)",
+    "direct": "在售票柜台直接付款",
+    "onepay": "OnePay：信用卡/借记卡 (手续费：5000đ + 3.5%)",
+    "remaining": "剩余：",
+    "note": "请在进行购票交易前仔细审核并确认所提供的信息。",
+    "terms-1": "接受 ",
+    "terms-2": "条款与条件",
+    "action-button": "付款",
+    "qr-method": {
+      "title": "二维码",
+      "noteTitle": "转账备注",
+      "noteContent": "转账至我们的银行账户，转账后5分钟内确认订单。",
+      "bankingInformation": {
+        "title": "转账信息",
+        "bankAccountNumber": "账户号码：",
+        "bankAccount": "银行账户：",
+        "bankAccountName": "账户名称：",
+        "bankName": "银行：",
+        "transferContent": "内容：",
+        "topicTransferContent": "支付行程票款",
+        "orderCode": "订单编号",
+        "phoneNumber": "电话号码",
+        "amountPayment": "付款金额"
+      }
+    },
+    "direct-method": {
+      "title": "直接付款",
+      "contactInformation": "联系信息",
+      "message": "请直接前往 Mekong Smile 办公室",
+      "address": "地址：",
+      "hotline": "热线：",
+      "ncmkAdress": "芹苴市宁翘区陈文淮街5号"
+    },
+    "bank-transfer-method": {
+      "title": "银行转账",
+      "noteTitle": "转账备注",
+      "noteContent": "请选择24/7快速转账方式并转账至您的账户。",
+      "bankingInformation": {
+        "title": "转账信息",
+        "bankAccountNumber": "账户号码：",
+        "bankAccount": "银行账户：",
+        "bankAccountName": "账户名称：",
+        "bankName": "银行：",
+        "transferContent": "内容：",
+        "topicTransferContent": "支付行程票款",
+        "orderCode": "订单编号",
+        "phoneNumber": "电话号码",
+        "amountPayment": "付款金额"
+      }
+    },
+    "check-balance": {
+      "title": "您的账户余额为 ",
+      "title-not-enough": "付款不足",
+      "title-enough": "付款充足"
+    }
+  },
+  "export-ticket": "导出票据",
+  "export-ticket-modal": {
+    "success": "票据导出成功",
+    "downloadInfo": "下载票据信息",
+    "departTicket": "出发票",
+    "returnTicket": "返回票",
+    "confirm": "确认",
+    "exportTicket": "导出票据",
+    "pleaseConfirm": "导出票据前请确认",
+    "totalMoney": "总金额：",
+    "noteConfirm": "选择确认后，系统将导出票据",
+    "cancel": "取消",
+    "waitExport": "等待导出票据...",
+    "errorBookedSeatExport": "您选择的某个座位已被预订。",
+    "errorDuplicateSocialId": "一个或多个身份证号重复使用。",
+    "export": "导出 ",
+    "export-fail": "失败",
+    "returnBookingStep2": "返回选择座位步骤",
+    "errorExport": "出票过程中发生错误",
+    "errorUknown": "未知错误",
+    "errorProcessingIssueTicket": "此预订正在出票中，请稍候。",
+    "errorCustomerBalanceNotEnough": "客户余额不足",
+    "errorInvalidInput": "输入无效",
+    "errorInvalidStatus": "此预订无法重新出票，因为已成功出票或已取消",
+    "errorNoCustomerAttached": "此预订没有关联客户",
+    "errorOrganizationBalanceNotEnough": "您的机构或其上级机构余额不足。",
+    "iUnderstand": "返回预订详情",
+    "ticket_export_error": "出票过程中发生错误，请联系热线获取支持。错误代码：{{errorCode}}",
+    "errorUnavailableSeats": "您选择的某个座位已被预订。",
+    "errorDuplicateSocialIdOperator": "乘客身份证号已在所选行程中使用："
+  },
+  "order-status": {
+    "0": "草稿",
+    "2": "已请求",
+    "6": "导出错误",
+    "8": "已过期",
+    "10": "已预订",
+    "12": "取消请求",
+    "14": "已取消",
+    "16": "出发取消",
+    "4": "等待出票",
+    "20": "强制取消",
+    "18": "已退款"
+  },
+  "e-invoice": {
+    "label": "电子发票",
+    "not-found": "此订单尚未开具电子发票",
+    "status-label": "状态",
+    "lookup-code-label": "查询码",
+    "lookup-url": {
+      "label": "查询链接",
+      "open-link": "查询电子发票"
+    },
+    "pdf-file": {
+      "label": "发票文件",
+      "download": "下载发票"
+    },
+    "errors-label": "开具发票时发生错误，请联系热线获取更多信息。"
+  }
+}

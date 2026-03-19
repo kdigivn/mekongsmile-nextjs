@@ -3,7 +3,7 @@ import { ELanguages } from "./language-enum";
 
 export const fallbackLanguage = getEnumKeyByEnumValue(
   ELanguages,
-  ELanguages.vi
+  ELanguages.en
 );
 export const languages = getEnumKeys(ELanguages);
 export const defaultNamespace = "common";

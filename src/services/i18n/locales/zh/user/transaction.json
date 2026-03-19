@@ -1,0 +1,37 @@
+{
+  "table": {
+    "title": "交易历史",
+    "header": {
+      "transaction-code": "交易编号",
+      "transaction-time": "交易时间",
+      "transaction-info": "交易内容",
+      "booking-code": "预订编号",
+      "total-amount": "变动金额（越南盾）",
+      "type": "类型",
+      "status": "状态",
+      "note": "备注"
+    },
+    "cell": {
+      "status": {
+        "0": "失败",
+        "1": "成功",
+        "2": "已取消"
+      },
+      "type": {
+        "PB": "支付预订 (PB)",
+        "DP": "客户充值 (DP)",
+        "OD": "机构充值 (OD)",
+        "SO": "与运营商同步 (SO)",
+        "BL": "空白 (BL)",
+        "UK": "未知 (UK)",
+        "CB": "客户借款 (CB)",
+        "CR": "客户还款 (CR)",
+        "PO": "订单支付 (PO)",
+        "CH": "退款 (CH)",
+        "DR": "债务核对 (DR)",
+        "RF": "退款 (RF)"
+      }
+    }
+  },
+  "unsupported": "不支持"
+}

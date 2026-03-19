@@ -34,7 +34,7 @@ function ConfirmDialogProvider({ children }: { children: React.ReactNode }) {
 
   const [confirmDialogInfo, setConfirmDialogInfo] =
     useState<ConfirmDialogOptions>(defaultConfirmDialogInfo);
-  const resolveRef = useRef<(value: boolean) => void>();
+  const resolveRef = useRef<(value: boolean) => void>(undefined);
 
   const handleClose = useCallback(() => {
     setIsOpen(false);

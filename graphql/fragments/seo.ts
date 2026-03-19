@@ -11,11 +11,10 @@ export const SEO_FIELDS = gql`
     description
     focusKeywords
     robots
-    canonical
+    canonicalUrl
     breadcrumbs {
       text
       url
-      isHome
     }
     openGraph {
       title

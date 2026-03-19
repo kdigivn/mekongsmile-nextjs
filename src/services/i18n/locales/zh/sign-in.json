@@ -1,0 +1,48 @@
+{
+  "title": "登录",
+  "welcome": "欢迎回来！",
+  "actions": {
+    "submit": "登录",
+    "createAccount": {
+      "ask": "没有账户？",
+      "link": "立即注册"
+    },
+    "forgotPassword": "忘记密码？"
+  },
+  "inputs": {
+    "email": {
+      "label": "电子邮件",
+      "placeholder": "请输入您的电子邮件",
+      "validation": {
+        "required": "电子邮件为必填项",
+        "invalid": "电子邮件格式无效",
+        "server": {
+          "notFound": "电子邮件不存在"
+        },
+        "notExist": "电子邮件不存在"
+      }
+    },
+    "password": {
+      "label": "密码",
+      "placeholder": "请输入您的密码",
+      "validation": {
+        "required": "密码为必填项",
+        "min": "密码至少需要6个字符",
+        "server": {
+          "incorrectPassword": "密码无效"
+        }
+      }
+    },
+    "remember": {
+      "label": "记住登录状态"
+    },
+    "user": {
+      "validation": {
+        "server": {
+          "notBelongToThisOrganization": "用户未在此系统注册"
+        }
+      }
+    }
+  },
+  "or": "或"
+}

@@ -22,17 +22,17 @@ export const themes = {
         "900": "#161c24",
       },
       primary: {
-        DEFAULT: "#218721",
+        DEFAULT: "#2D5A27",
         foreground: "#ffffff",
-        "100": "#e0f9d3",
-        "200": "#bcf3a9",
-        "300": "#88db77",
-        "400": "#58b74f",
-        "500": "#218721",
-        "600": "#187420",
-        "700": "#10611e",
-        "800": "#0a4e1c",
-        "900": "#06401a",
+        "100": "#e8f5e4",
+        "200": "#c8e6c0",
+        "300": "#8cc480",
+        "400": "#5a9e4e",
+        "500": "#2D5A27",
+        "600": "#254d21",
+        "700": "#1d3f1a",
+        "800": "#153114",
+        "900": "#0e240e",
       },
       success: {
         DEFAULT: "#1d8719",
@@ -162,9 +162,15 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ['"Be Vietnam Pro"', '"Noto Sans SC"', "sans-serif"],
+        heading: ['"Playfair Display"', "Georgia", "serif"],
+      },
       boxShadow: {
+        card: "0 1px 3px 0 rgb(0 0 0 / 0.08), 0 1px 2px -1px rgb(0 0 0 / 0.08)",
         cardHover:
-          "0.9px 0.9px 2.2px -32px rgba(0, 0, 0, 0.02), 2.1px 2.1px 5.3px -32px rgba(0, 0, 0, 0.028), 4px 4px 10px -32px rgba(0, 0, 0, 0.035), 7.1px 7.1px 17.9px -32px rgba(0, 0, 0, 0.042), 13.4px 13.4px 33.4px -32px rgba(0, 0, 0, 0.05), 32px 32px 80px -32px rgba(0, 0, 0, 0.07)",
+          "0 10px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.08)",
+        booking: "0 8px 30px rgb(0 0 0 / 0.04)",
       },
       colors: {
         info: {
@@ -188,8 +194,8 @@ const config = {
         input: "hsl(var(--heroui-default-400))",
         // Used for focus ring
         ring: "hsl(var(--heroui-primary))",
-        // Default background color of <body />...etc
-        pageBackground: "hsl(var(--heroui-default-200))",
+        // Default background color of <body />
+        pageBackground: "#F9F7F2",
         // We do not use these color of shadcn as nextui has already defined it
         // // Default background color of <body />...etc
         // background: "hsl(var(--background))",
@@ -237,34 +243,23 @@ const config = {
           // Foreground color for <Card />
           foreground: "hsl(var(--heroui-foreground))",
         },
-        // Ferry Seat colors
-        seatDefault: {
-          DEFAULT: "hsl(var(--seat-default) / <alpha-value>)",
-          foreground: "hsl(var(--seat-default-foreground) / <alpha-value>)",
+        // Brand colors
+        secondary: {
+          DEFAULT: "#4A7C8C",
+          foreground: "#ffffff",
+          "100": "#e0eef2",
+          "200": "#b3d4de",
+          "300": "#80b5c5",
+          "400": "#5a97a9",
+          "500": "#4A7C8C",
+          "600": "#3d6776",
+          "700": "#305260",
+          "800": "#233d4a",
+          "900": "#172934",
         },
-        seatBooked: {
-          DEFAULT: "hsl(var(--seat-booked) / <alpha-value>)",
-          foreground: "hsl(var(--seat-booked-foreground) / <alpha-value>)",
-        },
-        seatOnHold: {
-          DEFAULT: "hsl(var(--seat-onHold) / <alpha-value>)",
-          foreground: "hsl(var(--seat-onHold-foreground) / <alpha-value>)",
-        },
-        seatEco: {
-          DEFAULT: "hsl(var(--seat-eco) / <alpha-value>)",
-          foreground: "hsl(var(--seat-eco-foreground) / <alpha-value>)",
-        },
-        seatVip: {
-          DEFAULT: "hsl(var(--seat-vip) / <alpha-value>)",
-          foreground: "hsl(var(--seat-vip-foreground) / <alpha-value>)",
-        },
-        seatBusiness: {
-          DEFAULT: "hsl(var(--seat-business) / <alpha-value>)",
-          foreground: "hsl(var(--seat-business-foreground) / <alpha-value>)",
-        },
-        seatPresident: {
-          DEFAULT: "hsl(var(--seat-president) / <alpha-value>)",
-          foreground: "hsl(var(--seat-president-foreground) / <alpha-value>)",
+        cta: {
+          DEFAULT: "#F4E30C",
+          foreground: "#1a1a00",
         },
       },
       borderRadius: {

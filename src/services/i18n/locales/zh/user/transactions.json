@@ -1,0 +1,11 @@
+{
+  "title": "全部交易 | 湄公微笑",
+  "table": {
+    "title": "交易历史",
+    "no-result": "暂无交易记录",
+    "load-data": {
+      "title": "加载更多",
+      "loading": "加载中..."
+    }
+  }
+}

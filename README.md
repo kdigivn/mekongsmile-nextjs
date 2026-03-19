@@ -6,7 +6,7 @@
   </a>
 </p>
 <h1 align="center">
-  Ferry Ticket Frontend
+  Mekong Smile Tours
 </h1>
 <h4 align="center">
   <a href="https://kdigi.vn">Website</a> |
@@ -18,9 +18,9 @@
 
 ## Description
 
-Customer-facing frontend for the Ferry Ticket booking system. Allows users to search routes, book tickets, manage passengers, and process payments across multiple Vietnamese ferry operators.
+Customer-facing frontend for the Mekong Smile Tours booking system. Allows users to search tours, book tours, manage passengers, and process payments across multiple Mekong Delta tour destinations.
 
-**Stack:** Next.js 14 (App Router) · TypeScript · Tailwind CSS · React Query v5 · i18next
+**Stack:** Next.js 16 (App Router) · React 19 · TypeScript · Tailwind CSS · React Query v5 · i18next
 
 ## Quick Start
 
@@ -60,7 +60,7 @@ npm run dev
 
 ## Features
 
-- [x] Next.js 14 App Router (SSR, ISR, RSC)
+- [x] Next.js 16 App Router (SSR, ISR, RSC, Turbopack)
 - [x] TypeScript 5 (strict mode)
 - [x] Tailwind CSS + HeroUI + Radix UI (shadcn/ui pattern)
 - [x] TanStack Query v5 (server state)
@@ -68,7 +68,7 @@ npm run dev
 - [x] i18n — Vietnamese (default) + English
 - [x] Auth — Email/OTP, Google OAuth, Facebook OAuth
 - [x] JWT in HTTP-only cookies (XSS-safe)
-- [x] Ferry schedule search & seat selection
+- [x] Tour listing & selection
 - [x] Multi-passenger booking
 - [x] Payments — OnePay, SMS Banking, Offline
 - [x] Voucher / promo code system
@@ -85,11 +85,11 @@ npm run dev
 ## Scripts
 
 ```bash
-npm run dev          # Dev server on port 3001
+npm run dev          # Dev server on port 3001 (Turbopack bundler by default)
 npm run build        # Production build
 npm run build:uat    # UAT build
 npm run start        # Start standalone server
-npm run lint         # ESLint
+npm run lint         # ESLint (src/ only)
 npm run format       # Prettier
 npm run ts           # TypeScript check
 ```

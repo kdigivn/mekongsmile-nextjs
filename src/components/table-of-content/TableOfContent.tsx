@@ -1,4 +1,4 @@
-import { memo, useEffect, useRef, useState } from "react";
+import { memo, useRef, useState } from "react";
 import HeadingBase from "../heading/heading-base";
 import TableOfContentItem from "./TableOfContentItem";
 import { TableOfContentNode } from "./types/table-of-content.type";
@@ -19,7 +19,6 @@ import { Button } from "../ui/button";
 import { useCheckMobile } from "@/hooks/use-check-screen-type";
 import { IoIosList } from "react-icons/io";
 import { useTranslation } from "@/services/i18n/client";
-import { useMobileBottomNavActions } from "@/components/footer/footer-mobile-contact-buttons/use-mobile-bottom-nav-actions";
 
 type Props = {
   toc: TableOfContentNode[];
@@ -106,15 +105,8 @@ const TableOfContent = ({
   const isDesktop = !useCheckMobile();
   const { t } = useTranslation("table-of-content");
   const [isOpen, setIsOpen] = useState(false);
-  const { hideNav, showNav } = useMobileBottomNavActions();
 
-  useEffect(() => {
-    if (isOpen) {
-      hideNav();
-    } else {
-      showNav();
-    }
-  }, [hideNav, isOpen, showNav]);
+  // TODO: re-add mobile nav hide/show when bottom nav is rebuilt
 
   if (isDesktop) {
     return (

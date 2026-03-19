@@ -1,5 +1,5 @@
 {
-  "title": "All Bookings | Ferry Ticket",
+  "title": "All Bookings | Mekong Smile",
   "form": {
     "booking-id": {
       "title": "Booking ID",
@@ -41,11 +41,11 @@
     },
     "cell": {
       "order-detail": {
-        "title": "Ferry Ticket of",
+        "title": "Tour Booking of",
         "from": "From",
         "to": "to",
         "depart-date": "Departure date:",
-        "passengers": "Passengers:",
+        "passengers": "Travelers:",
         "toggle-btn": "Toggle"
       },
       "total-amount": {

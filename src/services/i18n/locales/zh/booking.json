@@ -1,0 +1,281 @@
+{
+  "title": "预订支付 | 湄公微笑",
+  "voyage-tab": {
+    "departure": "出发",
+    "return": "返回",
+    "tooltip": {
+      "edit-button": "预订未确认前可编辑"
+    }
+  },
+  "ticket-confirmation": {
+    "title": "预订确认",
+    "pic-info": {
+      "title": "联系人详情",
+      "name": "姓名：",
+      "phone": "电话：",
+      "email": "邮箱：",
+      "socialId": "证件号/护照："
+    },
+    "ticket-detail": {
+      "passenger-info": {
+        "title": "游客详情",
+        "name": "姓名：",
+        "gender": {
+          "title": "性别：",
+          "male": "男",
+          "female": "女"
+        },
+        "dateOfBirth": "出生日期：",
+        "socialId": "证件号/护照：",
+        "nationality": "国籍：",
+        "plate-number": "车牌号："
+      },
+      "seat-info": {
+        "title": "座位详情",
+        "ticket-type": "票种：",
+        "seat-type": "座位类型：",
+        "seat-name": "座位名称："
+      },
+      "ticket-info": {
+        "title": "票据详情",
+        "price": "价格："
+      }
+    }
+  },
+  "payment-info": {
+    "title": "支付详情",
+    "table": {
+      "col": {
+        "voyage": "旅游",
+        "ticket-type": "票种",
+        "seat-type": "座位类型",
+        "amount": "数量",
+        "price": "价格（越南盾）",
+        "total": "总计（越南盾）"
+      },
+      "row": {
+        "total-ticket": "总票数",
+        "total-harbor-fee": "总港口费",
+        "discount": "折扣",
+        "total": "总计"
+      },
+      "departure": "出发",
+      "return": "返回",
+      "ticket": "票"
+    },
+    "payment-due-date": "支付截止日期",
+    "payment-due-date-tooltip": "请在支付截止日期前完成支付，否则预订将被取消。"
+  },
+  "payment-methods": {
+    "title": "选择支付方式",
+    "qr": "二维码扫码 - 自动出票 ",
+    "banking": "银行转账 ",
+    "direct": "直接到售票处支付 ",
+    "onepay": "OnePay：信用卡/借记卡 ",
+    "fee": "（手续费：{{fee}}）",
+    "remaining": "剩余：",
+    "paid": "已支付：",
+    "available": "可用余额：",
+    "note": "请在继续支付前仔细核对所有信息。支付完成后将无法更改，我们不对任何错误负责。",
+    "terms-1": "接受 ",
+    "terms-2": "条款与条件",
+    "action-button": "支付",
+    "qr-method": {
+      "title": "二维码",
+      "noteTitle": "转账备注",
+      "noteContent": "请转账至我们的银行账户。订单将在转账后5分钟内确认。",
+      "note-content-topup": "请转账至我们的银行账户。充值将在转账后5分钟内确认。",
+      "bankingInformation": {
+        "title": "转账信息",
+        "bankAccountNumber": "账号：",
+        "bankAccount": "银行账户：",
+        "bankAccountName": "账户名：",
+        "bankName": "银行：",
+        "transferContent": "内容：",
+        "topicTransferContent": "支付旅游预订",
+        "orderCode": "订单编号",
+        "phoneNumber": "电话号码",
+        "amountPayment": "支付金额",
+        "paymentCodeExpired": "此支付码将于 {{expiredDate}} 过期"
+      }
+    },
+    "direct-method": {
+      "title": "直接支付",
+      "contactInformation": "联系信息",
+      "message": "请直接前往湄公微笑办公室",
+      "address": "地址：",
+      "hotline": "热线：",
+      "ncmkAdress": "越南芹苴市宁桥区陈文怀街5号"
+    },
+    "bank-transfer-method": {
+      "title": "银行转账",
+      "noteTitle": "转账备注",
+      "noteContent": "请选择24/7快速转账方式转至您的账户。",
+      "bankingInformation": {
+        "title": "转账信息",
+        "bankAccountNumber": "账号：",
+        "bankAccount": "银行账户：",
+        "bankAccountName": "账户名：",
+        "bankName": "银行：",
+        "transferContent": "内容：",
+        "topicTransferContent": "支付旅游预订",
+        "orderCode": "订单编号",
+        "phoneNumber": "电话号码",
+        "amountPayment": "支付金额"
+      }
+    },
+    "check-balance": {
+      "title": "您的账户余额为 ",
+      "title-not-enough": "余额不足",
+      "title-enough": "余额充足"
+    }
+  },
+  "payment-success": {
+    "title": "支付成功",
+    "billCode": "账单编号",
+    "paymentTime": "支付时间",
+    "paymentMethod": "支付方式",
+    "bankTransfer": "银行转账",
+    "payer": "支付人",
+    "amount": "金额",
+    "exportBill": "导出账单",
+    "returnHomepage": "返回首页",
+    "sentRequest": "预订申请已发送",
+    "success": "成功",
+    "waitForInfo": "请等待支付信息",
+    "loading": "更新中..."
+  },
+  "payment-fail": {
+    "errorExport": "出票时出现错误",
+    "hotlineInfo": "请联系热线：0924299898",
+    "fail": "失败",
+    "notEnough": "转账金额不足",
+    "hasPay": "您已支付：",
+    "needMoreMoney": "请补充转账以完成预订"
+  },
+  "export-ticket": "导出票据",
+  "export-harbor-file": "导出港口文件",
+  "export-ticket-modal": {
+    "success": "票据导出成功",
+    "downloadInfo": "下载票据信息",
+    "departTicket": "出发票据",
+    "returnTicket": "返回票据",
+    "confirm": "确认",
+    "exportTicket": "导出票据",
+    "pleaseConfirm": "请在导出票据前确认",
+    "totalMoney": "总金额：",
+    "noteConfirm": "选择确认后，系统将导出票据",
+    "cancel": "取消",
+    "waitExport": "等待导出票据...",
+    "errorBookedSeatExport": "您选择的其中一个座位已被预订，请返回选座步骤重新选择。提示：您可以导出游客名单以便更换座位后快速重新输入数据。",
+    "errorDuplicateSocialId": "一个或多个证件号重复使用，请再次核查游客信息。",
+    "export": "导出 ",
+    "export-fail": "失败",
+    "returnBookingStep2": "返回选座步骤",
+    "errorExport": "导出票据时出现错误",
+    "errorUknown": "未知错误",
+    "errorProcessingIssueTicket": "此预订正在出票，请稍候。",
+    "errorCustomerBalanceNotEnough": "客户余额不足",
+    "errorInvalidInput": "输入无效",
+    "errorInvalidStatus": "此预订无法重新出票，因为已成功出票或已取消",
+    "errorNoCustomerAttached": "此预订没有关联客户",
+    "errorOrganizationBalanceNotEnough": "您的机构或上级机构余额不足。",
+    "iUnderstand": "返回预订详情",
+    "ticket_export_error": "导出票据时出现错误，请联系热线获取支持。错误代码：{{errorCode}}",
+    "errorUnavailableSeats": "您选择的其中一个座位已被预订。",
+    "errorDuplicateSocialIdOperator": "游客证件号已在所选行程中使用："
+  },
+  "payment": {
+    "title": "支付",
+    "notification": {
+      "success": "充值成功"
+    },
+    "loader": {
+      "title": "安全支付处理中",
+      "description": "请稍候，我们正在安全处理您的支付"
+    },
+    "loading": "{{second}}秒后将跳转至出票页面",
+    "redirect-success": "{{second}}秒后将跳转至预订详情",
+    "banking": {
+      "title": "在线支付"
+    },
+    "offline": {
+      "title": "直接支付"
+    },
+    "onepay": {
+      "title": "OnePay支付",
+      "loading-connect": "正在连接OnePay...",
+      "check-transaction": "正在检查交易结果..."
+    }
+  },
+  "issue-ticket": {
+    "title": "导出票据"
+  },
+  "transaction-result": {
+    "title": "交易结果",
+    "payment-response-code": {
+      "success": "交易成功",
+      "unknown": "交易状态未知",
+      "card-not-enabled": "交易失败。发卡行未授权或卡未开通网络支付服务，请联系银行获取支持。",
+      "bank-rejected": "交易失败。发卡行拒绝授权，请联系银行了解具体原因。",
+      "no-bank-response": "交易失败。支付网关未收到发卡行响应，请联系银行核查交易状态后重试。",
+      "card-expired": "交易失败，卡已过期或输入的有效期不正确，请核实后重试。",
+      "insufficient-balance": "交易失败。卡额度不足或账户余额不足，请核实后重试。",
+      "bank-processing-error": "交易失败。发卡行处理时出现错误，请联系银行获取支持。",
+      "transaction-error": "交易失败。处理交易时出现错误，请重试。",
+      "invalid-card-number": "交易失败。卡号不正确，请核实后重试。",
+      "invalid-card-holder": "交易失败。持卡人姓名不正确，请核实后重试。",
+      "card-locked-or-expired": "交易失败。卡已过期或被锁定，请核实后重试。",
+      "card-not-registered": "交易失败。卡未注册网络支付服务，请联系银行获取支持。",
+      "invalid-expiry-date": "交易失败。发行日期/有效期不正确，请核实后重试。",
+      "insufficient-funds": "交易失败。资金不足，请核实后重试。",
+      "invalid-account-info": "交易失败。账户信息不正确，请核实后重试。",
+      "account-locked": "交易失败。账户已锁定，请联系银行获取支持。",
+      "invalid-card-info": "交易失败。卡信息不正确，请核实后重试。",
+      "invalid-otp": "交易失败。OTP不正确，请核实后重试。",
+      "payment-timeout": "交易失败。支付超时，请重试。",
+      "user-cancelled": "交易失败。用户取消了交易。",
+      "three-d-secure-auth-failed": "3D安全认证失败，请联系银行获取支持。",
+      "invalid-csc": "CSC（卡安全码）不正确或银行拒绝授权，请联系银行获取支持。",
+      "three-d-secure-verification-failed": "3D安全验证失败，请联系银行获取支持。",
+      "transaction-rejected": "您的交易被拒绝，请联系商家获取支持。",
+      "default": "支付失败。",
+      "paymentResultInvalid": "支付结果无效，请重新支付。"
+    }
+  },
+  "error": {
+    "sorry": "抱歉",
+    "not-found": "未找到",
+    "return-home": "返回首页",
+    "not-found-booking": "预订",
+    "not-found-booking-description": "抱歉，我们找不到您要查找的预订。",
+    "not-found-page": "页面",
+    "not-found-page-description": "抱歉，我们找不到您要查找的页面。请检查URL是否正确！"
+  },
+  "bookingProcessing": "预订 {{bookingId}} 仍在处理中，请5分钟后再查看。",
+  "booking-no-payment": "预订 {{bookingId}} 正在等待支付。如果您已支付，请5分钟后重试。如仍显示此信息，请联系热线获取支持。",
+  "update-passenger-dialog": {
+    "title": "更新座位 {{seatName}} 的游客信息",
+    "field": {
+      "name": "游客姓名",
+      "name-placeholder": "请输入姓名",
+      "social-id": "证件号",
+      "social-id-placeholder": "请输入证件号"
+    },
+    "button": {
+      "update": "更新",
+      "cancel": "取消"
+    },
+    "yup-error": {
+      "name": "游客姓名不能为空",
+      "social-id": "证件号不能为空",
+      "social-id-min": "证件号至少需要 {{min}} 个字符",
+      "social-id-max": "证件号不超过 {{max}} 个字符"
+    },
+    "notification": {
+      "success": "游客信息更新成功",
+      "error": "更新游客信息时出现错误",
+      "error-ticket-not-found": "此票据没有更多更新次数"
+    }
+  }
+}

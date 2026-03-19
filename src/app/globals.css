@@ -28,45 +28,24 @@
     --secondary: 0 0% 96.1%;
     --secondary-foreground: 0 0% 9%; */
 
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
+    --muted: 40 23% 96%;
+    --muted-foreground: 0 0% 40%;
 
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
+    --accent: 18 54% 46%;
+    --accent-foreground: 0 0% 100%;
 
     /* --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%; */
 
-    /* Ferry seat colors */
-    --seat-default: 213 16% 89%;
-    --seat-default-foreground: 0 0% 0%;
-    --seat-booked: 2 77% 41%;
-    --seat-booked-foreground: 0 0% 100%;
-    --seat-onHold: 198 100% 31%;
-    --seat-onHold-foreground: 0 0% 100%;
-    --seat-eco: 213 16% 89%;
-    --seat-eco-foreground: 0 0% 0%;
-    --seat-vip: 44 100% 70%;
-    --seat-vip-foreground: 0 0% 0%;
-    --seat-business: 154 78% 31%;
-    --seat-business-foreground: 0 0% 0%;
-    --seat-president: 261 76% 41%;
-    --seat-president-foreground: 0 0% 100%;
-    /* --seat-booked: 0 100% 100%;
-    --seat-booked-background: 2 77% 41%;
-    --seat-onHold: 0 100% 100%;
-    --seat-onHold-background: 198 100% 31%;
-    --seat-normal: 0 100% 0%;
-    --seat-normal-background: 210 22% 96%;
-    --seat-normal-background-hover: 240 5% 96%; */
-    --a: hsl(0, 0%, 100%);
-    --a: hsl(213, 16%, 89%);
+    /* Brand accent colors */
+    --brand-accent: 18 54% 46%;
+    --brand-cta: 54 93% 50%;
 
     /* --border: 0 0% 89.8%; */
     /* --input: 120 61% 33%; */
     /* --ring: 0 0% 3.9%; */
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
   }
 
   .dark {
@@ -114,7 +93,7 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: var(--font-inter), sans-serif;
+    font-family: var(--font-be-vietnam-pro), var(--font-noto-sans-sc), sans-serif;
   }
 
   /* Custom Scroll Bar */
@@ -135,7 +114,7 @@
     /* Works on Firefox */
     * {
       scrollbar-width: thin;
-      scrollbar-color: hsl(var(--heroui-primary) / 1) transparent;
+      scrollbar-color: #2D5A27 transparent;
     }
 
     .scrollbar-gray {
@@ -144,21 +123,21 @@
 
     /* Works on Chrome, Edge, and Safari */
     *::-webkit-scrollbar {
-      width: 0.25rem;
-      height: 0.25rem;
+      width: 6px;
+      height: 6px;
     }
 
     *::-webkit-scrollbar-track {
-      background: rgb(245, 245, 245);
+      background: transparent;
     }
 
     *::-webkit-scrollbar-thumb {
-      background-color: hsl(var(--heroui-primary) / 1);
-      border-radius: 2rem;
+      background-color: #2D5A27;
+      border-radius: 3px;
     }
 
     *::-webkit-scrollbar-corner {
-      background: #1e1f22;
+      background: transparent;
     }
 
     .scrollbar-gray::-webkit-scrollbar-thumb {
@@ -184,6 +163,27 @@
     .navBarMobile {
       display: flex !important;
     }
+  }
+
+  /* Premium heading typography */
+  h1, h2, h3 {
+    font-family: var(--font-playfair), Georgia, serif;
+    letter-spacing: -0.02em;
+  }
+
+  /* Smooth transitions globally */
+  a, button, [role="button"] {
+    @apply transition-all duration-200;
+  }
+
+  /* Premium selection color */
+  ::selection {
+    @apply bg-primary/20 text-primary-900;
+  }
+
+  /* Premium focus ring */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-primary/30 ring-offset-2;
   }
 }
 
@@ -252,6 +252,15 @@
     -webkit-transform: rotate(0) scale(1) skew(1deg);
     -webkit-opacity: 0.1;
   }
+}
+
+@keyframes gradient {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient 15s ease infinite;
 }
 
 input[type="search"]::-webkit-search-cancel-button {

@@ -1,24 +1,24 @@
 {
-  "title": "Vé tàu",
-  "description": "Hello World!",
-  "title1": "LỊCH CHẠY TÀU, GIÁ VÉ",
-  "title-search": "Đi đâu đi!",
+  "title": "Mekong Smile Tours",
+  "description": "Khám phá đồng bằng sông Cửu Long",
+  "title1": "TOUR ĐỒNG BẰNG SÔNG CỬU LONG & TRẢI NGHIỆM",
+  "title-search": "KHÁM PHÁ TOUR",
   "table": {
     "filter": {
       "tab": "Tất cả",
-      "route": "Tìm theo tuyến"
+      "route": "Lọc theo điểm đến"
     },
     "header": {
-      "boat-name": "Hãng tàu",
-      "route": "Tuyến",
-      "depart-time": "Giờ xuất cảng",
-      "available-seat": "Ghế trống",
-      "price": "Giá vé"
+      "boat-name": "Tên Tour",
+      "route": "Điểm đến",
+      "depart-time": "Giờ khởi hành",
+      "available-seat": "Chỗ còn trống",
+      "price": "Giá từ"
     },
-    "action": "Chọn mua",
-    "no-of-results": "chuyến đi được tìm thấy",
-    "no-result": "Chưa có chuyến đi",
-    "disabled": "Tuyến này chưa hoạt động lại, vui lòng chọn tuyến khác",
+    "action": "Đặt Ngay",
+    "no-of-results": "tour được tìm thấy",
+    "no-result": "Không có kết quả",
+    "disabled": "Tour này hiện không khả dụng, vui lòng chọn tour khác",
     "load-data": {
       "title": "Tải thêm dữ liệu",
       "loading": "Đang tải dữ liệu..."
@@ -28,8 +28,8 @@
       "surcharge_applied": "Phụ thu áp dụng",
       "click_to_view_price_details": "Nhấn để xem chi tiết giá",
       "price_details": "Chi tiết giá",
-      "ticket_price_details": "Chi tiết giá vé",
-      "initial_ticket_price": "Giá vé ban đầu",
+      "ticket_price_details": "Chi tiết giá tour",
+      "initial_ticket_price": "Giá tour ban đầu",
       "promotion": "Khuyến mãi",
       "total_promotion": "Tổng khuyến mãi",
       "surcharge": "Phụ thu",
@@ -56,5 +56,5 @@
       }
     }
   },
-  "filterResultEmpty": "Không có chuyến đi nào theo bộ lọc này."
+  "filterResultEmpty": "Không có tour nào theo bộ lọc này."
 }

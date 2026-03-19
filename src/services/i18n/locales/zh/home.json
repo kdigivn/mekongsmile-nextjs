@@ -1,0 +1,59 @@
+{
+  "title": "湄公微笑旅游",
+  "title1": "湄公三角洲旅游与体验",
+  "title-search": "探索旅游",
+  "table": {
+    "filter": {
+      "tab": "全部",
+      "route": "按目的地筛选"
+    },
+    "header": {
+      "boat-name": "旅游名称",
+      "route": "目的地",
+      "depart-time": "出发时间",
+      "available-seat": "可用名额",
+      "price": "价格起"
+    },
+    "action": "立即预订",
+    "no-of-results": "个旅游",
+    "no-result": "无结果",
+    "disabled": "此旅游暂不可用，请选择其他旅游",
+    "load-data": {
+      "title": "加载更多",
+      "loading": "加载中..."
+    },
+    "cell": {
+      "promotion_applied": "已应用优惠",
+      "surcharge_applied": "已收附加费",
+      "click_to_view_price_details": "点击查看价格详情",
+      "price_details": "价格详情",
+      "ticket_price_details": "旅游价格详情",
+      "initial_ticket_price": "原始旅游价格",
+      "promotion": "优惠",
+      "total_promotion": "总优惠",
+      "surcharge": "附加费",
+      "final_price": "最终价格",
+      "savings": "节省 ",
+      "increase": "增加 ",
+      "issue-ticket-speed": {
+        "instant": {
+          "label": "即时",
+          "description": "付款后立即出票。"
+        },
+        "fast": {
+          "label": "快速",
+          "description": "付款后2个工作小时内出票。"
+        },
+        "standard": {
+          "label": "标准",
+          "description": "付款后4个工作小时内出票。"
+        },
+        "slow": {
+          "label": "普通",
+          "description": "付款后1个工作日内出票。"
+        }
+      }
+    }
+  },
+  "filterResultEmpty": "此筛选条件下没有旅游。"
+}
