@@ -30,14 +30,17 @@ const EXCLUDED_SLUGS = new Set([
 ]);
 
 export async function generateStaticParams() {
-  const pages = await getAllPageSlugs();
-
-  return pages
-    .filter((p) => !EXCLUDED_SLUGS.has(p.slug))
-    .map((p) => ({
-      slug: (p.uri ?? `/${p.slug}/`).split("/").filter((s) => s !== ""),
-    }))
-    .filter((p) => p.slug.length > 0);
+  try {
+    const pages = await getAllPageSlugs();
+    return pages
+      .filter((p) => !EXCLUDED_SLUGS.has(p.slug))
+      .map((p) => ({
+        slug: (p.uri ?? `/${p.slug}/`).split("/").filter((s) => s !== ""),
+      }))
+      .filter((p) => p.slug.length > 0);
+  } catch {
+    return [];
+  }
 }
 
 export async function generateMetadata({
