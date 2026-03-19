@@ -11,7 +11,7 @@
 - **Security:** Extended CMS HTML sanitization to post content, page content, and comments — applied `sanitizeCmsHtml()` to `src/views/post/comments-section.tsx` (comment.content), `src/views/post/detail-post-section.tsx` (post.content), and `src/app/(language)/default-page.tsx` (page.content); now covers all 4 CMS content render points
 - **Security (initial):** Implemented HTML sanitization for WordPress CMS content via `src/lib/cms-html-sanitizer.ts` — prevents XSS attacks when rendering CMS HTML via `dangerouslySetInnerHTML`; uses `sanitize-html` library with CMS-safe tag allowlist
 - **Calendar bugfix:** Removed `calendarKey` anti-pattern from `tablist-voyage-table-section.tsx` — prevented unintended full calendar remount on tab revisit; added `CalendarErrorBoundary` for dynamic import failures
-- **Calendar state sync:** Fixed `ferry-big-calendar.tsx` — `navDate` scope bug (const in else block → let) and operator state sync (`handleSetRequestQueryVoyages` instead of direct setter)
+- **Calendar state sync:** Fixed `booking-calendar.tsx` — `navDate` scope bug (const in else block → let) and state sync (`handleSetRequestQueryTours` instead of direct setter)
 - **Product detail:** Wrapped CMS content with `sanitizeCmsHtml()` before `dangerouslySetInnerHTML` in `detail-product-section.tsx`
 - **CLS stabilization:** Added `minHeight: 500px` wrapper in `list-with-table-view.tsx` for layout shift prevention
 - **Homepage bugfix:** Added missing error return (`return []`) in `getRoutes()` error branch; added ISR `revalidate = 300`

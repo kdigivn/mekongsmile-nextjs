@@ -164,7 +164,7 @@ src/
 
 | Route | Rendering | Auth | Status | Description |
 |-------|-----------|------|--------|-------------|
-| `/sign-in` | CSR | No | Simplified | Email + password + Google OAuth (simplified from ferry) |
+| `/sign-in` | CSR | No | Simplified | Email + password + Google OAuth |
 | `/sign-up` | CSR | No | Simplified | Registration (backend TBD) |
 | `/user/profile` | CSR | Yes | Basic | View/edit profile (name, email, avatar) |
 | `/user/bookings` | CSR | Yes | Phase 9 | Booking history (deferred, requires backend) |
@@ -608,7 +608,7 @@ experimental: {
 {
   "@context": "https://schema.org",
   "@type": "Product",
-  "name": "Ferry Ticket",
+  "name": "Mekong Smile Tour",
   "description": "...",
   "offers": { "@type": "Offer", ... }
 }
@@ -658,7 +658,7 @@ OrgContext provides:
 
 ### API Key Injection
 
-The SSE proxy uses `FERRY_DEFAULT_API_KEY` env var for authentication instead of per-user JWT — the SSE endpoint requires org-level access.
+The SSE proxy uses `MEKONG_DEFAULT_API_KEY` env var for authentication instead of per-user JWT — the SSE endpoint requires org-level access.
 
 ---
 
@@ -672,7 +672,7 @@ Browser
     ▼
 Next.js SSE Proxy (src/app/api/sse/[...path]/route.ts)
     │ • Strips /api/sse prefix, prepends API_SERVER_PREFIX
-    │ • Injects Authorization: Bearer FERRY_DEFAULT_API_KEY
+    │ • Injects Authorization: Bearer MEKONG_DEFAULT_API_KEY
     │ • Creates TransformStream — pipes backend SSE to client
     ▼
 Backend SSE Endpoint

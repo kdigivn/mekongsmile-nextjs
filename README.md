@@ -6,7 +6,7 @@
   </a>
 </p>
 <h1 align="center">
-  Ferry Ticket Frontend
+  Mekong Smile Tours
 </h1>
 <h4 align="center">
   <a href="https://kdigi.vn">Website</a> |
@@ -18,7 +18,7 @@
 
 ## Description
 
-Customer-facing frontend for the Ferry Ticket booking system. Allows users to search routes, book tickets, manage passengers, and process payments across multiple Vietnamese ferry operators.
+Customer-facing frontend for the Mekong Smile Tours booking system. Allows users to search tours, book tours, manage passengers, and process payments across multiple Mekong Delta tour destinations.
 
 **Stack:** Next.js 16 (App Router) · React 19 · TypeScript · Tailwind CSS · React Query v5 · i18next
 
@@ -68,7 +68,7 @@ npm run dev
 - [x] i18n — Vietnamese (default) + English
 - [x] Auth — Email/OTP, Google OAuth, Facebook OAuth
 - [x] JWT in HTTP-only cookies (XSS-safe)
-- [x] Ferry schedule search & seat selection
+- [x] Tour listing & selection
 - [x] Multi-passenger booking
 - [x] Payments — OnePay, SMS Banking, Offline
 - [x] Voucher / promo code system

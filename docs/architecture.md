@@ -11,8 +11,8 @@ src/
 │   ├── (language)/             # Route group — optional [lang] prefix
 │   │   ├── layout.tsx          # Shared layout (AppBar, Footer, Providers)
 │   │   ├── page.tsx            # Home page
-│   │   ├── schedules/          # Ferry schedule search
-│   │   ├── ticket-detail/      # Booking form (passengers, seats)
+│   │   ├── tours/              # Tour listing & search
+│   │   ├── tour-detail/        # Tour detail & booking form (passengers, dates)
 │   │   ├── booking/[id]/       # Booking confirmation + payment
 │   │   ├── sign-in/            # Login page
 │   │   ├── sign-up/            # Registration page

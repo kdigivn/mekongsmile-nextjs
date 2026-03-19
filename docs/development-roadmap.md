@@ -1,23 +1,23 @@
 # Development Roadmap
 
-> Current state, known tech debt, and planned improvements for ferry-frontend.
+> Current state, known tech debt, and planned improvements for Mekong Smile Tours.
 
 **Last Updated:** 2026-03-10
 
 ## Current Status — March 2026
 
-The application is in **active production** serving multiple ferry operators across Vietnam.
+The application is in **active production** serving Mekong Delta tour bookings.
 
 ### Implemented Features
 
 #### Core Booking Flow ✅
-- [x] Schedule search by origin/destination/date
-- [x] Voyage listing with filters (operator, class, price)
-- [x] Visual boat seat map (eco, VIP, business, president classes)
+- [x] Tour search & listing
+- [x] Tour detail with filters (destination, price, rating)
+- [x] Tour scheduling and availability calendar
 - [x] Multi-passenger booking form (up to 30 passengers)
 - [x] ID card OCR autofill (Viettel AI integration)
 - [x] Booking confirmation and summary page
-- [x] Ticket download / email
+- [x] Booking confirmation download / email
 
 #### Payments ✅
 - [x] OnePay gateway (card + bank transfer)
@@ -44,12 +44,12 @@ The application is in **active production** serving multiple ferry operators acr
 - [x] Auto-generated XML sitemap
 - [x] i18n support (Vietnamese + English)
 
-#### Operator Features ✅
-- [x] Multi-operator / multi-tenant support
-- [x] Per-operator theme (light, condao-express-light)
-- [x] Passenger list bulk import
-- [x] Excel export (passenger list, bookings)
-- [x] Booking management dashboard
+#### Tour Destination Features ✅
+- [x] Multi-destination support
+- [x] Per-destination theme (light, condao-express-light)
+- [x] Tour list bulk import
+- [x] Excel export (tour list, bookings)
+- [x] Tour booking management dashboard
 
 #### Infrastructure ✅
 - [x] Sentry error tracking (client + server + edge)

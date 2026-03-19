@@ -1,6 +1,6 @@
 # Auth
 
-> Authentication flows for ferry-frontend.
+> Authentication flows for Mekong Smile Tours.
 
 **Last Updated:** 2026-03-03
 
@@ -76,7 +76,7 @@ Service hook: `useAuthLoginService()` from `src/services/apis/auth/`
 4. Add authorized JavaScript origins:
    - `http://localhost` (local dev)
    - `http://localhost:3001` (local dev with port)
-   - Your production domain (e.g., `https://ferry.vn`)
+   - Your production domain (e.g., `https://mekongsmile.com`)
 5. Copy the **Client ID**
 6. Add to `.env.local`:
    ```env

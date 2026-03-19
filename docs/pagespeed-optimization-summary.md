@@ -77,13 +77,10 @@ const ReactQueryDevtools =
 ### 4. Preconnect hints for image CDNs
 **File:** [src/app/layout.tsx](src/app/layout.tsx)
 
-Added to `<head>` for 5 primary CDN domains used by above-the-fold images:
+Added to `<head>` for 2 primary CDN domains used by above-the-fold images:
 ```html
-<link rel="preconnect" href="https://cdn.vetaucaotoc.net" />
-<link rel="preconnect" href="https://cdn.condao.express" />
+<link rel="preconnect" href="https://mekongsmile.com" />
 <link rel="preconnect" href="https://r2.kdigi.net" />
-<link rel="preconnect" href="https://cdn.phuquoc.express" />
-<link rel="preconnect" href="https://cdn.ferry.vn" />
 ```
 
 **Impact:** DNS + TLS resolved before browser discovers image URLs — LCP -100–200ms.
@@ -182,7 +179,7 @@ images: {
 ## How to Verify
 
 1. Deploy `feat/improve-performance` branch to production/staging
-2. Run PageSpeed: https://pagespeed.web.dev/analysis?url=https://vetaucaotoc.net
+2. Run PageSpeed: https://pagespeed.web.dev/analysis?url=https://mekongsmile.com
 3. Compare with baseline in `pagespeed-report/report.md`
 4. Verify GA4/GTM/Clarity tracking still fires correctly in browser Network tab
 

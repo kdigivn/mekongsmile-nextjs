@@ -1,6 +1,6 @@
 # Code Standards
 
-> Coding conventions and patterns for ferry-frontend. All contributors and AI agents must follow these.
+> Coding conventions and patterns for Mekong Smile Tours. All contributors and AI agents must follow these.
 
 **Last Updated:** 2026-03-19
 
