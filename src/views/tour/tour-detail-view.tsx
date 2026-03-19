@@ -73,10 +73,10 @@ export default function TourDetailView({ tour }: Props) {
 
             {/* Highlights */}
             {info?.highlights && (
-              <div className="mt-4 rounded-lg border bg-white p-5">
+              <div className="mt-4 overflow-hidden rounded-lg border bg-white p-5">
                 <h2 className="font-heading mb-3 text-xl font-semibold">Tour Highlights</h2>
                 <div
-                  className="prose prose-sm max-w-none"
+                  className="prose prose-sm max-w-none [&_img]:max-w-full [&_img]:h-auto [&_img]:rounded-xl"
                   dangerouslySetInnerHTML={{ __html: sanitizeCmsHtml(info.highlights) }}
                 />
               </div>
@@ -85,10 +85,10 @@ export default function TourDetailView({ tour }: Props) {
 
           {/* Itinerary: description with timeline styling */}
           {tour.description && (
-            <section id="itinerary" className="rounded-lg border bg-white p-5">
+            <section id="itinerary" className="overflow-hidden rounded-lg border bg-white p-5">
               <h2 className="font-heading mb-3 text-xl font-semibold">Itinerary</h2>
               <div
-                className="itinerary-timeline prose prose-sm max-w-none"
+                className="itinerary-timeline prose prose-sm max-w-none [&_img]:max-w-full [&_img]:h-auto [&_img]:rounded-xl"
                 dangerouslySetInnerHTML={{ __html: sanitizeCmsHtml(tour.description) }}
               />
             </section>
