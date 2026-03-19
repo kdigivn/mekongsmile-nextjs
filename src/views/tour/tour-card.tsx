@@ -6,6 +6,7 @@ import {
   LikelyToSellOutBadge,
   FreeCancellationBadge,
 } from "@/components/trust-badges";
+import { extractHighlightsList } from "@/lib/extract-highlights";
 
 type Props = {
   tour: TourCard;
@@ -14,8 +15,9 @@ type Props = {
 const PLACEHOLDER = "/static-img/placeholder-image-500x500.png";
 
 export default function TourCard({ tour }: Props) {
-  const price = tour.shortTourInformation?.priceInUsd;
-  const duration = tour.shortTourInformation?.duration;
+  const shortTourInfo = tour.shortTourInformation;
+  const price = shortTourInfo?.priceInUsd;
+  const duration = shortTourInfo?.duration;
   const imageUrl = tour.featuredImage?.node.sourceUrl ?? PLACEHOLDER;
   const imageAlt = tour.featuredImage?.node.altText ?? tour.name;
   const firstDestination = tour.destination?.nodes?.[0];
@@ -27,6 +29,7 @@ export default function TourCard({ tour }: Props) {
   const isLikelyToSellOut =
     !isBestSeller &&
     tour.productTags?.nodes?.some((t) => t.slug === "likely-to-sell-out");
+  const highlights = extractHighlightsList(shortTourInfo?.highlights, 2);
 
   return (
     <Link href={`/tour/${tour.slug}/`} className="group block">
@@ -82,6 +85,23 @@ export default function TourCard({ tour }: Props) {
             </div>
           )}
 
+          {/* Highlight bullet points */}
+          {highlights.length > 0 && (
+            <ul className="mt-2 space-y-1">
+              {highlights.map((item, i) => (
+                <li
+                  key={i}
+                  className="flex items-start gap-1.5 text-xs text-muted-foreground"
+                >
+                  <span className="mt-0.5 flex-shrink-0 text-primary text-[10px]">
+                    ✓
+                  </span>
+                  <span className="line-clamp-1">{item}</span>
+                </li>
+              ))}
+            </ul>
+          )}
+
           {/* Pricing */}
           <div className="mt-3 flex items-baseline gap-1">
             {price ? (
@@ -101,6 +121,11 @@ export default function TourCard({ tour }: Props) {
           <div className="mt-2">
             <FreeCancellationBadge />
           </div>
+
+          {/* View Details — card is already a link; span styled as link */}
+          <span className="mt-3 inline-flex items-center text-sm font-medium text-primary group-hover:underline">
+            View Details →
+          </span>
         </div>
       </div>
     </Link>

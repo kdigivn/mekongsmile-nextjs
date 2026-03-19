@@ -85,6 +85,7 @@ export const TOUR_CARD_FIELDS = gql`
         priceInUsd
         priceInVnd
         duration
+        highlights
       }
     }
   }

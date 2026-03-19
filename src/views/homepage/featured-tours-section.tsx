@@ -1,6 +1,7 @@
 import Link from "@/components/link-base";
 import type { TourCard } from "@/graphql/types";
 import TourCardComponent from "@/views/tour/tour-card";
+import SectionHeading from "@/components/ui/section-heading";
 
 type Props = {
   tours: TourCard[];
@@ -12,7 +13,12 @@ export default function FeaturedToursSection({ tours }: Props) {
   return (
     <section className="py-10">
       <div className="mb-6 flex items-center justify-between">
-        <h2 className="text-2xl font-bold">Featured Tours</h2>
+        <SectionHeading
+          chip="Tours"
+          title="Featured Experiences"
+          emphasisWord="Experiences"
+          className="mb-0"
+        />
         <Link
           href="/tours/"
           className="text-sm font-medium text-primary hover:underline"

@@ -188,6 +188,7 @@ export interface TourCard {
     priceInUsd: number | null;
     priceInVnd: number | null;
     duration: string | null;
+    highlights: string | null;
   };
 }
 

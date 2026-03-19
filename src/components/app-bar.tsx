@@ -366,32 +366,20 @@ const ResponsiveAppBar = ({ primaryMenu, siteTitle }: Props) => {
             justify="start"
             as={"div"}
           >
-            <NavbarBrand className="lg:!flex-grow-0">
+            <NavbarBrand className="lg:!flex-grow-0 lg:!basis-auto">
               <LinkBase
                 href={"/"}
-                className="hidden h-[48px] items-center justify-center lg:flex"
+                className="flex h-[48px] items-center justify-center"
               >
-                <span className="font-heading text-xl font-bold text-primary">
-                  {siteTitle}
-                </span>
+                <img
+                  src="/static-img/mekongsmile-logo-full.png"
+                  alt={siteTitle}
+                  width={180}
+                  height={40}
+                  className="h-8 w-auto lg:h-10"
+                />
               </LinkBase>
             </NavbarBrand>
-            <NavbarContent
-              className="flex w-full flex-none justify-between lg:hidden"
-              justify="center"
-              as={"div"}
-            >
-              <NavbarBrand>
-                <LinkBase
-                  href={"/"}
-                  className="flex h-[36px] items-center justify-center"
-                >
-                  <span className="font-heading text-lg font-bold text-primary">
-                    {siteTitle}
-                  </span>
-                </LinkBase>
-              </NavbarBrand>
-            </NavbarContent>
           </NavbarContent>
 
           {/* Mobile menu */}

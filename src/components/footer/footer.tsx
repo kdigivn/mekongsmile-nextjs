@@ -61,11 +61,12 @@ export default function Footer({ menu, siteSettings }: Props) {
                 <div className="text-sm">
                   <LinkBase href={"/"}>
                     <Image
-                      src={"/static-img/mekongsmile-logo.png"}
+                      src="/static-img/mekongsmile-logo-full.png"
                       alt={siteSettings.title}
-                      width={150}
-                      height={50}
-                      className="!rounded-none"
+                      width={180}
+                      height={48}
+                      className="!rounded-none brightness-0 invert"
+                      unoptimized
                     />
                   </LinkBase>
                 </div>
