@@ -16,7 +16,7 @@ export default function HeroSection() {
       />
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center gap-6 px-4 text-center">
-        <h1 className="text-4xl font-extrabold tracking-tight text-white md:text-6xl">
+        <h1 className="font-heading text-4xl font-bold tracking-tight text-white md:text-6xl">
           Discover the Heart of the Delta
         </h1>
         <p className="max-w-xl text-lg text-white/80">

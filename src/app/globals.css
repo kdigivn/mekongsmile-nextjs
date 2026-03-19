@@ -114,7 +114,7 @@
     /* Works on Firefox */
     * {
       scrollbar-width: thin;
-      scrollbar-color: hsl(var(--heroui-primary) / 1) transparent;
+      scrollbar-color: #2D5A27 transparent;
     }
 
     .scrollbar-gray {
@@ -123,21 +123,21 @@
 
     /* Works on Chrome, Edge, and Safari */
     *::-webkit-scrollbar {
-      width: 0.25rem;
-      height: 0.25rem;
+      width: 6px;
+      height: 6px;
     }
 
     *::-webkit-scrollbar-track {
-      background: rgb(245, 245, 245);
+      background: transparent;
     }
 
     *::-webkit-scrollbar-thumb {
-      background-color: hsl(var(--heroui-primary) / 1);
-      border-radius: 2rem;
+      background-color: #2D5A27;
+      border-radius: 3px;
     }
 
     *::-webkit-scrollbar-corner {
-      background: #1e1f22;
+      background: transparent;
     }
 
     .scrollbar-gray::-webkit-scrollbar-thumb {
@@ -163,6 +163,27 @@
     .navBarMobile {
       display: flex !important;
     }
+  }
+
+  /* Premium heading typography */
+  h1, h2, h3 {
+    font-family: var(--font-playfair), Georgia, serif;
+    letter-spacing: -0.02em;
+  }
+
+  /* Smooth transitions globally */
+  a, button, [role="button"] {
+    @apply transition-all duration-200;
+  }
+
+  /* Premium selection color */
+  ::selection {
+    @apply bg-primary/20 text-primary-900;
+  }
+
+  /* Premium focus ring */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-primary/30 ring-offset-2;
   }
 }
 
