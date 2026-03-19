@@ -48,18 +48,21 @@ export async function generateMetadata({
 }: {
   params: Promise<{ slug: string[] }>;
 }): Promise<Metadata> {
-  const { slug } = await params;
-  const uri = `/${slug.join("/")}/`;
-  const page = await getPageBySlug(uri);
-  if (!page) return {};
-
-  return {
-    title: page.seo?.title || page.title,
+  try {
+    const { slug } = await params;
+    const uri = `/${slug.join("/")}/`;
+    const page = await getPageBySlug(uri);
+    if (!page) return {};
+    return {
+      title: page.seo?.title || page.title,
     description: page.seo?.description || undefined,
     alternates: {
       canonical: `${process.env.NEXT_PUBLIC_BASE_URL || ""}${uri}`,
     },
   };
+  } catch {
+    return {};
+  }
 }
 
 export default async function CatchAllPage({
@@ -69,7 +72,7 @@ export default async function CatchAllPage({
 }) {
   const { slug } = await params;
   const uri = `/${slug.join("/")}/`;
-  const page = await getPageBySlug(uri);
+  const page = await getPageBySlug(uri).catch(() => null);
 
   if (!page) notFound();
 

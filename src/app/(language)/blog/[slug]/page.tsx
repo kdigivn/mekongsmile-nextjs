@@ -22,14 +22,17 @@ export async function generateMetadata({
 }: {
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
-  const { slug } = await params;
-  const post = await getPostBySlug(slug);
-  if (!post) return {};
-
-  return seoToMetadata(post.seo, {
-    title: post.title,
-    description: post.excerpt || "",
-  });
+  try {
+    const { slug } = await params;
+    const post = await getPostBySlug(slug);
+    if (!post) return {};
+    return seoToMetadata(post.seo, {
+      title: post.title,
+      description: post.excerpt || "",
+    });
+  } catch {
+    return { title: "Blog — Mekong Smile" };
+  }
 }
 
 export default async function BlogPostPage({
@@ -38,7 +41,7 @@ export default async function BlogPostPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const post = await getPostBySlug(slug);
+  const post = await getPostBySlug(slug).catch(() => null);
   if (!post) notFound();
 
   return (

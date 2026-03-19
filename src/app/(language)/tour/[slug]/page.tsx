@@ -44,7 +44,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function TourPage({ params }: Props) {
   const { slug } = await params;
-  const tour = await getTourBySlug(slug);
+  const tour = await getTourBySlug(slug).catch(() => null);
   if (!tour) notFound();
 
   return (
