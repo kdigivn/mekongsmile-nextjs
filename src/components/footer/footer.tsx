@@ -39,7 +39,7 @@ export default function Footer({ menu, siteSettings }: Props) {
           >
             <LinkBase
               href={item.path || item.url}
-              className="transition-all duration-200 hover:text-primary"
+              className="text-white/70 transition-all duration-200 hover:text-white"
             >
               {item.label}
             </LinkBase>
@@ -51,8 +51,8 @@ export default function Footer({ menu, siteSettings }: Props) {
   };
 
   return (
-    <footer id="main-footer" className="flex w-full flex-col justify-center">
-      <div className="flex h-auto w-full items-center justify-center bg-white py-9">
+    <footer id="main-footer" className="flex w-full flex-col justify-center bg-brand-navy text-white">
+      <div className="flex h-auto w-full items-center justify-center py-9">
         <div className="container max-w-screen-xl px-0">
           <div className="flex w-full max-w-screen-xl flex-col flex-nowrap justify-between gap-4 px-4 sm:flex-col md:flex-col md:px-6 lg:flex-row lg:px-8">
             <div className="grid w-full grid-cols-2 justify-between gap-4 gap-y-4 md:grid-cols-5 lg:flex">
@@ -69,8 +69,8 @@ export default function Footer({ menu, siteSettings }: Props) {
                     />
                   </LinkBase>
                 </div>
-                <p className="text-sm font-semibold">{siteSettings.title}</p>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-sm font-semibold text-white">{siteSettings.title}</p>
+                <p className="text-sm text-white/70">
                   {siteSettings.description}
                 </p>
               </div>
@@ -100,10 +100,10 @@ export default function Footer({ menu, siteSettings }: Props) {
                   menuItems.length % 2 === 0 ? "md:col-span-2" : "md:col-span-3"
                 )}
               >
-                <div className="mb-2">
+                <div className="mb-2 opacity-70">
                   <SecurePaymentBadge />
                 </div>
-                <div className="grid w-full grid-cols-5 gap-2">
+                <div className="grid w-full grid-cols-5 gap-2 opacity-70">
                   <Image
                     src={"/static-img/pay-img/vietqr.svg"}
                     alt="VietQR"
@@ -151,7 +151,7 @@ export default function Footer({ menu, siteSettings }: Props) {
       </div>
 
       <LayoutWrapper className="pb-0">
-        <div className="container flex w-full max-w-screen-xl px-2 pb-24 pt-6 text-center text-xs lg:px-0 lg:pb-6">
+        <div className="container flex w-full max-w-screen-xl px-2 pb-24 pt-6 text-center text-xs text-white/50 lg:px-0 lg:pb-6">
           <span>
             {`© ${currentYear} ${siteSettings.title}. All rights reserved.`}
           </span>

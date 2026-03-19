@@ -28,7 +28,7 @@ export default async function NewsPage() {
       <div className="relative bg-primary-50 px-5 py-6 md:px-10 lg:px-8">
         <div className="mx-auto flex max-w-7xl flex-col gap-4">
           <Breadcrumbs links={breadcrumbLinks} hasBackground={false} />
-          <HeadingBase headingTag="h1">Tin tức</HeadingBase>
+          <HeadingBase headingTag="h1" contentClass="font-heading">Tin tức</HeadingBase>
         </div>
       </div>
 

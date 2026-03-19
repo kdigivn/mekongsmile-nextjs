@@ -2,30 +2,28 @@ import Link from "@/components/link-base";
 
 export default function HeroSection() {
   return (
-    <section className="relative flex min-h-[70vh] w-full flex-col items-center justify-center overflow-hidden">
-      {/* Animated gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary-900 via-secondary-800 to-primary-700 animate-gradient" />
-      {/* Subtle dot pattern overlay */}
+    <section className="relative flex min-h-[80vh] w-full items-center justify-center overflow-hidden">
+      {/* Dark overlay on image placeholder — using gradient until real photo available */}
+      <div className="absolute inset-0 bg-gradient-to-br from-brand-navy via-brand-navy/90 to-primary-900" />
       <div
-        className="absolute inset-0 opacity-10"
+        className="absolute inset-0 opacity-[0.03]"
         style={{
           backgroundImage:
-            "url(\"data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='1' cy='1' r='1' fill='white'/%3E%3C/svg%3E\")",
-          backgroundRepeat: "repeat",
+            "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
+          backgroundSize: "40px 40px",
         }}
       />
-      {/* Content */}
       <div className="relative z-10 flex flex-col items-center gap-6 px-4 text-center">
-        <h1 className="font-heading text-4xl font-bold tracking-tight text-white md:text-6xl">
-          Discover the Heart of the Delta
+        <h1 className="font-heading text-hero font-bold text-white">
+          Explore the Mekong Delta
         </h1>
-        <p className="max-w-xl text-lg text-white/80">
-          Authentic day tours, river cruises, and cultural experiences in
+        <p className="max-w-xl text-lg text-white/70">
+          Authentic tours, river cruises, and cultural experiences in
           Vietnam&apos;s most vibrant region.
         </p>
         <Link
           href="/tours/"
-          className="mt-2 inline-flex items-center rounded-xl bg-white px-8 py-4 text-base font-bold text-primary shadow-lg transition-all hover:bg-white/90 hover:shadow-xl active:scale-[0.98]"
+          className="mt-4 inline-flex items-center rounded-xl bg-brand-gold px-8 py-4 text-base font-bold text-brand-navy shadow-lg transition-all hover:bg-brand-gold-light hover:shadow-xl active:scale-[0.98]"
         >
           Explore All Tours
         </Link>

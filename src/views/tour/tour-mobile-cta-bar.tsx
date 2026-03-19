@@ -15,11 +15,11 @@ export default function TourMobileCtaBar({ price, tourName, bookingEmail }: Prop
       <div className="flex items-center justify-between gap-4">
         <div>
           <p className="text-xs uppercase tracking-wider text-muted-foreground">From</p>
-          <p className="text-xl font-bold">{price ? `$${price}` : "N/A"}</p>
+          <p className="text-xl font-bold text-brand-gold">{price ? `$${price}` : "N/A"}</p>
         </div>
         <a
           href={`mailto:${email}?subject=${encodeURIComponent(subject)}`}
-          className="flex-1 rounded-lg bg-primary px-6 py-3 text-center font-bold text-white transition-colors hover:bg-primary/90"
+          className="flex-1 rounded-lg bg-brand-gold px-6 py-3 text-center font-bold text-brand-navy transition-colors hover:bg-brand-gold-light"
         >
           Book Now
         </a>

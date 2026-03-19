@@ -29,11 +29,11 @@ export default function TourDetailView({ tour }: Props) {
         {/* Left content — 65% */}
         <div className="flex flex-col gap-8 lg:w-[65%]">
           <div>
-            <h1 className="text-2xl font-bold md:text-3xl">{tour.name}</h1>
+            <h1 className="font-heading text-2xl font-bold md:text-3xl">{tour.name}</h1>
             {(tour.averageRating || tour.reviewCount) && (
               <div className="mt-2 flex items-center gap-2 text-sm">
                 {tour.averageRating && (
-                  <span className="text-amber-500">
+                  <span className="text-brand-gold">
                     ★ {Number(tour.averageRating).toFixed(1)}
                   </span>
                 )}
@@ -57,7 +57,7 @@ export default function TourDetailView({ tour }: Props) {
           {/* Highlights */}
           {info?.highlights && (
             <section className="rounded-lg border bg-white p-5">
-              <h2 className="mb-3 text-lg font-semibold">Tour Highlights</h2>
+              <h2 className="font-heading mb-3 text-xl font-semibold">Tour Highlights</h2>
               <div
                 className="prose prose-sm max-w-none"
                 dangerouslySetInnerHTML={{ __html: sanitizeCmsHtml(info.highlights) }}
@@ -68,7 +68,7 @@ export default function TourDetailView({ tour }: Props) {
           {/* Description */}
           {tour.description && (
             <section className="rounded-lg border bg-white p-5">
-              <h2 className="mb-3 text-lg font-semibold">Tour Overview</h2>
+              <h2 className="font-heading mb-3 text-xl font-semibold">Tour Overview</h2>
               <div
                 className="prose prose-sm max-w-none"
                 dangerouslySetInnerHTML={{ __html: sanitizeCmsHtml(tour.description) }}
@@ -97,7 +97,7 @@ export default function TourDetailView({ tour }: Props) {
           {/* Additional info */}
           {info?.additionalInfo && (
             <section className="rounded-lg border bg-white p-5">
-              <h2 className="mb-3 text-lg font-semibold">Additional Information</h2>
+              <h2 className="font-heading mb-3 text-xl font-semibold">Additional Information</h2>
               <div
                 className="prose prose-sm max-w-none"
                 dangerouslySetInnerHTML={{ __html: sanitizeCmsHtml(info.additionalInfo) }}

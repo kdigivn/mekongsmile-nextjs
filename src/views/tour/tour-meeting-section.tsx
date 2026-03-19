@@ -17,7 +17,7 @@ export default function TourMeetingSection({ meetingPickup }: Props) {
 
   return (
     <div className="rounded-lg border bg-white p-5">
-      <h2 className="mb-4 text-lg font-semibold">Meeting & Pickup</h2>
+      <h2 className="font-heading mb-4 text-xl font-semibold">Meeting & Pickup</h2>
       <div className="flex flex-col gap-3 text-sm">
         {pickupPoint && (
           <div className="flex gap-2">

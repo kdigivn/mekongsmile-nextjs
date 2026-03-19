@@ -52,9 +52,9 @@ export default async function ToursPage({ searchParams }: PageProps) {
   return (
     <div className="mx-auto w-full max-w-screen-xl px-4 py-8 md:px-8">
       <div className="mb-6">
-        <h1 className="text-3xl font-bold">All Tours</h1>
+        <h1 className="font-heading text-3xl font-bold">All Tours</h1>
         <p className="mt-2 text-muted-foreground">
-          Discover our handpicked tours across the Mekong Delta region.
+          Discover 34 authentic Mekong Delta experiences.
         </p>
       </div>
 

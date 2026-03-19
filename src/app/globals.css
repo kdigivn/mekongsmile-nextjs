@@ -91,6 +91,11 @@
     scroll-behavior: smooth;
   }
 
+  /* Premium section spacing */
+  .section-spacing {
+    padding-block: clamp(3rem, 6vw, 6rem);
+  }
+
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-be-vietnam-pro), var(--font-noto-sans-sc), sans-serif;

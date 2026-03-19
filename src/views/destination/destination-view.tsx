@@ -36,7 +36,7 @@ export default function DestinationView({ destination }: Props) {
         <div className="absolute inset-0 flex items-end p-6 md:p-8">
           <div className="text-white">
             <BreadcrumbNav items={breadcrumbItems} />
-            <h1 className="mt-2 text-3xl font-bold md:text-4xl">
+            <h1 className="font-heading mt-2 text-3xl font-bold md:text-4xl">
               {destination.name}
             </h1>
             {destination.count && (
@@ -59,7 +59,7 @@ export default function DestinationView({ destination }: Props) {
         {/* Child destinations as pill chips */}
         {destination.children?.nodes && destination.children.nodes.length > 0 && (
           <div className="mb-8">
-            <h2 className="mb-4 text-xl font-semibold">Sub-Destinations</h2>
+            <h2 className="font-heading mb-4 text-xl font-semibold">Sub-Destinations</h2>
             <div className="flex flex-wrap gap-2">
               {destination.children.nodes.map((child) => (
                 <Link
@@ -81,8 +81,8 @@ export default function DestinationView({ destination }: Props) {
 
         {/* Tours */}
         {tours.length > 0 && (
-          <div className="mb-12">
-            <h2 className="mb-6 text-xl font-semibold">
+          <div className="mb-12 section-spacing">
+            <h2 className="font-heading mb-6 text-xl font-semibold">
               Tours in {destination.name}
             </h2>
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -97,8 +97,8 @@ export default function DestinationView({ destination }: Props) {
 
         {/* Blog posts */}
         {posts.length > 0 && (
-          <div>
-            <h2 className="mb-6 text-xl font-semibold">
+          <div className="section-spacing">
+            <h2 className="font-heading mb-6 text-xl font-semibold">
               Travel Guides for {destination.name}
             </h2>
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">

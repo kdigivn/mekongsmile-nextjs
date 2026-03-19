@@ -19,8 +19,8 @@ const WHY_ICONS = [Star, Clock, Shield];
 function WhyChooseSection({ items }: { items: TourConstant["whyChooseUs"] }) {
   if (!items || items.length === 0) return null;
   return (
-    <section className="py-10">
-      <h2 className="mb-6 text-center text-2xl font-bold">Why Choose Us</h2>
+    <section className="section-spacing">
+      <h2 className="mb-6 text-center font-heading text-2xl font-bold">Why Choose Us</h2>
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {items.map((item, idx) => {
           const Icon = WHY_ICONS[idx % WHY_ICONS.length];
@@ -46,9 +46,9 @@ function WhyChooseSection({ items }: { items: TourConstant["whyChooseUs"] }) {
 function LatestPostsSection({ posts }: { posts: PostCard[] }) {
   if (!posts || posts.length === 0) return null;
   return (
-    <section className="py-10">
+    <section className="section-spacing">
       <div className="mb-6 flex items-center justify-between">
-        <h2 className="text-2xl font-bold">Travel Blog</h2>
+        <h2 className="font-heading text-2xl font-bold">Travel Blog</h2>
         <Link href="/blog/" className="text-sm font-medium text-primary hover:underline">
           View all posts
         </Link>
